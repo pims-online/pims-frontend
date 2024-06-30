@@ -1,0 +1,6 @@
+{
+	"test": {
+		"helloWorld": "Hello world",
+		"testWidget": "I am testing my super widget"
+	}
+}
