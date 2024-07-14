@@ -1,10 +1,10 @@
-import r2wc from "@r2wc/react-to-web-component";
-import App from "./App";
+import r2wc from '@r2wc/react-to-web-component';
+import { WidgetApp } from './App';
 
-const WebComponentWidget = r2wc(App, {
-  props: {
-    applicationId: "string",
-  },
+export const WebComponentWidget = r2wc(WidgetApp, {
+	props: {
+		applicationId: 'string',
+	},
 });
 
-customElements.define("pims-dematerialized-widget", WebComponentWidget);
+customElements.define('pims-dematerialized-widget', WebComponentWidget);
