@@ -9,9 +9,13 @@
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
 		"prettier": "prettier --check --ignore-unknown .",
-		"prettier:fix": "prettier --write --ignore-unknown ."
+		"prettier:fix": "prettier --write --ignore-unknown .",
+		"postinstall": "copy-dsfr-to-public",
+		"predev": "only-include-used-icons",
+		"prebuild": "only-include-used-icons"
 	},
 	"dependencies": {
+		"@codegouvfr/react-dsfr": "^1.9.23",
 		"@r2wc/react-to-web-component": "^2.0.3",
 		"@types/node": "^20.14.9",
 		"i18next": "^23.11.5",
