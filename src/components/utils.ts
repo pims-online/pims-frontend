@@ -1,0 +1,9 @@
+import { STEPS, type Step } from './constants';
+
+export const getStepMap = () => {
+	const stepMap = new Map<number, Step>();
+	STEPS.forEach((step) => {
+		stepMap.set(step.stepIndex, step);
+	});
+	return stepMap;
+};
