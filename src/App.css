@@ -40,6 +40,10 @@ p {
 	background-color: cyan;
 }
 
+.pims-root-layout__container {
+	padding: 16px;
+}
+
 /* fonts.css */
 @font-face {
 	font-family: 'Marianne';

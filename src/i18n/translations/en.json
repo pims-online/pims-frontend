@@ -1,6 +1,22 @@
 {
 	"test": {
-		"helloWorld": "Hello world",
-		"testWidget": "I am testing my super widget"
+		"helloWorld": "Hello World",
+		"testWidget": "Widgeeeet"
+	},
+	"stepper": {
+		"step_one": "I learn about the risks around me",
+		"step_two": "I'm preparing to deal with them",
+		"step_three": "I act in the event of a hazard or alert",
+		"step_four": "To go further, I get involved",
+		"step_five": "I check my entries and generate my PIMS"
+	},
+	"header": {
+		"serviceTitle": "Plan Individuel de Mise en Sureté dématérialisé",
+		"serviceTagline": "Created by the Bureau de l'Alerte, de la Sensibilisation et de l'Education des Publics (BASEP)",
+		"widgetHeadline": "Download your dematerialised PIMS"
+	},
+	"common": {
+		"goNextStep": "Next step",
+		"goPreviousStep": "Previous Step"
 	}
 }

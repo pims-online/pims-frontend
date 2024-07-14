@@ -2,5 +2,21 @@
 	"test": {
 		"helloWorld": "Coucou le monde",
 		"testWidget": "Widgeeeet"
+	},
+	"stepper": {
+		"step_one": "Je m'informe sur les risques qui m'entourent",
+		"step_two": "Je me prépare à faire face",
+		"step_three": "J'agis en cas d'aléa ou d'alerte",
+		"step_four": "Pour aller plus loin je m'implique",
+		"step_five": "Je vérifie ma saisie et je génère mon PIMS"
+	},
+	"header": {
+		"serviceTitle": "Plan Individuel de Mise en Sureté dématérialisé",
+		"serviceTagline": "Créé par le Bureau de l'Alerte, de la Sensibilisation et de l'Education des Publics (BASEP)",
+		"widgetHeadline": "Téléchargez votre PIMS dématérialisé"
+	},
+	"common": {
+		"goNextStep": "Étape suivante",
+		"goPreviousStep": "Étape précédente"
 	}
 }
