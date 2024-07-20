@@ -18,5 +18,17 @@
 	"common": {
 		"goNextStep": "Next step",
 		"goPreviousStep": "Previous Step"
+	},
+	"homeScreen": {
+		"protection": "Protect yourself and your loved ones in just a few minutes",
+		"summary": "From a simple address in less than five minutes, I generate my PIMS in a downloadable, printable and transferable PDF version.",
+		"riskIdentification": "I identify the natural and technological risks present in my environment, which concern the entire population and can affect every citizen.",
+		"fiveSteps": "I prepare myself and those around me to take shelter in the event of an emergency, in five steps :",
+		"trustworthySources": "I know which sources are reliable so that I can stay calm and informed by following developments in the situation and official instructions.",
+		"startButton": {
+			"title": "Ready? Ready!",
+			"subtitle": "Plan Individuel de Mise en Sureté",
+			"text": "I'm starting to type"
+		}
 	}
 }
