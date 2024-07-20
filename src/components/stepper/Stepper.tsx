@@ -1,10 +1,8 @@
 import { Stepper as StepperDSFR } from '@codegouvfr/react-dsfr/Stepper';
-import { getStepMap } from './utils';
 
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-
-const STEP_COUNT = 5;
+import { STEP_COUNT, getStepMap } from './utils';
 
 type Props = {
 	currentStep: number;

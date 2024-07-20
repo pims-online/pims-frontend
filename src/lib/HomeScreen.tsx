@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { STEPS } from '../components/constants';
+import { STEPS } from '../layouts/constants';
 import { fr } from '@codegouvfr/react-dsfr';
 import { Button } from '@codegouvfr/react-dsfr/Button';
 

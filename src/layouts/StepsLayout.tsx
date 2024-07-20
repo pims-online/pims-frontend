@@ -1,9 +1,9 @@
 // ----- COMPONENTS -----
-import Stepper from '../components/Stepper';
+import Stepper from '../components/stepper/Stepper';
 import Navigator from '../components/Navigator';
 
 // ----- SCREENS  -----
-import { SCREENS } from '../components/constants';
+import { SCREENS } from './constants';
 import InformationScreen from '../lib/InformationScreen';
 import EmergencyKitScreen from '../lib/EmergencyKitScreen';
 import AlertScreen from '../lib/AlertScreen';

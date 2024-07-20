@@ -1,7 +1,7 @@
 import Header from '../components/Header.tsx';
 import LanguageSelector from '../components/LanguageSelector.tsx';
 import { useState } from 'react';
-import { SCREENS } from '../components/constants.ts';
+import { SCREENS } from './constants.ts';
 import StepsLayout from './StepsLayout';
 import HomeScreen from '../lib/HomeScreen.tsx';
 import FinalScreen from '../lib/FinalScreen.tsx';
