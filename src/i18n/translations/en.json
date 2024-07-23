@@ -1,34 +1,166 @@
 {
 	"test": {
-		"helloWorld": "Hello World",
+		"helloWorld": "Hello world",
 		"testWidget": "Widgeeeet"
 	},
 	"stepper": {
 		"step_one": "I learn about the risks around me",
-		"step_two": "I'm preparing to deal with them",
-		"step_three": "I act in the event of a hazard or alert",
+		"step_two": "I prepare to face them",
+		"step_three": "I act in case of a hazard or alert",
 		"step_four": "To go further, I get involved",
-		"step_five": "I check my entries and generate my PIMS"
+		"step_five": "I check my input and generate my PIMS"
 	},
 	"header": {
-		"serviceTitle": "Plan Individuel de Mise en Sureté dématérialisé",
-		"serviceTagline": "Created by the Bureau de l'Alerte, de la Sensibilisation et de l'Education des Publics (BASEP)",
-		"widgetHeadline": "Download your dematerialised PIMS"
+		"serviceTitle": "Dematerialized Individual Safety Plan",
+		"serviceTagline": "Created by the Bureau of Alert, Awareness, and Public Education (BASEP)",
+		"widgetHeadline": "Download your dematerialized PIMS"
 	},
 	"common": {
 		"goNextStep": "Next step",
-		"goPreviousStep": "Previous Step"
+		"goPreviousStep": "Previous step"
 	},
 	"homeScreen": {
-		"protection": "Protect yourself and your loved ones in just a few minutes",
-		"summary": "From a simple address in less than five minutes, I generate my PIMS in a downloadable, printable and transferable PDF version.",
-		"riskIdentification": "I identify the natural and technological risks present in my environment, which concern the entire population and can affect every citizen.",
-		"fiveSteps": "I prepare myself and those around me to take shelter in the event of an emergency, in five steps :",
-		"trustworthySources": "I know which sources are reliable so that I can stay calm and informed by following developments in the situation and official instructions.",
+		"protection": "Protect yourself and your loved ones in a few minutes",
+		"summary": "From a simple address in less than five minutes, I generate my PIMS in a downloadable, printable, transferable PDF version.",
+		"riskIdentification": "I identify the natural and technological risks present in my environment that concern the entire population and can affect every citizen.",
+		"fiveSteps": "I prepare myself and my loved ones to be safe in case of an emergency, in five steps:",
+		"trustworthySources": "I know reliable sources to stay calm and informed by following the evolution of the situation and official instructions.",
 		"startButton": {
-			"title": "Ready? Ready!",
-			"subtitle": "Plan Individuel de Mise en Sureté",
-			"text": "I'm starting to type"
+			"title": "Ready? Set!",
+			"subtitle": "Individual Safety Plan",
+			"text": "I start my input"
+		}
+	},
+	"information_screen": {
+		"address": {
+			"title": "Know the risks near my home",
+			"call_to_action": "Please enter your address",
+			"search_bar_label": "Exact address"
+		},
+		"safe_behavior": "Safety behaviors",
+		"see_more_risks": "I check all the natural and technological risks that exist, in addition to those concerning my address."
+	},
+	"risks": {
+		"industrial_accident": {
+			"title": "Industrial accident",
+			"preventions": {
+				"item_1": "Shelter immediately in a nearby enclosed building",
+				"item_2": "Close windows, doors, and vents",
+				"item_3": "Stop the ventilation",
+				"item_4": "Avoid any flame or spark"
+			}
+		},
+		"nuclear_accident": {
+			"title": "Nuclear accident",
+			"preventions": {
+				"item_1": "Anticipate by obtaining free iodine tablets from the pharmacy",
+				"item_2": "Shelter in an enclosed building",
+				"item_3": "Close windows, doors, and vents",
+				"item_4": "Stop the ventilation"
+			}
+		},
+		"dangerous_transportation_accident": {
+			"title": "Dangerous goods transportation accident",
+			"preventions": {
+				"item_1": "Avoid the perimeter",
+				"item_2": "If you cannot, shelter in a nearby enclosed building to limit exposure to danger",
+				"item_3": "Close windows, doors, and vents",
+				"item_4": "Stop the ventilation"
+			}
+		},
+		"avalanche": {
+			"title": "Avalanche",
+			"preventions": {
+				"item_1": "Avoid the perimeter",
+				"item_2": "Move away from valley bottoms"
+			}
+		},
+		"volcanic_eruption": {
+			"title": "Volcanic eruption",
+			"preventions": {
+				"item_1": "Shelter in an enclosed building",
+				"item_2": "Close and reinforce doors, windows, and shutters",
+				"item_3": "Breathe through a mask or damp cloth if the air is too full of gas or ash"
+			}
+		},
+		"forest_fire": {
+			"title": "Forest fire",
+			"preventions": {
+				"item_1": "Leave the forest immediately or shelter in a solid building",
+				"item_2": "Avoid leaving your car. If caught by flames, stop in a clear area",
+				"item_3": "You are safer in a building; evacuate only if ordered by authorities"
+			}
+		},
+		"flooding": {
+			"title": "Flooding",
+			"preventions": {
+				"item_1": "Move away from valley bottoms and watercourses",
+				"item_2": "Take refuge as high as possible",
+				"item_3": "At home, turn off water, gas, electricity",
+				"item_4": "Postpone or cancel your travels"
+			}
+		},
+		"landslide": {
+			"title": "Landslide",
+			"preventions": {
+				"item_1": "Avoid the area",
+				"item_2": "Move away from valley bottoms"
+			}
+		},
+		"dam_break": {
+			"title": "Dam break",
+			"preventions": {
+				"item_1": "Avoid the perimeter",
+				"item_2": "Move away from valley bottoms"
+			}
+		},
+		"earthquake": {
+			"title": "Earthquake",
+			"preventions": {
+				"item_1": "Leave damaged buildings",
+				"item_2": "Move away from anything that could collapse",
+				"item_3": "Use only stairs"
+			}
+		},
+		"storm": {
+			"title": "Storm / Cyclone",
+			"preventions": {
+				"item_1": "Shelter in a building, preferably solid",
+				"item_2": "Avoid staying under a tree",
+				"item_3": "Close doors, windows, and shutters",
+				"item_4": "Avoid going out during the cyclone's eye"
+			}
+		},
+		"tsunami": {
+			"title": "Tsunami",
+			"preventions": {
+				"item_1": "On land: evacuate the coastline immediately on foot",
+				"item_2": "At sea: head offshore"
+			}
+		},
+		"coastline_retreat": {
+			"title": "Coastline retreat",
+			"preventions": {}
+		},
+		"clay_swelling": {
+			"title": "Clay swelling",
+			"preventions": {}
+		},
+		"radon": {
+			"title": "Radon",
+			"preventions": {}
+		},
+		"soil_pollution": {
+			"title": "Soil pollution",
+			"preventions": {}
+		},
+		"mining_risks": {
+			"title": "Mining risks",
+			"preventions": {}
+		},
+		"icpe": {
+			"title": "Classified industrial installations (ICPE)",
+			"preventions": {}
 		}
 	}
 }

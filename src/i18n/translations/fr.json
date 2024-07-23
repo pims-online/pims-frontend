@@ -30,5 +30,137 @@
 			"subtitle": "Plan Individuel de Mise en Sureté",
 			"text": "Je commence ma saisie"
 		}
+	},
+	"information_screen": {
+		"address": {
+			"title": "Connaître les risques près de chez moi",
+			"call_to_action": "Veuillez renseigner votre adresse",
+			"search_bar_label": "Adresse exacte"
+		},
+		"safe_behavior": "Les comportements de sauvegarde",
+		"see_more_risks": "Je consulte l'ensemble des risques naturels et technologiques qui existent, en plus de ceux qui concernent mon adresse."
+	},
+	"risks": {
+		"industrial_accident": {
+			"title": "Accident industriel",
+			"preventions": {
+				"item_1": "Abritez-vous immédiatement dans un bâtiment clos à proximité",
+				"item_2": "Fermez les fenêtres, portes, aérations",
+				"item_3": "Arrêtez la ventilation",
+				"item_4": "Évitez toute flamme ou toute étincelle"
+			}
+		},
+		"nuclear_accident": {
+			"title": "Accident nucélaire",
+			"preventions": {
+				"item_1": "Anticipez en retirant vos comprimés d’iode (gratuits) en pharmacie",
+				"item_2": "Abritez-vous dans un bâtiment clos",
+				"item_3": "Fermez les fenêtres, portes et aérations",
+				"item_4": "Arrêtez la ventilation"
+			}
+		},
+		"dangerous_transportation_accident": {
+			"title": "Accident transport de matières dangereuses",
+			"preventions": {
+				"item_1": "Évitez le périmètre",
+				"item_2": "Si vous ne le pouvez pas, abritez-vous dans un bâtiment clos à proximité immédiate afin de limiter l’exposition au danger",
+				"item_3": "Fermez les fenêtres, portes, aérations",
+				"item_4": "Arrêtez la ventilation"
+			}
+		},
+		"avalanche": {
+			"title": "Avalanche",
+			"preventions": {
+				"item_1": "Évitez le périmètre",
+				"item_2": "Éloignez-vous des fonds de vallée"
+			}
+		},
+		"volcanic_eruption": {
+			"title": "Éruption volcanique",
+			"preventions": {
+				"item_1": "Abritez-vous dans un bâtiment clos",
+				"item_2": "Fermez et consolidez portes, fenêtres et volets",
+				"item_3": "Respirez à travers un masque ou un linge humide si l’air est trop chargé en gaz ou en cendres"
+			}
+		},
+		"forest_fire": {
+			"title": "Feu de forêt",
+			"preventions": {
+				"item_1": "Quittez le massif forestier immédiatement ou abritez-vous dans un bâtiment en dur",
+				"item_2": "Évitez de quitter votre voiture. Si vous êtes surpris par un front de flamme, arrêtez-vous dans une zone dégagée",
+				"item_3": "Vous êtes davantage en sécurité dans un immeuble, n’évacuez que sur ordre des autorités"
+			}
+		},
+		"flooding": {
+			"title": "Inondation",
+			"preventions": {
+				"item_1": "Éloignez-vous des fonds de vallée et des cours d’eau",
+				"item_2": "Réfugiez-vous le plus haut possible",
+				"item_3": "À la maison, coupez eau, gaz, électricité",
+				"item_4": "Reportez ou annulez vos déplacements"
+			}
+		},
+		"landslide": {
+			"title": "Mouvement de terrain",
+			"preventions": {
+				"item_1": "Évitez le secteur",
+				"item_2": "Éloignez-vous des fonds de vallée"
+			}
+		},
+		"dam_break": {
+			"title": "Rupture de barrage",
+			"preventions": {
+				"item_1": "Évitez le périmètre",
+				"item_2": "Éloignez-vous des fonds de vallée"
+			}
+		},
+		"earthquake": {
+			"title": "Séisme",
+			"preventions": {
+				"item_1": "Sortez des bâtiments endommagés",
+				"item_2": "Éloignez-vous de tout ce qui peut s’effondrer",
+				"item_3": "Utilisez uniquement les escaliers"
+			}
+		},
+		"storm": {
+			"title": "Tempête / Cyclone",
+			"preventions": {
+				"item_1": "Abritez-vous dans un bâtiment, en dur de préférence",
+				"item_2": "Évitez de rester sous un arbre",
+				"item_3": "Fermez les portes, fenêtres et volet",
+				"item_4": "Évitez de sortir durant l’oeil du cylone"
+			}
+		},
+		"tsunami": {
+			"title": "Tsunami",
+			"preventions": {
+				"item_1": "Sur terre : évacuez immédiatement le bord de mer, à pied",
+				"item_2": "En mer : dirigez-vous vers le large"
+			}
+		},
+		"coastline_retreat": {
+			"title": "Recul du trait de cote",
+			"preventions": {}
+		},
+		"clay_swelling": {
+			"title": "Retrait gonflement des argiles",
+			"preventions": {}
+		},
+		"radon": {
+			"title": "Radon",
+			"preventions": {}
+		},
+		"soil_pollution": {
+			"title": "Pollution des sols",
+			"preventions": {}
+		},
+		"mining_risks": {
+			"title": "Risques miniers",
+			"preventions": {}
+		},
+		"icpe": {
+			"title": "Installations industrielles classées (ICPE)",
+			"preventions": {}
+		}
 	}
 }

@@ -1,6 +1,8 @@
 import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
 import { useTranslation } from 'react-i18next';
 
+import { fr } from '@codegouvfr/react-dsfr';
+
 type Props = {
 	currentStep: number;
 	setCurrentStep: (nextStep: number) => void;
@@ -35,6 +37,9 @@ export default function Navigator(props: Props) {
 					disabled: currentStep === 5,
 				},
 			]}
+			style={{
+				marginTop: fr.spacing('4v'),
+			}}
 		/>
 	);
 }

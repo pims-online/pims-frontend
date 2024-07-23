@@ -20,7 +20,7 @@ export default function HomeScreen(props: Props) {
 			>
 				{t('homeScreen:protection')}
 			</h5>
-			<h5 id="pims-home-screen__summary">{t('homeScreen:summary')}</h5>
+			<h5 className="pims__screen-title">{t('homeScreen:summary')}</h5>
 			<p>{t('homeScreen:riskIdentification')}</p>
 			<p>{t('homeScreen:fiveSteps')}</p>
 			<ol>
@@ -32,7 +32,10 @@ export default function HomeScreen(props: Props) {
 			</ol>
 			<p>{t('homeScreen:trustworthySources')}</p>
 			<div className="pims__responsive-flexbox-col">
-				<h2 id="pims-home-screen__start-process-title">
+				<h2
+					id="pims-home-screen__start-process-title"
+					className="pims__screen-title"
+				>
 					{t('homeScreen:startButton.title')}
 				</h2>
 				<p id="pims-home-screen__start-process-subtitle">

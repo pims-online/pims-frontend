@@ -52,6 +52,10 @@ p {
 	align-items: flex-start;
 }
 
+.pims__screen-title {
+	color: var(--text-title-blue-france);
+}
+
 @media (max-width: 680px) {
 	.pims__responsive-flexbox-col {
 		align-items: center;
@@ -67,12 +71,7 @@ p {
 	text-align: center;
 }
 
-#pims-home-screen__summary {
-	color: var(--text-title-blue-france);
-}
-
 #pims-home-screen__start-process-title {
-	color: var(--text-title-blue-france);
 	display: inline-block;
 	white-space: nowrap; /* Prevents title from wrapping */
 	margin-bottom: 4px;
@@ -90,6 +89,50 @@ p {
 	#pims-home-screen__summary {
 		text-align: center;
 	}
+}
+
+/* Information screen */
+
+.pims-information-screen__georisque-item {
+	background-color: var(--background-flat-blue-ecume);
+	color: var(--text-inverted-grey);
+	width: fit-content;
+}
+
+#pims-information-screen__address-feature-list {
+	border-bottom-right-radius: 0.5rem; /* 8px */
+	border-bottom-left-radius: 0.5rem; /* 8px */
+	margin: 0px;
+	box-shadow:
+		0 1px 3px 0 var(--border-action-high-blue-france),
+		0 1px 2px -1px var(--border-action-high-blue-france);
+}
+
+.pims-information-screen__risk-item-prevention-container {
+	width: 100%;
+}
+
+.pims-information-screen__risk-item-prevention-list {
+	border-left: 4px solid var(--pims-orange-border);
+	list-style-type: none;
+	padding-left: 8px;
+	border-radius:4px;
+}
+
+.pims-information-screen__risk-item-prevention-list li {
+	position: relative;
+}
+
+.pims-information-screen__risk-item-prevention-list li::before {
+	content: '';
+	position: absolute;
+	left: -8px;
+	top: 6px;
+	border-left: 8px solid orange;
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	height: 0;
+	width: 0;
 }
 
 /* fonts.css */
