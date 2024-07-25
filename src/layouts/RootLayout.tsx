@@ -9,7 +9,7 @@ import { useIsDark } from '@codegouvfr/react-dsfr/useIsDark';
 import { fr } from '@codegouvfr/react-dsfr';
 
 export default function RootLayout() {
-	const [currentIndex, setCurrentIndex] = useState(1);
+	const [currentIndex, setCurrentIndex] = useState(2);
 	const { isDark } = useIsDark();
 
 	const navigateToFirstStep = () => setCurrentIndex(1);

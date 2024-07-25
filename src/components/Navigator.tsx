@@ -6,10 +6,17 @@ import { fr } from '@codegouvfr/react-dsfr';
 type Props = {
 	currentStep: number;
 	setCurrentStep: (nextStep: number) => void;
+	isNavigateNextLocked: boolean;
+	setIsNavigateNextLocked: (nextValue: boolean) => void;
 };
 
 export default function Navigator(props: Props) {
-	const { currentStep, setCurrentStep } = props;
+	const {
+		currentStep,
+		setCurrentStep,
+		isNavigateNextLocked,
+		setIsNavigateNextLocked,
+	} = props;
 
 	const { t } = useTranslation('common');
 	return (
@@ -25,7 +32,10 @@ export default function Navigator(props: Props) {
 					iconId: 'fr-icon-arrow-left-s-line',
 					priority: 'secondary',
 					type: 'button',
-					onClick: () => setCurrentStep(currentStep - 1),
+					onClick: () => {
+						setIsNavigateNextLocked(false); // Reset
+						setCurrentStep(currentStep - 1);
+					},
 					disabled: currentStep === 1,
 				},
 				{
@@ -34,7 +44,7 @@ export default function Navigator(props: Props) {
 					priority: 'primary',
 					type: 'button',
 					onClick: () => setCurrentStep(currentStep + 1),
-					disabled: currentStep === 5,
+					disabled: isNavigateNextLocked || currentStep === 5,
 				},
 			]}
 			style={{

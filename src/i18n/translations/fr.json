@@ -162,5 +162,48 @@
 			"title": "Installations industrielles classées (ICPE)",
 			"preventions": {}
 		}
+	},
+	"emergency_kit_screen": {
+		"kit_preparation": "Je prépare sans attendre un kit d'urgence contenant de quoi vivre en autonomie pendant 3 jours en cas d'évacuation précipitée ou de mise à l'abri.",
+		"kit_listing": {
+			"title": "Voici la liste du contenu essentiel de mon kit d'urgence 72h :",
+			"items": {
+				"item_1": "Une radio à piles (avec piles de recharge)",
+				"item_2": "Des médicaments",
+				"item_3": "Une trousse de premiers secours (alcool, pansements, compresses, ...)",
+				"item_4": "Des outils de base (couteau multifonctions, ouvre-boîte, ...)",
+				"item_5": "De la nourriture non périssable et ne nécessitant pas de cuisson (conserves, petits pots de bébé)",
+				"item_6": "Des vêtements chauds et une couverture de survie",
+				"item_7": "Une lampe torche (avec des piles de recharge, bougies, briquet)",
+				"item_8": "Un chargeur de téléphone portable",
+				"item_9": "Ses lunettes de vue",
+				"item_10": "De l'argent liquide",
+				"item_11": "De l'eau potable en quantité (6 litres par personne)",
+				"item_12": "Des photocopies des documents essentiels dans une pochette étanche",
+				"item_13": "Le double des clés de la maison et de la voiture",
+				"item_14": "Des jeux pour occuper le temps"
+			},
+			"checkbox": "J'ai pris connaissance du contenu essentiel de mon kit d'urgence"
+		},
+		"kit_storage": {
+			"accessibility": "Je range mon kit d'urgence 72h dans un endroit facile d'accès et je partage sa localisation avec mes proches :",
+			"input_placeholder": "Je saisis ici le lieu de rangement de mon kit d'urgence"
+		},
+		"useful_numbers": {
+			"title": "Les numéros utiles",
+			"emergency": {
+				"subtitle": "À composer en cas d'urgence",
+				"112": "Numéro unique d'appel d'urgence en <k1>Europe</k1> : <k2>112</k2>",
+				"114": "Numéro d'appel d'urgence pour les <k1>malentendants</k1> : <k2>114</k2>"
+			},
+			"inputs": {
+				"subtitle": "Coordonnées à compléter",
+				"town_hall": "Mairie :",
+				"insurance": "Assurance :",
+				"relatives": "Proches :",
+				"others": "Autres :"
+			}
+		},
+		"go_to_next_step": "Pour passer à l'étape suivante, vous devez avoir coché que vous avez pris connaissance du contenu du kit d'urgence, rempli votre lieu de rangement de votre kit, et complété les numéros pour la mairie, l'assurance et les proches."
 	}
 }

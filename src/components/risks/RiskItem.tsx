@@ -41,7 +41,7 @@ export default function RiskItem(props: Props) {
 							}),
 							marginLeft: fr.spacing('1w'),
 						}}
-						className="pims-information-screen__risk-item-prevention-list"
+						className="pims__toothed-list"
 					>
 						{preventionList.map((prevention) => (
 							<li

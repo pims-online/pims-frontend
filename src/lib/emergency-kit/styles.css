@@ -1,0 +1,42 @@
+.pims-emergency-kit-screen__emergency-number-spec {
+	color: var(--pims-orange);
+}
+
+.pims-emergency-kit-screen__emergency-number-value {
+	color: var(--pims-orange);
+	margin-left: 4px;
+	font-size: 1.5rem;
+}
+
+.pims-emergency-kit-screen__input-list {
+}
+
+.pims-emergency-kit-screen__input-list li {
+	display: flex;
+	flex-direction: row;
+}
+
+.pims-emergency-kit-screen__useful-numbers-container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+.pims-emergency-kit-screen__useful-numbers-subcontainer {
+	flex: 1;
+	width: 100%;
+}
+
+.pims-emergency-kit__input-container {
+	flex: 1;
+}
+
+.pims-emergency-kit__input-container input {
+	margin: 0 !important;
+}
+
+@media (max-width: 680px) {
+	.pims-emergency-kit-screen__useful-numbers-container {
+		flex-direction: column;
+	}
+}

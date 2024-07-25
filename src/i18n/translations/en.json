@@ -162,5 +162,48 @@
 			"title": "Classified industrial installations (ICPE)",
 			"preventions": {}
 		}
+	},
+	"emergency_kit_screen": {
+		"kit_preparation": "I prepare without delay an emergency kit containing enough to live autonomously for 3 days in case of sudden evacuation or sheltering.",
+		"kit_listing": {
+			"title": "Here is the list of essential contents for my 72-hour emergency kit:",
+			"items": {
+				"item_1": "A battery-powered radio (with spare batteries)",
+				"item_2": "Medications",
+				"item_3": "A first aid kit (alcohol, bandages, gauze, ...)",
+				"item_4": "Basic tools (multi-tool knife, can opener, ...)",
+				"item_5": "Non-perishable food that does not require cooking (canned goods, baby food jars)",
+				"item_6": "Warm clothes and a survival blanket",
+				"item_7": "A flashlight (with spare batteries, candles, lighter)",
+				"item_8": "A mobile phone charger",
+				"item_9": "Prescription glasses",
+				"item_10": "Cash",
+				"item_11": "A sufficient amount of drinking water (6 liters per person)",
+				"item_12": "Photocopies of essential documents in a waterproof pouch",
+				"item_13": "Spare keys for the house and car",
+				"item_14": "Games to pass the time"
+			},
+			"checkbox": "I have acknowledged the essential contents of my emergency kit"
+		},
+		"kit_storage": {
+			"accessibility": "I store my 72-hour emergency kit in an easily accessible place and share its location with my loved ones:",
+			"input_placeholder": "I enter here the storage location of my emergency kit"
+		},
+		"useful_numbers": {
+			"title": "Useful numbers",
+			"emergency": {
+				"subtitle": "To dial in case of emergency",
+				"112": "Single emergency call number in <k1>Europe</k1>: <k2>112</k2>",
+				"114": "Emergency call number for the <k1>hearing impaired</k1>: <k2>114</k2>"
+			},
+			"inputs": {
+				"subtitle": "Contact details to be completed",
+				"town_hall": "Town hall:",
+				"insurance": "Insurance:",
+				"relatives": "Relatives:",
+				"others": "Others:"
+			}
+		},
+		"go_to_next_step": "To proceed to the next step, you must have checked that you have acknowledged the contents of the emergency kit, filled in your kit storage location, and completed the numbers for the town hall, insurance, and relatives."
 	}
 }
