@@ -1,10 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { fr } from '@codegouvfr/react-dsfr';
 import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
+import { Dispatch, SetStateAction } from 'react';
 
 type Props = {
 	currentStep: number;
-	setCurrentStep: (nextStep: number) => void;
+	setCurrentStep: Dispatch<SetStateAction<number>>;
 	isNavigateNextLocked: boolean;
 	setIsNavigateNextLocked: (nextValue: boolean) => void;
 };
@@ -18,6 +19,12 @@ export default function Navigator(props: Props) {
 	} = props;
 
 	const { t } = useTranslation('common');
+
+	const scrollToTop = () => {
+		if (!!window) {
+			setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+		}
+	};
 	return (
 		<ButtonsGroup
 			alignment="right"
@@ -33,7 +40,8 @@ export default function Navigator(props: Props) {
 					type: 'button',
 					onClick: () => {
 						setIsNavigateNextLocked(false); // Reset
-						setCurrentStep(currentStep - 1);
+						setCurrentStep((step) => step - 1);
+						scrollToTop();
 					},
 					disabled: currentStep === 1,
 				},
@@ -42,7 +50,10 @@ export default function Navigator(props: Props) {
 					iconId: 'fr-icon-arrow-right-s-line',
 					priority: 'primary',
 					type: 'button',
-					onClick: () => setCurrentStep(currentStep + 1),
+					onClick: () => {
+						setCurrentStep((step) => step + 1);
+						scrollToTop();
+					},
 					disabled: isNavigateNextLocked || currentStep === 5,
 				},
 			]}
