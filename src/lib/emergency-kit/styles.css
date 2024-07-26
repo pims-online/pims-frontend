@@ -1,7 +1,3 @@
-.pims-emergency-kit-screen__emergency-number-spec {
-	color: var(--pims-orange);
-}
-
 .pims-emergency-kit-screen__emergency-number-value {
 	color: var(--pims-orange);
 	margin-left: 4px;

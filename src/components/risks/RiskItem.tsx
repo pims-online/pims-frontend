@@ -44,12 +44,7 @@ export default function RiskItem(props: Props) {
 						className="pims__toothed-list"
 					>
 						{preventionList.map((prevention) => (
-							<li
-								key={`prevention-${prevention}`}
-								style={{ paddingLeft: fr.spacing('1w') }}
-							>
-								{prevention}
-							</li>
+							<li key={`prevention-${prevention}`}>{prevention}</li>
 						))}
 					</ul>
 				</td>

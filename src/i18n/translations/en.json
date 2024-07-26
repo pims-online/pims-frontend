@@ -205,5 +205,53 @@
 			}
 		},
 		"go_to_next_step": "To proceed to the next step, you must have checked that you have acknowledged the contents of the emergency kit, filled in your kit storage location, and completed the numbers for the town hall, insurance, and relatives."
+	},
+	"alert_screen": {
+		"crisis": "During the crisis, <k1>I follow the evolution of the situation.</k1>",
+		"weather_vigilance": {
+			"title": "Weather vigilance",
+			"awareness": "I monitor the evolution of vigilance:"
+		},
+		"alert_systems": {
+			"title": "Population alert",
+			"activation": "In case of life-threatening risk, the authorities can activate:",
+			"systems": {
+				"fr_alert": "the <k1>FR-Alert system</k1> which sends a message directly to all mobile phones (without registration or download) with the associated instructions",
+				"saip": "the <k1>SAIP sirens</k1> which trigger a sound signal of 3 times 1'41\""
+			},
+			"saip_guidelines": {
+				"introduction": "Then you must",
+				"no_phone": "<k1>Avoid making phone calls</k1> to keep the networks available for emergency services",
+				"stay_safe": "<k1>Stay sheltered</k1> and only evacuate your home if ordered by the authorities",
+				"listen_carefully": "<k1>Listen carefully</k1> to the authorities' instructions"
+			},
+			"buttons_title": {
+				"fr_alert": "The FR-Alert sound",
+				"saip": "The SAIP sirens"
+			}
+		},
+		"fr_alert_discovery": {
+			"title": "Example of an FR-Alert notification",
+			"button": "Simulate the notification",
+			"notification": {
+				"title": "FR-ALERT: Extreme Alert 11/11/2023 09:19 AM",
+				"body_1": "ALERT FLOOD",
+				"body_2": "Message from the prefecture of Pas de Calais",
+				"body_3": "Exceptional flood that may exceed historical levels.",
+				"body_4": {
+					"item_1": "1. Move away from watercourses.",
+					"item_2": "2. Seek refuge as high as possible.",
+					"item_3": "3. In case of flooding in your home, turn off water, gas, electricity.",
+					"item_4": "4. Postpone or cancel your travels.",
+					"item_5": "5. Contact 18 in case of extreme necessity (life-threatening emergencies)."
+				},
+				"body_5": "Follow the authorities' instructions and stay in a safe place until the end of the alert is given."
+			}
+		},
+		"public_medias": "Public media will be the relay of the authorities in emergency situations to communicate with the population.",
+		"radio_frequencies": {
+			"title": "Follow the official instructions, you will contribute to your safety and support the actions of emergency services!",
+			"near_station": "Radio stations near you:"
+		}
 	}
 }

@@ -65,6 +65,7 @@ p {
 
 .pims__toothed-list li {
 	position: relative;
+	padding-left: 8px;
 }
 
 .pims__toothed-list li::before {
@@ -77,6 +78,10 @@ p {
 	border-bottom: 4px solid transparent;
 	height: 0;
 	width: 0;
+}
+
+.pims__text-color-orange {
+	color: var(--pims-orange);
 }
 
 @media (max-width: 680px) {

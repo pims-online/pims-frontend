@@ -16,9 +16,7 @@ export default function EmergencyKitNumbersEmergency() {
 						t={t}
 						i18nKey={`useful_numbers.emergency.${phoneNumber}`}
 						components={{
-							k1: (
-								<b className="pims-emergency-kit-screen__emergency-number-spec" />
-							),
+							k1: <b className="pims__text-color-orange" />,
 							k2: (
 								<b className="pims-emergency-kit-screen__emergency-number-value" />
 							),

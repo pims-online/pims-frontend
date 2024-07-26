@@ -43,7 +43,6 @@ export default function EmergencyKitNumbersInputs(props: Props) {
 						key={input.kitNumbersKey}
 						style={{
 							marginBottom: fr.spacing('1v'),
-							paddingLeft: fr.spacing('1w'),
 						}}
 					>
 						<p

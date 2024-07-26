@@ -205,5 +205,53 @@
 			}
 		},
 		"go_to_next_step": "Pour passer à l'étape suivante, vous devez avoir coché que vous avez pris connaissance du contenu du kit d'urgence, rempli votre lieu de rangement de votre kit, et complété les numéros pour la mairie, l'assurance et les proches."
+	},
+	"alert_screen": {
+		"crisis": "Pendant la crise, <k1>je suis l'évolution de la situation.</k1>",
+		"weather_vigilance": {
+			"title": "Les vigilances météo",
+			"awareness": "Je surveille l'évolution des vigilances :"
+		},
+		"alert_systems": {
+			"title": "L'alerte des populations",
+			"activation": "En cas de risque vital, les autorités peuvent activer :",
+			"systems": {
+				"fr_alert": "le <k1>dispositif FR-Alert</k1> qui diffuse un message directement sur tous les téléphones portables (sans inscription ni téléchargement) avec les consignes associées",
+				"saip": "les <k1>sirènes SAIP</<k1> qui déclenchent un signal sonore de 3 fois 1'41"
+			},
+			"saip_guidelines": {
+				"introduction": "Il faut alors",
+				"no_phone": "<k1>Éviter de téléphoner</k1> afin de laisser les réseaux disponibles pour les secours",
+				"stay_safe": "<k1>Rester à l'abri</k1> et n'évacuez votre domicile que sur ordre des autorités",
+				"listen_carefully": "<k1>Rester à l'écoute</k1> des consignes des autorités"
+			},
+			"buttons_title": {
+				"fr_alert": "Le son FR-Alert",
+				"saip": "Les sirènes SAIP"
+			}
+		},
+		"fr_alert_discovery": {
+			"title": "Exemple d'une notification type FR-Alert",
+			"button": "Simuler la notification",
+			"notification": {
+				"title": "FR-ALERT : Alerte extrême 11/11/2023 09:19 AM",
+				"body_1": "ALERTE CRUE",
+				"body_2": "Message de la préfecture du Pas de Calais",
+				"body_3": "Crue exceptionnelle pouvant dépasser les niveaux historiques.",
+				"body_4": {
+					"item_1": "1. Éloignez-vous des cours d'eau.",
+					"item_2": "2. Réfugiez-vous le plus haut possible.",
+					"item_3": "3. En cas d'inondation de votre logement, coupez eau, gaz, électricité.",
+					"item_4": "4. Reportez ou annulez vos déplacements.",
+					"item_5": "5. Contactez le 18 en cas d'extrême nécessité (urgences vitales)."
+				},
+				"body_5": "Respectez les consignes des autorités et restez en lieu sûr jusqu'à ce que la fin de l'alerte soit donnée."
+			}
+		},
+		"public_medias": "Les médias publics seront les relais des autorités en situation d'urgence pour communiquer avec la population.",
+		"radio_frequencies": {
+			"title": "Respectez les consignes officielles, vous participerez à votre sécurité et soutiendrez l'action des secours !",
+			"near_station": "Les stations radios près de chez vous :"
+		}
 	}
 }

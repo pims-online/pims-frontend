@@ -8,7 +8,7 @@ import Navigator from '../components/Navigator';
 import { SCREENS } from './constants';
 import InformationScreen from '../lib/InformationScreen';
 import EmergencyKitScreen from '../lib/emergency-kit/EmergencyKitScreen';
-import AlertScreen from '../lib/AlertScreen';
+import AlertScreen from '../lib/alert/AlertScreen';
 import InvolvementScreen from '../lib/InvolvementScreen';
 import SummaryScreen from '../lib/SummaryScreen';
 
