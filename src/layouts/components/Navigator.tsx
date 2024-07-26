@@ -27,7 +27,7 @@ export default function Navigator(props: Props) {
 			inlineLayoutWhen="always"
 			buttons={[
 				{
-					children: t('goPreviousStep'),
+					children: t('go_previous_step'),
 					iconId: 'fr-icon-arrow-left-s-line',
 					priority: 'secondary',
 					type: 'button',
@@ -38,7 +38,7 @@ export default function Navigator(props: Props) {
 					disabled: currentStep === 1,
 				},
 				{
-					children: t('goNextStep'),
+					children: t('go_next_step'),
 					iconId: 'fr-icon-arrow-right-s-line',
 					priority: 'primary',
 					type: 'button',

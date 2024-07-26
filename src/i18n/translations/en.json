@@ -1,8 +1,4 @@
 {
-	"test": {
-		"helloWorld": "Hello world",
-		"testWidget": "Widgeeeet"
-	},
 	"stepper": {
 		"step_one": "I learn about the risks around me",
 		"step_two": "I prepare to face them",
@@ -11,21 +7,21 @@
 		"step_five": "I check my input and generate my PIMS"
 	},
 	"header": {
-		"serviceTitle": "Dematerialized Individual Safety Plan",
-		"serviceTagline": "Created by the Bureau of Alert, Awareness, and Public Education (BASEP)",
-		"widgetHeadline": "Download your dematerialized PIMS"
+		"service_title": "Dematerialized Individual Safety Plan",
+		"service_tagline": "Created by the Bureau of Alert, Awareness, and Public Education (BASEP)",
+		"widget_headline": "Download your dematerialized PIMS"
 	},
 	"common": {
-		"goNextStep": "Next step",
-		"goPreviousStep": "Previous step"
+		"go_next_step": "Next step",
+		"go_previous_step": "Previous step"
 	},
-	"homeScreen": {
+	"home_screen": {
 		"protection": "Protect yourself and your loved ones in a few minutes",
 		"summary": "From a simple address in less than five minutes, I generate my PIMS in a downloadable, printable, transferable PDF version.",
-		"riskIdentification": "I identify the natural and technological risks present in my environment that concern the entire population and can affect every citizen.",
-		"fiveSteps": "I prepare myself and my loved ones to be safe in case of an emergency, in five steps:",
-		"trustworthySources": "I know reliable sources to stay calm and informed by following the evolution of the situation and official instructions.",
-		"startButton": {
+		"risk_identification": "I identify the natural and technological risks present in my environment that concern the entire population and can affect every citizen.",
+		"five_steps": "I prepare myself and my loved ones to be safe in case of an emergency, in five steps:",
+		"trustworthy_sources": "I know reliable sources to stay calm and informed by following the evolution of the situation and official instructions.",
+		"start_button": {
 			"title": "Ready? Set!",
 			"subtitle": "Individual Safety Plan",
 			"text": "I start my input"

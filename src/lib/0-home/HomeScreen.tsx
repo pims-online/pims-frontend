@@ -8,9 +8,9 @@ type Props = {
 	navigateToFirstStep: () => void;
 };
 
-export default function HomeScreen(props: Props) {
+export default function home_screen(props: Props) {
 	const { navigateToFirstStep } = props;
-	const { t } = useTranslation(['homeScreen', 'stepper']);
+	const { t } = useTranslation(['home_screen', 'stepper']);
 
 	return (
 		<div>
@@ -20,11 +20,11 @@ export default function HomeScreen(props: Props) {
 					...fr.spacing('padding', { topBottom: '1w', rightLeft: '2w' }),
 				}}
 			>
-				{t('homeScreen:protection')}
+				{t('home_screen:protection')}
 			</h5>
-			<h5 className="pims__screen-title">{t('homeScreen:summary')}</h5>
-			<p>{t('homeScreen:riskIdentification')}</p>
-			<p>{t('homeScreen:fiveSteps')}</p>
+			<h5 className="pims__screen-title">{t('home_screen:summary')}</h5>
+			<p>{t('home_screen:risk_identification')}</p>
+			<p>{t('home_screen:five_steps')}</p>
 			<ol>
 				{STEPS.map((step) => (
 					<li key={`home-screen-step-${step.keyTranslation}`}>
@@ -32,21 +32,21 @@ export default function HomeScreen(props: Props) {
 					</li>
 				))}
 			</ol>
-			<p>{t('homeScreen:trustworthySources')}</p>
+			<p>{t('home_screen:trustworthy_sources')}</p>
 			<div className="pims__responsive-flexbox-col">
 				<h2
 					id="pims-home-screen__start-process-title"
 					className="pims__screen-title"
 				>
-					{t('homeScreen:startButton.title')}
+					{t('home_screen:start_button.title')}
 				</h2>
 				<p id="pims-home-screen__start-process-subtitle">
-					{t('homeScreen:startButton.subtitle')}
+					{t('home_screen:start_button.subtitle')}
 				</p>
 			</div>
 			<div className="pims__responsive-flexbox-col">
 				<Button size="medium" onClick={navigateToFirstStep} priority="primary">
-					{t('homeScreen:startButton.text')}
+					{t('home_screen:start_button.text')}
 				</Button>
 			</div>
 		</div>

@@ -1,8 +1,4 @@
 {
-	"test": {
-		"helloWorld": "Coucou le monde",
-		"testWidget": "Widgeeeet"
-	},
 	"stepper": {
 		"step_one": "Je m'informe sur les risques qui m'entourent",
 		"step_two": "Je me prépare à faire face",
@@ -11,21 +7,21 @@
 		"step_five": "Je vérifie ma saisie et je génère mon PIMS"
 	},
 	"header": {
-		"serviceTitle": "Plan Individuel de Mise en Sureté dématérialisé",
-		"serviceTagline": "Créé par le Bureau de l'Alerte, de la Sensibilisation et de l'Education des Publics (BASEP)",
-		"widgetHeadline": "Téléchargez votre PIMS dématérialisé"
+		"service_title": "Plan Individuel de Mise en Sureté dématérialisé",
+		"service_tagline": "Créé par le Bureau de l'Alerte, de la Sensibilisation et de l'Education des Publics (BASEP)",
+		"widget_headline": "Téléchargez votre PIMS dématérialisé"
 	},
 	"common": {
-		"goNextStep": "Étape suivante",
-		"goPreviousStep": "Étape précédente"
+		"go_next_step": "Étape suivante",
+		"go_previous_step": "Étape précédente"
 	},
-	"homeScreen": {
+	"home_screen": {
 		"protection": "Se protéger et protéger ses proches en quelques minutes",
 		"summary": "A partir d'une simple adresse en moins de cinq minutes, je génère mon PIMS en version PDF téléchargeable, imprimable, transférable.",
-		"riskIdentification": "J'identifie les risques, naturels et technologiques, présents dans mon environnement, qui concernent l'ensemble de la population et peuvent affecter chaque citoyen.",
-		"fiveSteps": "Je me prépare et je prépare mes proches pour nous mettre à l'abri en cas d'urgence, en cinq étapes :",
-		"trustworthySources": "Je connais les sources fiables pour rester serein et informé en suivant l'évolution de la situation et les consignes officielles.",
-		"startButton": {
+		"risk_identification": "J'identifie les risques, naturels et technologiques, présents dans mon environnement, qui concernent l'ensemble de la population et peuvent affecter chaque citoyen.",
+		"five_steps": "Je me prépare et je prépare mes proches pour nous mettre à l'abri en cas d'urgence, en cinq étapes :",
+		"trustworthy_sources": "Je connais les sources fiables pour rester serein et informé en suivant l'évolution de la situation et les consignes officielles.",
+		"start_button": {
 			"title": "Prêts ? Parés !",
 			"subtitle": "Plan Individuel de Mise en Sureté",
 			"text": "Je commence ma saisie"

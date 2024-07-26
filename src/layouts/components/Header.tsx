@@ -29,13 +29,13 @@ function GovernmentHeader(props: HeaderChildProps) {
 			id="fr-header-simple-header-with-service-title-and-tagline"
 			serviceTitle={
 				<>
-					{t('serviceTitle')}{' '}
+					{t('service_title')}{' '}
 					<Badge as="span" noIcon severity="success">
 						Beta
 					</Badge>
 				</>
 			}
-			serviceTagline={t('serviceTagline')}
+			serviceTagline={t('service_tagline')}
 		/>
 	);
 }
@@ -51,5 +51,5 @@ function GovernmentHeader(props: HeaderChildProps) {
 function WidgetHeader(props: HeaderChildProps) {
 	const { t } = props;
 	// ADD THEME MODE SELECTOR
-	return <h1>{t('widgetHealine')}</h1>;
+	return <h1>{t('widget_headline')}</h1>;
 }
