@@ -1,7 +1,6 @@
-import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
 import { useTranslation } from 'react-i18next';
-
 import { fr } from '@codegouvfr/react-dsfr';
+import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
 
 type Props = {
 	currentStep: number;

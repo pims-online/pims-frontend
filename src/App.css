@@ -90,56 +90,6 @@ p {
 	}
 }
 
-/* Home screen */
-
-#pims-home-screen__protection {
-	border-top: solid 2px var(--pims-orange);
-	background-color: var(--pims-green-background);
-	color: var(--pims-green-text);
-	text-align: center;
-}
-
-#pims-home-screen__start-process-title {
-	display: inline-block;
-	white-space: nowrap; /* Prevents title from wrapping */
-	margin-bottom: 4px;
-}
-
-#pims-home-screen__start-process-subtitle {
-	color: var(--text-label-orange-terre-battue);
-	display: inline-block;
-	white-space: nowrap; /* Prevents subtitle from wrapping */
-	font-stretch: condensed;
-	font-size: 0.75rem;
-}
-
-@media (max-width: 680px) {
-	#pims-home-screen__summary {
-		text-align: center;
-	}
-}
-
-/* Information screen */
-
-.pims-information-screen__georisque-item {
-	background-color: var(--background-flat-blue-ecume);
-	color: var(--text-inverted-grey);
-	width: fit-content;
-}
-
-#pims-information-screen__address-feature-list {
-	border-bottom-right-radius: 0.5rem; /* 8px */
-	border-bottom-left-radius: 0.5rem; /* 8px */
-	margin: 0px;
-	box-shadow:
-		0 1px 3px 0 var(--border-action-high-blue-france),
-		0 1px 2px -1px var(--border-action-high-blue-france);
-}
-
-.pims-information-screen__risk-item-prevention-container {
-	width: 100%;
-}
-
 /* fonts.css */
 @font-face {
 	font-family: 'Marianne';

@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import type { KitNumbers } from './types';
+import type { KitNumbers } from '../types';
 import EmergencyKitNumbersEmergency from './EmergencyKitNumbersEmergency';
 import EmergencyKitNumbersInputs from './EmergencyKitNumbersInputs';
 

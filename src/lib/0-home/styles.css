@@ -1,0 +1,26 @@
+#pims-home-screen__protection {
+	border-top: solid 2px var(--pims-orange);
+	background-color: var(--pims-green-background);
+	color: var(--pims-green-text);
+	text-align: center;
+}
+
+#pims-home-screen__start-process-title {
+	display: inline-block;
+	white-space: nowrap; /* Prevents title from wrapping */
+	margin-bottom: 4px;
+}
+
+#pims-home-screen__start-process-subtitle {
+	color: var(--text-label-orange-terre-battue);
+	display: inline-block;
+	white-space: nowrap; /* Prevents subtitle from wrapping */
+	font-stretch: condensed;
+	font-size: 0.75rem;
+}
+
+@media (max-width: 680px) {
+	#pims-home-screen__summary {
+		text-align: center;
+	}
+}

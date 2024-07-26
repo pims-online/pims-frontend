@@ -1,7 +1,7 @@
-import { Stepper as StepperDSFR } from '@codegouvfr/react-dsfr/Stepper';
-
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Stepper as StepperDSFR } from '@codegouvfr/react-dsfr/Stepper';
+
 import { STEP_COUNT, getStepMap } from './utils';
 
 type Props = {

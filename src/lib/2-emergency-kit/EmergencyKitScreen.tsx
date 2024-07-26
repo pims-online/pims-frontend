@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import EmergencyKitListing from './EmergencyKitListing';
 import EmergencyKitStorage from './EmergencyKitStorage';
-import EmergencyKitNumbers from './EmergencyKitNumbers';
+import EmergencyKitNumbers from './emergency-kit-numbers/EmergencyKitNumbers';
 import EmergencyKitNextStepAlert from './EmergencyKitNextStepAlert';
 import type { KitNumbers } from './types';
 

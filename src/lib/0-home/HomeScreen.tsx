@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { STEPS } from '../layouts/constants';
 import { fr } from '@codegouvfr/react-dsfr';
 import { Button } from '@codegouvfr/react-dsfr/Button';
+
+import { STEPS } from '../../layouts/constants';
 
 type Props = {
 	navigateToFirstStep: () => void;
@@ -10,6 +11,7 @@ type Props = {
 export default function HomeScreen(props: Props) {
 	const { navigateToFirstStep } = props;
 	const { t } = useTranslation(['homeScreen', 'stepper']);
+
 	return (
 		<div>
 			<h5

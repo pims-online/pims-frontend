@@ -1,4 +1,5 @@
 import { fr } from '@codegouvfr/react-dsfr';
+
 import type { DataGeopfFeature } from './types';
 
 type Props = {
@@ -8,6 +9,7 @@ type Props = {
 
 export default function AddressFeatureList(props: Props) {
 	const { addressFeatureList, onClickListItem } = props;
+
 	return (
 		<ul
 			id="pims-information-screen__address-feature-list"

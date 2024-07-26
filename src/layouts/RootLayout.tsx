@@ -1,12 +1,16 @@
-import Header from '../components/Header.tsx';
-import LanguageSelector from '../components/LanguageSelector.tsx';
 import { useState } from 'react';
+import { fr } from '@codegouvfr/react-dsfr';
+import { useIsDark } from '@codegouvfr/react-dsfr/useIsDark';
+
+// ----- LAYOUT COMPONENTS -----
 import { SCREENS } from './constants.ts';
 import StepsLayout from './StepsLayout';
-import HomeScreen from '../lib/HomeScreen.tsx';
-import FinalScreen from '../lib/FinalScreen.tsx';
-import { useIsDark } from '@codegouvfr/react-dsfr/useIsDark';
-import { fr } from '@codegouvfr/react-dsfr';
+import Header from './components/Header';
+import LanguageSelector from './components/LanguageSelector';
+
+// ----- SCREENS -----
+import HomeScreen from '../lib/0-home/HomeScreen';
+import FinalScreen from '../lib/6-final/FinalScreen';
 
 export default function RootLayout() {
 	const [currentIndex, setCurrentIndex] = useState(3);

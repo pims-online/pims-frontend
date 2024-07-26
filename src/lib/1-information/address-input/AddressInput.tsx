@@ -1,17 +1,14 @@
 import { useState, useEffect } from 'react';
-
+import { useTranslation } from 'react-i18next';
 import { SearchBar } from '@codegouvfr/react-dsfr/SearchBar';
 
-import { useTranslation } from 'react-i18next';
-
+import AddressFeatureList from './AddressFeatureList';
 import type { DataGeopfFeature, GeorisqueAPIResponse } from './types';
 import {
 	getAutocompletedAddresses,
 	getRisksAroundCoordinates,
 	getEffectiveRiskIdentifierListFromGeorisqueResponse,
 } from './utils';
-
-import AddressFeatureList from './AddressFeatureList';
 
 type Props = {
 	setRiskIdList: (nextList: Array<string>) => void;

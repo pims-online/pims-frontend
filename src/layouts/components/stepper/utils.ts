@@ -1,4 +1,4 @@
-import { STEPS, type Step } from '../../layouts/constants';
+import { STEPS, type Step } from '../../constants';
 
 export const getStepMap = () => {
 	const stepMap = new Map<number, Step>();

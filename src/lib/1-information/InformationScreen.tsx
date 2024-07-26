@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import AddressInput from '../components/address-input/AddressInput';
-import RiskList from '../components/risks/RiskList';
-import { RISK_LIST } from '../components/risks/constants';
-import { Accordion } from '@codegouvfr/react-dsfr/Accordion';
 import { useTranslation } from 'react-i18next';
 import { fr } from '@codegouvfr/react-dsfr';
+import { Accordion } from '@codegouvfr/react-dsfr/Accordion';
+
+import AddressInput from './address-input/AddressInput';
+import RiskList from './risks/RiskList';
+import { RISK_LIST } from './risks/constants';
 
 export default function InformationScreen() {
 	const { t } = useTranslation('information_screen');

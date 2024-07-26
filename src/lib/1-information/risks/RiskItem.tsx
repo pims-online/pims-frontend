@@ -9,6 +9,7 @@ type Props = {
 
 export default function RiskItem(props: Props) {
 	const { iconsPaths, title, preventionList, isFirstItem } = props;
+
 	return (
 		<>
 			<tr>

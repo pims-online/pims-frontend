@@ -1,9 +1,8 @@
 import { useTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
 import { Header as HeaderDSFR } from '@codegouvfr/react-dsfr/Header';
 import { headerFooterDisplayItem } from '@codegouvfr/react-dsfr/Display';
 import { Badge } from '@codegouvfr/react-dsfr/Badge';
-
-import type { TFunction } from 'i18next';
 
 type Props = {
 	isWidget?: boolean;

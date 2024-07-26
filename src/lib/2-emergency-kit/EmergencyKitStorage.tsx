@@ -5,6 +5,7 @@ type Props = {
 	storage: string;
 	setStorage: (nextValue: string) => void;
 };
+
 export default function EmergencyKitStorage(props: Props) {
 	const { t } = useTranslation('emergency_kit_screen');
 

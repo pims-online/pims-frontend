@@ -1,7 +1,7 @@
 import { useTranslation, Trans } from 'react-i18next';
 
 import WeatherVigilance from './WeatherVigilance';
-import AlertSystems from './AlertSystems';
+import AlertSystems from './alert-systems/AlertSystems';
 import RadioFrequencies from './RadioFrequencies';
 import FrAlertDiscovery from './FrAlertDiscovery';
 

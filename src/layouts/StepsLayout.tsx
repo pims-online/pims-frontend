@@ -1,16 +1,16 @@
 import { useState } from 'react';
 
-// ----- COMPONENTS -----
-import Stepper from '../components/stepper/Stepper';
-import Navigator from '../components/Navigator';
+// ----- LAYOUT COMPONENTS -----
+import Stepper from './components/stepper/Stepper';
+import Navigator from './components/Navigator';
 
 // ----- SCREENS  -----
 import { SCREENS } from './constants';
-import InformationScreen from '../lib/InformationScreen';
-import EmergencyKitScreen from '../lib/emergency-kit/EmergencyKitScreen';
-import AlertScreen from '../lib/alert/AlertScreen';
-import InvolvementScreen from '../lib/InvolvementScreen';
-import SummaryScreen from '../lib/SummaryScreen';
+import InformationScreen from '../lib/1-information/InformationScreen';
+import EmergencyKitScreen from '../lib/2-emergency-kit/EmergencyKitScreen';
+import AlertScreen from '../lib/3-alert/AlertScreen';
+import InvolvementScreen from '../lib/4-involvment/InvolvementScreen';
+import SummaryScreen from '../lib/5-summary/SummaryScreen';
 
 type Props = {
 	currentIndex: number;

@@ -1,9 +1,8 @@
+import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import RiskItem from './RiskItem';
 import { getRiskItemList } from './utils';
-
-import { useMemo } from 'react';
-
-import { useTranslation } from 'react-i18next';
 
 type Props = {
 	riskIdList: Array<string>;

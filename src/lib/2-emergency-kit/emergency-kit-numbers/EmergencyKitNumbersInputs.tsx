@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { fr } from '@codegouvfr/react-dsfr';
 import { Input } from '@codegouvfr/react-dsfr/Input';
 
-import type { KitNumbers } from './types';
+import type { KitNumbers } from '../types';
 
 type KitNumbersKeys = keyof KitNumbers;
 
