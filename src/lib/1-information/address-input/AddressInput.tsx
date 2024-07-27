@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SearchBar } from '@codegouvfr/react-dsfr/SearchBar';
+
+import { AppContext } from '../../../AppContextProvider';
 
 import AddressFeatureList from './AddressFeatureList';
 import type { DataGeopfFeature, GeorisqueAPIResponse } from './types';
@@ -10,18 +12,12 @@ import {
 	getEffectiveRiskIdentifierListFromGeorisqueResponse,
 } from './utils';
 
-type Props = {
-	setRiskIdList: (nextList: Array<string>) => void;
-};
-
-export default function AddressInput(props: Props) {
-	const { setRiskIdList } = props;
-
+export default function AddressInput() {
 	const { t } = useTranslation('information_screen');
+	const { setRiskIdList, address, setAddress, setCoordinates } =
+		useContext(AppContext);
 
 	// ----- State management -----
-	// State to manage the content of the search bar
-	const [address, setAddress] = useState<string>('');
 	// State to manage the results of the query on data.geopf api
 	const [addressFeatureList, setAddressFeatureList] = useState<
 		Array<DataGeopfFeature>
@@ -51,6 +47,7 @@ export default function AddressInput(props: Props) {
 		setShowAddressFeatureList(false);
 	};
 
+	// Retrieve georisque response with keyboard "enter"
 	const onKeyDown = async (
 		event: React.KeyboardEvent<HTMLInputElement>
 	): Promise<void> => {
@@ -60,11 +57,17 @@ export default function AddressInput(props: Props) {
 				undefined,
 				address
 			);
-			// 2. Process the response
+			// 2. Update the coordinates
+			setCoordinates({
+				latitude: georisqueResponse.latitude,
+				longitude: georisqueResponse.longitude,
+			});
+			// 3. Process the response
 			handleGeorisqueResponse(georisqueResponse);
 		}
 	};
 
+	// Retrieve georisque response by clicking on an item of the feature list
 	const onClickListItem = async (
 		addressFeature: DataGeopfFeature
 	): Promise<void> => {
@@ -73,7 +76,12 @@ export default function AddressInput(props: Props) {
 		// 2. Make a request on georisque API to obtain GeorisqueAPIResponse, based on the coordinates (latlon)
 		const coordinates = addressFeature.geometry.coordinates;
 		const georisqueResponse = await getRisksAroundCoordinates(coordinates);
-		// 3. Process the response
+		// 3. Update the coordinates
+		setCoordinates({
+			latitude: coordinates[0], //georisqueResponse.latitude,
+			longitude: coordinates[1], // georisqueResponse.longitude,
+		});
+		// 4. Process the response
 		handleGeorisqueResponse(georisqueResponse);
 	};
 

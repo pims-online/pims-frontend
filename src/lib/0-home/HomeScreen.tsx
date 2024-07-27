@@ -8,7 +8,7 @@ type Props = {
 	navigateToFirstStep: () => void;
 };
 
-export default function home_screen(props: Props) {
+export default function HomeScreen(props: Props) {
 	const { navigateToFirstStep } = props;
 	const { t } = useTranslation(['home_screen', 'stepper']);
 

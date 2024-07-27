@@ -66,7 +66,10 @@ export default function FrAlertDiscovery() {
 			>
 				<>
 					{[body1, body2, body3, body4ConcatJSX, body5].map((value, index) => (
-						<p key={`alert-discovery-body${index + 1}`}>
+						<p
+							key={`alert-discovery-body${index + 1}`}
+							style={{ marginBottom: 0 }}
+						>
 							{value}
 							{index < 4 && (
 								<>

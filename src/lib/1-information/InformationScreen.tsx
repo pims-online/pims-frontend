@@ -1,15 +1,35 @@
-import { useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { fr } from '@codegouvfr/react-dsfr';
 import { Accordion } from '@codegouvfr/react-dsfr/Accordion';
+
+import { AppContext } from '../../AppContextProvider';
 
 import AddressInput from './address-input/AddressInput';
 import RiskList from './risks/RiskList';
 import { RISK_LIST } from './risks/constants';
 
-export default function InformationScreen() {
+type Props = {
+	setIsNavigateNextLocked: (nextValue: boolean) => void;
+};
+
+export default function InformationScreen(props: Props) {
 	const { t } = useTranslation('information_screen');
-	const [riskIdList, setRiskIdList] = useState<Array<string>>([]);
+	const { setIsNavigateNextLocked } = props;
+	const { riskIdList, coordinates } = useContext(AppContext);
+
+	useEffect(() => {
+		// Block navigation while the coordinates of the user and the related risks are unknown
+		if (
+			!riskIdList?.length ||
+			coordinates.latitude === undefined ||
+			coordinates.longitude === undefined
+		) {
+			setIsNavigateNextLocked(true);
+		} else {
+			setIsNavigateNextLocked(false);
+		}
+	}, [riskIdList, coordinates, setIsNavigateNextLocked]);
 
 	return (
 		<div>
@@ -29,7 +49,7 @@ export default function InformationScreen() {
 			>
 				{t('address.call_to_action')}
 			</p>
-			<AddressInput setRiskIdList={setRiskIdList} />
+			<AddressInput />
 			{riskIdList?.length > 0 && (
 				<>
 					<h5

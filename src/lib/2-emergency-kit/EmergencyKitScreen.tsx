@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+
+import { AppContext } from '../../AppContextProvider';
 
 import EmergencyKitListing from './EmergencyKitListing';
 import EmergencyKitStorage from './EmergencyKitStorage';
 import EmergencyKitNumbers from './emergency-kit-numbers/EmergencyKitNumbers';
 import EmergencyKitNextStepAlert from './EmergencyKitNextStepAlert';
-import type { KitNumbers } from './types';
 
 type Props = {
 	setIsNavigateNextLocked: (nextValue: boolean) => void;
@@ -12,22 +13,19 @@ type Props = {
 
 export default function EmergencyKitScreen(props: Props) {
 	const { setIsNavigateNextLocked } = props;
+	const {
+		emergencyKitStorage,
+		setEmergencyKitStorage,
+		usefulNumbers,
+		setUsefulNumbers,
+		kitListChecked,
+		setKitListChecked,
+	} = useContext(AppContext);
 
-	const [kitListChecked, setKitListChecked] = useState(false);
-	const [kitStorage, setKitStorage] = useState('');
-	const [kitNumbers, setKitNumbers] = useState<KitNumbers>({
-		townHall: '',
-		insurance: '',
-		relatives: '',
-		others: '',
-	});
-
-	useEffect(() => setIsNavigateNextLocked(true), [setIsNavigateNextLocked]);
-
-	const isKitStorageSet = !!kitStorage;
-	const isTownHallNumberSet = !!kitNumbers.townHall;
-	const isInsuranceNumberSet = !!kitNumbers.insurance;
-	const isRelativesNumberSet = !!kitNumbers.relatives;
+	const isKitStorageSet = !!emergencyKitStorage;
+	const isTownHallNumberSet = !!usefulNumbers.townHall;
+	const isInsuranceNumberSet = !!usefulNumbers.insurance;
+	const isRelativesNumberSet = !!usefulNumbers.relatives;
 
 	useEffect(() => {
 		if (
@@ -38,6 +36,8 @@ export default function EmergencyKitScreen(props: Props) {
 			isRelativesNumberSet
 		) {
 			setIsNavigateNextLocked(false);
+		} else {
+			setIsNavigateNextLocked(true);
 		}
 	}, [
 		setIsNavigateNextLocked,
@@ -54,10 +54,13 @@ export default function EmergencyKitScreen(props: Props) {
 				kitListChecked={kitListChecked}
 				setKitListChecked={setKitListChecked}
 			/>
-			<EmergencyKitStorage storage={kitStorage} setStorage={setKitStorage} />
+			<EmergencyKitStorage
+				storage={emergencyKitStorage}
+				setStorage={setEmergencyKitStorage}
+			/>
 			<EmergencyKitNumbers
-				kitNumbers={kitNumbers}
-				setKitNumbers={setKitNumbers}
+				kitNumbers={usefulNumbers}
+				setKitNumbers={setUsefulNumbers}
 			/>
 			<EmergencyKitNextStepAlert />
 		</div>

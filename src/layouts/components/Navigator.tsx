@@ -21,10 +21,11 @@ export default function Navigator(props: Props) {
 	const { t } = useTranslation('common');
 
 	const scrollToTop = () => {
-		if (!!window) {
+		if (window) {
 			setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
 		}
 	};
+
 	return (
 		<ButtonsGroup
 			alignment="right"

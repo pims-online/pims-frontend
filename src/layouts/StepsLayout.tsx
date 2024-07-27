@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Dispatch, SetStateAction } from 'react';
 
 // ----- LAYOUT COMPONENTS -----
 import Stepper from './components/stepper/Stepper';
@@ -14,7 +14,7 @@ import SummaryScreen from '../lib/5-summary/SummaryScreen';
 
 type Props = {
 	currentIndex: number;
-	setCurrentIndex: (nextIndex: number) => void;
+	setCurrentIndex: Dispatch<SetStateAction<number>>;
 };
 
 export default function StepsLayout(props: Props) {
@@ -25,7 +25,9 @@ export default function StepsLayout(props: Props) {
 	return (
 		<div>
 			<Stepper currentStep={currentIndex} />
-			{currentIndex === SCREENS.INFORMATION_SCREEN && <InformationScreen />}
+			{currentIndex === SCREENS.INFORMATION_SCREEN && (
+				<InformationScreen setIsNavigateNextLocked={setIsNavigateNextLocked} />
+			)}
 			{currentIndex === SCREENS.EMERGENCY_KIT_SCREEN && (
 				<EmergencyKitScreen setIsNavigateNextLocked={setIsNavigateNextLocked} />
 			)}

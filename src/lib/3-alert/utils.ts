@@ -1,9 +1,11 @@
+import type { RadioFrequencies, Coordinates } from '../../AppContextProvider';
+
 /**
  * Given latlon, return an html content with several radio brands and their frequencies
  */
 const getRadioFrequenciesAroundLatLon = async (
-	latitude: number,
-	longitude: number
+	latitude: Coordinates['latitude'],
+	longitude: Coordinates['longitude']
 ): Promise<string | null> => {
 	const url = `https://www.radiofrance.com/frequences_ajax/${latitude}/${longitude}/SP`;
 	try {
@@ -37,17 +39,13 @@ const getRadioFrequenciesAroundLatLon = async (
 				<strong>100.9MHz</strong>
 			</div>
 */
-const parseRadioFrequencies = (
-	htmlContent: string
-): {
-	[key: string]: string[];
-} => {
+const parseRadioFrequencies = (htmlContent: string): RadioFrequencies => {
 	const parser = new DOMParser();
 	const doc = parser.parseFromString(htmlContent, 'text/html');
-	const frequencies: { [key: string]: string[] } = {
-		'France Inter': [],
-		franceinfo: [],
-		'France Bleu': [],
+	const frequencies: RadioFrequencies = {
+		franceInter: [],
+		franceInfo: [],
+		franceBleu: [],
 	};
 
 	// Look up for div containing frequencies data
@@ -63,19 +61,16 @@ const parseRadioFrequencies = (
 			frequency = frequency.replace('MHz', ' FM');
 
 			if (radioBrand && frequency) {
-				// France Bleu brands always contain sth more, like 'France Bleu orleans'
-				// Thus we need to manually gather them in the 'France Bleu' array value
-				const franceBleuId = 'France Bleu';
-				const isFranceBleu = radioBrand.includes(franceBleuId);
-				if (isFranceBleu) {
-					frequencies[franceBleuId].push(frequency);
+				console.log('set up this brand : ', radioBrand);
+				if (radioBrand.includes('France Bleu')) {
+					frequencies.franceBleu.push(frequency);
 				}
-
-				// Work nice for other brands
-				if (!frequencies[radioBrand]) {
-					frequencies[radioBrand] = [];
+				if (radioBrand.includes('franceinfo')) {
+					frequencies.franceInfo.push(frequency);
 				}
-				frequencies[radioBrand].push(frequency);
+				if (radioBrand.includes('France Inter')) {
+					frequencies.franceInter.push(frequency);
+				}
 			}
 		}
 	});
@@ -86,12 +81,7 @@ const parseRadioFrequencies = (
 export const getRadioFrequencies = async ({
 	latitude,
 	longitude,
-}: {
-	latitude: number;
-	longitude: number;
-}): Promise<{
-	[key: string]: string[];
-}> => {
+}: Coordinates): Promise<RadioFrequencies> => {
 	const radioFrequenciesHTMLContent = await getRadioFrequenciesAroundLatLon(
 		latitude,
 		longitude
@@ -99,10 +89,10 @@ export const getRadioFrequencies = async ({
 	if (radioFrequenciesHTMLContent) {
 		return parseRadioFrequencies(radioFrequenciesHTMLContent);
 	} else {
-		const frequencies: { [key: string]: string[] } = {
-			'France Inter': [],
-			franceinfo: [],
-			'France Bleu': [],
+		const frequencies: RadioFrequencies = {
+			franceInter: [],
+			franceInfo: [],
+			franceBleu: [],
 		};
 		return frequencies;
 	}
