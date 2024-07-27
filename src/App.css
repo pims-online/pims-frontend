@@ -80,6 +80,23 @@ p {
 	width: 0;
 }
 
+.pims__arrowed-list {
+	list-style: none; /* Remove default bullets */
+	padding: 0px;
+}
+
+.pims__arrowed-list li {
+	position: relative;
+	padding-left: 16px;
+}
+
+.pims__arrowed-list li::before {
+	content: '⎆';
+	position: absolute;
+	left: 0;
+	color: var(--pims-orange);
+}
+
 .pims__text-color-orange {
 	color: var(--pims-orange);
 }

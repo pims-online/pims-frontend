@@ -249,5 +249,23 @@
 			"title": "Follow the official instructions, you will contribute to your safety and support the actions of emergency services!",
 			"near_station": "Radio stations near you:"
 		}
+	},
+	"involvement_screen": {
+		"participation": {
+			"title": "I participate in awareness actions near my home during the National Resilience Day!",
+			"items": {
+				"item_1": "I train in life-saving techniques with firefighters or an accredited civil protection association",
+				"item_2": "I become a volunteer firefighter and participate in rescue operations",
+				"item_3": "I join my municipality's civil protection reserve to participate in the support and assistance of the population",
+				"item_4": "I register on the public volunteer platform: <k1>www.jeveuxaider.gouv.fr</k1>"
+			}
+		},
+		"information": {
+			"title": "I get information from dedicated sites",
+			"items": {
+				"item_1": "I get information on effects and threats: <k1>www.lien.gouv.fr</k1>",
+				"item_2": "I get information on building preservation measures: <k1>www.lien.gouv.fr</k1>"
+			}
+		}
 	}
 }

@@ -9,7 +9,7 @@ import { SCREENS } from './constants';
 import InformationScreen from '../lib/1-information/InformationScreen';
 import EmergencyKitScreen from '../lib/2-emergency-kit/EmergencyKitScreen';
 import AlertScreen from '../lib/3-alert/AlertScreen';
-import InvolvementScreen from '../lib/4-involvment/InvolvementScreen';
+import InvolvementScreen from '../lib/4-involvement/InvolvementScreen';
 import SummaryScreen from '../lib/5-summary/SummaryScreen';
 
 type Props = {

@@ -249,5 +249,23 @@
 			"title": "Respectez les consignes officielles, vous participerez à votre sécurité et soutiendrez l'action des secours !",
 			"near_station": "Les stations radios près de chez vous :"
 		}
+	},
+	"involvement_screen": {
+		"participation": {
+			"title": "Je participe près de chez moi aux actions de sensibilisation de la journée nationale de la résilience !",
+			"items": {
+				"item_1": "Je me forme aux gestes qui sauvent auprès des sapeurs-pompiers ou d'une association agréée de sécurité civile",
+				"item_2": "Je deviens pompier volontaire et je participe aux actions de secours",
+				"item_3": "J'intègre la réserve de sécurité civile de ma commune pour participer au soutien et à l'assistance de la population",
+				"item_4": "Je m'inscris sur la plateforme publique du bénévolat : <k1>www.jeveuxaider.gouv.fr</k1>"
+			}
+		},
+		"information": {
+			"title": "Je m'informe sur les sites dédiés",
+			"items": {
+				"item_1": "Je m'informe sur les effets et les menaces : <k1>www.lien.gouv.fr</k1>",
+				"item_2": "Je m'informe sur les mesures de préservation du bâti : <k1>www.lien.gouv.fr</k1>"
+			}
+		}
 	}
 }
