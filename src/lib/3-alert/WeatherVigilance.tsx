@@ -1,12 +1,16 @@
 import { useTranslation } from 'react-i18next';
 
+import { Title, Container } from '../../components';
+
 export default function WeatherVigilance() {
 	const { t } = useTranslation('alert_screen');
 
 	return (
-		<div>
-			<h5 className="pims__screen-title">{t('weather_vigilance.title')}</h5>
-			<p>{t('weather_vigilance.awareness')}</p>
+		<Container>
+			<Title text={t('weather_vigilance.title')} />
+			<p className="pims__list-introducer">
+				{t('weather_vigilance.awareness')}
+			</p>
 			<ul className="pims__toothed-list">
 				{[
 					'https://vigilance.meteofrance.fr',
@@ -19,6 +23,6 @@ export default function WeatherVigilance() {
 					</li>
 				))}
 			</ul>
-		</div>
+		</Container>
 	);
 }

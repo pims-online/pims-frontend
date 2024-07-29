@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { fr } from '@codegouvfr/react-dsfr';
 import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
+
+import { Container } from '../../../components';
 
 export default function AlertSystemsPlayers() {
 	const { t } = useTranslation('alert_screen');
@@ -20,11 +21,11 @@ export default function AlertSystemsPlayers() {
 	const imgSide = 24;
 
 	return (
-		<div>
+		<Container flexboxDirection="column" flexboxAlignment="center">
 			<ButtonsGroup
 				inlineLayoutWhen="always"
 				buttonsEquisized
-				alignment="left"
+				alignment="center"
 				buttonsSize="medium"
 				buttons={[
 					{
@@ -35,9 +36,7 @@ export default function AlertSystemsPlayers() {
 									alt={configFrAlert.translationKey}
 									width={imgSide}
 									height={imgSide}
-									style={{
-										marginRight: fr.spacing('1w'),
-									}}
+									className="fr-mr-1w"
 								/>
 								{t(
 									`alert_systems.buttons_title.${configFrAlert.translationKey}`
@@ -58,9 +57,7 @@ export default function AlertSystemsPlayers() {
 									alt={configSaip.translationKey}
 									width={imgSide}
 									height={imgSide}
-									style={{
-										marginRight: fr.spacing('1w'),
-									}}
+									className="fr-mr-1w"
 								/>
 								{t(`alert_systems.buttons_title.${configSaip.translationKey}`)}
 							</p>
@@ -74,6 +71,6 @@ export default function AlertSystemsPlayers() {
 				]}
 			/>
 			<audio controls src={selectedMedia} autoPlay></audio>
-		</div>
+		</Container>
 	);
 }

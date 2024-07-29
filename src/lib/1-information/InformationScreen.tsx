@@ -1,9 +1,10 @@
 import { useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { fr } from '@codegouvfr/react-dsfr';
+import { clsx } from 'clsx';
 import { Accordion } from '@codegouvfr/react-dsfr/Accordion';
 
 import { AppContext } from '../../AppContextProvider';
+import { Title, Container } from '../../components';
 
 import AddressInput from './address-input/AddressInput';
 import RiskList from './risks/RiskList';
@@ -34,46 +35,29 @@ export default function InformationScreen(props: Props) {
 	return (
 		<div>
 			<h5
-				className="pims-information-screen__georisque-item"
-				style={{
-					...fr.spacing('padding', { topBottom: '2v', rightLeft: '2w' }),
-				}}
+				className={clsx(
+					'fr-py-2v fr-px-2w',
+					'pims-information-screen__georisque-item'
+				)}
 			>
 				{t('address.title')}
 			</h5>
 			<p
-				className="pims-information-screen__georisque-item"
-				style={{
-					...fr.spacing('padding', { topBottom: '2v', rightLeft: '2w' }),
-				}}
+				className={clsx(
+					'fr-py-2v fr-px-2w',
+					'pims-information-screen__georisque-item'
+				)}
 			>
 				{t('address.call_to_action')}
 			</p>
 			<AddressInput />
 			{riskIdList?.length > 0 && (
-				<>
-					<h5
-						className="pims__screen-title"
-						style={{
-							marginTop: fr.spacing('8v'),
-							marginBottom: fr.spacing('4v'),
-						}}
-					>
-						{t('safe_behavior')}
-					</h5>
-					<div
-						style={{
-							...fr.spacing('padding', { rightLeft: '1w', topBottom: '2v' }),
-						}}
-					>
-						<RiskList riskIdList={riskIdList} />
-					</div>
-				</>
+				<Container>
+					<Title text={t('safe_behavior')} />
+					<RiskList riskIdList={riskIdList} />
+				</Container>
 			)}
-			<Accordion
-				label={t('see_more_risks')}
-				style={{ marginTop: fr.spacing('8v') }}
-			>
+			<Accordion label={t('see_more_risks')}>
 				<RiskList
 					riskIdList={RISK_LIST.map((item) => item.georisqueApiIdentifier)}
 				/>

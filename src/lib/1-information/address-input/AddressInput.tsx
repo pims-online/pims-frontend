@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { SearchBar } from '@codegouvfr/react-dsfr/SearchBar';
 
 import { AppContext } from '../../../AppContextProvider';
+import { Container } from '../../../components';
 
 import AddressFeatureList from './AddressFeatureList';
 import type { DataGeopfFeature, GeorisqueAPIResponse } from './types';
@@ -78,15 +79,15 @@ export default function AddressInput() {
 		const georisqueResponse = await getRisksAroundCoordinates(coordinates);
 		// 3. Update the coordinates
 		setCoordinates({
-			latitude: coordinates[0], //georisqueResponse.latitude,
-			longitude: coordinates[1], // georisqueResponse.longitude,
+			longitude: coordinates[0], // georisqueResponse.longitude,
+			latitude: coordinates[1], //georisqueResponse.latitude,
 		});
 		// 4. Process the response
 		handleGeorisqueResponse(georisqueResponse);
 	};
 
 	return (
-		<>
+		<Container>
 			<SearchBar
 				renderInput={({ className, id, type }) => (
 					<input
@@ -110,6 +111,6 @@ export default function AddressInput() {
 					addressFeatureList={addressFeatureList}
 				/>
 			)}
-		</>
+		</Container>
 	);
 }

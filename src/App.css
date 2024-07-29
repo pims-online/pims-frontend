@@ -1,16 +1,9 @@
+/**
+Margin and padding should be set with the fr-m*-* and fr-p*-* classes
+--> See Classes CSS in https://www.systeme-de-design.gouv.fr/fondamentaux/espacement
+*/
+
 :root {
-	line-height: 1.5;
-	font-weight: 400;
-
-	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
-
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-
 	--pims-orange: #f09939;
 	--pims-green-text-light: #b6d094;
 	--pims-green-text-dark: #4f5c3e;
@@ -19,7 +12,6 @@
 }
 
 body {
-	margin: 0;
 	min-height: 100vh;
 }
 
@@ -34,6 +26,7 @@ p {
 }
 
 /* Light and dark modes */
+
 .pims-light {
 	--pims-green-background: var(--pims-green-background-light);
 	--pims-green-text: var(--pims-green-text-light);
@@ -46,14 +39,48 @@ p {
 
 /* Components */
 
-.pims__responsive-flexbox-col {
+.pims__title {
+	color: var(--text-title-blue-france);
+}
+
+.pims__subtitle {
+	color: var(--pims-orange);
+}
+
+.pims__flexbox-base {
 	display: flex;
+}
+
+.pims__flexbox-direction-column {
 	flex-direction: column;
+}
+
+.pims__flexbox-direction-row {
+	flex-direction: row;
+}
+
+.pims__flexbox-direction-responsive {
+	flex-direction: row;
+}
+
+.pims__flexbox-alignment-start {
 	align-items: flex-start;
 }
 
-.pims__screen-title {
-	color: var(--text-title-blue-france);
+.pims__flexbox-alignment-center {
+	align-items: center;
+}
+
+.pims__flexbox-alignment-responsive {
+	align-items: flex-start;
+}
+
+.pims__gap {
+	gap: 8px;
+}
+
+.pims__list-introducer {
+	margin-bottom: 8px;
 }
 
 .pims__toothed-list {
@@ -61,6 +88,7 @@ p {
 	list-style-type: none;
 	border-radius: 4px;
 	padding-left: 8px;
+	padding-top: 8px;
 }
 
 .pims__toothed-list li {
@@ -101,99 +129,26 @@ p {
 	color: var(--pims-orange);
 }
 
+.pims__root-layout {
+	padding: 32px;
+}
+
+/* ----- SM / MOBILE ----- */
+
 @media (max-width: 680px) {
-	.pims__responsive-flexbox-col {
+	.pims__flexbox-sm-center {
 		align-items: center;
 	}
-}
 
-/* fonts.css */
-@font-face {
-	font-family: 'Marianne';
-	src: url('/fonts/marianne_web_font/Marianne-Thin.woff2') format('woff2');
-	font-weight: 100;
-	font-style: normal;
-}
+	.pims__flexbox-direction-responsive {
+		flex-direction: column;
+	}
 
-@font-face {
-	font-family: 'Marianne';
-	src: url('/fonts/marianne_web_font/Marianne-Thin_Italic.woff2')
-		format('woff2');
-	font-weight: 100;
-	font-style: italic;
-}
+	.pims__flexbox-alignment-responsive {
+		align-items: center;
+	}
 
-@font-face {
-	font-family: 'Marianne';
-	src: url('/fonts/marianne_web_font/Marianne-Light.woff2') format('woff2');
-	font-weight: 300;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Marianne';
-	src: url('/fonts/marianne_web_font/Marianne-Light_Italic.woff2')
-		format('woff2');
-	font-weight: 300;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'Marianne';
-	src: url('/fonts/marianne_web_font/Marianne-Regular.woff2') format('woff2');
-	font-weight: 400;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Marianne';
-	src: url('/fonts/marianne_web_font/Marianne-Regular_Italic.woff2')
-		format('woff2');
-	font-weight: 400;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'Marianne';
-	src: url('/fonts/marianne_web_font/Marianne-Medium.woff2') format('woff2');
-	font-weight: 500;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Marianne';
-	src: url('/fonts/marianne_web_font/Marianne-Medium_Italic.woff2')
-		format('woff2');
-	font-weight: 500;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'Marianne';
-	src: url('/fonts/marianne_web_font/Marianne-Bold.woff2') format('woff2');
-	font-weight: 700;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Marianne';
-	src: url('/fonts/marianne_web_font/Marianne-Bold_Italic.woff2')
-		format('woff2');
-	font-weight: 700;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'Marianne';
-	src: url('/fonts/marianne_web_font/Marianne-ExtraBold.woff2') format('woff2');
-	font-weight: 800;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Marianne';
-	src: url('/fonts/marianne_web_font/Marianne-ExtraBold_Italic.woff2')
-		format('woff2');
-	font-weight: 800;
-	font-style: italic;
+	.pims__root-layout {
+		padding: 16px;
+	}
 }

@@ -1,4 +1,4 @@
-#pims-home-screen__protection {
+#pims-home-screen__title-protection {
 	border-top: solid 2px var(--pims-orange);
 	background-color: var(--pims-green-background);
 	color: var(--pims-green-text);
@@ -9,6 +9,7 @@
 	display: inline-block;
 	white-space: nowrap; /* Prevents title from wrapping */
 	margin-bottom: 4px;
+	color: var(--text-title-blue-france);
 }
 
 #pims-home-screen__start-process-subtitle {
@@ -17,10 +18,4 @@
 	white-space: nowrap; /* Prevents subtitle from wrapping */
 	font-stretch: condensed;
 	font-size: 0.75rem;
-}
-
-@media (max-width: 680px) {
-	#pims-home-screen__summary {
-		text-align: center;
-	}
 }

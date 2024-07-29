@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
-import { fr } from '@codegouvfr/react-dsfr';
+import { clsx } from 'clsx';
 import { Input } from '@codegouvfr/react-dsfr/Input';
 
 import type { KitNumbers } from '../types';
@@ -37,19 +37,19 @@ export default function EmergencyKitNumbersInputs(props: Props) {
 	return (
 		<div className="pims-emergency-kit-screen__useful-numbers-subcontainer">
 			<h6>{t('useful_numbers.inputs.subtitle')}</h6>
-			<ul className="pims__toothed-list pims-emergency-kit-screen__input-list">
-				{inputs.map((input) => (
+			<ul
+				className={clsx(
+					'fr-m-0',
+					'pims__toothed-list',
+					'pims-emergency-kit-screen__input-list'
+				)}
+			>
+				{inputs.map((input, index) => (
 					<li
 						key={input.kitNumbersKey}
-						style={{
-							marginBottom: fr.spacing('1v'),
-						}}
+						className={clsx({ 'fr-mt-2v': index > 0 })}
 					>
-						<p
-							style={{
-								marginBottom: fr.spacing('2v'),
-							}}
-						>
+						<p className="fr-mb-1v">
 							{t(`useful_numbers.inputs.${input.translationKey}`)}
 						</p>
 						<Input
@@ -66,10 +66,10 @@ export default function EmergencyKitNumbersInputs(props: Props) {
 									}),
 								required: true,
 							}}
-							className="pims-emergency-kit__input-container"
-							style={{
-								marginLeft: fr.spacing('1w'),
-							}}
+							className={clsx(
+								'fr-ml-1w',
+								'pims-emergency-kit__input-container'
+							)}
 						/>
 					</li>
 				))}

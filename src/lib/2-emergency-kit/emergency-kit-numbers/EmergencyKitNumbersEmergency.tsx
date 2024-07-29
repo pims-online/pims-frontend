@@ -1,5 +1,4 @@
 import { useTranslation, Trans } from 'react-i18next';
-import { fr } from '@codegouvfr/react-dsfr';
 
 export default function EmergencyKitNumbersEmergency() {
 	const { t } = useTranslation('emergency_kit_screen');
@@ -8,10 +7,7 @@ export default function EmergencyKitNumbersEmergency() {
 		<div className="pims-emergency-kit-screen__useful-numbers-subcontainer">
 			<h6>{t('useful_numbers.emergency.subtitle')}</h6>
 			{[112, 114].map((phoneNumber) => (
-				<p
-					key={`emergency-number-${phoneNumber}`}
-					style={{ paddingRight: fr.spacing('1w') }}
-				>
+				<p key={`emergency-number-${phoneNumber}`}>
 					<Trans
 						t={t}
 						i18nKey={`useful_numbers.emergency.${phoneNumber}`}

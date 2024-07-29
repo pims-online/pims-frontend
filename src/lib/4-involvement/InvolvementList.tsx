@@ -1,19 +1,20 @@
 import { useTranslation, Trans } from 'react-i18next';
-import { fr } from '@codegouvfr/react-dsfr';
+
+import { Container, Title } from '../../components';
 
 type Props = {
 	translationKeyPrefix: string;
 	listLength: number;
+	isLast?: boolean;
 };
 
 export default function InvolvementList(props: Props) {
 	const { t } = useTranslation('involvement_screen');
-	const { translationKeyPrefix, listLength } = props;
+	const { translationKeyPrefix, listLength, isLast } = props;
+
 	return (
-		<div style={{ marginBottom: fr.spacing('8v') }}>
-			<h5 className="pims__screen-title">
-				{t(`${translationKeyPrefix}.title`)}
-			</h5>
+		<Container withoutMarginBottom={isLast}>
+			<Title text={t(`${translationKeyPrefix}.title`)} />
 			<ul className="pims__arrowed-list">
 				{[...Array(listLength).keys()].map((id) => (
 					<li key={`${translationKeyPrefix}-list-item-${id + 1}`}>
@@ -27,6 +28,6 @@ export default function InvolvementList(props: Props) {
 					</li>
 				))}
 			</ul>
-		</div>
+		</Container>
 	);
 }

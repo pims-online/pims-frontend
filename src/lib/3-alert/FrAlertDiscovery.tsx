@@ -2,6 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@codegouvfr/react-dsfr/Button';
 import { createModal } from '@codegouvfr/react-dsfr/Modal';
 
+import { Title, Container } from '../../components';
+
 export default function FrAlertDiscovery() {
 	const { t } = useTranslation('alert_screen');
 
@@ -26,7 +28,7 @@ export default function FrAlertDiscovery() {
 		</span>
 	));
 
-	const onClickShowAlertdiscovery = () => {
+	const onClickShowAlertDiscovery = () => {
 		/**
 		 * The following part encounters problems on Mozilla Firefox.
 		 * This is due to the system used to trigger notification by the browser,
@@ -55,21 +57,25 @@ export default function FrAlertDiscovery() {
 	};
 
 	return (
-		<div>
-			<h6 className="pims__screen-title">{t('fr_alert_discovery.title')}</h6>
-			<Button priority="tertiary" onClick={onClickShowAlertdiscovery}>
-				{t('fr_alert_discovery.button')}
-			</Button>
+		<Container>
+			<Title text={t('fr_alert_discovery.title')} />
+			<Container
+				withoutMarginBottom
+				flexboxAlignment="center"
+				flexboxDirection="column"
+			>
+				<Button priority="tertiary" onClick={onClickShowAlertDiscovery}>
+					{t('fr_alert_discovery.button')}
+				</Button>
+			</Container>
+			<p className="fr-mb-0 fr-mt-6v">{t('public_medias')}</p>
 			<Modal.Component
 				title={notificationTitle}
 				//iconId='fr-icon-alert-fill' icon not working
 			>
 				<>
 					{[body1, body2, body3, body4ConcatJSX, body5].map((value, index) => (
-						<p
-							key={`alert-discovery-body${index + 1}`}
-							style={{ marginBottom: 0 }}
-						>
+						<p key={`alert-discovery-body${index + 1}`} className="fr-mb-0">
 							{value}
 							{index < 4 && (
 								<>
@@ -81,6 +87,6 @@ export default function FrAlertDiscovery() {
 					))}
 				</>
 			</Modal.Component>
-		</div>
+		</Container>
 	);
 }

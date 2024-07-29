@@ -1,7 +1,6 @@
-import { useTranslation } from 'react-i18next';
-import { fr } from '@codegouvfr/react-dsfr';
-import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
 import { Dispatch, SetStateAction } from 'react';
+import { useTranslation } from 'react-i18next';
+import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
 
 type Props = {
 	currentStep: number;
@@ -58,9 +57,7 @@ export default function Navigator(props: Props) {
 					disabled: isNavigateNextLocked || currentStep === 5,
 				},
 			]}
-			style={{
-				marginTop: fr.spacing('4v'),
-			}}
+			className="fr-mt-10v"
 		/>
 	);
 }

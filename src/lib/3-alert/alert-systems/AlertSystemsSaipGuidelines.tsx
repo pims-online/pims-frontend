@@ -1,6 +1,7 @@
 import { useTranslation, Trans } from 'react-i18next';
 import { clsx } from 'clsx';
-import { fr } from '@codegouvfr/react-dsfr';
+
+import { Container } from '../../../components';
 
 export default function AlertSystemsSaipGuidelines() {
 	const { t } = useTranslation('alert_screen');
@@ -21,25 +22,28 @@ export default function AlertSystemsSaipGuidelines() {
 	];
 
 	return (
-		<div style={{ ...fr.spacing('margin', { topBottom: '4v' }) }}>
-			<p>{t('alert_systems.saip_guidelines.introduction')}</p>
+		<Container>
+			<p className={clsx('fr-mt-6v', 'pims__list-introducer')}>
+				{t('alert_systems.saip_guidelines.introduction')}
+			</p>
 			<div className="pims-alert-screen__saip-guidelines-grid-container">
 				{items.map((item, index) => (
 					<div
 						key={`saip-guidelines-${item.translationKey}`}
-						className={clsx('pims-alert-screen__saip-guidelines-grid-item ', {
-							'pims-alert-screen__saip-guidelines-grid-border': index > 0,
-						})}
-						style={{
-							...fr.spacing('padding', { topBottom: '2v' }),
-						}}
+						className={clsx(
+							'fr-py-2v',
+							'pims-alert-screen__saip-guidelines-grid-item ',
+							{
+								'pims-alert-screen__saip-guidelines-grid-border': index > 0,
+							}
+						)}
 					>
 						<img
 							src={item.icon}
 							width={40}
 							height={40}
 							alt={item.translationKey}
-							style={{ marginBottom: fr.spacing('2v') }}
+							className="fr-mb-2v"
 						/>
 						<p>
 							<Trans
@@ -55,6 +59,6 @@ export default function AlertSystemsSaipGuidelines() {
 					</div>
 				))}
 			</div>
-		</div>
+		</Container>
 	);
 }

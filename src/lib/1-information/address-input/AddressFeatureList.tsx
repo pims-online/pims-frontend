@@ -1,5 +1,3 @@
-import { fr } from '@codegouvfr/react-dsfr';
-
 import type { DataGeopfFeature } from './types';
 
 type Props = {
@@ -13,9 +11,7 @@ export default function AddressFeatureList(props: Props) {
 	return (
 		<ul
 			id="pims-information-screen__address-feature-list"
-			style={{
-				...fr.spacing('padding', { topBottom: '2v', left: '4w', right: '2w' }),
-			}}
+			className="fr-py-2v fr-pl-4w fr-pr-2w"
 		>
 			{(addressFeatureList || []).map((addressFeature) => (
 				<li

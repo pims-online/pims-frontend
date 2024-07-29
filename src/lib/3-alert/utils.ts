@@ -61,7 +61,6 @@ const parseRadioFrequencies = (htmlContent: string): RadioFrequencies => {
 			frequency = frequency.replace('MHz', ' FM');
 
 			if (radioBrand && frequency) {
-				console.log('set up this brand : ', radioBrand);
 				if (radioBrand.includes('France Bleu')) {
 					frequencies.franceBleu.push(frequency);
 				}

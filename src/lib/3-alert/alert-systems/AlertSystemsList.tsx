@@ -5,7 +5,7 @@ export default function AlertSystemsList() {
 
 	return (
 		<>
-			<p>{t('alert_systems.activation')}</p>
+			<p className="pims__list-introducer">{t('alert_systems.activation')}</p>
 			<ul className="pims__toothed-list">
 				<li>
 					<Trans

@@ -13,6 +13,20 @@
 		0 1px 2px -1px var(--border-action-high-blue-france);
 }
 
+#pims-information-screen__address-feature-list button {
+	width: 100%;
+	text-align: left;
+	border-radius: 4px;
+}
+
+#pims-information-screen__address-feature-list button:hover {
+	background-color: var(--background-default-grey-hover);
+}
+
+.pims-information-screen__risk-list-table {
+	border-spacing: 0px;
+}
+
 .pims-information-screen__risk-item-prevention-container {
 	width: 100%;
 }

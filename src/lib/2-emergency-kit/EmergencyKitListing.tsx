@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { Checkbox } from '@codegouvfr/react-dsfr/Checkbox';
 
+import { Container } from '../../components';
+
 type Props = {
 	kitListChecked: boolean;
 	setKitListChecked: (nextValue: boolean) => void;
@@ -10,9 +12,9 @@ export default function EmergencyKitListing(props: Props) {
 	const { t } = useTranslation('emergency_kit_screen');
 
 	return (
-		<div>
-			<p>{t('kit_listing.title')}</p>
-			<ol>
+		<Container withoutMarginBottom className="fr-mb-8v">
+			<p className="pims__list-introducer">{t('kit_listing.title')}</p>
+			<ol className="fr-mb-6v fr-mt-0">
 				{[...Array(14).keys()].map((value) => (
 					<li key={`kit-listing-item-${value}`}>
 						{t(`kit_listing.items.item_${value + 1}`)}
@@ -30,6 +32,6 @@ export default function EmergencyKitListing(props: Props) {
 					},
 				]}
 			/>
-		</div>
+		</Container>
 	);
 }

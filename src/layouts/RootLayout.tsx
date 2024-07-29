@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { fr } from '@codegouvfr/react-dsfr';
 import { useIsDark } from '@codegouvfr/react-dsfr/useIsDark';
 
 // ----- LAYOUT COMPONENTS -----
@@ -13,7 +12,7 @@ import HomeScreen from '../lib/0-home/HomeScreen';
 import FinalScreen from '../lib/6-final/FinalScreen';
 
 export default function RootLayout() {
-	const [currentIndex, setCurrentIndex] = useState(4);
+	const [currentIndex, setCurrentIndex] = useState(0);
 	const { isDark } = useIsDark();
 
 	const navigateToFirstStep = () => setCurrentIndex(1);
@@ -21,7 +20,7 @@ export default function RootLayout() {
 	return (
 		<div className={isDark ? 'pims-dark' : 'pims-light'}>
 			<Header />
-			<section style={{ padding: fr.spacing('2w') }}>
+			<section className="pims__root-layout">
 				<LanguageSelector />
 				{currentIndex === SCREENS.HOME_SCREEN && (
 					<HomeScreen navigateToFirstStep={navigateToFirstStep} />

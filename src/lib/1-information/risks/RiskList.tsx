@@ -26,7 +26,7 @@ export default function RiskList(props: Props) {
 	};
 
 	return (
-		<table>
+		<table className="pims-information-screen__risk-list-table">
 			<tbody>
 				{riskItemList.map((item, index) => (
 					<RiskItem
