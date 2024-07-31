@@ -1,13 +1,19 @@
+import FinalizeButton from './FinalizeButton';
+import InformationCheck from './InformationCheck';
+import PimsConfiguration from './PimsConfiguration';
+
 type Props = {
 	navigateToFinalScreen: () => void;
 };
 
 export default function SummaryScreen(props: Props) {
 	const { navigateToFinalScreen } = props;
+
 	return (
 		<div>
-			<p>Summary Screen</p>
-			<button onClick={navigateToFinalScreen}>Finalize</button>
+			<InformationCheck />
+			<PimsConfiguration />
+			<FinalizeButton navigateToFinalScreen={navigateToFinalScreen} />
 		</div>
 	);
 }

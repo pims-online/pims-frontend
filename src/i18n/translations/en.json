@@ -267,5 +267,21 @@
 				"item_2": "I get information on building preservation measures: <k1>www.lien.gouv.fr</k1>"
 			}
 		}
+	},
+	"summary_screen": {
+		"information_check": {
+			"title": "I verify my data",
+			"address": "I verify my address",
+			"kit_storage": "I verify the storage location of my 72-hour emergency kit",
+			"useful_numbers": "I verify the useful numbers"
+		},
+		"name_input": {
+			"title": "I name my PIMS",
+			"placeholder": "I name my PIMS (home, vacation, grandma's, ...)"
+		},
+		"finalize_button": {
+			"title": "Generate my PIMS",
+			"error_happened": "An error occurred"
+		}
 	}
 }

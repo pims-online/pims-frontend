@@ -267,5 +267,29 @@
 				"item_2": "Je m'informe sur les mesures de préservation du bâti : <k1>www.lien.gouv.fr</k1>"
 			}
 		}
+	},
+	"summary_screen": {
+		"information_check": {
+			"title": "Je vérifie mes données",
+			"address": "Je vérifie mon adresse",
+			"kit_storage": "Je vérifie le lieu de rangement de mon kit d'urgence 72h",
+			"useful_numbers": "Je vérifie les numéros utiles"
+		},
+		"configuration": {
+			"title": "Je configure mon PIMS",
+			"name": {
+				"title": "Je nomme mon PIMS",
+				"placeholder": "Je nomme mon PIMS (maison, vacances, mamie, ...)"
+			},
+			"locale": {
+				"title": "Je choisis la langue de mon PIMS",
+				"french": "Français",
+				"english": "English"
+			}
+		},
+		"finalize_button": {
+			"title": "Générer mon PIMS",
+			"error_happened": "Une erreur est survenue"
+		}
 	}
 }

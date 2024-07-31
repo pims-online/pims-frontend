@@ -21,6 +21,7 @@ export type RadioFrequencies = {
 	franceBleu: Array<string>;
 	franceInter: Array<string>;
 };
+export type Locale = 'fr' | 'en';
 
 export type AppContextValues = {
 	// State to manage the content of the Address Input Search Bar
@@ -47,6 +48,12 @@ export type AppContextValues = {
 	// State to manage the final name of the file
 	pimsFileName: string;
 	setPimsFileName: Dispatch<SetStateAction<string>>;
+	// State to manage the locale of the file
+	pimsLocale: Locale;
+	setPimsLocale: Dispatch<SetStateAction<Locale>>;
+	// State to manage the URL location of the genetared PIMS
+	pimsStorageLocation: string;
+	setPimsStorageLocation: Dispatch<SetStateAction<string>>;
 };
 
 export const AppContext = createContext<AppContextValues>(
@@ -78,6 +85,8 @@ export default function AppContextProvider({
 		franceBleu: [],
 	});
 	const [pimsFileName, setPimsFileName] = useState<string>('');
+	const [pimsLocale, setPimsLocale] = useState<Locale>('fr');
+	const [pimsStorageLocation, setPimsStorageLocation] = useState<string>('');
 
 	const appContextValues = {
 		address,
@@ -96,6 +105,10 @@ export default function AppContextProvider({
 		setRadioFrequencies,
 		pimsFileName,
 		setPimsFileName,
+		pimsLocale,
+		setPimsLocale,
+		pimsStorageLocation,
+		setPimsStorageLocation,
 	};
 
 	return (
