@@ -283,5 +283,15 @@
 			"title": "Generate my PIMS",
 			"error_happened": "An error occurred"
 		}
+	},
+	"final_screen": {
+		"success": "Congratulations, your PIMS '{{ customName }}' has been successfully generated in PDF version!",
+		"actions": {
+			"introducer": "You can now download it and share it with those around you.",
+			"download": "I download my PIMS",
+			"share": "I share my PIMS",
+			"copyToClipboard": "The link has been successfully copied to the clipboard."
+		},
+		"goBackHome": "Go back to the home screen"
 	}
 }

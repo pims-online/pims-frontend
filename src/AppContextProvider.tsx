@@ -22,6 +22,11 @@ export type RadioFrequencies = {
 	franceInter: Array<string>;
 };
 export type Locale = 'fr' | 'en';
+export type ApiResponse = {
+	pims_url: string;
+	file_size_ko: number;
+	file_size_mo: number;
+};
 
 export type AppContextValues = {
 	// State to manage the content of the Address Input Search Bar
@@ -51,9 +56,9 @@ export type AppContextValues = {
 	// State to manage the locale of the file
 	pimsLocale: Locale;
 	setPimsLocale: Dispatch<SetStateAction<Locale>>;
-	// State to manage the URL location of the genetared PIMS
-	pimsStorageLocation: string;
-	setPimsStorageLocation: Dispatch<SetStateAction<string>>;
+	// State to manage the API response after generating the pdf
+	apiResponse: ApiResponse;
+	setApiResponse: Dispatch<SetStateAction<ApiResponse>>;
 };
 
 export const AppContext = createContext<AppContextValues>(
@@ -86,7 +91,11 @@ export default function AppContextProvider({
 	});
 	const [pimsFileName, setPimsFileName] = useState<string>('');
 	const [pimsLocale, setPimsLocale] = useState<Locale>('fr');
-	const [pimsStorageLocation, setPimsStorageLocation] = useState<string>('');
+	const [apiResponse, setApiResponse] = useState<ApiResponse>({
+		pims_url: '',
+		file_size_ko: 0,
+		file_size_mo: 0,
+	});
 
 	const appContextValues = {
 		address,
@@ -107,8 +116,8 @@ export default function AppContextProvider({
 		setPimsFileName,
 		pimsLocale,
 		setPimsLocale,
-		pimsStorageLocation,
-		setPimsStorageLocation,
+		apiResponse,
+		setApiResponse,
 	};
 
 	return (
