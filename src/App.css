@@ -133,6 +133,11 @@ p {
 	padding: 32px;
 }
 
+.pims__nav-link-selected {
+	border-left: 2px var(--border-default-blue-france) solid;
+	background-color: var(--background-contrast-blue-france);
+}
+
 /* ----- SM / MOBILE ----- */
 
 @media (max-width: 680px) {

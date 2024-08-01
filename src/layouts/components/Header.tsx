@@ -3,6 +3,7 @@ import type { TFunction } from 'i18next';
 import { Header as HeaderDSFR } from '@codegouvfr/react-dsfr/Header';
 import { headerFooterDisplayItem } from '@codegouvfr/react-dsfr/Display';
 import { Badge } from '@codegouvfr/react-dsfr/Badge';
+import LanguageSelector from './language-selector/LanguageSelector';
 
 type Props = {
 	isWidget?: boolean;
@@ -25,7 +26,7 @@ function GovernmentHeader(props: HeaderChildProps) {
 			homeLinkProps={{
 				title: 'Accueil - BASEP - PIMS',
 			}}
-			quickAccessItems={[headerFooterDisplayItem]}
+			quickAccessItems={[headerFooterDisplayItem, <LanguageSelector />]}
 			id="fr-header-simple-header-with-service-title-and-tagline"
 			serviceTitle={
 				<>

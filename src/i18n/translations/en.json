@@ -13,7 +13,8 @@
 	},
 	"common": {
 		"go_next_step": "Next step",
-		"go_previous_step": "Previous step"
+		"go_previous_step": "Previous step",
+		"select_language": "Select language"
 	},
 	"home_screen": {
 		"protection": "Protect yourself and your loved ones in a few minutes",
