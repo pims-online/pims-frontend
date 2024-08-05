@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { SearchBar } from '@codegouvfr/react-dsfr/SearchBar';
 
 import { AppContext } from '../../../AppContextProvider';
-import { Container } from '../../../components';
 
 import AddressFeatureList from './AddressFeatureList';
 import type { DataGeopfFeature, GeorisqueAPIResponse } from './types';
@@ -87,7 +86,7 @@ export default function AddressInput() {
 	};
 
 	return (
-		<Container>
+		<>
 			<SearchBar
 				renderInput={({ className, id, type }) => (
 					<input
@@ -111,6 +110,6 @@ export default function AddressInput() {
 					addressFeatureList={addressFeatureList}
 				/>
 			)}
-		</Container>
+		</>
 	);
 }

@@ -35,6 +35,7 @@
 			"search_bar_label": "Exact address"
 		},
 		"safe_behavior": "Safety behaviors",
+		"no_risks_around": "There are no identified risks around your position.",
 		"see_more_risks": "I check all the natural and technological risks that exist, in addition to those concerning my address."
 	},
 	"risks": {
