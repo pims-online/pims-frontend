@@ -23,17 +23,18 @@ export default function EmergencyKitScreen(props: Props) {
 	} = useContext(AppContext);
 
 	const isKitStorageSet = !!emergencyKitStorage;
-	const isTownHallNumberSet = !!usefulNumbers.townHall;
-	const isInsuranceNumberSet = !!usefulNumbers.insurance;
-	const isRelativesNumberSet = !!usefulNumbers.relatives;
+	// const isTownHallNumberSet = !!usefulNumbers.townHall;
+	// const isInsuranceNumberSet = !!usefulNumbers.insurance;
+	// const isRelativesNumberSet = !!usefulNumbers.relatives;
 
 	useEffect(() => {
 		if (
 			kitListChecked &&
-			isKitStorageSet &&
-			isTownHallNumberSet &&
-			isInsuranceNumberSet &&
-			isRelativesNumberSet
+			isKitStorageSet
+			// isKitStorageSet &&
+			// isTownHallNumberSet &&
+			// isInsuranceNumberSet &&
+			// isRelativesNumberSet
 		) {
 			setIsNavigateNextLocked(false);
 		} else {
@@ -43,9 +44,9 @@ export default function EmergencyKitScreen(props: Props) {
 		setIsNavigateNextLocked,
 		kitListChecked,
 		isKitStorageSet,
-		isTownHallNumberSet,
-		isInsuranceNumberSet,
-		isRelativesNumberSet,
+		// isTownHallNumberSet,
+		// isInsuranceNumberSet,
+		// isRelativesNumberSet,
 	]);
 
 	return (

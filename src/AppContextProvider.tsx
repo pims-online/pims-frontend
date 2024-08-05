@@ -36,8 +36,11 @@ export type AppContextValues = {
 	coordinates: Coordinates;
 	setCoordinates: Dispatch<SetStateAction<Coordinates>>;
 	// State to manage the identifiers of the risks identified around the address
-	riskIdList: Array<string>;
-	setRiskIdList: Dispatch<SetStateAction<Array<string>>>;
+	riskIdList: Array<string> | undefined;
+	setRiskIdList: Dispatch<SetStateAction<Array<string> | undefined>>;
+	// State to manage the gathering place
+	gatheringPlace: string;
+	setGatheringPlace: Dispatch<SetStateAction<string>>;
 	// State to manage whether the kit list has been read
 	kitListChecked: boolean;
 	setKitListChecked: Dispatch<SetStateAction<boolean>>;
@@ -75,7 +78,10 @@ export default function AppContextProvider({
 		latitude: undefined,
 		longitude: undefined,
 	});
-	const [riskIdList, setRiskIdList] = useState<Array<string>>([]);
+	const [riskIdList, setRiskIdList] = useState<Array<string> | undefined>(
+		undefined
+	);
+	const [gatheringPlace, setGatheringPlace] = useState<string>('');
 	const [kitListChecked, setKitListChecked] = useState<boolean>(false);
 	const [emergencyKitStorage, setEmergencyKitStorage] = useState<string>('');
 	const [usefulNumbers, setUsefulNumbers] = useState<UsefulNumbers>({
@@ -104,6 +110,8 @@ export default function AppContextProvider({
 		setCoordinates,
 		riskIdList,
 		setRiskIdList,
+		gatheringPlace,
+		setGatheringPlace,
 		kitListChecked,
 		setKitListChecked,
 		emergencyKitStorage,
