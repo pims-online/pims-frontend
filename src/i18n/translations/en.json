@@ -203,7 +203,8 @@
 				"town_hall": "Town hall:",
 				"insurance": "Insurance:",
 				"relatives": "Relatives:",
-				"others": "Others:"
+				"others": "Others:",
+				"suggested_number": "Suggested number : {{ suggestedNumber }}"
 			}
 		},
 		"go_to_next_step": "To proceed to the next step, you must have checked that you have acknowledged the contents of the emergency kit, and filled in your kit storage location."

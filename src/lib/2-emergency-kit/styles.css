@@ -31,6 +31,10 @@
 	margin: 0 !important;
 }
 
+.pims-emergency-kit__input-container-with-hint {
+	margin-top: -24px;
+}
+
 @media (max-width: 680px) {
 	.pims-emergency-kit-screen__useful-numbers-container {
 		flex-direction: column;

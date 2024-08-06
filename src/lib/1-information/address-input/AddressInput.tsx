@@ -14,7 +14,7 @@ import {
 
 export default function AddressInput() {
 	const { t } = useTranslation('information_screen');
-	const { setRiskIdList, address, setAddress, setCoordinates } =
+	const { setRiskIdList, address, setAddress, setCoordinates, setInseeCode } =
 		useContext(AppContext);
 
 	// ----- State management -----
@@ -76,11 +76,12 @@ export default function AddressInput() {
 		// 2. Make a request on georisque API to obtain GeorisqueAPIResponse, based on the coordinates (latlon)
 		const coordinates = addressFeature.geometry.coordinates;
 		const georisqueResponse = await getRisksAroundCoordinates(coordinates);
-		// 3. Update the coordinates
+		// 3. Update the coordinates and the insee code
 		setCoordinates({
 			longitude: coordinates[0], // georisqueResponse.longitude,
 			latitude: coordinates[1], //georisqueResponse.latitude,
 		});
+		setInseeCode(addressFeature.properties.citycode);
 		// 4. Process the response
 		handleGeorisqueResponse(georisqueResponse);
 	};

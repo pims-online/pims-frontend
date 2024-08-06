@@ -13,7 +13,8 @@ type Props = {
 
 export default function InformationScreen(props: Props) {
 	const { setIsNavigateNextLocked } = props;
-	const { riskIdList, coordinates, gatheringPlace, setGatheringPlace } = useContext(AppContext);
+	const { riskIdList, coordinates, gatheringPlace, setGatheringPlace } =
+		useContext(AppContext);
 
 	useEffect(() => {
 		// Block navigation while the coordinates of the user and the related risks are unknown
@@ -33,7 +34,10 @@ export default function InformationScreen(props: Props) {
 			<GeorisqueAddressInput />
 			<DisplayRiskListAround riskIdList={riskIdList} />
 			<DisplayRiskListAll />
-			<GatheringPlaceInput gatheringPlace={gatheringPlace} setGatheringPlace={setGatheringPlace}/>
+			<GatheringPlaceInput
+				gatheringPlace={gatheringPlace}
+				setGatheringPlace={setGatheringPlace}
+			/>
 		</div>
 	);
 }

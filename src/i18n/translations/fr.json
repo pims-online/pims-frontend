@@ -203,7 +203,8 @@
 				"town_hall": "Mairie :",
 				"insurance": "Assurance :",
 				"relatives": "Proches :",
-				"others": "Autres :"
+				"others": "Autres :",
+				"suggested_number": "Numéro proposé : {{ suggestedNumber }}"
 			}
 		},
 		"go_to_next_step": "Pour passer à l'étape suivante, vous devez avoir coché que vous avez pris connaissance du contenu du kit d'urgence, et rempli votre lieu de rangement de votre kit."

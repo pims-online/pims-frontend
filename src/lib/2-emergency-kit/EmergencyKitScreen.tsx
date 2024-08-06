@@ -20,6 +20,7 @@ export default function EmergencyKitScreen(props: Props) {
 		setUsefulNumbers,
 		kitListChecked,
 		setKitListChecked,
+		inseeCode,
 	} = useContext(AppContext);
 
 	const isKitStorageSet = !!emergencyKitStorage;
@@ -62,6 +63,7 @@ export default function EmergencyKitScreen(props: Props) {
 			<EmergencyKitNumbers
 				kitNumbers={usefulNumbers}
 				setKitNumbers={setUsefulNumbers}
+				inseeCode={inseeCode}
 			/>
 			<EmergencyKitNextStepAlert />
 		</div>

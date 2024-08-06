@@ -3,13 +3,14 @@ import { useTranslation } from 'react-i18next';
 
 import { Title, Container } from '../../../components';
 
-import type { KitNumbers } from '../types';
+import type { KitNumbers } from './types';
 import EmergencyKitNumbersEmergency from './EmergencyKitNumbersEmergency';
 import EmergencyKitNumbersInputs from './EmergencyKitNumbersInputs';
 
 type Props = {
 	kitNumbers: KitNumbers;
 	setKitNumbers: Dispatch<SetStateAction<KitNumbers>>;
+	inseeCode?: string | number;
 };
 
 export default function EmergencyKitNumbers(props: Props) {
@@ -23,6 +24,7 @@ export default function EmergencyKitNumbers(props: Props) {
 				<EmergencyKitNumbersInputs
 					kitNumbers={props.kitNumbers}
 					setKitNumbers={props.setKitNumbers}
+					inseeCode={props.inseeCode}
 				/>
 			</Container>
 		</Container>

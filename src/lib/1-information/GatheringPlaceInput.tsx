@@ -16,7 +16,6 @@ export default function GatheringPlaceInput(props: Props) {
 		<Container>
 			<Title text={t('gathering_place.title')} />
 			<Input
-				
 				label={t('gathering_place.hint')}
 				nativeInputProps={{
 					value: props.gatheringPlace,
