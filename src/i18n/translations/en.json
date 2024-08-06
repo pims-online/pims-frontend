@@ -278,9 +278,21 @@
 	"summary_screen": {
 		"information_check": {
 			"title": "I verify my data",
-			"address": "I verify my address",
-			"kit_storage": "I verify the storage location of my 72-hour emergency kit",
-			"useful_numbers": "I verify the useful numbers"
+			"warning": "By clicking on the 'Modify' buttons, you will be redirected to the corresponding pages.",
+			"modify_button": "Modify",
+			"items": {
+				"address": "I verify my address",
+				"gathering_place": "I verify my gathering place",
+				"gathering_place_unknown": "You have not entered this information",
+				"kit_storage": "I verify the storage location of my 72-hour emergency kit",
+				"useful_numbers": {
+					"subtitle": "I verify the useful numbers",
+					"town_hall": "Town hall: {{ number }}",
+					"insurance": "Insurance: {{ number }}",
+					"relatives": "Relatives: {{ number }}",
+					"others": "Others: {{ number }}"
+				}
+			}
 		},
 		"name_input": {
 			"title": "I name my PIMS",

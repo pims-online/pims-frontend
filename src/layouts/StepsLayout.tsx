@@ -22,6 +22,10 @@ export default function StepsLayout(props: Props) {
 	const [isNavigateNextLocked, setIsNavigateNextLocked] = useState(false);
 
 	const navigateToFinalScreen = () => setCurrentIndex(SCREENS.FINAL_SCREEN);
+	const navigateToInformationScreen = () =>
+		setCurrentIndex(SCREENS.INFORMATION_SCREEN);
+	const navigateToEmergencyKitScreen = () =>
+		setCurrentIndex(SCREENS.EMERGENCY_KIT_SCREEN);
 	return (
 		<div>
 			<Stepper currentStep={currentIndex} />
@@ -34,7 +38,11 @@ export default function StepsLayout(props: Props) {
 			{currentIndex === SCREENS.ALERT_SCREEN && <AlertScreen />}
 			{currentIndex === SCREENS.INVOLVEMENT_SCREEN && <InvolvementScreen />}
 			{currentIndex === SCREENS.SUMMARY_SCREEN && (
-				<SummaryScreen navigateToFinalScreen={navigateToFinalScreen} />
+				<SummaryScreen
+					navigateToFinalScreen={navigateToFinalScreen}
+					navigateToInformationScreen={navigateToInformationScreen}
+					navigateToEmergencyKitScreen={navigateToEmergencyKitScreen}
+				/>
 			)}
 			<Navigator
 				currentStep={currentIndex}

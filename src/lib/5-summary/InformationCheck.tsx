@@ -1,47 +1,71 @@
 import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Input } from '@codegouvfr/react-dsfr/Input';
 
 import { AppContext } from '../../AppContextProvider';
-import { Title, Subtitle, Container } from '../../components';
+import { Title, Container } from '../../components';
 
-import EmergencyKitNumbersInputsItems from '../2-emergency-kit/emergency-kit-numbers/EmergencyKitNumbersInputsItems';
+import InformationCheckItem from './InformationCheckItem';
 
-export default function InformationCheck() {
+type Props = {
+	navigateToInformationScreen: () => void;
+	navigateToEmergencyKitScreen: () => void;
+};
+
+export default function InformationCheck(props: Props) {
 	const { t } = useTranslation('summary_screen');
-	const {
-		emergencyKitStorage,
-		setEmergencyKitStorage,
-		usefulNumbers,
-		setUsefulNumbers,
-		address,
-		setAddress,
-	} = useContext(AppContext);
+	const { emergencyKitStorage, usefulNumbers, address, gatheringPlace } =
+		useContext(AppContext);
+	const { navigateToInformationScreen, navigateToEmergencyKitScreen } = props;
+
+	const usefulNumberList = [
+		t('information_check.items.useful_numbers.town_hall', {
+			number: usefulNumbers.townHall,
+		}),
+		t('information_check.items.useful_numbers.insurance', {
+			number: usefulNumbers.insurance,
+		}),
+		t('information_check.items.useful_numbers.relatives', {
+			number: usefulNumbers.relatives,
+		}),
+		t('information_check.items.useful_numbers.others', {
+			number: usefulNumbers.others,
+		}),
+	];
 
 	return (
 		<Container>
 			<Title text={t('information_check.title')} />
-			<Subtitle text={t('information_check.address')} />
-			<Input
-				label={undefined}
-				nativeInputProps={{
-					value: address,
-					onChange: (e) => setAddress(e.target.value),
-				}}
-			/>
-			<Subtitle text={t('information_check.kit_storage')} />
-			<Input
-				label={undefined}
-				nativeInputProps={{
-					value: emergencyKitStorage,
-					onChange: (e) => setEmergencyKitStorage(e.target.value),
-				}}
-			/>
-			<Subtitle text={t('information_check.useful_numbers')} />
-			<EmergencyKitNumbersInputsItems
-				kitNumbers={usefulNumbers}
-				setKitNumbers={setUsefulNumbers}
-			/>
+			<p>{t('information_check.warning')}</p>
+			<InformationCheckItem
+				subtitle={t('information_check.items.address')}
+				onClickModify={navigateToInformationScreen}
+			>
+				{address}
+			</InformationCheckItem>
+			<InformationCheckItem
+				subtitle={t('information_check.items.gathering_place')}
+				onClickModify={navigateToInformationScreen}
+			>
+				{gatheringPlace || (
+					<i>{t('information_check.items.gathering_place_unknown')}</i>
+				)}
+			</InformationCheckItem>
+			<InformationCheckItem
+				subtitle={t('information_check.items.kit_storage')}
+				onClickModify={navigateToEmergencyKitScreen}
+			>
+				{emergencyKitStorage}
+			</InformationCheckItem>
+			<InformationCheckItem
+				subtitle={t('information_check.items.useful_numbers.subtitle')}
+				onClickModify={navigateToEmergencyKitScreen}
+			>
+				<span className="pims__arrowed-list">
+					{usefulNumberList.map((translation) => (
+						<li key={`check-number-${translation}`}>{translation}</li>
+					))}
+				</span>
+			</InformationCheckItem>
 		</Container>
 	);
 }
