@@ -11,7 +11,7 @@ import HomeScreen from '../lib/0-home/HomeScreen';
 import FinalScreen from '../lib/6-final/FinalScreen';
 
 export default function RootLayout() {
-	const [currentIndex, setCurrentIndex] = useState(1);
+	const [currentIndex, setCurrentIndex] = useState(5);
 	const { isDark } = useIsDark();
 
 	const navigateToFirstStep = () => setCurrentIndex(1);

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@codegouvfr/react-dsfr/Button';
 
 import { AppContext } from '../../AppContextProvider';
-import { Container } from '../../components';
+import { Container, CircularProgress } from '../../components';
 
 import { generatePims } from './utils';
 
@@ -40,13 +40,11 @@ export default function FinalizeButton(props: Props) {
 			gatheringPlace,
 		};
 
-		try {
-			await generatePims(params, setApiResponse);
-			setIsProcessing(false);
+		const isSuccess = await generatePims(params, setApiResponse);
+		setIsProcessing(false);
+		if (isSuccess) {
 			navigateToFinalScreen();
-		} catch (error) {
-			console.error(error);
-			setIsProcessing(false);
+		} else {
 			window.alert(t('finalize_button.error_happened'));
 		}
 	};
@@ -62,9 +60,11 @@ export default function FinalizeButton(props: Props) {
 				onClick={handleFinalizeButton}
 				disabled={isProcessing}
 				size="large"
+				className="fr-mb-3v"
 			>
 				{t('finalize_button.title')}
 			</Button>
+			{isProcessing && <CircularProgress color="blue" size="medium" />}
 		</Container>
 	);
 }

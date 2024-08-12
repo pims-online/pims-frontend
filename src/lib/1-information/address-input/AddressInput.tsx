@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { SearchBar } from '@codegouvfr/react-dsfr/SearchBar';
 
 import { AppContext } from '../../../AppContextProvider';
+import { Container, CircularProgress } from '../../../components';
 
 import AddressFeatureList from './AddressFeatureList';
 import type { DataGeopfFeature, GeorisqueAPIResponse } from './types';
@@ -30,6 +31,8 @@ export default function AddressInput() {
 	>([]);
 	// State to manage when to show the results of the data.geopf query, to help select a recognized address
 	const [showAddressFeatureList, setShowAddressFeatureList] = useState(true);
+	// State to manage API loading
+	const [isFetchingAPI, setIsFetchingAPI] = useState(false);
 
 	// Every time the address is updated, make a request on data.geopf to update the list
 	useEffect(() => {
@@ -61,6 +64,9 @@ export default function AddressInput() {
 		event: React.KeyboardEvent<HTMLInputElement>
 	): Promise<void> => {
 		if (event.key === 'Enter') {
+			// 0. Set is fetching to True and hide the list
+			setIsFetchingAPI(true);
+			setShowAddressFeatureList(false);
 			// 1. Make a request on georisque API to obtain GeorisqueAPIResponse, based on the address
 			const georisqueResponse = await getRisksAroundCoordinates(
 				undefined,
@@ -76,6 +82,8 @@ export default function AddressInput() {
 			}
 			// 3. Process the response
 			handleGeorisqueResponse(georisqueResponse);
+			// 4. Terminate the loading
+			setIsFetchingAPI(false);
 		}
 	};
 
@@ -83,6 +91,9 @@ export default function AddressInput() {
 	const onClickListItem = async (
 		addressFeature: DataGeopfFeature
 	): Promise<void> => {
+		// 0. Set is fetching to True and hide the list
+		setIsFetchingAPI(true);
+		setShowAddressFeatureList(false);
 		// 1. Update the address
 		setAddress(addressFeature.properties.label);
 		// 2. Make a request on georisque API to obtain GeorisqueAPIResponse, based on the coordinates (latlon)
@@ -100,6 +111,8 @@ export default function AddressInput() {
 		setInseeCode(addressFeature.properties.citycode);
 		// 4. Process the response
 		handleGeorisqueResponse(georisqueResponse);
+		// 5. Terminate the loading
+		setIsFetchingAPI(false);
 	};
 
 	return (
@@ -126,6 +139,16 @@ export default function AddressInput() {
 					onClickListItem={onClickListItem}
 					addressFeatureList={addressFeatureList}
 				/>
+			)}
+			{isFetchingAPI && (
+				<Container
+					withoutMarginBottom
+					flexboxAlignment="center"
+					flexboxDirection="column"
+					className="fr-mt-3v"
+				>
+					<CircularProgress color="blue" size="medium" />
+				</Container>
 			)}
 		</>
 	);

@@ -5,6 +5,7 @@ Margin and padding should be set with the fr-m*-* and fr-p*-* classes
 
 :root {
 	--pims-orange: #f09939;
+	--pims-orange-transparent: #f0993980;
 	--pims-green-text-light: #b6d094;
 	--pims-green-text-dark: #4f5c3e;
 	--pims-green-background-light: #2d3842;
@@ -38,42 +39,6 @@ p {
 }
 
 /* Components */
-
-.pims__title {
-	color: var(--text-title-blue-france);
-}
-
-.pims__subtitle {
-	color: var(--pims-orange);
-}
-
-.pims__flexbox-base {
-	display: flex;
-}
-
-.pims__flexbox-direction-column {
-	flex-direction: column;
-}
-
-.pims__flexbox-direction-row {
-	flex-direction: row;
-}
-
-.pims__flexbox-direction-responsive {
-	flex-direction: row;
-}
-
-.pims__flexbox-alignment-start {
-	align-items: flex-start;
-}
-
-.pims__flexbox-alignment-center {
-	align-items: center;
-}
-
-.pims__flexbox-alignment-responsive {
-	align-items: flex-start;
-}
 
 .pims__gap {
 	gap: 8px;
@@ -141,18 +106,6 @@ p {
 /* ----- SM / MOBILE ----- */
 
 @media (max-width: 680px) {
-	.pims__flexbox-sm-center {
-		align-items: center;
-	}
-
-	.pims__flexbox-direction-responsive {
-		flex-direction: column;
-	}
-
-	.pims__flexbox-alignment-responsive {
-		align-items: center;
-	}
-
 	.pims__root-layout {
 		padding: 16px;
 	}

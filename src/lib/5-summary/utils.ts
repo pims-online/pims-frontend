@@ -23,7 +23,7 @@ export type PimsParams = {
 export const generatePims = async (
 	params: PimsParams,
 	setApiResponse: Dispatch<SetStateAction<ApiResponse>>
-): Promise<void> => {
+): Promise<boolean> => {
 	const finalUrl = `${BACKEND_DOMAIN}/download-pims`;
 
 	try {
@@ -38,10 +38,13 @@ export const generatePims = async (
 		if (response.ok) {
 			const data = (await response.json()) as ApiResponse;
 			setApiResponse(data);
+			return true;
 		} else {
 			console.error('Failed to download the file');
+			return false;
 		}
 	} catch (error) {
 		console.error('Get an error in generate Pims : ', error);
+		return false;
 	}
 };
