@@ -10,11 +10,11 @@ export const dataTest1: GeorisqueAPIResponse = {
 			present: true,
 			libelle: 'Inondation',
 		},
-		risquesCotiers: {
+		risqueCotier: {
 			present: false,
 			libelle: 'Risques côtiers (submersion marine, tsunami)',
 		},
-		seismes: {
+		seisme: {
 			present: true,
 			libelle: 'Séismes',
 		},
@@ -26,7 +26,7 @@ export const dataTest1: GeorisqueAPIResponse = {
 			present: false,
 			libelle: 'Recul du trait de cote',
 		},
-		retraitGonflementArgiles: {
+		retraitGonflementArgile: {
 			present: true,
 			libelle: 'Retrait gonflement des argiles',
 		},
@@ -42,7 +42,7 @@ export const dataTest1: GeorisqueAPIResponse = {
 			present: false,
 			libelle: 'Eruption volcanique',
 		},
-		cyclones: {
+		cyclone: {
 			present: false,
 			libelle: 'Vents violents et risques cycloniques',
 		},
@@ -60,7 +60,7 @@ export const dataTest1: GeorisqueAPIResponse = {
 			present: false,
 			libelle: 'Nucléaire',
 		},
-		canalisationsMatièresDangereuses: {
+		canalisationsMatieresDangereuses: {
 			present: false,
 			libelle: 'Canalisations de transport de matières dangereuses',
 		},
@@ -72,7 +72,7 @@ export const dataTest1: GeorisqueAPIResponse = {
 			present: false,
 			libelle: 'Rupture de barrage',
 		},
-		risquesMiniers: {
+		risqueMinier: {
 			present: false,
 			libelle: 'Risques miniers',
 		},
@@ -89,11 +89,11 @@ export const dataTest2: GeorisqueAPIResponse = {
 			present: true,
 			libelle: 'Inondation',
 		},
-		risquesCotiers: {
+		risqueCotier: {
 			present: false,
 			libelle: 'Risques côtiers (submersion marine, tsunami)',
 		},
-		seismes: {
+		seisme: {
 			present: true,
 			libelle: 'Séismes',
 		},
@@ -105,7 +105,7 @@ export const dataTest2: GeorisqueAPIResponse = {
 			present: false,
 			libelle: 'Recul du trait de cote',
 		},
-		retraitGonflementArgiles: {
+		retraitGonflementArgile: {
 			present: true,
 			libelle: 'Retrait gonflement des argiles',
 		},
@@ -121,7 +121,7 @@ export const dataTest2: GeorisqueAPIResponse = {
 			present: false,
 			libelle: 'Eruption volcanique',
 		},
-		cyclones: {
+		cyclone: {
 			present: false,
 			libelle: 'Vents violents et risques cycloniques',
 		},
@@ -139,7 +139,7 @@ export const dataTest2: GeorisqueAPIResponse = {
 			present: true,
 			libelle: 'Nucléaire',
 		},
-		canalisationsMatièresDangereuses: {
+		canalisationsMatieresDangereuses: {
 			present: true,
 			libelle: 'Canalisations de transport de matières dangereuses',
 		},
@@ -151,7 +151,7 @@ export const dataTest2: GeorisqueAPIResponse = {
 			present: false,
 			libelle: 'Rupture de barrage',
 		},
-		risquesMiniers: {
+		risqueMinier: {
 			present: false,
 			libelle: 'Risques miniers',
 		},

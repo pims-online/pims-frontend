@@ -23,6 +23,7 @@ export default function FinalizeButton(props: Props) {
 		emergencyKitStorage,
 		radioFrequencies,
 		setApiResponse,
+		gatheringPlace,
 	} = useContext(AppContext);
 
 	const handleFinalizeButton = async () => {
@@ -32,10 +33,11 @@ export default function FinalizeButton(props: Props) {
 			locale: pimsLocale,
 			filename: pimsFileName,
 			usefulNumbers,
-			riskIdList,
+			riskIdList: riskIdList || [],
 			emergencyKitStorage,
 			radioFrequencies,
 			screenWidth: window.innerWidth,
+			gatheringPlace,
 		};
 
 		try {

@@ -3,10 +3,9 @@ import type {
 	DataGeopfFeature,
 	GeorisqueAPIResponse,
 } from './types';
-import { dataTest1, dataTest2 } from './data-test';
 
 const URL_DATA_GEOCODAGE = 'https://data.geopf.fr/geocodage/';
-const URL_GEORISQUE = 'https://georisques.gouv.fr/api/';
+const URL_GEORISQUE = 'https://georisques.gouv.fr/api/v1/';
 
 /**
  * Given an input 'address', search for the closest results in geocodage database
@@ -35,26 +34,37 @@ export const getAutocompletedAddresses = (
  */
 export const getRisksAroundCoordinates = async (
 	coordinates?: Array<number>,
-	address?: string
-): Promise<GeorisqueAPIResponse> => {
+	address?: string,
+	inseeCode?: string | number
+): Promise<GeorisqueAPIResponse | undefined> => {
+	// Documentation : https://www.georisques.gouv.fr/doc-api#/Rapport%20PDF%20et%20JSON/generateRapportRisqueJson
 	let finalUrl = URL_GEORISQUE + 'resultats_rapport_risque?';
+
+	// We add query params from the most precised to the lowest
 	if (coordinates) {
 		finalUrl = finalUrl + 'latlon=' + (coordinates || []).join(',');
-	} else {
+	} else if (address) {
 		const queryParams = new URLSearchParams(address).toString();
 		finalUrl = finalUrl + 'adresse=' + queryParams;
+	} else {
+		finalUrl = finalUrl + 'code_insee=' + inseeCode;
 	}
-	console.log('Waiting for the following api to be released : ', finalUrl);
-	// TODO : remove the comments when the API is released
-	// try {
-	// 	const data = await fetch(finalUrl);
-	// 	// @ts-expect-error Response and GeorisqueAPIResponse not matching
-	// 	return data;
-	// } catch (error) {
-	// 	console.error('Get an error fetching Georisque API', error);
-	// }
-	const expectedData = Math.round(Math.random()) === 0 ? dataTest1 : dataTest2;
-	return expectedData;
+
+	try {
+		const response = await fetch(finalUrl, {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
+
+		if (response.ok) {
+			return response.json() as Promise<GeorisqueAPIResponse>;
+		}
+	} catch (error) {
+		console.error('Get an error fetching Georisque API', error);
+	}
+	return undefined;
 };
 
 /**

@@ -14,6 +14,7 @@ export type PimsParams = {
 	riskIdList: Array<string>;
 	emergencyKitStorage: string;
 	radioFrequencies: RadioFrequencies;
+	gatheringPlace: string;
 	locale: Locale;
 	filename: string;
 	screenWidth: number;
@@ -25,18 +26,22 @@ export const generatePims = async (
 ): Promise<void> => {
 	const finalUrl = `${BACKEND_DOMAIN}/download-pims`;
 
-	const response = await fetch(finalUrl, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify(params),
-	});
+	try {
+		const response = await fetch(finalUrl, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(params),
+		});
 
-	if (response.ok) {
-		const data = (await response.json()) as ApiResponse;
-		setApiResponse(data);
-	} else {
-		console.error('Failed to download the file');
+		if (response.ok) {
+			const data = (await response.json()) as ApiResponse;
+			setApiResponse(data);
+		} else {
+			console.error('Failed to download the file');
+		}
+	} catch (error) {
+		console.error('Get an error in generate Pims : ', error);
 	}
 };

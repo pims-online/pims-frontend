@@ -66,14 +66,14 @@ export const ITEM_DAM_BREAK: RiskItem = {
 };
 
 export const ITEM_EARTHQUAKE: RiskItem = {
-	georisqueApiIdentifier: 'seismes',
+	georisqueApiIdentifier: 'seisme',
 	keyTranslation: 'earthquake',
 	preventionListLength: 3,
 	iconFileName: ['/risk-icons/10- Séisme.svg'],
 };
 
 export const ITEM_STORM: RiskItem = {
-	georisqueApiIdentifier: 'cyclones',
+	georisqueApiIdentifier: 'cyclone',
 	keyTranslation: 'storm',
 	preventionListLength: 4,
 	iconFileName: [
@@ -83,7 +83,7 @@ export const ITEM_STORM: RiskItem = {
 };
 
 export const ITEM_TSUNAMI: RiskItem = {
-	georisqueApiIdentifier: 'risquesCotiers',
+	georisqueApiIdentifier: 'risqueCotier',
 	keyTranslation: 'tsunami',
 	preventionListLength: 2,
 	iconFileName: ['/risk-icons/12- Tsunami.svg'],
@@ -97,7 +97,7 @@ export const ITEM_COASTLINE_RETREAT: RiskItem = {
 };
 
 export const ITEM_CLAY_SWELLING: RiskItem = {
-	georisqueApiIdentifier: 'retraitGonflementArgiles',
+	georisqueApiIdentifier: 'retraitGonflementArgile',
 	keyTranslation: 'clay_swelling',
 	preventionListLength: 0,
 	iconFileName: [],
@@ -118,7 +118,7 @@ export const ITEM_SOIL_POLLUTION: RiskItem = {
 };
 
 export const ITEM_MINING_RISKS: RiskItem = {
-	georisqueApiIdentifier: 'risquesMiniers',
+	georisqueApiIdentifier: 'risqueMinier',
 	keyTranslation: 'mining_risks',
 	preventionListLength: 0,
 	iconFileName: [],

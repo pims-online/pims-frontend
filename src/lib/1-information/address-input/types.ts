@@ -56,25 +56,25 @@ type GeorisqueAPIResponseRiskItem = {
 
 type GeorisqueAPIResponseRisks = {
 	risquesNaturels: {
-		inondation: GeorisqueAPIResponseRiskItem;
-		risquesCotiers: GeorisqueAPIResponseRiskItem;
-		seismes: GeorisqueAPIResponseRiskItem;
-		mouvementTerrain: GeorisqueAPIResponseRiskItem;
-		reculTraitCote: GeorisqueAPIResponseRiskItem;
-		retraitGonflementArgiles: GeorisqueAPIResponseRiskItem;
 		avalanche: GeorisqueAPIResponseRiskItem;
-		feuForet: GeorisqueAPIResponseRiskItem;
+		cyclone: GeorisqueAPIResponseRiskItem;
 		eruptionVolcanique: GeorisqueAPIResponseRiskItem;
-		cyclones: GeorisqueAPIResponseRiskItem;
+		feuForet: GeorisqueAPIResponseRiskItem;
+		inondation: GeorisqueAPIResponseRiskItem;
+		mouvementTerrain: GeorisqueAPIResponseRiskItem;
 		radon: GeorisqueAPIResponseRiskItem;
+		reculTraitCote: GeorisqueAPIResponseRiskItem;
+		retraitGonflementArgile: GeorisqueAPIResponseRiskItem;
+		risqueCotier: GeorisqueAPIResponseRiskItem;
+		seisme: GeorisqueAPIResponseRiskItem;
 	};
 	risquesTechnologiques: {
+		canalisationsMatieresDangereuses: GeorisqueAPIResponseRiskItem;
 		icpe: GeorisqueAPIResponseRiskItem;
 		nucleaire: GeorisqueAPIResponseRiskItem;
-		canalisationsMatièresDangereuses: GeorisqueAPIResponseRiskItem;
 		pollutionSols: GeorisqueAPIResponseRiskItem;
+		risqueMinier: GeorisqueAPIResponseRiskItem;
 		ruptureBarrage: GeorisqueAPIResponseRiskItem;
-		risquesMiniers: GeorisqueAPIResponseRiskItem;
 	};
 };
 

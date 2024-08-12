@@ -14,8 +14,14 @@ import {
 
 export default function AddressInput() {
 	const { t } = useTranslation('information_screen');
-	const { setRiskIdList, address, setAddress, setCoordinates, setInseeCode } =
-		useContext(AppContext);
+	const {
+		setRiskIdList,
+		address,
+		setAddress,
+		setCoordinates,
+		setInseeCode,
+		inseeCode,
+	} = useContext(AppContext);
 
 	// ----- State management -----
 	// State to manage the results of the query on data.geopf api
@@ -37,10 +43,13 @@ export default function AddressInput() {
 		setShowAddressFeatureList(true);
 	};
 
-	const handleGeorisqueResponse = (georisqueResponse: GeorisqueAPIResponse) => {
+	const handleGeorisqueResponse = (
+		georisqueResponse: GeorisqueAPIResponse | undefined
+	) => {
 		// 1. Get the identifiers of the risks to focus
-		const riskIdList =
-			getEffectiveRiskIdentifierListFromGeorisqueResponse(georisqueResponse);
+		const riskIdList: Array<string> = georisqueResponse
+			? getEffectiveRiskIdentifierListFromGeorisqueResponse(georisqueResponse)
+			: [];
 		// 2. Update the riskIdList -> display the list
 		setRiskIdList(riskIdList);
 		// 3. Hide the address list
@@ -55,13 +64,16 @@ export default function AddressInput() {
 			// 1. Make a request on georisque API to obtain GeorisqueAPIResponse, based on the address
 			const georisqueResponse = await getRisksAroundCoordinates(
 				undefined,
-				address
+				address,
+				inseeCode
 			);
 			// 2. Update the coordinates
-			setCoordinates({
-				latitude: georisqueResponse.latitude,
-				longitude: georisqueResponse.longitude,
-			});
+			if (georisqueResponse) {
+				setCoordinates({
+					latitude: georisqueResponse.latitude,
+					longitude: georisqueResponse.longitude,
+				});
+			}
 			// 3. Process the response
 			handleGeorisqueResponse(georisqueResponse);
 		}
@@ -75,7 +87,11 @@ export default function AddressInput() {
 		setAddress(addressFeature.properties.label);
 		// 2. Make a request on georisque API to obtain GeorisqueAPIResponse, based on the coordinates (latlon)
 		const coordinates = addressFeature.geometry.coordinates;
-		const georisqueResponse = await getRisksAroundCoordinates(coordinates);
+		const georisqueResponse = await getRisksAroundCoordinates(
+			coordinates,
+			address,
+			inseeCode
+		);
 		// 3. Update the coordinates and the insee code
 		setCoordinates({
 			longitude: coordinates[0], // georisqueResponse.longitude,
