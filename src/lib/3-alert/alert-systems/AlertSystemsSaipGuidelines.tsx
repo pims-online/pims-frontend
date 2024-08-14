@@ -2,6 +2,7 @@ import { useTranslation, Trans } from 'react-i18next';
 import { clsx } from 'clsx';
 
 import { Container } from '../../../components';
+import iconNoPhone from '../../../../public/icons/dirty-saip-guidelines-no-phone.png';
 
 export default function AlertSystemsSaipGuidelines() {
 	const { t } = useTranslation('alert_screen');
@@ -9,7 +10,7 @@ export default function AlertSystemsSaipGuidelines() {
 	const items = [
 		{
 			translationKey: 'no_phone',
-			icon: '/icons/dirty-saip-guidelines-no-phone.png',
+			icon: iconNoPhone,
 		},
 		{
 			translationKey: 'stay_safe',
