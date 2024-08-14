@@ -1,0 +1,9 @@
+{
+	// IntelliSense config
+	"compilerOptions": {
+		"paths": {
+			"@/*": ["./src/*"],
+			"public/*": ["./public/*"]
+		}
+	}
+}

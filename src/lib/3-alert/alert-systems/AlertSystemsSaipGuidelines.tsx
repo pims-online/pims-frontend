@@ -1,8 +1,11 @@
 import { useTranslation, Trans } from 'react-i18next';
 import { clsx } from 'clsx';
 
+import iconNoPhone from '@public/icons/dirty-saip-guidelines-no-phone.png';
+import iconStaySafe from '@public/icons/dirty-saip-guidelines-stay-safe.png';
+import iconListenCarefully from '@public/icons/dirty-saip-guidelines-listen-carefully.png';
+
 import { Container } from '../../../components';
-import iconNoPhone from '../../../../public/icons/dirty-saip-guidelines-no-phone.png';
 
 export default function AlertSystemsSaipGuidelines() {
 	const { t } = useTranslation('alert_screen');
@@ -14,11 +17,11 @@ export default function AlertSystemsSaipGuidelines() {
 		},
 		{
 			translationKey: 'stay_safe',
-			icon: '/icons/dirty-saip-guidelines-stay-safe.png',
+			icon: iconStaySafe,
 		},
 		{
 			translationKey: 'listen_carefully',
-			icon: '/icons/dirty-saip-guidelines-listen-carefully.png',
+			icon: iconListenCarefully,
 		},
 	];
 

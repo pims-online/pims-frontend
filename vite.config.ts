@@ -23,6 +23,8 @@ const URL = buildLocal ? URL_LOCALHOST : URL_CDN;
  * ├── js
  * │   └── widget.js
  * └── main.js
+ *
+ * SVG files might be incorporated in data:
  */
 
 // Folders for images and medias
@@ -35,7 +37,12 @@ const imageExtensions = ['.png', '.svg', '.jpg', '.jpeg', '.gif'];
 const mediaExtensions = ['.mp3', '.wav', '.ogg'];
 
 export default defineConfig({
-	// base: URL,
+	resolve: {
+		alias: {
+			'@': path.resolve(__dirname, './src'),
+			'@public': path.resolve(__dirname, './public'),
+		},
+	},
 	plugins: [
 		react(),
 		cssInjectedByJsPlugin({

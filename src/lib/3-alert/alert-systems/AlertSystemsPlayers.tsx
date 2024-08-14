@@ -2,6 +2,11 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
 
+import iconFrAlert from '@public/icons/logo_fr_alert.svg';
+import iconSaip from '@public/icons/logo_saip.png';
+import mediaFrAlert from '@public/media/sound_fr_alert.mp3';
+import mediaSaip from '@public/media/sound_saip.mp3';
+
 import { Container } from '../../../components';
 
 export default function AlertSystemsPlayers() {
@@ -10,13 +15,13 @@ export default function AlertSystemsPlayers() {
 
 	const configFrAlert = {
 		translationKey: 'fr_alert',
-		icon: '/icons/logo_fr_alert.svg',
-		media: '/media/sound_fr_alert.mp3',
+		icon: iconFrAlert,
+		media: mediaFrAlert,
 	};
 	const configSaip = {
 		translationKey: 'saip',
-		icon: '/icons/logo_saip.png',
-		media: '/media/sound_saip.mp3',
+		icon: iconSaip,
+		media: mediaSaip,
 	};
 	const imgSide = 24;
 
