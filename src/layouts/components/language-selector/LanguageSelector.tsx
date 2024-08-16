@@ -1,5 +1,8 @@
+import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { setUseLang } from '@codegouvfr/react-dsfr/spa';
+
+import { AppContext } from '../../../AppContextProvider';
 
 import LanguageSelectorMobile from './LanguageSelectorMobile';
 import LanguageSelectorDesktop from './LanguageSelectorDesktop';
@@ -9,6 +12,7 @@ type Props = {
 };
 
 export default function LanguageSelector(props: Props) {
+	const { setPimsLocale } = useContext(AppContext);
 	const {
 		i18n: _i18n, //: { changeLanguage, language },
 	} = useTranslation('');
@@ -17,6 +21,7 @@ export default function LanguageSelector(props: Props) {
 	const updateLocale = (nextValue: 'en' | 'fr') => {
 		_i18n.changeLanguage(nextValue);
 		setUseLang({ useLang: () => nextValue });
+		setPimsLocale(nextValue);
 	};
 
 	if (props.selectorKind === 'desktop') {
