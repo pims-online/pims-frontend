@@ -13,15 +13,15 @@ const URL = buildLocal ? URL_LOCALHOST : URL_CDN;
  * ├── App-BGM31teO.js
  * ├── dsfr.module.min-8s9HWIH0.js
  * ├── images
- * │   ├── dirty-saip-guidelines-no-phone-B3ClGUxc.png
- * │   ├── light-BcMY7tSa.svg
- * │   ├── ...
- * │   └── system-BJKRkqTi.svg
+ * │	├── dirty-saip-guidelines-no-phone-B3ClGUxc.png
+ * │	├── light-BcMY7tSa.svg
+ * │	├── ...
+ * │	└── system-BJKRkqTi.svg
  * ├── media
- * │   ├── ...
- * │   └── ...
+ * │	├── ...
+ * │	└── ...
  * ├── js
- * │   └── widget.js
+ * │	└── widget.js
  * └── main.js
  *
  * SVG files might be incorporated in data:
