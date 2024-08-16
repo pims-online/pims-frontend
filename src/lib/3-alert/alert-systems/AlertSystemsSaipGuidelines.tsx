@@ -1,9 +1,9 @@
 import { useTranslation, Trans } from 'react-i18next';
 import { clsx } from 'clsx';
 
-import iconNoPhone from '@public/icons/dirty-saip-guidelines-no-phone.png';
-import iconStaySafe from '@public/icons/dirty-saip-guidelines-stay-safe.png';
-import iconListenCarefully from '@public/icons/dirty-saip-guidelines-listen-carefully.png';
+import iconNoPhone from '@public/icons/dirty_saip_guidelines_no_phone.png';
+import iconStaySafe from '@public/icons/dirty_saip_guidelines_stay_safe.png';
+import iconListenCarefully from '@public/icons/dirty_saip_guidelines_listen_carefully.png';
 
 import { Container } from '../../../components';
 
