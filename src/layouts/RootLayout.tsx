@@ -4,7 +4,7 @@ import { useIsDark } from '@codegouvfr/react-dsfr/useIsDark';
 // ----- LAYOUT COMPONENTS -----
 import { SCREENS } from './constants.ts';
 import StepsLayout from './StepsLayout';
-import Header from './components/Header';
+import Header from './components/header/Header';
 
 // ----- SCREENS -----
 import HomeScreen from '../lib/0-home/HomeScreen';
