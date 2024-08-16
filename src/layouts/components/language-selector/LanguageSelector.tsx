@@ -4,7 +4,11 @@ import { setUseLang } from '@codegouvfr/react-dsfr/spa';
 import LanguageSelectorMobile from './LanguageSelectorMobile';
 import LanguageSelectorDesktop from './LanguageSelectorDesktop';
 
-export default function LanguageSelector() {
+type Props = {
+	selectorKind?: 'responsive' | 'desktop' | 'mobile';
+};
+
+export default function LanguageSelector(props: Props) {
 	const {
 		i18n: _i18n, //: { changeLanguage, language },
 	} = useTranslation('');
@@ -14,6 +18,26 @@ export default function LanguageSelector() {
 		_i18n.changeLanguage(nextValue);
 		setUseLang({ useLang: () => nextValue });
 	};
+
+	if (props.selectorKind === 'desktop') {
+		return (
+			<div>
+				<LanguageSelectorDesktop
+					currentLanguage={currentLanguage}
+					updateLocale={updateLocale}
+				/>
+			</div>
+		);
+	}
+
+	if (props.selectorKind === 'mobile') {
+		return (
+			<LanguageSelectorMobile
+				currentLanguage={currentLanguage}
+				updateLocale={updateLocale}
+			/>
+		);
+	}
 
 	return (
 		<div className="fr-mx-1w">

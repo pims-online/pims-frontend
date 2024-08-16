@@ -3,7 +3,9 @@ import type { TFunction } from 'i18next';
 import { Header as HeaderDSFR } from '@codegouvfr/react-dsfr/Header';
 import { headerFooterDisplayItem } from '@codegouvfr/react-dsfr/Display';
 import { Badge } from '@codegouvfr/react-dsfr/Badge';
+
 import LanguageSelector from './language-selector/LanguageSelector';
+import ThemeSelector from './theme-selector/ThemeSelector';
 
 type Props = {
 	isWidget?: boolean;
@@ -30,7 +32,7 @@ function GovernmentHeader(props: HeaderChildProps) {
 			id="fr-header-simple-header-with-service-title-and-tagline"
 			serviceTitle={
 				<>
-					{t('service_title')}{' '}
+					{t('service_title')}
 					<Badge as="span" noIcon severity="success">
 						Beta
 					</Badge>
@@ -41,6 +43,7 @@ function GovernmentHeader(props: HeaderChildProps) {
 	);
 }
 
+import iconGovernment from '@public/icons/logo_french_government.png';
 /**
  * When integrating the React App on another website with the
  * Web Component widget, we should not use the official header
@@ -52,5 +55,21 @@ function GovernmentHeader(props: HeaderChildProps) {
 function WidgetHeader(props: HeaderChildProps) {
 	const { t } = props;
 	// ADD THEME MODE SELECTOR
-	return <h1>{t('widget_headline')}</h1>;
+	return (
+		<div className="pims__widget-header">
+			<div className="pims__widget-header-configs">
+				<img
+					src={iconGovernment}
+					alt="French Government"
+					width={67}
+					height={40}
+				/>
+				<h4 className="pims__widget-header-title">{t('service_title')}</h4>
+			</div>
+			<div className="pims__widget-header-configs">
+				<ThemeSelector />
+				<LanguageSelector selectorKind="desktop" />
+			</div>
+		</div>
+	);
 }

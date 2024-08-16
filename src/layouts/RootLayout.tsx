@@ -11,14 +11,14 @@ import HomeScreen from '../lib/0-home/HomeScreen';
 import FinalScreen from '../lib/6-final/FinalScreen';
 
 export default function RootLayout() {
-	const [currentIndex, setCurrentIndex] = useState(3);
+	const [currentIndex, setCurrentIndex] = useState(0);
 	const { isDark } = useIsDark();
 
 	const navigateToFirstStep = () => setCurrentIndex(1);
 	const navigateToHomeScreen = () => setCurrentIndex(0);
 	return (
 		<div className={isDark ? 'pims-dark' : 'pims-light'}>
-			<Header />
+			<Header isWidget={true} />
 			<section className="pims__root-layout">
 				{currentIndex === SCREENS.HOME_SCREEN && (
 					<HomeScreen navigateToFirstStep={navigateToFirstStep} />
