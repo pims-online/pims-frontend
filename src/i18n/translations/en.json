@@ -294,9 +294,17 @@
 				}
 			}
 		},
-		"name_input": {
-			"title": "I name my PIMS",
-			"placeholder": "I name my PIMS (home, vacation, grandma's, ...)"
+		"configuration": {
+			"title": "I configure my PIMS",
+			"name": {
+				"title": "I name my PIMS",
+				"placeholder": "I name my PIMS (home, vacation, grandma's, ...)"
+			},
+			"locale": {
+				"title": "I choose the language of my generated PIMS",
+				"french": "French",
+				"english": "English"
+			}
 		},
 		"finalize_button": {
 			"title": "Generate my PIMS",
