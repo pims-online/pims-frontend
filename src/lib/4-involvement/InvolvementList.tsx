@@ -15,14 +15,14 @@ export default function InvolvementList(props: Props) {
 	return (
 		<Container withoutMarginBottom={isLast}>
 			<Title text={t(`${translationKeyPrefix}.title`)} />
-			<ul className="pims__arrowed-list">
+			<ul className="pims-components__arrowed-list">
 				{[...Array(listLength).keys()].map((id) => (
 					<li key={`${translationKeyPrefix}-list-item-${id + 1}`}>
 						<Trans
 							t={t}
 							i18nKey={`${translationKeyPrefix}.items.item_${id + 1}`}
 							components={{
-								k1: <b className="pims__text-color-orange" />,
+								k1: <b className="pims-components__text-color-orange" />,
 							}}
 						/>
 					</li>

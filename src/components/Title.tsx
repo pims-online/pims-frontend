@@ -8,8 +8,8 @@ type Props = {
 export default function Title(props: Props) {
 	return (
 		<h4
-			className={clsx('pims__title', {
-				'pims__title-sm-center-align': !!props.responsiveAlignment,
+			className={clsx('pims-components__title', {
+				'pims-components__title-sm-center-align': !!props.responsiveAlignment,
 			})}
 		>
 			{props.text}

@@ -27,10 +27,10 @@ export default function RadioFrequencies() {
 	return (
 		<Container withoutMarginBottom>
 			<Title text={t('radio_frequencies.title')} />
-			<p className="pims__list-introducer">
+			<p className="pims-components__list-introducer">
 				{t('radio_frequencies.near_station')}
 			</p>
-			<ul className="pims__toothed-list">
+			<ul className="pims-components__toothed-list">
 				<li>France Inter : {radioFrequencies.franceInter.join(', ')}</li>
 				<li>France Bleu : {radioFrequencies.franceBleu.join(', ')}</li>
 				<li>France Info : {radioFrequencies.franceInfo.join(', ')}</li>

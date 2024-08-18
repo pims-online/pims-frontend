@@ -27,7 +27,7 @@ export default function AlertSystemsSaipGuidelines() {
 
 	return (
 		<Container>
-			<p className={clsx('fr-mt-6v', 'pims__list-introducer')}>
+			<p className={clsx('fr-mt-6v', 'pims-components__list-introducer')}>
 				{t('alert_systems.saip_guidelines.introduction')}
 			</p>
 			<div className="pims-alert-screen__saip-guidelines-grid-container">

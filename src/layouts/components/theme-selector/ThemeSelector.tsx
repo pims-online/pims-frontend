@@ -6,7 +6,7 @@ export default function ThemeSelector() {
 	const { isDark, setIsDark } = useIsDark();
 	const onChangeTheme = () => setIsDark((darkEnabled) => !darkEnabled);
 	return (
-		<div onClick={onChangeTheme} className="pims__theme-selector">
+		<div onClick={onChangeTheme} className="pims-layouts__theme-selector">
 			{isDark ? <IconLight /> : <IconDark />}
 		</div>
 	);

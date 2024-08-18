@@ -17,7 +17,7 @@ export default function AlertScreen() {
 					t={t}
 					i18nKey="crisis"
 					components={{
-						k1: <b className="pims__text-color-orange" />,
+						k1: <b className="pims-components__text-color-orange" />,
 					}}
 				/>
 			</Container>

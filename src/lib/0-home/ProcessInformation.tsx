@@ -10,7 +10,9 @@ export default function ProcessInformation() {
 		<Container>
 			<Title text={t('home_screen:summary')} responsiveAlignment />
 			<p>{t('home_screen:risk_identification')}</p>
-			<p className="pims__list-introducer">{t('home_screen:five_steps')}</p>
+			<p className="pims-components__list-introducer">
+				{t('home_screen:five_steps')}
+			</p>
 			<ol className="fr-mb-6v fr-mt-0">
 				{STEPS.map((step) => (
 					<li key={`home-screen-step-${step.keyTranslation}`}>

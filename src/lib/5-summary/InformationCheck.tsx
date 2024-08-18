@@ -60,7 +60,7 @@ export default function InformationCheck(props: Props) {
 				subtitle={t('information_check.items.useful_numbers.subtitle')}
 				onClickModify={navigateToEmergencyKitScreen}
 			>
-				<span className="pims__arrowed-list">
+				<span className="pims-components__arrowed-list">
 					{usefulNumberList.map((translation) => (
 						<li key={`check-number-${translation}`}>{translation}</li>
 					))}

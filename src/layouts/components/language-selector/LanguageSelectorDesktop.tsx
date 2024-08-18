@@ -30,7 +30,8 @@ export default function LanguageSelectorDesktop(props: Props) {
 						<li>
 							<button
 								className={clsx('fr-translate__language fr-nav__link', {
-									'pims__nav-link-selected': currentLanguage === LOCALE_FR,
+									'pims-layouts__language-selector-nav-link-selected':
+										currentLanguage === LOCALE_FR,
 								})}
 								aria-current="false" // To prevent fr-nav__link from removing pointer events
 								onClick={() => updateLocale(LOCALE_FR)}
@@ -41,7 +42,8 @@ export default function LanguageSelectorDesktop(props: Props) {
 						<li>
 							<button
 								className={clsx('fr-translate__language fr-nav__link', {
-									'pims__nav-link-selected': currentLanguage === LOCALE_EN,
+									'pims-layouts__language-selector-nav-link-selected':
+										currentLanguage === LOCALE_EN,
 								})}
 								aria-current="false" // To prevent fr-nav__link from removing pointer events
 								onClick={() => updateLocale(LOCALE_EN)}

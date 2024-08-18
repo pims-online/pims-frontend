@@ -19,7 +19,7 @@ export default function RootLayout() {
 	return (
 		<div className={isDark ? 'pims-dark' : 'pims-light'}>
 			<Header isWidget={true} />
-			<section className="pims__root-layout">
+			<section className="pims-layouts__container">
 				{currentIndex === SCREENS.HOME_SCREEN && (
 					<HomeScreen navigateToFirstStep={navigateToFirstStep} />
 				)}

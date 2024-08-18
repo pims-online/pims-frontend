@@ -13,7 +13,9 @@ export default function EmergencyKitListing(props: Props) {
 
 	return (
 		<Container withoutMarginBottom className="fr-mb-8v">
-			<p className="pims__list-introducer">{t('kit_listing.title')}</p>
+			<p className="pims-components__list-introducer">
+				{t('kit_listing.title')}
+			</p>
 			<ol className="fr-mb-6v fr-mt-0">
 				{[...Array(14).keys()].map((value) => (
 					<li key={`kit-listing-item-${value}`}>

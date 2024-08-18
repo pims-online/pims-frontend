@@ -35,7 +35,7 @@ export default function RiskItem(props: Props) {
 						'pims-information-screen__risk-item-prevention-container'
 					)}
 				>
-					<ul className={clsx('fr-ml-1w', 'pims__toothed-list')}>
+					<ul className={clsx('fr-ml-1w', 'pims-components__toothed-list')}>
 						{preventionList.map((prevention) => (
 							<li key={`prevention-${prevention}`}>{prevention}</li>
 						))}

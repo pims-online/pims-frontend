@@ -8,10 +8,10 @@ export default function WeatherVigilance() {
 	return (
 		<Container>
 			<Title text={t('weather_vigilance.title')} />
-			<p className="pims__list-introducer">
+			<p className="pims-components__list-introducer">
 				{t('weather_vigilance.awareness')}
 			</p>
-			<ul className="pims__toothed-list">
+			<ul className="pims-components__toothed-list">
 				{[
 					'https://vigilance.meteofrance.fr',
 					'https://wwww.vigicrues.gouv.fr',

@@ -62,7 +62,7 @@ export default function EmergencyKitNumbersInputsItems(props: Props) {
 		<ul
 			className={clsx(
 				'fr-m-0',
-				'pims__toothed-list',
+				'pims-components__toothed-list',
 				'pims-emergency-kit-screen__input-list'
 			)}
 		>

@@ -19,7 +19,7 @@ export default function EmergencyKitNumbers(props: Props) {
 	return (
 		<Container>
 			<Title text={t('useful_numbers.title')} />
-			<Container flexboxDirection="responsive" className="pims__gap">
+			<Container flexboxDirection="responsive" className="pims-components__gap">
 				<EmergencyKitNumbersEmergency />
 				<EmergencyKitNumbersInputs
 					kitNumbers={props.kitNumbers}
