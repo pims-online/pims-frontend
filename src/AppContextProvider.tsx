@@ -67,8 +67,33 @@ export type AppContextValues = {
 	setApiResponse: Dispatch<SetStateAction<ApiResponse>>;
 };
 
+export const APP_CONTEXT_DEFAULT_VALUES = {
+	address: '',
+	coordinates: {
+		latitude: undefined,
+		longitude: undefined,
+	},
+	inseeCode: '',
+	riskIdList: undefined,
+	gatheringPlace: '',
+	kitListChecked: false,
+	emergencyKitStorage: '',
+	usefulNumbers: {
+		townHall: '',
+		relatives: '',
+		insurance: '',
+		others: '',
+	},
+	radioFrequencies: {
+		franceInter: [],
+		franceInfo: [],
+		franceBleu: [],
+	} as RadioFrequencies,
+	pimsFileName: '',
+} as AppContextValues;
+
 export const AppContext = createContext<AppContextValues>(
-	{} as AppContextValues
+	APP_CONTEXT_DEFAULT_VALUES
 );
 
 export default function AppContextProvider({
@@ -76,30 +101,36 @@ export default function AppContextProvider({
 }: {
 	children: React.ReactNode;
 }) {
-	const [address, setAddress] = useState<string>('');
-	const [coordinates, setCoordinates] = useState<Coordinates>({
-		latitude: undefined,
-		longitude: undefined,
-	});
-	const [inseeCode, setInseeCode] = useState<number | string>('');
-	const [riskIdList, setRiskIdList] = useState<Array<string> | undefined>(
-		undefined
+	const [address, setAddress] = useState<string>(
+		APP_CONTEXT_DEFAULT_VALUES.address
 	);
-	const [gatheringPlace, setGatheringPlace] = useState<string>('');
-	const [kitListChecked, setKitListChecked] = useState<boolean>(false);
-	const [emergencyKitStorage, setEmergencyKitStorage] = useState<string>('');
-	const [usefulNumbers, setUsefulNumbers] = useState<UsefulNumbers>({
-		townHall: '',
-		relatives: '',
-		insurance: '',
-		others: '',
-	});
-	const [radioFrequencies, setRadioFrequencies] = useState<RadioFrequencies>({
-		franceInter: [],
-		franceInfo: [],
-		franceBleu: [],
-	});
-	const [pimsFileName, setPimsFileName] = useState<string>('');
+	const [coordinates, setCoordinates] = useState<Coordinates>(
+		APP_CONTEXT_DEFAULT_VALUES.coordinates
+	);
+	const [inseeCode, setInseeCode] = useState<number | string>(
+		APP_CONTEXT_DEFAULT_VALUES.inseeCode
+	);
+	const [riskIdList, setRiskIdList] = useState<Array<string> | undefined>(
+		APP_CONTEXT_DEFAULT_VALUES.riskIdList
+	);
+	const [gatheringPlace, setGatheringPlace] = useState<string>(
+		APP_CONTEXT_DEFAULT_VALUES.gatheringPlace
+	);
+	const [kitListChecked, setKitListChecked] = useState<boolean>(
+		APP_CONTEXT_DEFAULT_VALUES.kitListChecked
+	);
+	const [emergencyKitStorage, setEmergencyKitStorage] = useState<string>(
+		APP_CONTEXT_DEFAULT_VALUES.emergencyKitStorage
+	);
+	const [usefulNumbers, setUsefulNumbers] = useState<UsefulNumbers>(
+		APP_CONTEXT_DEFAULT_VALUES.usefulNumbers
+	);
+	const [radioFrequencies, setRadioFrequencies] = useState<RadioFrequencies>(
+		APP_CONTEXT_DEFAULT_VALUES.radioFrequencies
+	);
+	const [pimsFileName, setPimsFileName] = useState<string>(
+		APP_CONTEXT_DEFAULT_VALUES.pimsFileName
+	);
 	const [pimsLocale, setPimsLocale] = useState<Locale>('fr');
 	const [apiResponse, setApiResponse] = useState<ApiResponse>({
 		pims_url: '',
