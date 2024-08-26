@@ -2,7 +2,7 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import type { AppContextValues } from '../../providers';
 
-const BACKEND_DOMAIN = 'http://127.0.0.1:5000';
+const BACKEND_DOMAIN = import.meta.env.VITE_BACKEND_URL;
 
 export type PimsParams = {
 	usefulNumbers: AppContextValues['usefulNumbers'];

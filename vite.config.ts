@@ -2,11 +2,14 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path, { resolve } from 'path';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
+import dotenv from 'dotenv';
 
-const URL_CDN = 'https://pims-frontend.vercel.app/';
-const URL_LOCALHOST = 'http://localhost:4173/';
-const buildLocal = true;
-const URL = buildLocal ? URL_LOCALHOST : URL_CDN;
+// Load environment variables from .env file
+dotenv.config();
+
+// Vite import.meta.env is accessible only in the application code
+const URL = process.env.VITE_APP_URL;
+console.log('this is the url : ', URL);
 
 /** ----- BUILD STRUCTURE : dist/assets -----
  *
