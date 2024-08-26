@@ -1,6 +1,6 @@
 import { useEffect, useContext } from 'react';
 
-import { AppContext } from '../../AppContextProvider';
+import { AppContext } from '../../providers';
 
 import EmergencyKitListing from './EmergencyKitListing';
 import EmergencyKitStorage from './EmergencyKitStorage';

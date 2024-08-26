@@ -1,4 +1,7 @@
-import type { RadioFrequencies, Coordinates } from '../../AppContextProvider';
+import type { AppContextValues } from '../../providers';
+
+type Coordinates = AppContextValues['coordinates'];
+type RadioFrequencies = AppContextValues['radioFrequencies'];
 
 /**
  * Given latlon, return an html content with several radio brands and their frequencies

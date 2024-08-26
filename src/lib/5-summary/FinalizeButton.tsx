@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@codegouvfr/react-dsfr/Button';
 
-import { AppContext } from '../../AppContextProvider';
+import { AppContext } from '../../providers';
 import { Container, CircularProgress } from '../../components';
 
 import { generatePims } from './utils';
@@ -39,7 +39,7 @@ export default function FinalizeButton(props: Props) {
 			screenWidth: window.innerWidth,
 			gatheringPlace,
 		};
-
+		console.log('Context : ', params);
 		const isSuccess = await generatePims(params, setApiResponse);
 		setIsProcessing(false);
 		if (isSuccess) {

@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Input } from '@codegouvfr/react-dsfr/Input';
 
-import { AppContext } from '../../AppContextProvider';
+import { AppContext } from '../../providers';
 import { Container, Title, Subtitle } from '../../components';
 
 export default function PimsConfiguration() {

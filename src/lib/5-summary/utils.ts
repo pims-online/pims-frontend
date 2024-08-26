@@ -1,24 +1,21 @@
 import type { Dispatch, SetStateAction } from 'react';
 
-import type {
-	UsefulNumbers,
-	RadioFrequencies,
-	Locale,
-	ApiResponse,
-} from '../../AppContextProvider';
+import type { AppContextValues } from '../../providers';
 
 const BACKEND_DOMAIN = 'http://127.0.0.1:5000';
 
 export type PimsParams = {
-	usefulNumbers: UsefulNumbers;
+	usefulNumbers: AppContextValues['usefulNumbers'];
 	riskIdList: Array<string>;
 	emergencyKitStorage: string;
-	radioFrequencies: RadioFrequencies;
+	radioFrequencies: AppContextValues['radioFrequencies'];
 	gatheringPlace: string;
-	locale: Locale;
+	locale: AppContextValues['pimsLocale'];
 	filename: string;
 	screenWidth: number;
 };
+
+type ApiResponse = AppContextValues['apiResponse'];
 
 export const generatePims = async (
 	params: PimsParams,

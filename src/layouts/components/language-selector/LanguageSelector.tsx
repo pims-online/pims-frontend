@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { setUseLang } from '@codegouvfr/react-dsfr/spa';
 
-import { AppContext } from '../../../AppContextProvider';
+import { AppContext } from '../../../providers';
 
 import LanguageSelectorMobile from './LanguageSelectorMobile';
 import LanguageSelectorDesktop from './LanguageSelectorDesktop';

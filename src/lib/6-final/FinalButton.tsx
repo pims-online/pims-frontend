@@ -1,10 +1,7 @@
 import { useContext } from 'react';
 import { Button } from '@codegouvfr/react-dsfr/Button';
 
-import {
-	AppContext,
-	APP_CONTEXT_DEFAULT_VALUES,
-} from '../../AppContextProvider';
+import { AppContext, APP_CONTEXT_DEFAULT_VALUES } from '../../providers';
 import { Container } from '../../components';
 
 type Props = {

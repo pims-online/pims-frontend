@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Download } from '@codegouvfr/react-dsfr/Download';
 import { Button } from '@codegouvfr/react-dsfr/Button';
 
-import { AppContext } from '../../AppContextProvider';
+import { AppContext } from '../../providers';
 import { Container } from '../../components';
 
 export default function FinalActions() {

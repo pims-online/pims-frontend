@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SearchBar } from '@codegouvfr/react-dsfr/SearchBar';
 
-import { AppContext } from '../../../AppContextProvider';
+import { AppContext } from '../../../providers';
 import { Container, CircularProgress } from '../../../components';
 
 import AddressFeatureList from './AddressFeatureList';

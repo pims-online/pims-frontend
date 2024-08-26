@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 
-import { AppContext } from '../../AppContextProvider';
+import { AppContext } from '../../providers';
 
 import GeorisqueAddressInput from './GeorisqueAddressInput';
 import DisplayRiskListAll from './DisplayRiskListAll';

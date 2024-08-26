@@ -1,6 +1,6 @@
-import type { UsefulNumbers } from '../../../AppContextProvider';
+import type { AppContextValues } from '../../../providers';
 
-export type KitNumbers = UsefulNumbers;
+export type KitNumbers = AppContextValues['usefulNumbers'];
 
 // ----- ANNUAIRE API -----
 

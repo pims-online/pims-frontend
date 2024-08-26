@@ -1,7 +1,7 @@
 import { useEffect, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AppContext } from '../../AppContextProvider';
+import { AppContext } from '../../providers';
 import { Title, Container } from '../../components';
 
 import { getRadioFrequencies } from './utils';
