@@ -9,7 +9,6 @@ dotenv.config();
 
 // Vite import.meta.env is accessible only in the application code
 const URL = process.env.VITE_APP_URL;
-console.log('this is the url : ', URL);
 
 /** ----- BUILD STRUCTURE : dist/assets -----
  *

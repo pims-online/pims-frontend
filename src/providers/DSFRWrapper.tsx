@@ -57,8 +57,7 @@ export default function DSFRWrapper({
 }) {
 	startReactDsfr({ defaultColorScheme: 'system' });
 	const viteAppUrl = import.meta.env.VITE_APP_URL;
-	console.log('this is vite app url :!', viteAppUrl);
-	const cdnUrl = forWidget ? 'http://localhost:4173' : '';
+	const cdnUrl = forWidget ? viteAppUrl : '';
 	loadAssets(cdnUrl);
 	return <>{children}</>;
 }
