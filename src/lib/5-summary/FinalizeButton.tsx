@@ -39,7 +39,7 @@ export default function FinalizeButton(props: Props) {
 			screenWidth: window.innerWidth,
 			gatheringPlace,
 		};
-		console.log('Context : ', params);
+
 		const isSuccess = await generatePims(params, setApiResponse);
 		setIsProcessing(false);
 		if (isSuccess) {

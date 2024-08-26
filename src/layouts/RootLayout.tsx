@@ -10,15 +10,21 @@ import Header from './components/header/Header';
 import HomeScreen from '../lib/0-home/HomeScreen';
 import FinalScreen from '../lib/6-final/FinalScreen';
 
-export default function RootLayout() {
+type Props = {
+	widgetHeaderFooter?: boolean;
+	applicationId?: string;
+};
+
+export default function RootLayout(props: Props) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const { isDark } = useIsDark();
 
 	const navigateToFirstStep = () => setCurrentIndex(1);
 	const navigateToHomeScreen = () => setCurrentIndex(0);
+	const applicationId = props.applicationId || 'pims-application';
 	return (
-		<div className={isDark ? 'pims-dark' : 'pims-light'}>
-			<Header isWidget={true} />
+		<div className={isDark ? 'pims-dark' : 'pims-light'} id={applicationId}>
+			<Header isWidget={props.widgetHeaderFooter} />
 			<section className="pims-layouts__container">
 				{currentIndex === SCREENS.HOME_SCREEN && (
 					<HomeScreen navigateToFirstStep={navigateToFirstStep} />

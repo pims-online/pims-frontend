@@ -4,6 +4,7 @@ import { WidgetApp } from './App';
 export const WebComponentWidget = r2wc(WidgetApp, {
 	props: {
 		applicationId: 'string',
+		widgetHeaderFooter: 'boolean',
 	},
 });
 
