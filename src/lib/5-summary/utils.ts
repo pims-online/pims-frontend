@@ -26,6 +26,22 @@ export const generatePims = async (
 ): Promise<boolean> => {
 	const finalUrl = `${BACKEND_DOMAIN}/download-pims`;
 
+	const apiIsDisabled = true;
+	if (apiIsDisabled) {
+		const pimsExampleUrl =
+			'https://pims-flask-app-generated-pdf-development.s3.eu-west-3.amazonaws.com/pims_2024-08-26-08-16-47_Demo-David-Bretaud.pdf';
+
+		const mockResponse = {
+			pims_url: pimsExampleUrl,
+			file_size_ko: 74.8,
+			file_size_mo: 0.0748,
+		} as ApiResponse;
+
+		const resolve = () => setApiResponse(mockResponse);
+		resolve();
+
+		return true;
+	}
 	try {
 		const response = await fetch(finalUrl, {
 			method: 'POST',

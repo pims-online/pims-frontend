@@ -33,6 +33,8 @@ export default function FinalActions() {
 				label={t('actions.download')}
 				linkProps={{
 					href: apiResponse.pims_url,
+					target: '_blank',
+					rel: 'noopener noreferrer',
 				}}
 			/>
 			<Button onClick={handleCopyToClipboard} size="medium" priority="primary">
