@@ -10,9 +10,11 @@ const getRadioFrequenciesAroundLatLon = async (
 	latitude: Coordinates['latitude'],
 	longitude: Coordinates['longitude']
 ): Promise<string | null> => {
-	const url = `https://www.radiofrance.com/frequences_ajax/${latitude}/${longitude}/SP`;
+	const proxyDomain = import.meta.env.VITE_SERVERLESS_API_URL;
+	const url = `${proxyDomain}/api/proxy?latitude=${latitude}&longitude=${longitude}`;
 	try {
 		const response = await fetch(url);
+		console.log('Get client response :  ', response);
 		if (response.ok) {
 			const text = await response.text();
 			return text;
