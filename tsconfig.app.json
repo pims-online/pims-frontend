@@ -23,5 +23,5 @@
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true
 	},
-	"include": ["src", "api/proxy.ts"]
+	"include": ["src", "api"]
 }

@@ -11,7 +11,7 @@ const getRadioFrequenciesAroundLatLon = async (
 	longitude: Coordinates['longitude']
 ): Promise<string | null> => {
 	const proxyDomain = import.meta.env.VITE_SERVERLESS_API_URL;
-	const url = `${proxyDomain}/api/proxy?latitude=${latitude}&longitude=${longitude}`;
+	const url = `${proxyDomain}/proxy?latitude=${latitude}&longitude=${longitude}`;
 	try {
 		const response = await fetch(url);
 		console.log('Get client response :  ', response);
