@@ -47,7 +47,7 @@ export default function FrAlertDiscovery() {
 			<p className="fr-mb-0 fr-mt-6v">{t('public_medias')}</p>
 			<Modal.Component
 				title={notificationTitle}
-			//iconId='fr-icon-alert-fill' icon not working
+				//iconId='fr-icon-alert-fill' icon not working
 			>
 				<>
 					{[body1, body2, body3, body4ConcatJSX, body5].map((value, index) => (

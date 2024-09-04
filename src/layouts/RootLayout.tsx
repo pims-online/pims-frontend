@@ -24,7 +24,7 @@ export default function RootLayout(props: Props) {
 		if (window) {
 			setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
 		}
-	}
+	};
 	const navigateToHomeScreen = () => setCurrentIndex(0);
 	const applicationId = props.applicationId || 'pims-application';
 	return (

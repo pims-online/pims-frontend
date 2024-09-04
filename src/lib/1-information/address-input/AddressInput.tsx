@@ -4,9 +4,13 @@ import { AppContext } from '../../../providers';
 import { Container, CircularProgress } from '../../../components';
 
 import AddressFeatureList from './AddressFeatureList';
-import GeolocationButton from "./GeolocationButton";
-import SearchBar from "./SearchBar";
-import type { GeoplateformeApiFeature, GeorisqueApiResponse, HandlerWrapper } from './types';
+import GeolocationButton from './GeolocationButton';
+import SearchBar from './SearchBar';
+import type {
+	GeoplateformeApiFeature,
+	GeorisqueApiResponse,
+	HandlerWrapper,
+} from './types';
 import {
 	getAutocompletedAddresses,
 	getRisksAroundCoordinates,
@@ -14,13 +18,8 @@ import {
 } from './utils';
 
 export default function AddressInput() {
-	const {
-		setRiskIdList,
-		address,
-		setAddress,
-		setCoordinates,
-		setInseeCode,
-	} = useContext(AppContext);
+	const { setRiskIdList, address, setAddress, setCoordinates, setInseeCode } =
+		useContext(AppContext);
 
 	// ----- State management -----
 
@@ -33,7 +32,6 @@ export default function AddressInput() {
 	// State to manage API loading
 	const [isFetchingAPI, setIsFetchingAPI] = useState(false);
 
-
 	// ----- Geoplateforme autocomplete -----
 
 	// Every time the address is updated, make a request on data.geopf to update the list
@@ -42,7 +40,6 @@ export default function AddressInput() {
 			getAutocompletedAddresses(address, setAddressFeatureList);
 		}
 	}, [address]);
-
 
 	// ----- Georisque response handler -----
 
@@ -60,7 +57,6 @@ export default function AddressInput() {
 		// 3. Hide the address list
 		setShowAddressFeatureList(false);
 	};
-
 
 	// ----- Handler wrapper -----
 
@@ -96,16 +92,14 @@ export default function AddressInput() {
 			);
 
 			// 5 - Handle the Georisque Response
-			handleGeorisqueResponse(georisqueResponse)
-
+			handleGeorisqueResponse(georisqueResponse);
 		} catch (error) {
-			console.error(error)
+			console.error(error);
 		}
 
 		// 6 - Display that the process is finished
 		setIsFetchingAPI(false);
-	}
-
+	};
 
 	return (
 		<>
@@ -122,7 +116,10 @@ export default function AddressInput() {
 					addressFeatureList={addressFeatureList}
 				/>
 			)}
-			<GeolocationButton setAddressFeatureList={setAddressFeatureList} handlerWrapper={handlerWrapper} />
+			<GeolocationButton
+				setAddressFeatureList={setAddressFeatureList}
+				handlerWrapper={handlerWrapper}
+			/>
 			{isFetchingAPI && (
 				<Container
 					withoutMarginBottom

@@ -1,9 +1,8 @@
-import { Dispatch, SetStateAction } from 'react';
 import type {
 	GeoplateformeApiResponse,
 	GeoplateformeApiFeature,
 	GeorisqueApiResponse,
-	GeolocationCoordinates
+	GeolocationCoordinates,
 } from './types';
 
 const URL_DATA_GEOCODAGE = 'https://data.geopf.fr/geocodage/';
@@ -34,74 +33,83 @@ export const getAutocompletedAddresses = (
 /**
  * Use the navigator feature to retrieve the user current position
  */
-export const getUserLocation = (fetchGeoplateforme: (latitude: number, longitude: number) => Promise<void>) => {
+export const getUserLocation = (
+	fetchGeoplateforme: (latitude: number, longitude: number) => Promise<void>
+) => {
 	// if geolocation is supported by the users browser
 	const options = {
-  enableHighAccuracy: true,
-  timeout: 4000,
-  maximumAge: 0,
-}
-    if (navigator.geolocation) {
-      // get the current users location
-      navigator.geolocation.getCurrentPosition(
-        // If position can be retrieved
-				async (position) => {
-					const { latitude, longitude } = position.coords;
+		enableHighAccuracy: true,
+		timeout: 4000,
+		maximumAge: 0,
+	};
+	if (navigator.geolocation) {
+		// get the current users location
+		navigator.geolocation.getCurrentPosition(
+			// If position can be retrieved
+			async (position) => {
+				const { latitude, longitude } = position.coords;
 
-          await fetchGeoplateforme(latitude, longitude);
-        },
-        // If there was an error getting the users location
-        (error) => {
-          console.error('Error getting user location:', error);
-				},
-				options
-      );
-    }
-    // If geolocation is not supported by the users browser
-    else {
-      console.error('Geolocation is not supported by this browser.');
-		}
-}
+				await fetchGeoplateforme(latitude, longitude);
+			},
+			// If there was an error getting the users location
+			(error) => {
+				console.error('Error getting user location:', error);
+			},
+			options
+		);
+	}
+	// If geolocation is not supported by the users browser
+	else {
+		console.error('Geolocation is not supported by this browser.');
+	}
+};
 
 /**
  * Retrive from Geoplateforme the Feature based on coordinates, and update the feature list
  */
-export const getGeoplateformeFeaturesFromCoordinates = async (coordinates: GeolocationCoordinates) =>  {
+export const getGeoplateformeFeaturesFromCoordinates = async (
+	coordinates: GeolocationCoordinates
+) => {
 	try {
 		if (!coordinates) {
 			return [];
 		}
-		const finalUrl = URL_DATA_GEOCODAGE + 'reverse?' + `lon=${coordinates.longitude}` + "&" + `lat=${coordinates.latitude}` + '&limit=10';
+		const finalUrl =
+			URL_DATA_GEOCODAGE +
+			'reverse?' +
+			`lon=${coordinates.longitude}` +
+			'&' +
+			`lat=${coordinates.latitude}` +
+			'&limit=10';
 		const response = await fetch(finalUrl, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
 			},
-		}); 
+		});
 		const data = (await response.json()) as GeoplateformeApiResponse;
 		return data.features;
 	} catch (error) {
 		console.error(error);
 		return [];
 	}
-}
+};
 
-
-
-export const mockGeoplateformeFeature = (coordinates?: Array<number>,
+export const mockGeoplateformeFeature = (
+	coordinates?: Array<number>,
 	address?: string,
-	inseeCode?: string | number) => {
+	inseeCode?: string | number
+) => {
 	return {
 		geometry: {
-			coordinates: coordinates
+			coordinates: coordinates,
 		},
 		properties: {
 			label: address,
-			citycode: inseeCode
-		}
-	} as GeoplateformeApiFeature
-	}
-
+			citycode: inseeCode,
+		},
+	} as GeoplateformeApiFeature;
+};
 
 /**
  * Given a set of coordinates, query the georisque API to retrieve the risks related to the address
@@ -158,5 +166,3 @@ export const getEffectiveRiskIdentifierListFromGeorisqueResponse = (
 		.map((entry) => entry[0]);
 	return [...naturalRisks, ...technologicalRisks];
 };
-
-

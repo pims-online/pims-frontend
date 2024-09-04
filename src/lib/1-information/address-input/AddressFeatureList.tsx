@@ -9,7 +9,7 @@ export default function AddressFeatureList(props: Props) {
 	const { addressFeatureList, handlerWrapper } = props;
 	const getHandler = (addressFeature: GeoplateformeApiFeature) => async () => {
 		return addressFeature;
-	}
+	};
 
 	return (
 		<ul
