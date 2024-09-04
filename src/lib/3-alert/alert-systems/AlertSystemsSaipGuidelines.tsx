@@ -1,9 +1,9 @@
 import { useTranslation, Trans } from 'react-i18next';
 import { clsx } from 'clsx';
 
-import iconNoPhone from '@public/icons/dirty_saip_guidelines_no_phone.png';
-import iconStaySafe from '@public/icons/dirty_saip_guidelines_stay_safe.png';
-import iconListenCarefully from '@public/icons/dirty_saip_guidelines_listen_carefully.png';
+import iconNoPhone from '@public/alert-icons/no_mobile.svg';
+import iconStaySafe from '@public/alert-icons/no_mobile.svg';
+import iconListenCarefully from '@public/alert-icons/radio_on.svg';
 
 import { Container } from '../../../components';
 
@@ -44,8 +44,8 @@ export default function AlertSystemsSaipGuidelines() {
 					>
 						<img
 							src={item.icon}
-							width={40}
-							height={40}
+							width={80}
+							height={80}
 							alt={item.translationKey}
 							className="fr-mb-2v"
 						/>

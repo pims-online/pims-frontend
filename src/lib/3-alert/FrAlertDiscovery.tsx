@@ -29,30 +29,6 @@ export default function FrAlertDiscovery() {
 	));
 
 	const onClickShowAlertDiscovery = () => {
-		/**
-		 * The following part encounters problems on Mozilla Firefox.
-		 * This is due to the system used to trigger notification by the browser,
-		 * To see the system used, write in the url search bar 'about:config', and
-		 * enter alerts.useSystemBackend :
-		 * - if true, it uses Window 10/11 Action center (broken case)
-		 * - if false, it uses the native Firefox solution
-		 * More details : https://www.askvg.com/tip-enable-disable-mozilla-firefox-notifications-to-show-in-windows-10-action-center/
-		 */
-		// Notification.requestPermission((result) => {
-		// 	if (result === 'granted') {
-		// 		// Trigger a notification
-		// 		const body4Concat = body4.join('\n');
-		// 		new Notification(notificationTitle, {
-		// 			icon: '/icons/icon_warning.svg',
-		// 			badge: '/icons/icon_warning.svg',
-		// 			body: [body1, body2, body3, body4Concat, body5].join('\n\n'),
-		// 		});
-		// 	} else {
-		// 		// Open a modal instead
-		// 		Modal.open();
-		// 	}
-		// });
-
 		Modal.open();
 	};
 
@@ -71,7 +47,7 @@ export default function FrAlertDiscovery() {
 			<p className="fr-mb-0 fr-mt-6v">{t('public_medias')}</p>
 			<Modal.Component
 				title={notificationTitle}
-				//iconId='fr-icon-alert-fill' icon not working
+			//iconId='fr-icon-alert-fill' icon not working
 			>
 				<>
 					{[body1, body2, body3, body4ConcatJSX, body5].map((value, index) => (

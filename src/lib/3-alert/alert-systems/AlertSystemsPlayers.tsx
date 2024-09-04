@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
 
-import iconFrAlert from '@public/icons/logo_fr_alert.svg';
+import iconFrAlert from '@public/alert-icons/fr_alert.svg';
 import iconSaip from '@public/icons/logo_saip.png';
 import mediaFrAlert from '@public/media/sound_fr_alert.mp3';
 import mediaSaip from '@public/media/sound_saip.mp3';
