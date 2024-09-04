@@ -1,28 +1,34 @@
-// ----- DATA GEOPF API -----
+// ----- HANDLERS -----
 
-export type DataGeopfResponseError = {
+export type Handler = () => Promise<GeoplateformeApiFeature>;
+
+export type HandlerWrapper = (handler: Handler) => () => Promise<void>;
+
+// ----- GEOPLATEFORME API -----
+
+export type GeoplateformeApiResponseError = {
 	code: number;
 	detail: Array<string>;
 	message: string;
 };
 
-export type DataGeopfResponse = {
-	features: Array<DataGeopfFeature>;
+export type GeoplateformeApiResponse = {
+	features: Array<GeoplateformeApiFeature>;
 	type: string; // FeatureCollection
 };
 
-export type DataGeopfFeature = {
+export type GeoplateformeApiFeature = {
 	type: 'Feature';
-	geometry: DataGeopfFeatureGeometry;
-	properties: DataGeopfFeatureProperties;
+	geometry: GeoplateformeApiFeatureGeometry;
+	properties: GeoplateformeApiFeatureProperties;
 };
 
-type DataGeopfFeatureGeometry = {
+type GeoplateformeApiFeatureGeometry = {
 	type: string; // Point
 	coordinates: Array<number>; // Two elements : latitude, longitude
 };
 
-export type DataGeopfFeatureProperties = {
+export type GeoplateformeApiFeatureProperties = {
 	city: string;
 	citycode: string; // code Insee
 	context: string;
@@ -42,41 +48,48 @@ export type DataGeopfFeatureProperties = {
 
 // ---- GEORISQUE API -----
 
-type GeorisqueAPIResponseInput = {
+type GeorisqueApiResponseInput = {
 	adresse: string;
 	longitude: number;
 	latitude: number;
 	url: string;
 };
 
-type GeorisqueAPIResponseRiskItem = {
+type GeorisqueApiResponseRiskItem = {
 	present: boolean;
 	libelle: string;
 };
 
-type GeorisqueAPIResponseRisks = {
+type GeorisqueApiResponseRisks = {
 	risquesNaturels: {
-		avalanche: GeorisqueAPIResponseRiskItem;
-		cyclone: GeorisqueAPIResponseRiskItem;
-		eruptionVolcanique: GeorisqueAPIResponseRiskItem;
-		feuForet: GeorisqueAPIResponseRiskItem;
-		inondation: GeorisqueAPIResponseRiskItem;
-		mouvementTerrain: GeorisqueAPIResponseRiskItem;
-		radon: GeorisqueAPIResponseRiskItem;
-		reculTraitCote: GeorisqueAPIResponseRiskItem;
-		retraitGonflementArgile: GeorisqueAPIResponseRiskItem;
-		risqueCotier: GeorisqueAPIResponseRiskItem;
-		seisme: GeorisqueAPIResponseRiskItem;
+		avalanche: GeorisqueApiResponseRiskItem;
+		cyclone: GeorisqueApiResponseRiskItem;
+		eruptionVolcanique: GeorisqueApiResponseRiskItem;
+		feuForet: GeorisqueApiResponseRiskItem;
+		inondation: GeorisqueApiResponseRiskItem;
+		mouvementTerrain: GeorisqueApiResponseRiskItem;
+		radon: GeorisqueApiResponseRiskItem;
+		reculTraitCote: GeorisqueApiResponseRiskItem;
+		retraitGonflementArgile: GeorisqueApiResponseRiskItem;
+		risqueCotier: GeorisqueApiResponseRiskItem;
+		seisme: GeorisqueApiResponseRiskItem;
 	};
 	risquesTechnologiques: {
-		canalisationsMatieresDangereuses: GeorisqueAPIResponseRiskItem;
-		icpe: GeorisqueAPIResponseRiskItem;
-		nucleaire: GeorisqueAPIResponseRiskItem;
-		pollutionSols: GeorisqueAPIResponseRiskItem;
-		risqueMinier: GeorisqueAPIResponseRiskItem;
-		ruptureBarrage: GeorisqueAPIResponseRiskItem;
+		canalisationsMatieresDangereuses: GeorisqueApiResponseRiskItem;
+		icpe: GeorisqueApiResponseRiskItem;
+		nucleaire: GeorisqueApiResponseRiskItem;
+		pollutionSols: GeorisqueApiResponseRiskItem;
+		risqueMinier: GeorisqueApiResponseRiskItem;
+		ruptureBarrage: GeorisqueApiResponseRiskItem;
 	};
 };
 
-export type GeorisqueAPIResponse = GeorisqueAPIResponseInput &
-	GeorisqueAPIResponseRisks;
+export type GeorisqueApiResponse = GeorisqueApiResponseInput &
+	GeorisqueApiResponseRisks;
+
+// ----- GEOLOCATION API -----
+
+export type GeolocationCoordinates = {
+	latitude: number;
+	longitude: number;
+} | null;

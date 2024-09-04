@@ -16,7 +16,7 @@ type Props = {
 };
 
 export default function RootLayout(props: Props) {
-	const [currentIndex, setCurrentIndex] = useState(2);
+	const [currentIndex, setCurrentIndex] = useState(1);
 	const { isDark } = useIsDark();
 
 	const navigateToFirstStep = () => {

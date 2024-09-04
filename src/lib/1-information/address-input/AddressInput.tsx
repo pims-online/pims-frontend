@@ -1,12 +1,12 @@
 import { useState, useEffect, useContext } from 'react';
-import { useTranslation } from 'react-i18next';
-import { SearchBar } from '@codegouvfr/react-dsfr/SearchBar';
 
 import { AppContext } from '../../../providers';
 import { Container, CircularProgress } from '../../../components';
 
 import AddressFeatureList from './AddressFeatureList';
-import type { DataGeopfFeature, GeorisqueAPIResponse } from './types';
+import GeolocationButton from "./GeolocationButton";
+import SearchBar from "./SearchBar";
+import type { GeoplateformeApiFeature, GeorisqueApiResponse, HandlerWrapper } from './types';
 import {
 	getAutocompletedAddresses,
 	getRisksAroundCoordinates,
@@ -14,25 +14,27 @@ import {
 } from './utils';
 
 export default function AddressInput() {
-	const { t } = useTranslation('information_screen');
 	const {
 		setRiskIdList,
 		address,
 		setAddress,
 		setCoordinates,
 		setInseeCode,
-		inseeCode,
 	} = useContext(AppContext);
 
 	// ----- State management -----
+
 	// State to manage the results of the query on data.geopf api
 	const [addressFeatureList, setAddressFeatureList] = useState<
-		Array<DataGeopfFeature>
+		Array<GeoplateformeApiFeature>
 	>([]);
 	// State to manage when to show the results of the data.geopf query, to help select a recognized address
 	const [showAddressFeatureList, setShowAddressFeatureList] = useState(true);
 	// State to manage API loading
 	const [isFetchingAPI, setIsFetchingAPI] = useState(false);
+
+
+	// ----- Geoplateforme autocomplete -----
 
 	// Every time the address is updated, make a request on data.geopf to update the list
 	useEffect(() => {
@@ -41,105 +43,86 @@ export default function AddressInput() {
 		}
 	}, [address]);
 
-	const onChangeInputAddress = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setAddress(event.currentTarget.value);
-		setShowAddressFeatureList(true);
-	};
+
+	// ----- Georisque response handler -----
 
 	const handleGeorisqueResponse = (
-		georisqueResponse: GeorisqueAPIResponse | undefined
+		georisqueResponse: GeorisqueApiResponse | undefined
 	) => {
 		// 1. Get the identifiers of the risks to focus
 		const riskIdList: Array<string> = georisqueResponse
 			? getEffectiveRiskIdentifierListFromGeorisqueResponse(georisqueResponse)
 			: [];
-		// 2. Update the riskIdList -> display the list
+
+		// 2. Update the riskIdList -> display the Risk list
 		setRiskIdList(riskIdList);
+
 		// 3. Hide the address list
 		setShowAddressFeatureList(false);
 	};
 
-	// Retrieve georisque response with keyboard "enter"
-	const onKeyDown = async (
-		event: React.KeyboardEvent<HTMLInputElement>
-	): Promise<void> => {
-		if (event.key === 'Enter') {
-			// 0. Set is fetching to True and hide the list
-			setIsFetchingAPI(true);
-			setShowAddressFeatureList(false);
-			// 1. Make a request on georisque API to obtain GeorisqueAPIResponse, based on the address
+
+	// ----- Handler wrapper -----
+
+	// We have different ways to retrieve Geoplateforme Feature,
+	// But what is before and after remains the same
+	// Thus, we provider a wrapper for handlers, where the handlers
+	// Should be async method returning one Geoplateforme Feature
+	const handlerWrapper: HandlerWrapper = (handler) => async () => {
+		// 1 - Display that we are fetching something
+		setIsFetchingAPI(true);
+		setShowAddressFeatureList(false);
+
+		try {
+			// 2 - Apply the handler to get the Geoplateforme feature
+			const geoplateformeFeature = await handler();
+			const coordinates = geoplateformeFeature.geometry.coordinates;
+			const address = geoplateformeFeature.properties.label;
+			const inseeCode = geoplateformeFeature.properties.citycode;
+
+			// 3 - Update the context data based on the feature
+			setCoordinates({
+				longitude: coordinates[0], // georisqueResponse.longitude,
+				latitude: coordinates[1], //georisqueResponse.latitude,
+			});
+			setInseeCode(inseeCode);
+			setAddress(address);
+
+			// 4 - Fetch Georisque API
 			const georisqueResponse = await getRisksAroundCoordinates(
-				undefined,
+				coordinates,
 				address,
 				inseeCode
 			);
-			// 2. Update the coordinates
-			if (georisqueResponse) {
-				setCoordinates({
-					latitude: georisqueResponse.latitude,
-					longitude: georisqueResponse.longitude,
-				});
-			}
-			// 3. Process the response
-			handleGeorisqueResponse(georisqueResponse);
-			// 4. Terminate the loading
-			setIsFetchingAPI(false);
-		}
-	};
 
-	// Retrieve georisque response by clicking on an item of the feature list
-	const onClickListItem = async (
-		addressFeature: DataGeopfFeature
-	): Promise<void> => {
-		// 0. Set is fetching to True and hide the list
-		setIsFetchingAPI(true);
-		setShowAddressFeatureList(false);
-		// 1. Update the address
-		setAddress(addressFeature.properties.label);
-		// 2. Make a request on georisque API to obtain GeorisqueAPIResponse, based on the coordinates (latlon)
-		const coordinates = addressFeature.geometry.coordinates;
-		const georisqueResponse = await getRisksAroundCoordinates(
-			coordinates,
-			address,
-			inseeCode
-		);
-		// 3. Update the coordinates and the insee code
-		setCoordinates({
-			longitude: coordinates[0], // georisqueResponse.longitude,
-			latitude: coordinates[1], //georisqueResponse.latitude,
-		});
-		setInseeCode(addressFeature.properties.citycode);
-		// 4. Process the response
-		handleGeorisqueResponse(georisqueResponse);
-		// 5. Terminate the loading
+			// 5 - Handle the Georisque Response
+			handleGeorisqueResponse(georisqueResponse)
+
+		} catch (error) {
+			console.error(error)
+		}
+
+		// 6 - Display that the process is finished
 		setIsFetchingAPI(false);
-	};
+	}
+
 
 	return (
 		<>
 			<SearchBar
-				renderInput={({ className, id, type }) => (
-					<input
-						className={className}
-						id={id}
-						placeholder={t('address.search_bar_label')}
-						type={type}
-						value={address}
-						// Note: The default behavior for an input of type 'text' is to clear the input value when the escape key is pressed.
-						// However, due to a bug in @gouvfr/dsfr the escape key event is not propagated to the input element.
-						// As a result this onChange is not called when the escape key is pressed.
-						onChange={onChangeInputAddress}
-						// Same goes for the keydown event so this is useless but we hope the bug will be fixed soon
-						onKeyDown={onKeyDown}
-					/>
-				)}
+				address={address}
+				setAddress={setAddress}
+				handlerWrapper={handlerWrapper}
+				addressFeatureList={addressFeatureList}
+				setShowAddressFeatureList={setShowAddressFeatureList}
 			/>
 			{showAddressFeatureList && addressFeatureList?.length > 0 && (
 				<AddressFeatureList
-					onClickListItem={onClickListItem}
+					handlerWrapper={handlerWrapper}
 					addressFeatureList={addressFeatureList}
 				/>
 			)}
+			<GeolocationButton setAddressFeatureList={setAddressFeatureList} handlerWrapper={handlerWrapper} />
 			{isFetchingAPI && (
 				<Container
 					withoutMarginBottom

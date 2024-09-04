@@ -1,6 +1,6 @@
-import type { GeorisqueAPIResponse } from './types';
+import type { GeorisqueApiResponse } from './types';
 
-export const dataTest1: GeorisqueAPIResponse = {
+export const dataTest1: GeorisqueApiResponse = {
 	adresse: '9 Rue Saint-Santin, 45750 Saint-Pryvé-Saint-Mesmin',
 	longitude: 1.847517,
 	latitude: 47.873298,
@@ -79,7 +79,7 @@ export const dataTest1: GeorisqueAPIResponse = {
 	},
 };
 
-export const dataTest2: GeorisqueAPIResponse = {
+export const dataTest2: GeorisqueApiResponse = {
 	adresse: '1 rue Louis Calmel, 92230 Gennevilliers',
 	longitude: 2.29253,
 	latitude: 48.92572,

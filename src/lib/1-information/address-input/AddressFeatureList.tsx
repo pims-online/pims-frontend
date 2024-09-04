@@ -1,12 +1,15 @@
-import type { DataGeopfFeature } from './types';
+import type { GeoplateformeApiFeature, HandlerWrapper } from './types';
 
 type Props = {
-	addressFeatureList: Array<DataGeopfFeature>;
-	onClickListItem: (addressFeature: DataGeopfFeature) => void;
+	addressFeatureList: Array<GeoplateformeApiFeature>;
+	handlerWrapper: HandlerWrapper;
 };
 
 export default function AddressFeatureList(props: Props) {
-	const { addressFeatureList, onClickListItem } = props;
+	const { addressFeatureList, handlerWrapper } = props;
+	const getHandler = (addressFeature: GeoplateformeApiFeature) => async () => {
+		return addressFeature;
+	}
 
 	return (
 		<ul
@@ -17,7 +20,7 @@ export default function AddressFeatureList(props: Props) {
 				<li
 					key={`address-feature-${addressFeature.properties.citycode}-${addressFeature.properties.label}`}
 				>
-					<button onClick={() => onClickListItem(addressFeature)}>
+					<button onClick={handlerWrapper(getHandler(addressFeature))}>
 						{addressFeature.properties.label}
 					</button>
 				</li>
