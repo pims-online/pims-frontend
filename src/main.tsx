@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client';
 
 import App from './App.tsx';
 import './App.css';
-import './lib/0-home/styles.css';
-import './lib/1-information/styles.css';
-import './lib/2-emergency-kit/styles.css';
-import './lib/3-alert/styles.css';
+import '@/lib/0-home/styles.css';
+import '@/lib/1-information/styles.css';
+import '@/lib/2-emergency-kit/styles.css';
+import '@/lib/3-alert/styles.css';
 import '@/components/styles.css';
 import './layouts/styles.css';
 

@@ -7,8 +7,8 @@ import StepsLayout from './StepsLayout';
 import Header from './components/header/Header';
 
 // ----- SCREENS -----
-import HomeScreen from '../lib/0-home/HomeScreen';
-import FinalScreen from '../lib/6-final/FinalScreen';
+import HomeScreen from '@/lib/0-home/HomeScreen';
+import FinalScreen from '@/lib/6-final/FinalScreen';
 
 type Props = {
 	widgetHeaderFooter?: boolean;
