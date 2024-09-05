@@ -4,6 +4,7 @@ import { headerFooterDisplayItem } from '@codegouvfr/react-dsfr/Display';
 import { Badge } from '@codegouvfr/react-dsfr/Badge';
 
 import LanguageSelector from '../language-selector/LanguageSelector';
+import { HREF_ROUTE_MAIN } from '@/providers';
 
 type Props = {
 	t: TFunction;
@@ -16,6 +17,7 @@ export default function HeaderGovernment(props: Props) {
 			brandTop={'Gouvernement'}
 			homeLinkProps={{
 				title: 'Accueil - BASEP - PIMS',
+				href: HREF_ROUTE_MAIN,
 			}}
 			quickAccessItems={[headerFooterDisplayItem, <LanguageSelector />]}
 			id="fr-header-simple-header-with-service-title-and-tagline"
