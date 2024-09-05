@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { Container, Title, RequiredFieldIndicator } from '@/components';
-import { STEPS } from '../../layouts/constants';
+import { STEPS } from '@/layouts/constants';
 
 export default function ProcessInformation() {
 	const { t } = useTranslation(['home_screen', 'stepper']);
