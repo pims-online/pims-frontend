@@ -20,15 +20,20 @@ export default function InformationCheck(props: Props) {
 	const usefulNumberList = [
 		t('information_check.items.useful_numbers.town_hall', {
 			number: usefulNumbers.townHall,
+			// Prevent the escape during interpolation (example : prevent turning an apostrophe into &#39;)
+			interpolation: { escapeValue: false },
 		}),
 		t('information_check.items.useful_numbers.insurance', {
 			number: usefulNumbers.insurance,
+			interpolation: { escapeValue: false },
 		}),
 		t('information_check.items.useful_numbers.relatives', {
 			number: usefulNumbers.relatives,
+			interpolation: { escapeValue: false },
 		}),
 		t('information_check.items.useful_numbers.others', {
 			number: usefulNumbers.others,
+			interpolation: { escapeValue: false },
 		}),
 	];
 

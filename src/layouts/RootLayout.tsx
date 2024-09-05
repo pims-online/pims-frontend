@@ -16,7 +16,7 @@ type Props = {
 };
 
 export default function RootLayout(props: Props) {
-	const startIndex = 0;
+	const startIndex = 2;
 	const currentIndexInitValue =
 		import.meta.env.VITE_ENVIRONMENT === 'local' ? startIndex : 0;
 	const [currentIndex, setCurrentIndex] = useState(currentIndexInitValue);
