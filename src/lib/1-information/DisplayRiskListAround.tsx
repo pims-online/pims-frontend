@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { Container, Title } from '../../components';
+import { Container, Title } from '@/components';
 
 import RiskList from './risks/RiskList';
 

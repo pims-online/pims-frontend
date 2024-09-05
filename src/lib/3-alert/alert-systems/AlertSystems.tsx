@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { Title } from '../../../components';
+import { Title } from '@/components';
 
 import AlertSystemsList from './AlertSystemsList';
 import AlertSystemsSaipGuidelines from './AlertSystemsSaipGuidelines';

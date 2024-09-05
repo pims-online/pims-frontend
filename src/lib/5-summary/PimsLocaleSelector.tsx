@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { RadioButtons } from '@codegouvfr/react-dsfr/RadioButtons';
 
 import { AppContext } from '../../providers';
-import { Subtitle } from '../../components';
+import { Subtitle } from '@/components';
 
 export default function PimsLocaleSelector() {
 	const { t } = useTranslation('summary_screen');

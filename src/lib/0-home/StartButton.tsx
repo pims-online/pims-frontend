@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Button } from '@codegouvfr/react-dsfr/Button';
 
-import { Container } from '../../components';
+import { Container } from '@/components';
 
 type Props = {
 	navigateToFirstStep: () => void;

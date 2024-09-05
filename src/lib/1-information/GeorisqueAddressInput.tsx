@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import { useTranslation } from 'react-i18next';
 
-import { Container, RequiredFieldIndicator } from '../../components';
+import { Container, RequiredFieldIndicator } from '@/components';
 
 import AddressInput from './address-input/AddressInput';
 

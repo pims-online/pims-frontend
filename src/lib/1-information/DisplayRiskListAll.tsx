@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Accordion } from '@codegouvfr/react-dsfr/Accordion';
 
-import { Container } from '../../components';
+import { Container } from '@/components';
 
 import { RISK_LIST } from './risks/constants';
 import RiskList from './risks/RiskList';

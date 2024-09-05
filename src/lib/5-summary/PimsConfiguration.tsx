@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Input } from '@codegouvfr/react-dsfr/Input';
 
 import { AppContext } from '../../providers';
-import { Container, Title, Subtitle } from '../../components';
+import { Container, Title, Subtitle } from '@/components';
 
 export default function PimsConfiguration() {
 	const { t } = useTranslation('summary_screen');

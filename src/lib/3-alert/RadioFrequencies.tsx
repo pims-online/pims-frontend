@@ -2,7 +2,7 @@ import { useEffect, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { AppContext } from '../../providers';
-import { Title, Container, CircularProgress } from '../../components';
+import { Title, Container, CircularProgress } from '@/components';
 
 import { getRadioFrequencies } from './utils';
 

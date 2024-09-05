@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Checkbox } from '@codegouvfr/react-dsfr/Checkbox';
 
-import { Container, RequiredFieldIndicator } from '../../components';
+import { Container, RequiredFieldIndicator } from '@/components';
 
 type Props = {
 	kitListChecked: boolean;

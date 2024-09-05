@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@codegouvfr/react-dsfr/Button';
 
-import { CircularProgress, Container } from '../../../components';
+import { CircularProgress, Container } from '@/components';
 
 import {
 	getUserLocation,

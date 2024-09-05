@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 
 import { AppContext } from '../../../providers';
-import { Container, CircularProgress } from '../../../components';
+import { Container, CircularProgress } from '@/components';
 
 import AddressFeatureList from './AddressFeatureList';
 import GeolocationButton from './GeolocationButton';

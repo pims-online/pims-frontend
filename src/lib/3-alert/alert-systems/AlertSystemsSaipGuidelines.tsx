@@ -5,7 +5,7 @@ import iconNoPhone from '@public/alert-icons/no_mobile.svg';
 import iconStaySafe from '@public/alert-icons/no_mobile.svg';
 import iconListenCarefully from '@public/alert-icons/radio_on.svg';
 
-import { Container } from '../../../components';
+import { Container } from '@/components';
 
 export default function AlertSystemsSaipGuidelines() {
 	const { t } = useTranslation('alert_screen');

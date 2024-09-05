@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@codegouvfr/react-dsfr/Button';
 import { createModal } from '@codegouvfr/react-dsfr/Modal';
 
-import { Title, Container } from '../../components';
+import { Title, Container } from '@/components';
 
 export default function FrAlertDiscovery() {
 	const { t } = useTranslation('alert_screen');

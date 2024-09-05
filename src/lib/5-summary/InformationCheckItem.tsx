@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Highlight } from '@codegouvfr/react-dsfr/Highlight';
 import { Button } from '@codegouvfr/react-dsfr/Button';
 
-import { Subtitle, Container } from '../../components';
+import { Subtitle, Container } from '@/components';
 
 type Props = {
 	subtitle: string;

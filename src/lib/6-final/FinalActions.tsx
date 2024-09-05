@@ -4,7 +4,7 @@ import { Download } from '@codegouvfr/react-dsfr/Download';
 import { Button } from '@codegouvfr/react-dsfr/Button';
 
 import { AppContext } from '../../providers';
-import { Container } from '../../components';
+import { Container } from '@/components';
 
 export default function FinalActions() {
 	const { t } = useTranslation('final_screen');

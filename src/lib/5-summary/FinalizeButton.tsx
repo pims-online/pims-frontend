@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@codegouvfr/react-dsfr/Button';
 
 import { AppContext } from '../../providers';
-import { Container, CircularProgress } from '../../components';
+import { Container, CircularProgress } from '@/components';
 
 import { generatePims } from './utils';
 

@@ -1,6 +1,6 @@
 import { useTranslation, Trans } from 'react-i18next';
 
-import { Container, Title } from '../../components';
+import { Container, Title } from '@/components';
 
 type Props = {
 	translationKeyPrefix: string;

@@ -1,6 +1,6 @@
 import { useTranslation, Trans } from 'react-i18next';
 
-import { Container } from '../../components';
+import { Container } from '@/components';
 
 import WeatherVigilance from './WeatherVigilance';
 import AlertSystems from './alert-systems/AlertSystems';

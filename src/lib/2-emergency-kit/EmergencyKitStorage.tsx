@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Input } from '@codegouvfr/react-dsfr/Input';
 
-import { Container, RequiredFieldIndicator } from '../../components';
+import { Container, RequiredFieldIndicator } from '@/components';
 
 type Props = {
 	storage: string;

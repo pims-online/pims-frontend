@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Title } from '../../components';
+import { Title } from '@/components';
 import { AppContext } from '../../providers';
 
 import FinalButton from './FinalButton';

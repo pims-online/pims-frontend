@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { Title, Container } from '../../components';
+import { Title, Container } from '@/components';
 
 export default function WeatherVigilance() {
 	const { t } = useTranslation('alert_screen');

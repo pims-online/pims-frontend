@@ -7,7 +7,7 @@ import iconSaip from '@public/icons/logo_saip.png';
 import mediaFrAlert from '@public/media/sound_fr_alert.mp3';
 import mediaSaip from '@public/media/sound_saip.mp3';
 
-import { Container } from '../../../components';
+import { Container } from '@/components';
 
 export default function AlertSystemsPlayers() {
 	const { t } = useTranslation('alert_screen');
