@@ -245,3 +245,11 @@
 .pims-components__text-color-orange {
 	color: var(--pims-orange);
 }
+
+.pims-components__text-red-marianne {
+	color: var(--text-action-high-red-marianne);
+}
+
+.pims-components__text-red-marianne-inverted {
+	color: var(--pims-red-marianne-inverted);
+}

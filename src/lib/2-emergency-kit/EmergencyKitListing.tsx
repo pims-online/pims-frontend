@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Checkbox } from '@codegouvfr/react-dsfr/Checkbox';
 
-import { Container } from '../../components';
+import { Container, RequiredFieldIndicator } from '../../components';
 
 type Props = {
 	kitListChecked: boolean;
@@ -23,17 +23,29 @@ export default function EmergencyKitListing(props: Props) {
 					</li>
 				))}
 			</ol>
-			<Checkbox
-				options={[
-					{
-						label: t('kit_listing.checkbox'),
-						nativeInputProps: {
-							checked: props.kitListChecked,
-							onChange: (e) => props.setKitListChecked(e.currentTarget.checked),
+			<Container
+				withoutMarginBottom
+				flexboxAlignment="start"
+				flexboxDirection="row"
+			>
+				<Checkbox
+					className="fr-mb-0"
+					options={[
+						{
+							label: '',
+							nativeInputProps: {
+								checked: props.kitListChecked,
+								onChange: (e) =>
+									props.setKitListChecked(e.currentTarget.checked),
+							},
 						},
-					},
-				]}
-			/>
+					]}
+				/>
+				<p className="fr-mb-0">
+					{`${t('kit_listing.checkbox')} `}
+					<RequiredFieldIndicator />
+				</p>
+			</Container>
 		</Container>
 	);
 }

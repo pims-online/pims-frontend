@@ -16,7 +16,10 @@ type Props = {
 };
 
 export default function RootLayout(props: Props) {
-	const [currentIndex, setCurrentIndex] = useState(1);
+	const startIndex = 0;
+	const currentIndexInitValue =
+		import.meta.env.VITE_ENVIRONMENT === 'local' ? startIndex : 0;
+	const [currentIndex, setCurrentIndex] = useState(currentIndexInitValue);
 	const { isDark } = useIsDark();
 
 	const navigateToFirstStep = () => {

@@ -31,9 +31,11 @@ p {
 .pims-light {
 	--pims-green-background: var(--pims-green-background-light);
 	--pims-green-text: var(--pims-green-text-light);
+	--pims-red-marianne-inverted: #f95c5e;
 }
 
 .pims-dark {
 	--pims-green-background: var(--pims-green-background-dark);
 	--pims-green-text: var(--pims-green-text-dark);
+	--pims-red-marianne-inverted: #c9191e;
 }

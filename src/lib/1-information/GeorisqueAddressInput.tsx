@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import { useTranslation } from 'react-i18next';
 
-import { Container } from '../../components';
+import { Container, RequiredFieldIndicator } from '../../components';
 
 import AddressInput from './address-input/AddressInput';
 
@@ -24,7 +24,8 @@ export default function GeorisqueAddressInput() {
 					'pims-information-screen__georisque-item'
 				)}
 			>
-				{t('address.call_to_action')}
+				{`${t('address.call_to_action')} `}
+				<RequiredFieldIndicator inverted />
 			</p>
 			<AddressInput />
 		</Container>

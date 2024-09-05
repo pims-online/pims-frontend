@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { Container, Title } from '../../components';
+import { Container, Title, RequiredFieldIndicator } from '../../components';
 import { STEPS } from '../../layouts/constants';
 
 export default function ProcessInformation() {
@@ -21,6 +21,10 @@ export default function ProcessInformation() {
 				))}
 			</ol>
 			<p>{t('home_screen:trustworthy_sources')}</p>
+			<p>
+				<RequiredFieldIndicator />
+				{` : ${t('home_screen:mandatory_fields')}`}
+			</p>
 		</Container>
 	);
 }

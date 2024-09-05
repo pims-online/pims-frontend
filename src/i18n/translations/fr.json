@@ -22,6 +22,7 @@
 		"risk_identification": "J'identifie les risques, naturels et technologiques, présents dans mon environnement, qui concernent l'ensemble de la population et peuvent affecter chaque citoyen.",
 		"five_steps": "Je me prépare et je prépare mes proches pour nous mettre à l'abri en cas d'urgence, en cinq étapes :",
 		"trustworthy_sources": "Je connais les sources fiables pour rester serein et informé en suivant l'évolution de la situation et les consignes officielles.",
+		"mandatory_fields": "Les champs marqués d'une étoile rouge sont obligatoires pour continuer la procédure.",
 		"start_button": {
 			"title": "Prêts ? Parés !",
 			"subtitle": "Plan Individuel de Mise en Sureté",
@@ -31,7 +32,7 @@
 	"information_screen": {
 		"address": {
 			"title": "Connaître les risques près de chez moi",
-			"call_to_action": "Veuillez renseigner votre adresse (obligatoire)",
+			"call_to_action": "Veuillez renseigner votre adresse",
 			"search_bar_label": "Adresse exacte"
 		},
 		"get_geolocation": "Utiliser ma position actuelle",
@@ -40,7 +41,7 @@
 		"see_more_risks": "Je consulte l'ensemble des risques naturels et technologiques qui existent, en plus de ceux qui concernent mon adresse.",
 		"gathering_place": {
 			"title": "Lieu de regroupement",
-			"hint": "En cas d'évacuation, le lieu de regroupement est (optionnel)"
+			"hint": "En cas d'évacuation, le lieu de regroupement est"
 		}
 	},
 	"risks": {
@@ -186,10 +187,10 @@
 				"item_13": "Le double des clés de la maison et de la voiture",
 				"item_14": "Des jeux pour occuper le temps"
 			},
-			"checkbox": "J'ai pris connaissance du contenu essentiel de mon kit d'urgence (obligatoire)"
+			"checkbox": "J'ai pris connaissance du contenu essentiel de mon kit d'urgence"
 		},
 		"kit_storage": {
-			"accessibility": "Je range mon kit d'urgence 72h dans un endroit facile d'accès et je partage sa localisation avec mes proches (obligatoire) :",
+			"accessibility": "Je range mon kit d'urgence 72h dans un endroit facile d'accès et je partage sa localisation avec mes proches",
 			"input_placeholder": "Je saisis ici le lieu de rangement de mon kit d'urgence"
 		},
 		"useful_numbers": {
@@ -200,7 +201,7 @@
 				"114": "Numéro d'appel d'urgence pour les <k1>malentendants</k1> : <k2>114</k2>"
 			},
 			"inputs": {
-				"subtitle": "Coordonnées à compléter (optionnel)",
+				"subtitle": "Coordonnées à compléter",
 				"town_hall": "Mairie :",
 				"insurance": "Assurance :",
 				"relatives": "Proches :",
