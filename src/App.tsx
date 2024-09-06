@@ -5,40 +5,31 @@ import {
 	AppContextProvider,
 	AppRouterProvider,
 } from './providers';
-
-type Props = {
-	applicationId?: string;
-	widgetHeaderFooter?: boolean;
-};
-
-function AppWithProviders(props: Props) {
-	return (
-		<AppContextProvider>
-			<I18nextProvider i18n={i18n}>
-				<AppRouterProvider
-					applicationId={props.applicationId}
-					widgetHeaderFooter={!!props.widgetHeaderFooter}
-				/>
-			</I18nextProvider>
-		</AppContextProvider>
-	);
-}
+import MainPage from '@/pages/MainPage';
 
 function App() {
 	return (
 		<DSFRWrapper>
-			<AppWithProviders />
+			<AppContextProvider>
+				<I18nextProvider i18n={i18n}>
+					<AppRouterProvider />
+				</I18nextProvider>
+			</AppContextProvider>
 		</DSFRWrapper>
 	);
 }
 
-export function WidgetApp(props: Props) {
+export function WidgetApp(props: {
+	applicationId?: string;
+	widgetHeaderFooter?: boolean;
+}) {
 	return (
 		<DSFRWrapper forWidget>
-			<AppWithProviders
-				applicationId={props.applicationId}
-				widgetHeaderFooter={!!props.widgetHeaderFooter}
-			/>
+			<AppContextProvider>
+				<I18nextProvider i18n={i18n}>
+					<MainPage {...props} isWidget />
+				</I18nextProvider>
+			</AppContextProvider>
 		</DSFRWrapper>
 	);
 }

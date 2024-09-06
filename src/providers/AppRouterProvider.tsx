@@ -10,23 +10,15 @@ import {
 	HREF_ROUTE_SITE_MAP,
 } from './constants';
 
-type Props = {
-	applicationId?: string;
-	widgetHeaderFooter?: boolean;
-};
-
-export default function AppRouterProvider(props: Props) {
+export default function AppRouterProvider() {
 	return (
 		<Router>
 			<Routes>
-				<Route path={HREF_ROUTE_MAIN} element={<MainPage {...props} />} />
-				<Route
-					path={HREF_ROUTE_SITE_MAP}
-					element={<SiteMapPage {...props} />}
-				/>
+				<Route path={HREF_ROUTE_MAIN} element={<MainPage />} />
+				<Route path={HREF_ROUTE_SITE_MAP} element={<SiteMapPage />} />
 				<Route
 					path={HREF_ROUTE_LEGAL_INFORMATION}
-					element={<LegalInformationPage {...props} />}
+					element={<LegalInformationPage />}
 				/>
 			</Routes>
 		</Router>
