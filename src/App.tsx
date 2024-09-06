@@ -1,10 +1,12 @@
 import { I18nextProvider } from 'react-i18next';
+import { BrowserRouter } from 'react-router-dom';
 import i18n from './i18n/i18n';
 import {
 	DSFRWrapper,
 	AppContextProvider,
-	AppRouterProvider,
+	AppRoutesProvider,
 } from './providers';
+import PageLayout from '@/layouts/PageLayout';
 import MainPage from '@/pages/MainPage';
 
 function App() {
@@ -12,7 +14,11 @@ function App() {
 		<DSFRWrapper>
 			<AppContextProvider>
 				<I18nextProvider i18n={i18n}>
-					<AppRouterProvider />
+					<BrowserRouter>
+						<PageLayout>
+							<AppRoutesProvider />
+						</PageLayout>
+					</BrowserRouter>
 				</I18nextProvider>
 			</AppContextProvider>
 		</DSFRWrapper>
@@ -27,7 +33,14 @@ export function WidgetApp(props: {
 		<DSFRWrapper forWidget>
 			<AppContextProvider>
 				<I18nextProvider i18n={i18n}>
-					<MainPage {...props} isWidget />
+					<PageLayout
+						widgetConfig={{
+							useWidgetHeader: props.widgetHeaderFooter,
+							applicationId: props.applicationId,
+						}}
+					>
+						<MainPage />
+					</PageLayout>
 				</I18nextProvider>
 			</AppContextProvider>
 		</DSFRWrapper>

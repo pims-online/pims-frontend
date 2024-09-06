@@ -7,7 +7,7 @@ export {
 	AppContext,
 } from './AppContextProvider';
 export { default as DSFRWrapper } from './DSFRWrapper';
-export { default as AppRouterProvider } from './AppRouterProvider';
+export { default as AppRoutesProvider } from './AppRoutesProvider';
 export {
 	HREF_ROUTE_LEGAL_INFORMATION,
 	HREF_ROUTE_MAIN,
