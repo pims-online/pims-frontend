@@ -244,7 +244,9 @@ Une documentation explicite les différents items : <https://rollupjs.org/config
 
 `output.entryFileNames` : pour le chunk qui porte le nom `widget`, nous le plaçons dans le dossier `assets/js`, et tous les autres iront dans le dossier `assets`.
 
-`output.assetFileNames`: on organise de même les assets statiques non js (les images, les svg, ...). En bref, les images sont mis dans le dossier `assets/images`, les medias dans le dossier `assets/medias`, et le reste sera placé dans `assets`.
+`output.assetFileNames`: on organise de même les fichiers considérés comme assets statiques par Vite : ce sont des images, des svg, à partir d'une certaille, et qui ont besoin d'être optimisées. En bref, les images sont mis dans le dossier `assets/images`, les medias dans le dossier `assets/medias`, et le reste sera placé dans `assets`. Leurs URLs sont gérés par Vite.
+
+Les très petites images (<=4kb / 4096 bytes) sont encodées en base64 data URIs. Cela permet d'améliorer les performances en évitant des requêtes HTTP supplémentaires.
 
 Le script de build fait automatiquement une copie de public/dsfr vers dist/dsfr.
 

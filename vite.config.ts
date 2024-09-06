@@ -15,7 +15,6 @@ const URL = process.env.VITE_APP_URL;
  * ├── App-BGM31teO.js
  * ├── dsfr.module.min-8s9HWIH0.js
  * ├── images
- * │	├── dirty-saip-guidelines-no-phone-B3ClGUxc.png
  * │	├── light-BcMY7tSa.svg
  * │	├── ...
  * │	└── system-BJKRkqTi.svg
@@ -26,7 +25,7 @@ const URL = process.env.VITE_APP_URL;
  * │	└── widget.js
  * └── main.js
  *
- * SVG files might be incorporated in data:
+ * SVG files are converted into Data URIs by Vite when their size are < 4KB
  */
 
 // Folders for images and medias
@@ -39,10 +38,10 @@ const imageExtensions = ['.png', '.svg', '.jpg', '.jpeg', '.gif'];
 const mediaExtensions = ['.mp3', '.wav', '.ogg'];
 
 export default defineConfig({
+	publicDir: 'public',
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, './src'),
-			'@public': path.resolve(__dirname, './public'),
 		},
 	},
 	plugins: [
@@ -61,6 +60,16 @@ export default defineConfig({
 		}),
 	],
 	build: {
+		assetsInlineLimit(filePath) {
+			// If return false => the file is not inlined, and forced to be considered as an asset
+			// If return true => the file is forced to be converted into data URI
+			// If return none, the default schema is applied : inline only if < 4KB
+
+			// For DSFR svg, we ban Inline files to prevent build issues
+			const isDSFRAsset = filePath.includes('react-dsfr/dsfr');
+			if (isDSFRAsset) return false;
+			return undefined;
+		},
 		rollupOptions: {
 			input: {
 				main: resolve(__dirname, 'index.html'),
@@ -68,14 +77,18 @@ export default defineConfig({
 			},
 			output: {
 				entryFileNames: (assetInfo) => {
+					console.log('Entry : ', assetInfo?.name);
 					return assetInfo.name === 'widget'
 						? 'assets/js/[name].js'
 						: 'assets/[name].js';
 				},
 				assetFileNames: (assetInfo) => {
-					// At build time, we organize images and media in subfolders
-					// For caching optimization, we add a hash to each file
+					// Assets are static files (images, svg) greater than 4KB
+					// They are optimized by Vite, and hashed for caching opt
+					// Here, at build time, we organize images and media in subfolders
+					// All other files (<4KB) are encoded as base64 data URIs
 					const filename = assetInfo.name || '';
+					console.log('Asset : ', filename);
 					const ext = path.extname(filename);
 					if (imageExtensions.includes(ext)) {
 						const finalPath = path.join(imagesDir, '[name]-[hash][extname]');

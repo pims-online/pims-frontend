@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
 
-import iconFrAlert from '@public/alert-icons/fr_alert.svg';
-import iconSaip from '@public/icons/logo_saip.png';
-import mediaFrAlert from '@public/media/sound_fr_alert.mp3';
-import mediaSaip from '@public/media/sound_saip.mp3';
+import iconFrAlert from '@/assets/alert-icons/fr_alert.svg';
+import iconSaip from '@/assets/icons/logo_saip.png';
+import mediaFrAlert from '@/assets/media/sound_fr_alert.mp3';
+import mediaSaip from '@/assets/media/sound_saip.mp3';
 
 import { Container } from '@/components';
 

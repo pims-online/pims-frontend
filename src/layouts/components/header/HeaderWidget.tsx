@@ -1,6 +1,6 @@
 import type { TFunction } from 'i18next';
 
-import iconGovernment from '@public/icons/logo_french_government.png';
+import iconGovernment from '@/assets/icons/logo_french_government.png';
 
 import LanguageSelector from '../language-selector/LanguageSelector';
 import ThemeSelector from '../theme-selector/ThemeSelector';

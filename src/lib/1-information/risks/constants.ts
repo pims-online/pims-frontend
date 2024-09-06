@@ -1,16 +1,16 @@
-import iconAvalanche from '@public/risk-icons/avalanche.svg';
-import iconDamBreak from '@public/risk-icons/dam_break.svg';
-import iconDangerousTransportationAccident from '@public/risk-icons/dangerous_transportation_accident.svg';
-import iconEarthquake from '@public/risk-icons/earthquake.svg';
-import iconFlooding from '@public/risk-icons/flooding.svg';
-import iconForestFire from '@public/risk-icons/forest_fire.svg';
-import iconIndustrialAccident from '@public/risk-icons/industrial_accident.svg';
-import iconLandslide from '@public/risk-icons/landslide.svg';
-import iconNuclearAccident from '@public/risk-icons/nuclear_accident.svg';
-import iconStorm1 from '@public/risk-icons/storm_1.svg';
-import iconStorm2 from '@public/risk-icons/storm_2.svg';
-import iconTsunami from '@public/risk-icons/tsunami.svg';
-import iconVolcanicEruption from '@public/risk-icons/volcanic_eruption.svg';
+import iconAvalanche from '@/assets/risk-icons/avalanche.svg';
+import iconDamBreak from '@/assets/risk-icons/dam_break.svg';
+import iconDangerousTransportationAccident from '@/assets/risk-icons/dangerous_transportation_accident.svg';
+import iconEarthquake from '@/assets/risk-icons/earthquake.svg';
+import iconFlooding from '@/assets/risk-icons/flooding.svg';
+import iconForestFire from '@/assets/risk-icons/forest_fire.svg';
+import iconIndustrialAccident from '@/assets/risk-icons/industrial_accident.svg';
+import iconLandslide from '@/assets/risk-icons/landslide.svg';
+import iconNuclearAccident from '@/assets/risk-icons/nuclear_accident.svg';
+import iconStorm1 from '@/assets/risk-icons/storm_1.svg';
+import iconStorm2 from '@/assets/risk-icons/storm_2.svg';
+import iconTsunami from '@/assets/risk-icons/tsunami.svg';
+import iconVolcanicEruption from '@/assets/risk-icons/volcanic_eruption.svg';
 
 import type { RiskItem } from './types';
 

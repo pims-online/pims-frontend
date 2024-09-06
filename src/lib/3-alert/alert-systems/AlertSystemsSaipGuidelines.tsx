@@ -1,9 +1,9 @@
 import { useTranslation, Trans } from 'react-i18next';
 import { clsx } from 'clsx';
 
-import iconNoPhone from '@public/alert-icons/no_mobile.svg';
-import iconStaySafe from '@public/alert-icons/no_mobile.svg';
-import iconListenCarefully from '@public/alert-icons/radio_on.svg';
+import iconNoPhone from '@/assets/alert-icons/no_mobile.svg';
+import iconStaySafe from '@/assets/alert-icons/no_mobile.svg';
+import iconListenCarefully from '@/assets/alert-icons/radio_on.svg';
 
 import { Container } from '@/components';
 
