@@ -1,5 +1,8 @@
 import { useState, Dispatch, SetStateAction } from 'react';
 
+// ----- UTILS -----
+import { useScrollToTop } from './utils';
+
 // ----- LAYOUT COMPONENTS -----
 import Stepper from './components/stepper/Stepper';
 import Navigator from './components/Navigator';
@@ -20,12 +23,23 @@ type Props = {
 export default function StepsLayout(props: Props) {
 	const { currentIndex, setCurrentIndex } = props;
 	const [isNavigateNextLocked, setIsNavigateNextLocked] = useState(false);
+	const scrollToTop = useScrollToTop();
 
-	const navigateToFinalScreen = () => setCurrentIndex(SCREENS.FINAL_SCREEN);
-	const navigateToInformationScreen = () =>
+	const navigateToFinalScreen = () => {
+		setCurrentIndex(SCREENS.FINAL_SCREEN);
+		scrollToTop();
+	};
+
+	const navigateToInformationScreen = () => {
 		setCurrentIndex(SCREENS.INFORMATION_SCREEN);
-	const navigateToEmergencyKitScreen = () =>
+		scrollToTop();
+	};
+
+	const navigateToEmergencyKitScreen = () => {
 		setCurrentIndex(SCREENS.EMERGENCY_KIT_SCREEN);
+		scrollToTop();
+	};
+
 	return (
 		<div>
 			<Stepper currentStep={currentIndex} />

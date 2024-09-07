@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+// ----- UTILS -----
+import { setStepInHash, useScrollToTop, removeStepInHash } from './utils';
+
 // ----- LAYOUT COMPONENTS -----
 import { SCREENS } from './constants.ts';
 import StepsLayout from './StepsLayout';
@@ -9,18 +12,27 @@ import HomeScreen from '@/lib/0-home/HomeScreen';
 import FinalScreen from '@/lib/6-final/FinalScreen';
 
 export default function RootLayout() {
-	const startIndex = 2;
+	const startIndex = 0;
 	const currentIndexInitValue =
 		import.meta.env.VITE_ENVIRONMENT === 'local' ? startIndex : 0;
 	const [currentIndex, setCurrentIndex] = useState(currentIndexInitValue);
+	const scrollToTop = useScrollToTop();
+
+	if (currentIndex >= 1 && currentIndex <= 5) {
+		setStepInHash(currentIndex);
+	} else {
+		removeStepInHash();
+	}
 
 	const navigateToFirstStep = () => {
 		setCurrentIndex(1);
-		if (window) {
-			setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
-		}
+		scrollToTop();
 	};
-	const navigateToHomeScreen = () => setCurrentIndex(0);
+
+	const navigateToHomeScreen = () => {
+		setCurrentIndex(0);
+		scrollToTop();
+	};
 	return (
 		<section className="pims-layouts__container">
 			{currentIndex === SCREENS.HOME_SCREEN && (

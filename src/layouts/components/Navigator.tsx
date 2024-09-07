@@ -2,6 +2,8 @@ import { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
 
+import { useScrollToTop } from '../utils';
+
 type Props = {
 	currentStep: number;
 	setCurrentStep: Dispatch<SetStateAction<number>>;
@@ -19,10 +21,11 @@ export default function Navigator(props: Props) {
 
 	const { t } = useTranslation('common');
 
-	const scrollToTop = () => {
-		if (window) {
-			setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
-		}
+	const scrollToTop = useScrollToTop();
+
+	const setNextCurrentStep = (nextStep: number) => {
+		setCurrentStep(nextStep);
+		scrollToTop();
 	};
 
 	return (
@@ -40,8 +43,7 @@ export default function Navigator(props: Props) {
 					type: 'button',
 					onClick: () => {
 						setIsNavigateNextLocked(false); // Reset
-						setCurrentStep((step) => step - 1);
-						scrollToTop();
+						setNextCurrentStep(currentStep - 1);
 					},
 					disabled: currentStep === 1,
 				},
@@ -51,8 +53,7 @@ export default function Navigator(props: Props) {
 					priority: 'primary',
 					type: 'button',
 					onClick: () => {
-						setCurrentStep((step) => step + 1);
-						scrollToTop();
+						setNextCurrentStep(currentStep + 1);
 					},
 					disabled: isNavigateNextLocked || currentStep === 5,
 				},
