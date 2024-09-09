@@ -356,5 +356,11 @@
 			"title": "Accessibilité",
 			"content": "Le Site est développé selon les recommandations du Référentiel général d'amélioration de l'accessibilité (RGAA) et les normes W3C. Nous nous sommes engagés à améliorer en permanence l’accessibilité de nos contenus pour que l’accès à l’information soit facilité."
 		}
+	},
+	"site_map_page": {
+		"title": "Plan du site",
+		"main": "Accueil - Télé procédure",
+		"site_map": "Plan du site",
+		"legal_information": "Mentions légales"
 	}
 }

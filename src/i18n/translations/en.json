@@ -356,5 +356,11 @@
 			"title": "Accessibility",
 			"content": "The Site is developed in accordance with the recommendations of the General Accessibility Improvement Reference (RGAA) and W3C standards. We are committed to continuously improving the accessibility of our content to facilitate access to information."
 		}
+	},
+	"site_map_page": {
+		"title": "Site Map",
+		"main": "Home - Online Procedures",
+		"site_map": "Site Map",
+		"legal_information": "Legal Information"
 	}
 }
