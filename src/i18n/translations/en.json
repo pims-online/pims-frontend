@@ -322,5 +322,39 @@
 			"copyToClipboard": "The link has been successfully copied to the clipboard."
 		},
 		"goBackHome": "Go back to the home screen"
+	},
+	"legal_information_page": {
+		"title": "Legal Information",
+		"edition": {
+			"title": "Site Edition",
+			"url": "The present site, accessible at the URL {{ url }} (the <<Site>>), is published by:",
+			"editor": "..."
+		},
+		"publication": {
+			"title": "Publication Director",
+			"content": "The Publication Director of the Site is {{ director }}."
+		},
+		"hosting": {
+			"title": "Hosting",
+			"content": "The Site is hosted by Vercel, Inc., located at 340 S Lemon Ave #4133, Walnut, CA 91789, USA, (phone or email contact: +15592887060)."
+		},
+		"statistics_handler": {
+			"title": "Statistics Manager",
+			"content": "Eulerian Technologies."
+		},
+		"cookies_analytics": {
+			"title": "Audience Measurement Cookies",
+			"content": "Our site uses audience measurement cookies. Some of these cookies are strictly necessary for the functioning and routine administration of the site."
+		},
+		"links_and_content": {
+			"title": "Reuse of Content and Links",
+			"licence": "Unless explicitly stated as third-party intellectual property, the content on this site is offered under the <k1>Etalab Open License 2.0</k1>.",
+			"rights": "You are free to reproduce, copy, modify, extract, transform, communicate, disseminate, redistribute, publish, transmit, and exploit this content provided that you mention its source, the date of the last update, and do not mislead third parties regarding the information contained within.",
+			"diffuse_information": "Any public or private website is authorized to establish a link (including deep links) to the information disseminated on this site without prior authorization."
+		},
+		"accessibility": {
+			"title": "Accessibility",
+			"content": "The Site is developed in accordance with the recommendations of the General Accessibility Improvement Reference (RGAA) and W3C standards. We are committed to continuously improving the accessibility of our content to facilitate access to information."
+		}
 	}
 }

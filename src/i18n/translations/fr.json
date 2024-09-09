@@ -322,5 +322,39 @@
 			"copyToClipboard": "Le lien a été correctement été copié dans le presse-papiers."
 		},
 		"goBackHome": "Retourner à l'écran d'accueil"
+	},
+	"legal_information_page": {
+		"title": "Mentions légales",
+		"edition": {
+			"title": "Édition du site",
+			"url": "Le présent site, accessible à l'URL {{ url }} (le <<Site>>), est édité par :",
+			"editor": "..."
+		},
+		"publication": {
+			"title": "Directeur de publication",
+			"content": "Le Directeur de la publication du Site est {{ director }}."
+		},
+		"hosting": {
+			"title": "Hébergement",
+			"content": "Le Site est hébergé par la société Vercel, Inc., situé 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis, (contact téléphonique ou email : +15592887060)."
+		},
+		"statistics_handler": {
+			"title": "Gestionnaire des statistiques",
+			"content": "Eulerian Technologies."
+		},
+		"cookies_analytics": {
+			"title": "Cookies de mesure d'audience",
+			"content": "Notre site utilise des cookies de mesure d'audience. Certains de ces cookies sont strictement nécessaires au fonctionnement et aux opérations d'administration courante du site."
+		},
+		"links_and_content": {
+			"title": "Réutilisation des contenus et liens",
+			"licence": "Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous <k1>licence ouverte Etalab 2.0</k1>.",
+			"rights": "Vous êtes notamment libres de les reproduire, copier, modifier, extraire, transformer, communiquer diffuser, redistribuer, publier, transmettre et exploiter sous réserve de mentionner leur source, leur date de dernière mise à jour et ne pas induire en erreur des tiers quant aux informations qui y figurent.",
+			"diffuse_information": "Tout site public ou privé est autorisé à établir, sans autorisation préalable, un lien (y compris profond) vers les informations diffusées sur ce site."
+		},
+		"accessibility": {
+			"title": "Accessibilité",
+			"content": "Le Site est développé selon les recommandations du Référentiel général d'amélioration de l'accessibilité (RGAA) et les normes W3C. Nous nous sommes engagés à améliorer en permanence l’accessibilité de nos contenus pour que l’accès à l’information soit facilité."
+		}
 	}
 }
