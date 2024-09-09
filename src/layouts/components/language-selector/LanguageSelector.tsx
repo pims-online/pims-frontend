@@ -22,6 +22,7 @@ export default function LanguageSelector(props: Props) {
 		_i18n.changeLanguage(nextValue);
 		setUseLang({ useLang: () => nextValue });
 		setPimsLocale(nextValue);
+		localStorage.setItem('i18nextLng', nextValue);
 	};
 
 	if (props.selectorKind === 'desktop') {
