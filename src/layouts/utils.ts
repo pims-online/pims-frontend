@@ -9,7 +9,7 @@ export const removeStepInHash = () => {
 export const useScrollToTop = () => {
 	const scrollToTop = () => {
 		if (window) {
-			setTimeout(() => window.scrollTo({ top: 150, behavior: 'smooth' }), 100);
+			setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
 		}
 	};
 	return scrollToTop;

@@ -28,7 +28,7 @@ export default function SiteMapPage() {
 			<h2>{t('title')}</h2>
 			<ul className="fr-py-4v">
 				{pages.map((item) => (
-					<li>
+					<li key={`site-map-item-${item.i18nkey}`}>
 						<a href={item.href}>{t(item.i18nkey)}</a>
 					</li>
 				))}
