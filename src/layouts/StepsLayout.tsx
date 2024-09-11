@@ -1,7 +1,7 @@
 import { useState, Dispatch, SetStateAction } from 'react';
 
 // ----- UTILS -----
-import { useScrollToTop } from './utils';
+import { useScrollToTop, setStepInHash, removeStepInHash } from './utils';
 
 // ----- LAYOUT COMPONENTS -----
 import Stepper from './components/stepper/Stepper';
@@ -27,16 +27,19 @@ export default function StepsLayout(props: Props) {
 
 	const navigateToFinalScreen = () => {
 		setCurrentIndex(SCREENS.FINAL_SCREEN);
+		removeStepInHash();
 		scrollToTop();
 	};
 
 	const navigateToInformationScreen = () => {
 		setCurrentIndex(SCREENS.INFORMATION_SCREEN);
+		setStepInHash(SCREENS.INFORMATION_SCREEN);
 		scrollToTop();
 	};
 
 	const navigateToEmergencyKitScreen = () => {
 		setCurrentIndex(SCREENS.EMERGENCY_KIT_SCREEN);
+		setStepInHash(SCREENS.EMERGENCY_KIT_SCREEN);
 		scrollToTop();
 	};
 

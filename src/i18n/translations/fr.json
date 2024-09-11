@@ -272,7 +272,7 @@
 		"information": {
 			"title": "Je m'informe sur les sites dédiés",
 			"items": {
-				"item_1": "Je m'informe sur les effets et les menaces : <k1>www.lien.gouv.fr</k1>",
+				"item_1": "Je m'informe sur les effets et les menaces : <k1>www.georisques.gouv.fr</k1>, <k1>www.info.gouv.fr/risques</k1>",
 				"item_2": "Je m'informe sur les mesures de préservation du bâti : <k1>www.lien.gouv.fr</k1>"
 			}
 		}
@@ -319,7 +319,7 @@
 			"introducer": "Vous pouvez dès à présent le télécharger et le partager autour de vous.",
 			"download": "Je télécharge mon PIMS",
 			"share": "Je partage mon PIMS",
-			"copyToClipboard": "Le lien a été correctement été copié dans le presse-papiers."
+			"copyToClipboard": "Le lien a été correctement copié dans le presse-papiers."
 		},
 		"goBackHome": "Retourner à l'écran d'accueil"
 	},

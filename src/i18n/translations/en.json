@@ -272,7 +272,7 @@
 		"information": {
 			"title": "I get information from dedicated sites",
 			"items": {
-				"item_1": "I get information on effects and threats: <k1>www.lien.gouv.fr</k1>",
+				"item_1": "I get information on effects and threats: <k1>www.georisques.gouv.fr</k1>, <k1>www.info.gouv.fr/risques</k1>",
 				"item_2": "I get information on building preservation measures: <k1>www.lien.gouv.fr</k1>"
 			}
 		}

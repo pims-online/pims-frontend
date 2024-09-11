@@ -18,19 +18,15 @@ export default function RootLayout() {
 	const [currentIndex, setCurrentIndex] = useState(currentIndexInitValue);
 	const scrollToTop = useScrollToTop();
 
-	if (currentIndex >= 1 && currentIndex <= 5) {
-		setStepInHash(currentIndex);
-	} else {
-		removeStepInHash();
-	}
-
 	const navigateToFirstStep = () => {
 		setCurrentIndex(1);
+		setStepInHash(1);
 		scrollToTop();
 	};
 
 	const navigateToHomeScreen = () => {
 		setCurrentIndex(0);
+		removeStepInHash();
 		scrollToTop();
 	};
 	return (
