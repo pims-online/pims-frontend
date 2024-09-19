@@ -35,6 +35,9 @@ export type AppContextValues = {
 	// State to manage the identifiers of the risks identified around the address
 	riskIdList: Array<string> | undefined;
 	setRiskIdList: Dispatch<SetStateAction<Array<string> | undefined>>;
+	// State to manage eligibility to iode pastille
+	iodePastilleEligibility: string;
+	setIodePastilleEligibility: Dispatch<SetStateAction<string>>;
 	// State to manage the gathering place
 	gatheringPlace: string;
 	setGatheringPlace: Dispatch<SetStateAction<string>>;
@@ -83,5 +86,6 @@ export const APP_CONTEXT_DEFAULT_VALUES = {
 		franceInfo: [],
 		franceBleu: [],
 	} as RadioFrequencies,
+	iodePastilleEligibility: '',
 	pimsFileName: '',
 } as AppContextValues;

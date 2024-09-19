@@ -42,6 +42,10 @@
 		"gathering_place": {
 			"title": "Lieu de regroupement",
 			"hint": "En cas d'évacuation, le lieu de regroupement est"
+		},
+		"iode_pastille": {
+			"title": "Vous êtes éligible à la pastille d'iode !",
+			"description": "Votre commune se situe dans le périmètre de l'Installation Nucléaire de Base de {{ inb }}. Assurez-vous d'avoir récupéré vos pastilles d'iode auprès de votre pharmacie."
 		}
 	},
 	"risks": {

@@ -32,6 +32,8 @@ export default function AppContextProvider({
 	const [riskIdList, setRiskIdList] = useState<Array<string> | undefined>(
 		APP_CONTEXT_DEFAULT_VALUES.riskIdList
 	);
+	const [iodePastilleEligibility, setIodePastilleEligibility] =
+		useState<string>(APP_CONTEXT_DEFAULT_VALUES.iodePastilleEligibility);
 	const [gatheringPlace, setGatheringPlace] = useState<string>(
 		APP_CONTEXT_DEFAULT_VALUES.gatheringPlace
 	);
@@ -69,6 +71,8 @@ export default function AppContextProvider({
 		setInseeCode,
 		riskIdList,
 		setRiskIdList,
+		iodePastilleEligibility,
+		setIodePastilleEligibility,
 		gatheringPlace,
 		setGatheringPlace,
 		kitListChecked,

@@ -6,6 +6,7 @@ import GeorisqueAddressInput from './GeorisqueAddressInput';
 import DisplayRiskListAll from './DisplayRiskListAll';
 import DisplayRiskListAround from './DisplayRiskListAround';
 import GatheringPlaceInput from './GatheringPlaceInput';
+import IodePastilleEligibility from './iode-pastille-eligibility/IodePastilleEligibility';
 
 type Props = {
 	setIsNavigateNextLocked: (nextValue: boolean) => void;
@@ -33,6 +34,7 @@ export default function InformationScreen(props: Props) {
 		<div>
 			<GeorisqueAddressInput />
 			<DisplayRiskListAround riskIdList={riskIdList} />
+			<IodePastilleEligibility />
 			<DisplayRiskListAll />
 			<GatheringPlaceInput
 				gatheringPlace={gatheringPlace}
