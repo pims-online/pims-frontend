@@ -366,5 +366,26 @@
 		"main": "Home - Online Procedures",
 		"site_map": "Site Map",
 		"legal_information": "Legal Information"
+	},
+	"accessibility_page": {
+		"title": "Accessibility Statement",
+		"date": "Established on September 20, 2024.",
+		"basep_commitment": "The Public Alert, Awareness, and Education Bureau is committed to making its service accessible, in accordance with Article 47 of Law No. 2005-102 of February 11, 2005.",
+		"declaration": "This accessibility statement applies to the <k1>Digital Individual Safety Plan</k1> teleprocedure (https://pims-frontend.vercel.app).",
+		"conformity": {
+			"title": "Compliance status",
+			"description": "The <k1>Digital Individual Safety Plan</k1> is <k1>non-compliant</k1> with the <k2>RGAA</k2>."
+		},
+		"right_of_recourse": {
+			"title": "Right of recourse",
+			"description": "This procedure should be used in the following case: you have reported an accessibility issue to the website administrator that prevents you from accessing content or one of the services on the portal, and you have not received a satisfactory response.",
+			"actions": {
+				"placeholder": "You can:",
+				"defense": "Write a message to the <k1>Defender of Rights</k1>",
+				"delegate": "Contact <k1>the regional delegate of the Defender of Rights in your area</k1>",
+				"send_letter": "Send a letter by mail (free, no stamp required):"
+			}
+		},
+		"generator": "This accessibility statement was created on September 20, 2024, using the <k1>Accessibility Statement Generator by BetaGouv</k1>."
 	}
 }

@@ -1,3 +1,20 @@
+/* ----- Page ----- */
+.pims-components__page {
+	padding: 64px 128px;
+}
+
+@media (max-width: 992px) {
+	.pims-components__page {
+		padding: 64px;
+	}
+}
+
+@media (max-width: 680px) {
+	.pims-components__page {
+		padding: 32px;
+	}
+}
+
 /* ----- Title & Subtitle ----- */
 
 .pims-components__title {

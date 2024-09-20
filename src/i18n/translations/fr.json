@@ -366,5 +366,26 @@
 		"main": "Accueil - Télé procédure",
 		"site_map": "Plan du site",
 		"legal_information": "Mentions légales"
+	},
+	"accessibility_page": {
+		"title": "Déclaration d’accessibilité",
+		"date": "Établie le 20 septembre 2024.",
+		"basep_commitment": "Le Bureau de l'Alerte, de la Sensibilisation et de l'Education des Publics s’engage à rendre son service accessible, conformément à l’article 47 de la loi n° 2005-102 du 11 février 2005.",
+		"declaration": "Cette déclaration d’accessibilité s’applique à la téléprocédure <k1>Plan Individuel de Mise en Sureté dématérialisé</k1> (https://pims-frontend.vercel.app).",
+		"conformity": {
+			"title": "État de conformité",
+			"description": "Le <k1>Plan Individuel de Mise en Sureté dématérialisé</k1> est <k1>non conforme</k1> avec le <k2>RGAA</k2>."
+		},
+		"right_of_recourse": {
+			"title": "Voie de recours",
+			"description": "Cette procédure est à utiliser dans le cas suivant : vous avez signalé au responsable du site internet un défaut d’accessibilité qui vous empêche d’accéder à un contenu ou à un des services du portail et vous n’avez pas obtenu de réponse satisfaisante.",
+			"actions": {
+				"placeholder": "Vous pouvez :",
+				"defense": "Écrire un message au <k1>Défenseur des droits</k1>",
+				"delegate": "Contacter <k1>le délégué du Défenseur des droits dans votre région</k1>",
+				"send_letter": "Envoyer un courrier par la poste (gratuit, ne pas mettre de timbre) :"
+			}
+		},
+		"generator": "Cette déclaration d’accessibilité a été créé le 20 septembre 2024 grâce au <k1>Générateur de Déclaration d’Accessibilité de BetaGouv</k1>."
 	}
 }
