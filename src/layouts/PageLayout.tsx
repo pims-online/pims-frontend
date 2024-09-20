@@ -2,6 +2,7 @@ import { useIsDark } from '@codegouvfr/react-dsfr/useIsDark';
 
 import Header from './components/header/Header';
 import Footer from './components/Footer';
+import { ConsentBannerAndConsentManagement } from './components/consentManagement';
 
 type Props = {
 	children: React.ReactNode;
@@ -20,6 +21,7 @@ export default function PageLayout(props: Props) {
 	const { isDark } = useIsDark();
 	return (
 		<div className={isDark ? 'pims-dark' : 'pims-light'} id={applicationId}>
+			<ConsentBannerAndConsentManagement />
 			<Header isWidget={useWidgetHeader} />
 			{props.children}
 			{!isWidget && <Footer />}
