@@ -365,7 +365,9 @@
 		"title": "Site Map",
 		"main": "Home - Online Procedures",
 		"site_map": "Site Map",
-		"legal_information": "Legal Information"
+		"legal_information": "Legal Information",
+		"accessibility": "Accessibility statement",
+		"privacy_policy": "Privacy policy"
 	},
 	"accessibility_page": {
 		"title": "Accessibility Statement",

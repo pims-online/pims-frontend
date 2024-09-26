@@ -365,7 +365,9 @@
 		"title": "Plan du site",
 		"main": "Accueil - Télé procédure",
 		"site_map": "Plan du site",
-		"legal_information": "Mentions légales"
+		"legal_information": "Mentions légales",
+		"accessibility": "Déclaration d'accessibilité",
+		"privacy_policy": "Politique de confidentialité"
 	},
 	"accessibility_page": {
 		"title": "Déclaration d’accessibilité",
