@@ -1,7 +1,11 @@
 import { Footer as FooterDSFR } from '@codegouvfr/react-dsfr/Footer';
 import { headerFooterDisplayItem } from '@codegouvfr/react-dsfr/Display';
 
-import { HREF_ROUTE_LEGAL_INFORMATION, HREF_ROUTE_SITE_MAP, HREF_ROUTE_ACCESSIBILITY } from '@/providers';
+import {
+	HREF_ROUTE_LEGAL_INFORMATION,
+	HREF_ROUTE_SITE_MAP,
+	HREF_ROUTE_ACCESSIBILITY,
+} from '@/providers';
 
 import {
 	FooterConsentManagementItem,
@@ -13,7 +17,7 @@ export default function Footer() {
 		<FooterDSFR
 			accessibility="partially compliant"
 			accessibilityLinkProps={{
-				href: HREF_ROUTE_ACCESSIBILITY
+				href: HREF_ROUTE_ACCESSIBILITY,
 			}}
 			contentDescription="A COMPLETER AVEC LE BASEP"
 			termsLinkProps={{

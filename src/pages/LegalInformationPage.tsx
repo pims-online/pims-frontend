@@ -1,13 +1,19 @@
+import { useEffect } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { Container } from '@/components';
 
-const Title = ({ text }: { text: string }) => <h2>{text}</h2>;
-const Subtitle = ({ text }: { text: string }) => <h4>{text}</h4>;
+const Title = ({ text }: { text: string }) => <h1>{text}</h1>;
+const Subtitle = ({ text }: { text: string }) => <h2>{text}</h2>;
 
 export default function LegalInformationPage() {
 	const { t } = useTranslation('legal_information_page');
+
+	useEffect(() => {
+		document.title = `${t('title')} | PIMS`;
+	}, [t]);
+
 	return (
-		<section className="pims-layouts__container">
+		<section className="pims-components__page">
 			<Title text={t('title')} />
 			<Container>
 				<Subtitle text={t('edition.title')} />
