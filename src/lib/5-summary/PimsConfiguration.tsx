@@ -20,6 +20,8 @@ export default function PimsConfiguration() {
 					value: pimsFileName,
 					onChange: (e) => setPimsFileName(e.currentTarget.value),
 				}}
+				data-fr-analytics-rating
+				id="pims-step-5__input-filename"
 			/>
 		</Container>
 	);

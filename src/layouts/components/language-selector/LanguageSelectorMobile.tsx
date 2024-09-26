@@ -37,6 +37,8 @@ export default function LanguageSelectorMobile(props: Props) {
 						},
 					]}
 					className="fr-ml-2w"
+					data-fr-analytics-rating
+					id="pims-layouts__radio-button-change-locale-mobile"
 				/>
 			</div>
 		</nav>

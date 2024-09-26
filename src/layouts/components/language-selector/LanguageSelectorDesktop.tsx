@@ -18,6 +18,8 @@ export default function LanguageSelectorDesktop(props: Props) {
 					aria-controls="translate-1177"
 					aria-expanded="false"
 					priority="tertiary"
+					data-fr-analytics-rating
+					id="pims-layouts__button-change-locale-desktop"
 				>
 					{currentLanguage === LOCALE_FR && 'FR'}
 					{currentLanguage === LOCALE_EN && 'EN'}

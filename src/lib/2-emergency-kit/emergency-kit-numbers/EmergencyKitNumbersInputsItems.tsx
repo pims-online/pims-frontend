@@ -95,6 +95,8 @@ export default function EmergencyKitNumbersInputsItems(props: Props) {
 						className={clsx('fr-ml-1w', 'pims-emergency-kit__input-container', {
 							'pims-emergency-kit__input-container-with-hint': !!input.hintText,
 						})}
+						data-fr-analytics-rating
+						id={`pims-step-2__input-useful-number-${input.kitNumbersKey}`}
 					/>
 				</li>
 			))}

@@ -24,6 +24,8 @@ export default function EmergencyKitStorage(props: Props) {
 					value: props.storage,
 					onChange: (e) => props.setStorage(e.currentTarget.value),
 				}}
+				data-fr-analytics-rating
+				id="pims-step-2__input-emergency-kit-storage"
 			/>
 		</Container>
 	);

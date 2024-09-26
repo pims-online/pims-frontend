@@ -44,12 +44,14 @@ export default function InformationCheck(props: Props) {
 			<InformationCheckItem
 				subtitle={t('information_check.items.address')}
 				onClickModify={navigateToInformationScreen}
+				itemId="address"
 			>
 				{address}
 			</InformationCheckItem>
 			<InformationCheckItem
 				subtitle={t('information_check.items.gathering_place')}
 				onClickModify={navigateToInformationScreen}
+				itemId="gathering-place"
 			>
 				{gatheringPlace || (
 					<i>{t('information_check.items.gathering_place_unknown')}</i>
@@ -58,12 +60,14 @@ export default function InformationCheck(props: Props) {
 			<InformationCheckItem
 				subtitle={t('information_check.items.kit_storage')}
 				onClickModify={navigateToEmergencyKitScreen}
+				itemId="emergency-kit-storage"
 			>
 				{emergencyKitStorage}
 			</InformationCheckItem>
 			<InformationCheckItem
 				subtitle={t('information_check.items.useful_numbers.subtitle')}
 				onClickModify={navigateToEmergencyKitScreen}
+				itemId="useful-numbers"
 			>
 				<span className="pims-components__arrowed-list">
 					{usefulNumberList.map((translation) => (

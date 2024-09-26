@@ -47,7 +47,13 @@ export default function FinalButton(props: Props) {
 			flexboxAlignment="center"
 			flexboxDirection="column"
 		>
-			<Button onClick={onClickReset} size="medium" priority="secondary">
+			<Button
+				onClick={onClickReset}
+				size="medium"
+				priority="secondary"
+				data-fr-analytics-rating
+				id="pims-step-6__button-go-back-to-home"
+			>
 				{props.buttonTitle}
 			</Button>
 		</Container>

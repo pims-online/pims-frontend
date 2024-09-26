@@ -8,6 +8,7 @@ type Props = {
 	subtitle: string;
 	children: NonNullable<React.ReactNode>;
 	onClickModify: () => void;
+	itemId: string;
 };
 
 export default function InformationCheckItem(props: Props) {
@@ -19,7 +20,12 @@ export default function InformationCheckItem(props: Props) {
 			<Highlight size="lg" classes={{ root: 'fr-ml-0' }}>
 				{props.children}
 			</Highlight>
-			<Button onClick={props.onClickModify} priority="secondary">
+			<Button
+				onClick={props.onClickModify}
+				priority="secondary"
+				data-fr-analytics-rating
+				id={`pims-step-5__button-modify-${props.itemId}`}
+			>
 				{t('information_check.modify_button')}
 			</Button>
 		</Container>

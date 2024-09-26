@@ -27,6 +27,8 @@ export default function StartButton(props: Props) {
 				size="medium"
 				onClick={props.navigateToFirstStep}
 				priority="primary"
+				data-fr-analytics-rating
+				id="pims-step-0__button-start"
 			>
 				{t('start_button.text')}
 			</Button>

@@ -40,6 +40,8 @@ export default function EmergencyKitListing(props: Props) {
 							},
 						},
 					]}
+					data-fr-analytics-rating
+					id="pims-step-2__checkbox-emergency-kit-read"
 				/>
 				<p className="fr-mb-0">
 					{`${t('kit_listing.checkbox')} `}

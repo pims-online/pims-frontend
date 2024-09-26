@@ -61,6 +61,8 @@ export default function FinalizeButton(props: Props) {
 				disabled={isProcessing}
 				size="large"
 				className="fr-mb-3v"
+				data-fr-analytics-rating
+				id="pims-step-5__button-generate-pims"
 			>
 				{t('finalize_button.title')}
 			</Button>

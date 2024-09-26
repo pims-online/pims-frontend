@@ -74,6 +74,8 @@ export default function AlertSystemsPlayers() {
 						},
 					},
 				]}
+				data-fr-analytics-rating
+				id="pims-step-3__button-play-alert-sound"
 			/>
 			<audio controls src={selectedMedia} autoPlay></audio>
 		</Container>

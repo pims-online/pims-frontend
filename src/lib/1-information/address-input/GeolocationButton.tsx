@@ -73,6 +73,8 @@ export default function GeolocationButton(props: Props) {
 				onClick={handleGetGeolocation}
 				priority="secondary"
 				className="fr-mr-2w"
+				data-fr-analytics-rating
+				id="pims-step-1__button-use-current-geolocation"
 			>
 				{t('get_geolocation')}
 			</Button>

@@ -21,6 +21,8 @@ export default function GatheringPlaceInput(props: Props) {
 					value: props.gatheringPlace,
 					onChange: (e) => props.setGatheringPlace(e.currentTarget.value),
 				}}
+				data-fr-analytics-rating
+				id="pims-step-1__input-gathering-place"
 			/>
 		</Container>
 	);

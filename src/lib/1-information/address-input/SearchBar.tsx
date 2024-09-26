@@ -63,6 +63,8 @@ export default function SearchBar(props: Props) {
 					onKeyDown={handleKeyDown}
 				/>
 			)}
+			data-fr-analytics-rating
+			id="pims-step-1__input-address-search-bar"
 		/>
 	);
 }

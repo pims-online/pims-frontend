@@ -59,6 +59,8 @@ export default function Navigator(props: Props) {
 				},
 			]}
 			className="fr-mt-10v"
+			data-fr-analytics-rating
+			id="pims-layouts__button-navigator"
 		/>
 	);
 }

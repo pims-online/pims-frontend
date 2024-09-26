@@ -36,8 +36,16 @@ export default function FinalActions() {
 					target: '_blank',
 					rel: 'noopener noreferrer',
 				}}
+				data-fr-analytics-rating
+				id="pims-step-6__download-file"
 			/>
-			<Button onClick={handleCopyToClipboard} size="medium" priority="primary">
+			<Button
+				onClick={handleCopyToClipboard}
+				size="medium"
+				priority="primary"
+				data-fr-analytics-rating
+				id="pims-step-6__button-share-link"
+			>
 				{t('actions.share')}
 			</Button>
 		</Container>

@@ -4,10 +4,10 @@ import { HREF_ROUTE_PRIVACY_POLICY } from '@/providers/constants';
 
 /*
 const prEulerianApi = startEulerianAnalytics({
-    "domain": "zpzs.next-demo.react-dsfr.fr",
+    "domain": "pims-frontend.vercel.app",
     "site": {
         "environment": process.env.NODE_ENV === "development" ? "development" : "production",
-        "entity": "Direction interministeriel du numérique"
+        "entity": "Bureau de l'Alerte, de la Sensibilisation et de l'Education des Publics"
     }
 });
 */

@@ -40,7 +40,12 @@ export default function FrAlertDiscovery() {
 				flexboxAlignment="center"
 				flexboxDirection="column"
 			>
-				<Button priority="tertiary" onClick={onClickShowAlertDiscovery}>
+				<Button
+					priority="tertiary"
+					onClick={onClickShowAlertDiscovery}
+					data-fr-analytics-rating
+					id="pims-step-3__button-show-alert-example"
+				>
 					{t('fr_alert_discovery.button')}
 				</Button>
 			</Container>
