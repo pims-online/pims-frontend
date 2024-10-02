@@ -8,7 +8,7 @@
 	},
 	"header": {
 		"service_title": "Plan Individuel de Mise en Sureté dématérialisé",
-		"service_tagline": "Créé par le Bureau de l'Alerte, de la Sensibilisation et de l'Education des Publics (BASEP)",
+		"service_tagline": "Prêts et parés, en quelques minutes",
 		"widget_headline": "Téléchargez votre PIMS dématérialisé"
 	},
 	"common": {
@@ -277,7 +277,7 @@
 			"title": "Je m'informe sur les sites dédiés",
 			"items": {
 				"item_1": "Je m'informe sur les effets et les menaces : <k1>www.georisques.gouv.fr</k1>, <k1>www.info.gouv.fr/risques</k1>",
-				"item_2": "Je m'informe sur les mesures de préservation du bâti : <k1>www.lien.gouv.fr</k1>"
+				"item_2": "Je m'informe sur les mesures de préservation du bâti : <k1>www.georisques.gouv.fr/me-preparer-me-proteger/les-conseils-pour-reduire-la-vulnerabilite-de-ma-maison</k1>"
 			}
 		}
 	},

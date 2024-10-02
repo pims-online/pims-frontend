@@ -8,7 +8,7 @@
 	},
 	"header": {
 		"service_title": "Dematerialized Individual Safety Plan",
-		"service_tagline": "Created by the Bureau of Alert, Awareness, and Public Education (BASEP)",
+		"service_tagline": "Ready and set, in just a few minutes",
 		"widget_headline": "Download your dematerialized PIMS"
 	},
 	"common": {
@@ -277,7 +277,7 @@
 			"title": "I get information from dedicated sites",
 			"items": {
 				"item_1": "I get information on effects and threats: <k1>www.georisques.gouv.fr</k1>, <k1>www.info.gouv.fr/risques</k1>",
-				"item_2": "I get information on building preservation measures: <k1>www.lien.gouv.fr</k1>"
+				"item_2": "I get information on building preservation measures: <k1>www.georisques.gouv.fr/me-preparer-me-proteger/les-conseils-pour-reduire-la-vulnerabilite-de-ma-maison</k1>"
 			}
 		}
 	},
