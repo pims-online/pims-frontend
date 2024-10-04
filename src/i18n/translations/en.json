@@ -389,5 +389,82 @@
 			}
 		},
 		"generator": "This accessibility statement was created on September 20, 2024, using the <k1>Accessibility Statement Generator by BetaGouv</k1>."
+	},
+	"privacy_policy_page": {
+		"title": "Privacy Policy",
+		"introduction": {
+			"data_analysis": "To provide an optimal user experience, the site <k1>{{ domain }}</k1> processes personal information.",
+			"law": "In accordance with <k1>Law No. 78-17 of January 6, 1978</k1> concerning data processing, files, and freedoms, as well as the General Data Protection Regulation (GDPR), we collect and publish personal data. We inform you of the rights you have over your personal data and the measures we take to protect it."
+		},
+		"rights": {
+			"title": "Exercising Your Rights",
+			"introduction": "For any information or to exercise your data protection rights, you can contact the Data Protection Officer at the Ministry of the Interior (with a copy of your ID if exercising your rights):",
+			"via_email": "via the following email address:",
+			"via_letter": "or by mail at the following address:",
+			"data_policy": "All personal data collected is treated with the strictest confidentiality. In particular, state services are committed to respecting the confidentiality of emails transmitted through electronic messaging. Emails and email addresses are only kept for as long as necessary to process them.",
+			"contact_cnil": "In the event of a dispute regarding the exercise of your rights, or if you believe your claim concerns a violation of the Data Protection Law, you may contact the National Commission on Informatics and Liberty (CNIL) at the following contacts:"
+		},
+		"cookies": {
+			"title": "Trackers and Cookies",
+			"introduction": {
+				"cookies_creation": "When browsing our platform <k1>{{ domain }}</k1>, cookies are placed on your computer, mobile, or tablet.",
+				"use_case": "We use different types of cookies to secure our site, measure its traffic, and also to offer videos, sharing buttons, content from social platforms, animated and interactive content, and, more broadly, to improve your browsing experience."
+			},
+			"definition": {
+				"title": "Definition of a Cookie",
+				"content_1": "A cookie is a small text file placed on your hard drive by the server of the visited site or by a third-party server (advertising network or web analytics service). A cookie allows a visitor to be recognized when they return to a website.",
+				"content_2": "Technically, a cookie recognizes a machine, not an individual user. A cookie can only be used by the server of the domain that placed it. Cookies are managed by your web browser.",
+				"content_3": "Cookies allow automatic access to personalized pages without needing to log in or identify revisits. They store user data to facilitate navigation and enable certain features."
+			},
+			"pims_cookies": {
+				"title": "Cookies Used",
+				"banner": "During your first visit to the site <k1>{{ domain }}</k1>, a banner informs you about the presence of these cookies and invites you to make your choice. Cookies are only placed if you accept them. You can adjust cookie settings at any time by accessing the 'Cookie Management' option at the bottom of each page of the site. You can also refuse cookies by configuring your browser settings.",
+				"analytics": {
+					"title": "Audience Measurement Cookies",
+					"content_1": "To better serve you and improve the user experience on our site, we measure its traffic using a solution that employs cookies. The collected data provides only anonymous statistical data about site visits (number of page views, number of visits, return frequency, etc.)."
+				}
+			},
+			"opposition": {
+				"title": "How to Block Cookies via Your Browser",
+				"deactivation": "You can choose to disable all cookies at any time, even those necessary for the website's operation. However, your user experience may be degraded. If you wish to disable only non-essential cookies, use our cookie management tool.",
+				"deactivation_per_browser": "Here are the procedures to block cookie creation from your browser settings:"
+			}
+		},
+		"data_policy": {
+			"title": "Data Policy",
+			"object": {
+				"title": "Purpose of the Processing",
+				"content_1": "By personal data, we mean any information relating to an identified or identifiable individual on the site <k1>{{ domain }}</k1>.",
+				"content_2": "The legal basis for the processing, as provided in Article 6 of the General Data Protection Regulation (GDPR), is as follows: the processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the data controller."
+			},
+			"rights": {
+				"title": "Rights of Data Subjects",
+				"law": "In accordance with all applicable regulations, you have rights concerning your data. These rights may vary depending on the type of data involved.",
+				"right_access": {
+					"title": "Right of Access",
+					"description": "The right of access is exercised under the conditions outlined in Article 15 of the GDPR. You can make a request to know the data we hold about you, and obtain a copy."
+				},
+				"right_information": {
+					"title": "Right to Information",
+					"description": "You have the right to be informed at any time, clearly, transparently, and comprehensibly, about how your data is processed."
+				},
+				"right_rectification": {
+					"title": "Right to Rectification",
+					"description": "Any incomplete or incorrect data concerning you can be corrected at your request. You can also supplement your data at any time by providing additional information."
+				},
+				"right_deletion": {
+					"title": "Right to Erasure",
+					"description": "The right to erasure does not apply under Article 17 3. b) of the GDPR."
+				},
+				"right_limit_treatment": {
+					"title": "Right to Restrict Processing",
+					"description": "The right to restrict processing is exercised under the conditions outlined in Article 18 of the GDPR."
+				},
+				"right_opposition": {
+					"title": "Right to Object",
+					"description": "If you exercise this right, the Ministry of the Interior and Overseas may ask you for reasons related to your particular situation and may oppose your request with compelling and legitimate reasons that override your claim, in accordance with Article 21-1 of the GDPR."
+				}
+			}
+		}
 	}
 }
