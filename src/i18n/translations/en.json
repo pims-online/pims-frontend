@@ -331,7 +331,7 @@
 		"title": "Legal Information",
 		"edition": {
 			"title": "Site Edition",
-			"url": "The present site, accessible at the URL {{ url }} (the <<Site>>), is published by:",
+			"url": "The present site, accessible at the URL {{- domain }} (the <<Site>>), is published by:",
 			"editor": "..."
 		},
 		"publication": {
@@ -373,7 +373,7 @@
 		"title": "Accessibility Statement",
 		"date": "Established on September 20, 2024.",
 		"basep_commitment": "The Public Alert, Awareness, and Education Bureau is committed to making its service accessible, in accordance with Article 47 of Law No. 2005-102 of February 11, 2005.",
-		"declaration": "This accessibility statement applies to the <k1>Digital Individual Safety Plan</k1> teleprocedure (https://pims-frontend.vercel.app).",
+		"declaration": "This accessibility statement applies to the <k1>Digital Individual Safety Plan</k1> teleprocedure ({{- url }}).",
 		"conformity": {
 			"title": "Compliance status",
 			"description": "The <k1>Digital Individual Safety Plan</k1> is <k1>non-compliant</k1> with the <k2>RGAA</k2>."
@@ -393,7 +393,7 @@
 	"privacy_policy_page": {
 		"title": "Privacy Policy",
 		"introduction": {
-			"data_analysis": "To provide an optimal user experience, the site <k1>{{ domain }}</k1> processes personal information.",
+			"data_analysis": "To provide an optimal user experience, the site <k1>{{- domain }}</k1> processes personal information.",
 			"law": "In accordance with <k1>Law No. 78-17 of January 6, 1978</k1> concerning data processing, files, and freedoms, as well as the General Data Protection Regulation (GDPR), we collect and publish personal data. We inform you of the rights you have over your personal data and the measures we take to protect it."
 		},
 		"rights": {
@@ -407,7 +407,7 @@
 		"cookies": {
 			"title": "Trackers and Cookies",
 			"introduction": {
-				"cookies_creation": "When browsing our platform <k1>{{ domain }}</k1>, cookies are placed on your computer, mobile, or tablet.",
+				"cookies_creation": "When browsing our platform <k1>{{- domain }}</k1>, cookies are placed on your computer, mobile, or tablet.",
 				"use_case": "We use different types of cookies to secure our site, measure its traffic, and also to offer videos, sharing buttons, content from social platforms, animated and interactive content, and, more broadly, to improve your browsing experience."
 			},
 			"definition": {
@@ -418,7 +418,7 @@
 			},
 			"pims_cookies": {
 				"title": "Cookies Used",
-				"banner": "During your first visit to the site <k1>{{ domain }}</k1>, a banner informs you about the presence of these cookies and invites you to make your choice. Cookies are only placed if you accept them. You can adjust cookie settings at any time by accessing the 'Cookie Management' option at the bottom of each page of the site. You can also refuse cookies by configuring your browser settings.",
+				"banner": "During your first visit to the site <k1>{{- domain }}</k1>, a banner informs you about the presence of these cookies and invites you to make your choice. Cookies are only placed if you accept them. You can adjust cookie settings at any time by accessing the 'Cookie Management' option at the bottom of each page of the site. You can also refuse cookies by configuring your browser settings.",
 				"analytics": {
 					"title": "Audience Measurement Cookies",
 					"content_1": "To better serve you and improve the user experience on our site, we measure its traffic using a solution that employs cookies. The collected data provides only anonymous statistical data about site visits (number of page views, number of visits, return frequency, etc.)."
@@ -434,7 +434,7 @@
 			"title": "Data Policy",
 			"object": {
 				"title": "Purpose of the Processing",
-				"content_1": "By personal data, we mean any information relating to an identified or identifiable individual on the site <k1>{{ domain }}</k1>.",
+				"content_1": "By personal data, we mean any information relating to an identified or identifiable individual on the site <k1>{{- domain }}</k1>.",
 				"content_2": "The legal basis for the processing, as provided in Article 6 of the General Data Protection Regulation (GDPR), is as follows: the processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the data controller."
 			},
 			"rights": {

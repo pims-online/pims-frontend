@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { Container } from '@/components';
 
+const FRONTEND_DOMAIN = import.meta.env.VITE_APP_DOMAIN;
+
 const Title = ({ text }: { text: string }) => <h1>{text}</h1>;
 const Subtitle = ({ text }: { text: string }) => <h2>{text}</h2>;
 
@@ -15,9 +17,10 @@ export default function LegalInformationPage() {
 	return (
 		<section className="pims-components__page">
 			<Title text={t('title')} />
+			<hr />
 			<Container>
 				<Subtitle text={t('edition.title')} />
-				<p>{t('edition.url', { url: 'www.pims-frontend.vercel.app' })}</p>
+				<p>{t('edition.url', { domain: FRONTEND_DOMAIN })}</p>
 				<p>{t('edition.editor')}</p>
 			</Container>
 			<Container>

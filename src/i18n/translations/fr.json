@@ -331,7 +331,7 @@
 		"title": "Mentions légales",
 		"edition": {
 			"title": "Édition du site",
-			"url": "Le présent site, accessible à l'URL {{ url }} (le <<Site>>), est édité par :",
+			"url": "Le présent site, accessible à l'URL {{- domain }} (le <<Site>>), est édité par :",
 			"editor": "..."
 		},
 		"publication": {
@@ -373,7 +373,7 @@
 		"title": "Déclaration d’accessibilité",
 		"date": "Établie le 20 septembre 2024.",
 		"basep_commitment": "Le Bureau de l'Alerte, de la Sensibilisation et de l'Education des Publics s’engage à rendre son service accessible, conformément à l’article 47 de la loi n° 2005-102 du 11 février 2005.",
-		"declaration": "Cette déclaration d’accessibilité s’applique à la téléprocédure <k1>Plan Individuel de Mise en Sureté dématérialisé</k1> (https://pims-frontend.vercel.app).",
+		"declaration": "Cette déclaration d’accessibilité s’applique à la téléprocédure <k1>Plan Individuel de Mise en Sureté dématérialisé</k1> ({{- url }}).",
 		"conformity": {
 			"title": "État de conformité",
 			"description": "Le <k1>Plan Individuel de Mise en Sureté dématérialisé</k1> est <k1>non conforme</k1> avec le <k2>RGAA</k2>."
@@ -393,7 +393,7 @@
 	"privacy_policy_page": {
 		"title": "Politique de confidentialité",
 		"introduction": {
-			"data_analysis": "Afin d’offrir une expérience utilisateur appropriée, le site <k1>{{ domain }}</k1> est amené à traiter des informations personnelles.",
+			"data_analysis": "Afin d’offrir une expérience utilisateur appropriée, le site <k1>{{- domain }}</k1> est amené à traiter des informations personnelles.",
 			"law": "Conformément à la <k1>loi 78-17 du 6 janvier 1978</k1> relative à l’informatique, aux fichiers et aux libertés et au Règlement général sur la protection des données (RGPD), nous collectons et publions des données personnelles. Nous vous informons des droits dont vous disposez sur les données vous concernant et des mesures que nous mettons en œuvre pour les protéger."
 		},
 		"rights": {
@@ -407,7 +407,7 @@
 		"cookies": {
 			"title": "Traceurs et cookies",
 			"introduction": {
-				"cookies_creation": "Lors de la consultation de notre plateforme <k1>{{ domain }}</k1>, des cookies sont déposés sur votre ordinateur, votre mobile ou votre tablette.",
+				"cookies_creation": "Lors de la consultation de notre plateforme <k1>{{- domain }}</k1>, des cookies sont déposés sur votre ordinateur, votre mobile ou votre tablette.",
 				"use_case": "Nous utilisons différents cookies pour sécuriser notre site, mesurer sa fréquentation mais également pour vous proposer des vidéos, des boutons de partage, des remontées de contenus de plateformes sociales, des contenus animés et interactifs et plus largement pour améliorer votre expérience de navigation."
 			},
 			"definition": {
@@ -418,7 +418,7 @@
 			},
 			"pims_cookies": {
 				"title": "Cookies utilisés",
-				"banner": "À l’occasion de votre première visite sur le site <k1>{{ domain }}</k1>, un bandeau vous informe de la présence de ces cookies et vous invite à indiquer votre choix. Les cookies ne sont déposés que si vous les acceptez. Vous pouvez à tout moment paramétrer ces cookies en vous rendant sur l’item « Gestion des cookies » situé en bas de chaque page du site. Vous pouvez en outre refuser ces cookies en configurant les paramètres de votre navigateur.",
+				"banner": "À l’occasion de votre première visite sur le site <k1>{{- domain }}</k1>, un bandeau vous informe de la présence de ces cookies et vous invite à indiquer votre choix. Les cookies ne sont déposés que si vous les acceptez. Vous pouvez à tout moment paramétrer ces cookies en vous rendant sur l’item « Gestion des cookies » situé en bas de chaque page du site. Vous pouvez en outre refuser ces cookies en configurant les paramètres de votre navigateur.",
 				"analytics": {
 					"title": "Cookies de mesure d'audience",
 					"content_1": "Afin de mieux vous servir et d’améliorer l’expérience utilisateur sur notre site, nous mesurons son audience grâce à une solution utilisant la technologie des cookies. Les données collectées permettent de fournir uniquement des données statistiques anonymes de fréquentation (le nombre de pages vues, le nombre de visites, leur fréquence de retour,...)."
@@ -434,7 +434,7 @@
 			"title": "Politique des données",
 			"object": {
 				"title": "Objet du traitement",
-				"content_1": "Par données personnelles, nous entendons toute information se rapportant à une personne physique identifiée ou identifiable sur le site <k1>{{ domain }}</k1>.",
+				"content_1": "Par données personnelles, nous entendons toute information se rapportant à une personne physique identifiée ou identifiable sur le site <k1>{{- domain }}</k1>.",
 				"content_2": "La base de licéité telle que prévue à l’article 6 du Règlement général sur la protection des données (RGPD) fondant le traitement mis en œuvre est la suivante : les traitements sont nécessaires à l’exécution d’une mission d’intérêt public ou relevant de l’autorité publique dont est investi le responsable du traitement."
 			},
 			"rights": {

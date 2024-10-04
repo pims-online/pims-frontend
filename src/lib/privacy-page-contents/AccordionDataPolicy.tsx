@@ -1,6 +1,9 @@
 import { type TFunction } from 'i18next';
 import { Trans } from 'react-i18next';
 
+const FRONTEND_DOMAIN = import.meta.env.VITE_APP_DOMAIN;
+const FRONTEND_URL = import.meta.env.VITE_APP_URL;
+
 type Props = {
 	t: TFunction;
 };
@@ -29,11 +32,11 @@ export default function AccordionDataPolicy(props: Props) {
 							<a
 								target="_blank"
 								rel="noopener noreferrer"
-								href="https:/pims-frontend.vercel.app"
+								href={FRONTEND_URL}
 							/>
 						),
 					}}
-					values={{ domain: 'pims-frontend.vercel.app' }}
+					values={{ domain: FRONTEND_DOMAIN }}
 				/>
 			</p>
 			<p>{t('data_policy.object.content_2')}</p>

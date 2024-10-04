@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 
+const FRONTEND_URL = import.meta.env.VITE_APP_URL;
+
 export default function AccessibilityPage() {
 	const { t } = useTranslation('accessibility_page');
 
@@ -20,6 +22,9 @@ export default function AccessibilityPage() {
 					i18nKey="declaration"
 					components={{
 						k1: <strong />,
+					}}
+					values={{
+						url: FRONTEND_URL,
 					}}
 				/>
 			</p>

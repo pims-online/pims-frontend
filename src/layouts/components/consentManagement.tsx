@@ -3,8 +3,9 @@ import { createConsentManagement } from '@codegouvfr/react-dsfr/consentManagemen
 import { HREF_ROUTE_PRIVACY_POLICY } from '@/providers/constants';
 
 /*
+const FRONTEND_DOMAIN = import.meta.env.VITE_APP_DOMAIN;
 const prEulerianApi = startEulerianAnalytics({
-    "domain": "pims-frontend.vercel.app",
+    "domain": FRONTEND_DOMAIN,
     "site": {
         "environment": process.env.NODE_ENV === "development" ? "development" : "production",
         "entity": "Bureau de l'Alerte, de la Sensibilisation et de l'Education des Publics"
