@@ -16,6 +16,7 @@ export default function FinalizeButton(props: Props) {
 	const { t } = useTranslation('summary_screen');
 	const [isProcessing, setIsProcessing] = useState(false);
 	const {
+		address,
 		pimsLocale,
 		pimsFileName,
 		usefulNumbers,
@@ -24,12 +25,14 @@ export default function FinalizeButton(props: Props) {
 		radioFrequencies,
 		setApiResponse,
 		gatheringPlace,
+		inseeCode,
 	} = useContext(AppContext);
 
 	const handleFinalizeButton = async () => {
 		setIsProcessing(true);
 
 		const params = {
+			address,
 			locale: pimsLocale,
 			filename: pimsFileName,
 			usefulNumbers,
@@ -38,6 +41,7 @@ export default function FinalizeButton(props: Props) {
 			radioFrequencies,
 			screenWidth: window.innerWidth,
 			gatheringPlace,
+			inseeCode,
 		};
 
 		const isSuccess = await generatePims(params, setApiResponse);

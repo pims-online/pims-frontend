@@ -5,6 +5,7 @@ import type { AppContextValues } from '../../providers';
 const BACKEND_DOMAIN = import.meta.env.VITE_BACKEND_URL;
 
 export type PimsParams = {
+	address: string;
 	usefulNumbers: AppContextValues['usefulNumbers'];
 	riskIdList: Array<string>;
 	emergencyKitStorage: string;
@@ -13,6 +14,7 @@ export type PimsParams = {
 	locale: AppContextValues['pimsLocale'];
 	filename: string;
 	screenWidth: number;
+	inseeCode: number | string;
 };
 
 type ApiResponse = AppContextValues['apiResponse'];
