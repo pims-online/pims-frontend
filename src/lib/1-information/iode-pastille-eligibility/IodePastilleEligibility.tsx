@@ -1,6 +1,6 @@
-import { Alert } from '@codegouvfr/react-dsfr/Alert';
 import { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Alert } from '@codegouvfr/react-dsfr/Alert';
 
 import { AppContext } from '@/providers';
 
@@ -37,13 +37,23 @@ export default function IodePastilleEligibility() {
 			{isFetchingAPI ? (
 				<CircularProgress color="blue" size="medium" />
 			) : (
-				<Alert
-					severity="warning"
-					title={t('iode_pastille.title')}
-					description={t('iode_pastille.description', {
-						inb: iodePastilleEligibility,
-					})}
-				/>
+				<>
+					<Alert
+						severity="warning"
+						title={t('iode_pastille.title')}
+						description={t('iode_pastille.description', {
+							inb: iodePastilleEligibility,
+						})}
+					/>
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://www.sante.fr/campagne-distribution-iode"
+						className="fr-mt-2v"
+					>
+						{t('iode_pastille.pharmacy_map')}
+					</a>
+				</>
 			)}
 		</Container>
 	);

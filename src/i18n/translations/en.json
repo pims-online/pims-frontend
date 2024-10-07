@@ -45,7 +45,8 @@
 		},
 		"iode_pastille": {
 			"title": "You are eligible for the iodine tablet!",
-			"description": "Your commune is located within the perimeter of the {{ inb }} Basic Nuclear Facility. Make sure you have collected your iodine tablets from your pharmacy."
+			"description": "Your commune is located within the perimeter of the {{ inb }} Basic Nuclear Facility. Make sure you have collected your iodine tablets from a pharmacy.",
+			"pharmacy_map": "Find here the map of pharmacies partnering the iodine tablet distribution campaign."
 		}
 	},
 	"risks": {
