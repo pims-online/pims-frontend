@@ -4,7 +4,7 @@ import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
 import { useIsDark } from '@codegouvfr/react-dsfr/useIsDark';
 
 import iconFrAlert from '@/assets/alert-icons/fr_alert.svg';
-import iconSaipLightMode from '@/assets/alert-icons/logo_saip.png';
+import iconSaipLightMode from '@/assets/alert-icons/logo_saip_light_mode.png';
 import iconSaipDarkMode from '@/assets/alert-icons/logo_saip_dark_mode.png';
 import mediaFrAlert from '@/assets/media/sound_fr_alert.mp3';
 import mediaSaip from '@/assets/media/sound_saip.mp3';
