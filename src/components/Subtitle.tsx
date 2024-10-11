@@ -3,5 +3,5 @@ type Props = {
 };
 
 export default function Subtitle(props: Props) {
-	return <h6 className="pims-components__subtitle">{props.text}</h6>;
+	return <h6 className="pims-components__subtitle fr-mb-4v">{props.text}</h6>;
 }

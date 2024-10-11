@@ -1,20 +1,14 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
-import { useIsDark } from '@codegouvfr/react-dsfr/useIsDark';
 
-import iconFrAlert from '@/assets/alert-icons/fr_alert.svg';
-import iconSaipLightMode from '@/assets/alert-icons/logo_saip_light_mode.png';
-import iconSaipDarkMode from '@/assets/alert-icons/logo_saip_dark_mode.png';
-import mediaFrAlert from '@/assets/media/sound_fr_alert.mp3';
-import mediaSaip from '@/assets/media/sound_saip.mp3';
 
 import { Container } from '@/components';
 
 export default function AlertSystemsPlayers() {
 	const { t } = useTranslation('alert_screen');
 	const [selectedMedia, setSelectedMedia] = useState('');
-	const { isDark } = useIsDark();
+	
 
 	const configFrAlert = {
 		translationKey: 'fr_alert',
@@ -23,10 +17,10 @@ export default function AlertSystemsPlayers() {
 	};
 	const configSaip = {
 		translationKey: 'saip',
-		icon: isDark ? iconSaipDarkMode : iconSaipLightMode,
+		icon: 
 		media: mediaSaip,
 	};
-	const imgSide = 24;
+	
 
 	return (
 		<Container flexboxDirection="column" flexboxAlignment="center">
@@ -63,7 +57,7 @@ export default function AlertSystemsPlayers() {
 								<img
 									src={configSaip.icon}
 									alt={configSaip.translationKey}
-									width={(imgSide * 632) / 395}
+									width={}
 									height={imgSide}
 									className="fr-mr-1w"
 								/>

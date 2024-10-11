@@ -5,7 +5,6 @@ import { Container } from '@/components';
 import WeatherVigilance from './WeatherVigilance';
 import AlertSystems from './alert-systems/AlertSystems';
 import RadioFrequencies from './RadioFrequencies';
-import FrAlertDiscovery from './FrAlertDiscovery';
 
 export default function AlertScreen() {
 	const { t } = useTranslation('alert_screen');
@@ -23,7 +22,6 @@ export default function AlertScreen() {
 			</Container>
 			<WeatherVigilance />
 			<AlertSystems />
-			<FrAlertDiscovery />
 			<RadioFrequencies />
 		</div>
 	);

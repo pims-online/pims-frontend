@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@codegouvfr/react-dsfr/Button';
 import { createModal } from '@codegouvfr/react-dsfr/Modal';
 
-import { Title, Container } from '@/components';
+import { Container } from '@/components';
 
 export default function FrAlertDiscovery() {
 	const { t } = useTranslation('alert_screen');
@@ -33,8 +33,7 @@ export default function FrAlertDiscovery() {
 	};
 
 	return (
-		<Container>
-			<Title text={t('fr_alert_discovery.title')} />
+		<>
 			<Container
 				withoutMarginBottom
 				flexboxAlignment="center"
@@ -49,7 +48,6 @@ export default function FrAlertDiscovery() {
 					{t('fr_alert_discovery.button')}
 				</Button>
 			</Container>
-			<p className="fr-mb-0 fr-mt-6v">{t('public_medias')}</p>
 			<Modal.Component
 				title={notificationTitle}
 				//iconId='fr-icon-alert-fill' icon not working
@@ -68,6 +66,6 @@ export default function FrAlertDiscovery() {
 					))}
 				</>
 			</Modal.Component>
-		</Container>
+		</>
 	);
 }
