@@ -1,14 +1,13 @@
-import InvolvementList from './InvolvementList';
+import InvolvementPartJNR from './InvolvementPartJNR';
+import InvolvementPartParticipation from './InvolvementPartParticipation';
+import InvolvementPartInformation from './InvolvementPartInformation';
 
 export default function InvolvementScreen() {
 	return (
 		<div>
-			<InvolvementList listLength={4} translationKeyPrefix="participation" />
-			<InvolvementList
-				listLength={2}
-				translationKeyPrefix="information"
-				isLast
-			/>
+			<InvolvementPartJNR />
+			<InvolvementPartParticipation />
+			<InvolvementPartInformation />
 		</div>
 	);
 }
