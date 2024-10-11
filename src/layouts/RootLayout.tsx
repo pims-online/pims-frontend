@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 // ----- UTILS -----
-import { setStepInHash, useScrollToTop, removeStepInHash } from './utils';
+import { useScrollToTop } from './utils';
 
 // ----- LAYOUT COMPONENTS -----
 import { SCREENS } from './constants.ts';
@@ -20,13 +20,11 @@ export default function RootLayout() {
 
 	const navigateToFirstStep = () => {
 		setCurrentIndex(1);
-		setStepInHash(1);
 		scrollToTop();
 	};
 
 	const navigateToHomeScreen = () => {
 		setCurrentIndex(0);
-		removeStepInHash();
 		scrollToTop();
 	};
 	return (
