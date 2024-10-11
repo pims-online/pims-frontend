@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
+import { clsx } from 'clsx';
 
 import { useScrollToTop } from '../utils';
 
@@ -28,6 +29,9 @@ export default function Navigator(props: Props) {
 		scrollToTop();
 	};
 
+	const previousButtonHidden = currentStep === 1;
+	const nextButtonHidden = currentStep === 5;
+
 	return (
 		<ButtonsGroup
 			alignment="right"
@@ -46,6 +50,7 @@ export default function Navigator(props: Props) {
 						setNextCurrentStep(currentStep - 1);
 					},
 					disabled: currentStep === 1,
+					className: clsx({ 'button-hidden': previousButtonHidden }),
 				},
 				{
 					children: t('go_next_step'),
@@ -55,7 +60,8 @@ export default function Navigator(props: Props) {
 					onClick: () => {
 						setNextCurrentStep(currentStep + 1);
 					},
-					disabled: isNavigateNextLocked || currentStep === 5,
+					disabled: isNavigateNextLocked || nextButtonHidden,
+					className: clsx({ 'button-hidden': nextButtonHidden }),
 				},
 			]}
 			className="fr-mt-10v"

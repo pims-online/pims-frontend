@@ -55,6 +55,10 @@
 	background-color: var(--background-contrast-blue-france);
 }
 
+.button-hidden {
+	display:none !important;
+}
+
 @media (max-width: 680px) {
 	.pims-layouts__widget-header {
 		display: flex;
