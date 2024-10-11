@@ -3,12 +3,12 @@
 		"step_one": "Je m'informe sur les risques qui m'entourent",
 		"step_two": "Je me prépare à faire face",
 		"step_three": "J'agis en cas d'aléa ou d'alerte",
-		"step_four": "Pour aller plus loin je m'implique",
+		"step_four": "Pour aller plus loin",
 		"step_five": "Je vérifie ma saisie et je génère mon PIMS"
 	},
 	"header": {
-		"service_title": "Plan Individuel de Mise en Sureté dématérialisé",
-		"service_tagline": "Prêts et parés, en quelques minutes",
+		"service_title": "Prêts ? Parés !",
+		"service_tagline": "Plan Individuel de Mise en Sureté",
 		"widget_headline": "Téléchargez votre PIMS dématérialisé"
 	},
 	"common": {
@@ -18,7 +18,7 @@
 	},
 	"home_screen": {
 		"protection": "Se protéger et protéger ses proches en quelques minutes",
-		"summary": "A partir d'une simple adresse en moins de cinq minutes, je génère mon PIMS en version PDF téléchargeable, imprimable, transférable.",
+		"summary": "En moins de cinq minutes, je saisis mon adresse postale et je génère mon PIMS en version PDF téléchargeable, imprimable, transférable.",
 		"risk_identification": "J'identifie les risques, naturels et technologiques, présents dans mon environnement, qui concernent l'ensemble de la population et peuvent affecter chaque citoyen.",
 		"five_steps": "Je me prépare et je prépare mes proches pour nous mettre à l'abri en cas d'urgence, en cinq étapes :",
 		"trustworthy_sources": "Je connais les sources fiables pour rester serein et informé en suivant l'évolution de la situation et les consignes officielles.",
@@ -190,7 +190,8 @@
 				"item_11": "De l'eau potable en quantité (6 litres par personne)",
 				"item_12": "Des photocopies des documents essentiels dans une pochette étanche",
 				"item_13": "Le double des clés de la maison et de la voiture",
-				"item_14": "Des jeux pour occuper le temps"
+				"item_14": "Des jeux pour occuper le temps",
+				"iode_pastille": "Les pastilles d'iode récupérées en pharmacie"
 			},
 			"checkbox": "J'ai pris connaissance du contenu essentiel de mon kit d'urgence"
 		},
@@ -225,9 +226,16 @@
 		"alert_systems": {
 			"title": "L'alerte des populations",
 			"activation": "En cas de risque vital, les autorités peuvent activer :",
-			"systems": {
-				"fr_alert": "le <k1>dispositif FR-Alert</k1> qui diffuse un message directement sur tous les téléphones portables (sans inscription ni téléchargement) avec les consignes associées",
-				"saip": "les <k1>sirènes SAIP</<k1> qui déclenchent un signal sonore de 3 fois 1'41"
+			"fr_alert": {
+				"title": "Le dispositif FR-Alert",
+				"content": "Le <k1>dispositif FR-Alert</k1> diffuse un message directement sur tous les téléphones portables (sans inscription ni téléchargement) avec les consignes associées.",
+				"simulation": "Appuyer sur le bouton suivant pour voir un exemple de notification type FR-Alert :",
+				"button": "Le son FR-Alert"
+			},
+			"saip": {
+				"title": "Les sirènes SAIP",
+				"content": "Les <k1>sirènes SAIP</<k1> déclenchent un signal sonore de 3 fois 1'41.",
+				"button": "Les sirènes SAIP"
 			},
 			"saip_guidelines": {
 				"introduction": "Il faut alors",
@@ -235,13 +243,12 @@
 				"stay_safe": "<k1>Rester à l'abri</k1> et n'évacuez votre domicile que sur ordre des autorités",
 				"listen_carefully": "<k1>Rester à l'écoute</k1> des consignes des autorités"
 			},
-			"buttons_title": {
-				"fr_alert": "Le son FR-Alert",
-				"saip": "Les sirènes SAIP"
+			"public_medias": {
+				"title": "Les médias publics",
+				"content": "Les médias publics seront les relais des autorités en situation d'urgence pour communiquer avec la population."
 			}
 		},
 		"fr_alert_discovery": {
-			"title": "Exemple d'une notification type FR-Alert",
 			"button": "Simuler la notification",
 			"notification": {
 				"title": "FR-ALERT : Alerte extrême 11/11/2023 09:19 AM",
@@ -258,27 +265,30 @@
 				"body_5": "Respectez les consignes des autorités et restez en lieu sûr jusqu'à ce que la fin de l'alerte soit donnée."
 			}
 		},
-		"public_medias": "Les médias publics seront les relais des autorités en situation d'urgence pour communiquer avec la population.",
 		"radio_frequencies": {
 			"title": "Respectez les consignes officielles, vous participerez à votre sécurité et soutiendrez l'action des secours !",
 			"near_station": "Les stations radios près de chez vous :"
 		}
 	},
 	"involvement_screen": {
-		"participation": {
+		"jnr": {
 			"title": "Je participe près de chez moi aux actions de sensibilisation de la journée nationale de la résilience !",
+			"link": "Je trouve les événements proches de chez moi sur <k1>la carte de la JNR</k1>."
+		},
+		"participation": {
+			"title": "Je m'implique",
 			"items": {
 				"item_1": "Je me forme aux gestes qui sauvent auprès des sapeurs-pompiers ou d'une association agréée de sécurité civile",
 				"item_2": "Je deviens pompier volontaire et je participe aux actions de secours",
 				"item_3": "J'intègre la réserve de sécurité civile de ma commune pour participer au soutien et à l'assistance de la population",
-				"item_4": "Je m'inscris sur la plateforme publique du bénévolat : <k1>www.jeveuxaider.gouv.fr</k1>"
+				"item_4": "Je m'inscris sur la plateforme publique du bénévolat : <k1>{{- urlVolunteering }}</k1>"
 			}
 		},
 		"information": {
 			"title": "Je m'informe sur les sites dédiés",
 			"items": {
-				"item_1": "Je m'informe sur les effets et les menaces : <k1>www.georisques.gouv.fr</k1>, <k1>www.info.gouv.fr/risques</k1>",
-				"item_2": "Je m'informe sur les mesures de préservation du bâti : <k1>www.georisques.gouv.fr/me-preparer-me-proteger/les-conseils-pour-reduire-la-vulnerabilite-de-ma-maison</k1>"
+				"item_1": "Je m'informe sur les effets et les menaces : <k1>{{- urlGeorisques }}</k1>, <k2>{{- urlGouvRisks }}</k2>",
+				"item_2": "Je m'informe sur les mesures de préservation du bâti : <k1>{{- urlBuildingPreservations }}</k1>"
 			}
 		}
 	},

@@ -3,12 +3,12 @@
 		"step_one": "I learn about the risks around me",
 		"step_two": "I prepare to face them",
 		"step_three": "I act in case of a hazard or alert",
-		"step_four": "To go further, I get involved",
+		"step_four": "To go further",
 		"step_five": "I check my input and generate my PIMS"
 	},
 	"header": {
-		"service_title": "Dematerialized Individual Safety Plan",
-		"service_tagline": "Ready and set, in just a few minutes",
+		"service_title": "Ready ? Set !",
+		"service_tagline": "Individual Safety Plan",
 		"widget_headline": "Download your dematerialized PIMS"
 	},
 	"common": {
@@ -18,7 +18,7 @@
 	},
 	"home_screen": {
 		"protection": "Protect yourself and your loved ones in a few minutes",
-		"summary": "From a simple address in less than five minutes, I generate my PIMS in a downloadable, printable, transferable PDF version.",
+		"summary": "In less than five minutes, I write my address and I generate my PIMS in a downloadable, printable, transferable PDF version.",
 		"risk_identification": "I identify the natural and technological risks present in my environment that concern the entire population and can affect every citizen.",
 		"five_steps": "I prepare myself and my loved ones to be safe in case of an emergency, in five steps:",
 		"trustworthy_sources": "I know reliable sources to stay calm and informed by following the evolution of the situation and official instructions.",
@@ -190,7 +190,8 @@
 				"item_11": "A sufficient amount of drinking water (6 liters per person)",
 				"item_12": "Photocopies of essential documents in a waterproof pouch",
 				"item_13": "Spare keys for the house and car",
-				"item_14": "Games to pass the time"
+				"item_14": "Games to pass the time",
+				"iode_pastille": "The iodine tablets retrieved in pharmacy "
 			},
 			"checkbox": "I have acknowledged the essential contents of my emergency kit"
 		},
@@ -225,23 +226,29 @@
 		"alert_systems": {
 			"title": "Population alert",
 			"activation": "In case of life-threatening risk, the authorities can activate:",
-			"systems": {
-				"fr_alert": "the <k1>FR-Alert system</k1> which sends a message directly to all mobile phones (without registration or download) with the associated instructions",
-				"saip": "the <k1>SAIP sirens</k1> which trigger a sound signal of 3 times 1'41\""
+			"fr_alert": {
+				"title": "The FR-Alert system",
+				"content": "The <k1>FR-Alert system</k1> sends a message directly to all mobile phones (without registration or download) with the associated instructions.",
+				"simulation": "Push on the following button to see and example of an FR-Alert notification:",
+				"button": "The FR-Alert sound"
+			},
+			"saip": {
+				"title": "The SAIP sirens",
+				"content": "The <k1>SAIP sirens</k1> trigger a sound signal of 3 times 1'41.",
+				"button": "The SAIP sirens"
 			},
 			"saip_guidelines": {
-				"introduction": "Then you must",
+				"introduction": "Then you must:",
 				"no_phone": "<k1>Avoid making phone calls</k1> to keep the networks available for emergency services",
 				"stay_safe": "<k1>Stay sheltered</k1> and only evacuate your home if ordered by the authorities",
 				"listen_carefully": "<k1>Listen carefully</k1> to the authorities' instructions"
 			},
-			"buttons_title": {
-				"fr_alert": "The FR-Alert sound",
-				"saip": "The SAIP sirens"
+			"public_medias": {
+				"title": "Public media",
+				"content": "Public media will be the relay of the authorities in emergency situations to communicate with the population."
 			}
 		},
 		"fr_alert_discovery": {
-			"title": "Example of an FR-Alert notification",
 			"button": "Simulate the notification",
 			"notification": {
 				"title": "FR-ALERT: Extreme Alert 11/11/2023 09:19 AM",
@@ -258,27 +265,30 @@
 				"body_5": "Follow the authorities' instructions and stay in a safe place until the end of the alert is given."
 			}
 		},
-		"public_medias": "Public media will be the relay of the authorities in emergency situations to communicate with the population.",
 		"radio_frequencies": {
 			"title": "Follow the official instructions, you will contribute to your safety and support the actions of emergency services!",
 			"near_station": "Radio stations near you:"
 		}
 	},
 	"involvement_screen": {
-		"participation": {
+		"jnr": {
 			"title": "I participate in awareness actions near my home during the National Resilience Day!",
+			"link": "I find the events around my location on <k1>the NRD map</k1>"
+		},
+		"participation": {
+			"title": "I get involved",
 			"items": {
 				"item_1": "I train in life-saving techniques with firefighters or an accredited civil protection association",
 				"item_2": "I become a volunteer firefighter and participate in rescue operations",
 				"item_3": "I join my municipality's civil protection reserve to participate in the support and assistance of the population",
-				"item_4": "I register on the public volunteer platform: <k1>www.jeveuxaider.gouv.fr</k1>"
+				"item_4": "I register on the public volunteer platform: <k1>{{- urlVolunteering }}</k1>"
 			}
 		},
 		"information": {
 			"title": "I get information from dedicated sites",
 			"items": {
-				"item_1": "I get information on effects and threats: <k1>www.georisques.gouv.fr</k1>, <k1>www.info.gouv.fr/risques</k1>",
-				"item_2": "I get information on building preservation measures: <k1>www.georisques.gouv.fr/me-preparer-me-proteger/les-conseils-pour-reduire-la-vulnerabilite-de-ma-maison</k1>"
+				"item_1": "I get information on effects and threats: <k1>{{- urlGeorisques }}</k1>, <k2>{{- urlGouvRisks }}</k2>",
+				"item_2": "I get information on building preservation measures: <k1>{{- urlBuildingPreservations }}</k1>"
 			}
 		}
 	},
