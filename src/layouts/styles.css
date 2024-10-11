@@ -56,7 +56,7 @@
 }
 
 .button-hidden {
-	display:none !important;
+	display: none !important;
 }
 
 @media (max-width: 680px) {

@@ -4,7 +4,8 @@ Margin and padding should be set with the fr-m*-* and fr-p*-* classes
 */
 
 :root {
-	--pims-orange: #f09939;
+	--pims-orange: #ec952d;
+	--pims-orange-old: #f09939;
 	--pims-orange-transparent: #f0993980;
 	--pims-green-text-light: #b6d094;
 	--pims-green-text-dark: #4f5c3e;
