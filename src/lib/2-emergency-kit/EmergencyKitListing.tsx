@@ -1,6 +1,8 @@
+import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Checkbox } from '@codegouvfr/react-dsfr/Checkbox';
 
+import { AppContext } from '@/providers';
 import { Container, RequiredFieldIndicator } from '@/components';
 
 type Props = {
@@ -10,6 +12,7 @@ type Props = {
 
 export default function EmergencyKitListing(props: Props) {
 	const { t } = useTranslation('emergency_kit_screen');
+	const { iodePastilleEligibility } = useContext(AppContext);
 
 	return (
 		<Container withoutMarginBottom className="fr-mb-8v">
@@ -17,6 +20,11 @@ export default function EmergencyKitListing(props: Props) {
 				{t('kit_listing.title')}
 			</p>
 			<ol className="fr-mb-6v fr-mt-0">
+				{iodePastilleEligibility && (
+					<li key="kit-listing-item-iode-pastille">
+						{t('kit_listing.items.iode_pastille')}
+					</li>
+				)}
 				{[...Array(14).keys()].map((value) => (
 					<li key={`kit-listing-item-${value}`}>
 						{t(`kit_listing.items.item_${value + 1}`)}
