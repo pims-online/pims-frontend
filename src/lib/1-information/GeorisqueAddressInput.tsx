@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import { useTranslation } from 'react-i18next';
 
-import { Container, RequiredFieldIndicator } from '@/components';
+import { Container, RequiredFieldIndicator, Title } from '@/components';
 
 import AddressInput from './address-input/AddressInput';
 
@@ -10,6 +10,7 @@ export default function GeorisqueAddressInput() {
 
 	return (
 		<Container>
+			<Title contained text="J'identifie les risques majeurs qui m'entourent" />
 			<h5
 				className={clsx(
 					'fr-py-2v fr-px-2w',

@@ -17,8 +17,14 @@
 
 /* ----- Title & Subtitle ----- */
 
-.pims-components__title {
+.pims-components__title-text {
 	color: var(--text-title-blue-france);
+}
+
+.pims-components__title-contained {
+	color: var(--pims-orange);
+	background-color: var(--pims-blue);
+	width: fit-content;
 }
 
 .pims-components__subtitle {
@@ -269,4 +275,9 @@
 
 .pims-components__text-red-marianne-inverted {
 	color: var(--pims-red-marianne-inverted);
+}
+
+.pims-components__divider {
+	background-size: 100% 4px;
+	background-image: linear-gradient(0deg, var(--pims-blue), var(--pims-blue));
 }
