@@ -1,27 +1,56 @@
 {
 	"stepper": {
-		"step_one": "Je m'informe sur les risques qui m'entourent",
+		"step_one": "J'identifie les risques majeurs",
 		"step_two": "Je me prépare à faire face",
 		"step_three": "J'agis en cas d'aléa ou d'alerte",
 		"step_four": "Pour aller plus loin",
-		"step_five": "Je vérifie ma saisie et je génère mon PIMS"
+		"step_five": "Je génère mon PIMS"
 	},
 	"header": {
 		"service_title": "Prêts ? Parés !",
 		"service_tagline": "Plan Individuel de Mise en Sureté",
-		"widget_headline": "Téléchargez votre PIMS dématérialisé"
+		"marianne": "Gouvernement",
+		"main_page_link": "Accueil - Téléprocédure PIMS",
+		"footer": "Le PIMS en ligne est développé par la Direction Générale de la Sécurité Civile et de la Gestion des Crises"
 	},
 	"common": {
 		"go_next_step": "Étape suivante",
 		"go_previous_step": "Étape précédente",
+		"go_back_home": "Revenir à l'accueil",
 		"select_language": "Sélectionner la langue"
 	},
 	"home_screen": {
-		"protection": "Se protéger et protéger ses proches en quelques minutes",
-		"summary": "En moins de cinq minutes, je saisis mon adresse postale et je génère mon PIMS en version PDF téléchargeable, imprimable, transférable.",
-		"risk_identification": "J'identifie les risques, naturels et technologiques, présents dans mon environnement, qui concernent l'ensemble de la population et peuvent affecter chaque citoyen.",
-		"five_steps": "Je me prépare et je prépare mes proches pour nous mettre à l'abri en cas d'urgence, en cinq étapes :",
-		"trustworthy_sources": "Je connais les sources fiables pour rester serein et informé en suivant l'évolution de la situation et les consignes officielles.",
+		"protection": "Face aux risques majeurs : se protéger et protéger ses proches en quelques minutes",
+		"online_procedure": {
+			"title": "Votre démarche PIMS en ligne",
+			"content": "Pour se tenir prêt à faire face aux risques majeurs (inondation, tempête, accident industriel, ...), il est important de se préparer. Cette démarche vous permet en moins de cinq minutes :",
+			"items": {
+				"item_1": "d'identifier les risques qui vous entourent,",
+				"item_2": "d'y associer les comportements de sauvegardes appropriés pour être moins vulnérable si un évènement survient,",
+				"item_3": "de constituer votre kit d'urgence,",
+				"item_4": "de vous informer sur les modalités de vigilance et d'alerte de la population,",
+				"item_5": "d'élaborer votre PIMS : un document synthétique en format PDF, avec l'ensemble de ces informations, que vous pourrez enregistrer directement sur votre appareil pour pouvoir le consulter dès que nécessaire."
+			}
+		},
+		"recipient": {
+			"title": "A qui la démarche PIMS en ligne s'adresse-t-elle ?",
+			"content": "Cette démarche s'adresse à tous les citoyens, car chacun est concerné par les risques majeurs, et doit donc être acteur de sa propre sécurité et celle d'autrui. Il s'agit d'une démarche claire, simple et rapide qui peut être faite par tous."
+		},
+		"information": {
+			"title": "Quelles informations sont nécessaires pour réaliser mon PIMS en ligne ?",
+			"content": "Une simple adresse postale est nécessaire. Aucune création de compte ou donnée personnelle ne vous sera demandée."
+		},
+		"steps": {
+			"title": "Quelles sont les étapes pour réaliser mon PIMS en ligne ?",
+			"content": "La démarche PIMS en ligne est simple : elle se compose de cinq étapes et prend moins de cinq minutes.",
+			"items": {
+				"step_one": "<k1>J'identifie</k1> les risques qui m'entourent",
+				"step_two": "<k1>Je me prépare</k1> à faire face",
+				"step_three": "<k1>J'agis</k1> en cas d'aléa ou d'alerte",
+				"step_four": "<k1>Pour aller plus loin</k1>",
+				"step_five": "<k1>Je génère mon PIMS</k1>"
+			}
+		},
 		"mandatory_fields": "Les champs marqués d'une étoile rouge sont obligatoires pour continuer la procédure.",
 		"start_button": {
 			"title": "Prêts ? Parés !",

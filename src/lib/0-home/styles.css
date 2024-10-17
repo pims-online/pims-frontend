@@ -1,8 +1,9 @@
 #pims-home-screen__title-protection {
 	border-top: solid 2px var(--pims-orange);
 	background-color: var(--pims-green-background);
-	color: var(--pims-green-text);
+	color: var(--pims-orange);
 	text-align: center;
+	font-weight: 400;
 }
 
 #pims-home-screen__start-process-title {
@@ -18,4 +19,32 @@
 	white-space: nowrap; /* Prevents subtitle from wrapping */
 	font-stretch: condensed;
 	font-size: 0.75rem;
+}
+
+.pims-home-screen__steps-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 24px;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.pims-home-screen__step-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.pims-home-screen__step-item-text-container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.pims-home-screen__step-item-text-container p {
+	width: fit-content;
+	max-width: 125px;
+	text-align: center;
 }

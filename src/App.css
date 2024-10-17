@@ -11,7 +11,7 @@ Margin and padding should be set with the fr-m*-* and fr-p*-* classes
 	--pims-green-text-light: #b6d094;
 	--pims-green-text-dark: #4f5c3e;
 	--pims-green-background-light: #2d3842;
-	--pims-green-background-dark: #c8c8c8;
+	--pims-green-background-dark: #2d3842; /*#c8c8c8; */
 }
 
 body {

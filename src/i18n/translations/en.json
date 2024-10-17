@@ -1,32 +1,61 @@
 {
 	"stepper": {
-		"step_one": "I learn about the risks around me",
+		"step_one": "I identify major risks",
 		"step_two": "I prepare to face them",
 		"step_three": "I act in case of a hazard or alert",
-		"step_four": "To go further",
-		"step_five": "I check my input and generate my PIMS"
+		"step_four": "For further information",
+		"step_five": "I generate my PIMS"
 	},
 	"header": {
-		"service_title": "Ready ? Set !",
+		"service_title": "Ready? Prepared!",
 		"service_tagline": "Individual Safety Plan",
-		"widget_headline": "Download your dematerialized PIMS"
+		"marianne": "Government",
+		"main_page_link": "Home - PIMS Online Procedure",
+		"footer": "The online PIMS is developed by the Directorate General for Civil Security and Crisis Management"
 	},
 	"common": {
 		"go_next_step": "Next step",
 		"go_previous_step": "Previous step",
+		"go_back_home": "Return to home",
 		"select_language": "Select language"
 	},
 	"home_screen": {
-		"protection": "Protect yourself and your loved ones in a few minutes",
-		"summary": "In less than five minutes, I write my address and I generate my PIMS in a downloadable, printable, transferable PDF version.",
-		"risk_identification": "I identify the natural and technological risks present in my environment that concern the entire population and can affect every citizen.",
-		"five_steps": "I prepare myself and my loved ones to be safe in case of an emergency, in five steps:",
-		"trustworthy_sources": "I know reliable sources to stay calm and informed by following the evolution of the situation and official instructions.",
-		"mandatory_fields": "Fields marked with a red star are mandatory to continue the procedure.",
+		"protection": "Facing major risks: protect yourself and your loved ones in just a few minutes",
+		"online_procedure": {
+			"title": "Your PIMS online process",
+			"content": "To be ready to face major risks (flood, storm, industrial accident, etc.), it is important to prepare. This process allows you in less than five minutes to:",
+			"items": {
+				"item_1": "identify the risks around you,",
+				"item_2": "associate them with appropriate safety behaviors to be less vulnerable if an event occurs,",
+				"item_3": "prepare your emergency kit,",
+				"item_4": "get information on the public alert and vigilance procedures,",
+				"item_5": "create your PIMS: a synthetic document in PDF format, with all this information, which you can save directly to your device for easy access when needed."
+			}
+		},
+		"recipient": {
+			"title": "Who is the online PIMS process for?",
+			"content": "This process is for all citizens, as everyone is concerned by major risks and must play a role in their own safety and that of others. It is a clear, simple, and quick process that can be done by anyone."
+		},
+		"information": {
+			"title": "What information is required to complete my PIMS online?",
+			"content": "Only a postal address is required. No account creation or personal data will be requested."
+		},
+		"steps": {
+			"title": "What are the steps to complete my PIMS online?",
+			"content": "The online PIMS process is simple: it consists of five steps and takes less than five minutes.",
+			"items": {
+				"step_one": "<k1>I identify</k1> the risks around me",
+				"step_two": "<k1>I prepare</k1> to face them",
+				"step_three": "<k1>I act</k1> in case of a hazard or alert",
+				"step_four": "<k1>For further information</k1>",
+				"step_five": "<k1>I generate my PIMS</k1>"
+			}
+		},
+		"mandatory_fields": "Fields marked with a red asterisk are mandatory to proceed with the process.",
 		"start_button": {
-			"title": "Ready? Set!",
+			"title": "Ready? Prepared!",
 			"subtitle": "Individual Safety Plan",
-			"text": "I start my input"
+			"text": "I start my entry"
 		}
 	},
 	"information_screen": {

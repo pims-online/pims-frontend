@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Footer as FooterDSFR } from '@codegouvfr/react-dsfr/Footer';
 import { headerFooterDisplayItem } from '@codegouvfr/react-dsfr/Display';
 
@@ -13,13 +14,14 @@ import {
 } from './consentManagement';
 
 export default function Footer() {
+	const { t } = useTranslation('header');
 	return (
 		<FooterDSFR
 			accessibility="partially compliant"
 			accessibilityLinkProps={{
 				href: HREF_ROUTE_ACCESSIBILITY,
 			}}
-			contentDescription="A COMPLETER AVEC LE BASEP"
+			contentDescription={t('footer')}
 			termsLinkProps={{
 				href: HREF_ROUTE_LEGAL_INFORMATION,
 			}}

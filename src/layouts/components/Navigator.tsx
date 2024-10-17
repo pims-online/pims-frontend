@@ -29,7 +29,6 @@ export default function Navigator(props: Props) {
 		scrollToTop();
 	};
 
-	const previousButtonHidden = currentStep === 1;
 	const nextButtonHidden = currentStep === 5;
 
 	return (
@@ -41,7 +40,8 @@ export default function Navigator(props: Props) {
 			inlineLayoutWhen="always"
 			buttons={[
 				{
-					children: t('go_previous_step'),
+					children:
+						currentStep === 1 ? t('go_back_home') : t('go_previous_step'),
 					iconId: 'fr-icon-arrow-left-s-line',
 					priority: 'secondary',
 					type: 'button',
@@ -49,8 +49,6 @@ export default function Navigator(props: Props) {
 						setIsNavigateNextLocked(false); // Reset
 						setNextCurrentStep(currentStep - 1);
 					},
-					disabled: currentStep === 1,
-					className: clsx({ 'button-hidden': previousButtonHidden }),
 				},
 				{
 					children: t('go_next_step'),

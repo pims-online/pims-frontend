@@ -14,9 +14,9 @@ export default function HeaderGovernment(props: Props) {
 	const { t } = props;
 	return (
 		<HeaderDSFR
-			brandTop={'Gouvernement'}
+			brandTop={t('marianne')}
 			homeLinkProps={{
-				title: 'Accueil - BASEP - PIMS',
+				title: t('main_page_link'),
 				href: HREF_ROUTE_MAIN,
 			}}
 			quickAccessItems={[headerFooterDisplayItem, <LanguageSelector />]}
