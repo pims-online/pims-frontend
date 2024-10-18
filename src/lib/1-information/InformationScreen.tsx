@@ -5,7 +5,6 @@ import { AppContext } from '../../providers';
 import SectionAddressInput from './SectionAddressInput';
 import DisplayRiskListAll from './DisplayRiskListAll';
 import DisplayRiskListAround from './DisplayRiskListAround';
-import GatheringPlaceInput from './GatheringPlaceInput';
 import IodePastilleEligibility from './iode-pastille-eligibility/IodePastilleEligibility';
 
 type Props = {
@@ -14,8 +13,7 @@ type Props = {
 
 export default function InformationScreen(props: Props) {
 	const { setIsNavigateNextLocked } = props;
-	const { riskIdList, coordinates, gatheringPlace, setGatheringPlace } =
-		useContext(AppContext);
+	const { riskIdList, coordinates } = useContext(AppContext);
 
 	useEffect(() => {
 		// Block navigation while the coordinates of the user and the related risks are unknown
@@ -36,10 +34,6 @@ export default function InformationScreen(props: Props) {
 			<DisplayRiskListAround riskIdList={riskIdList} />
 			<IodePastilleEligibility />
 			<DisplayRiskListAll />
-			<GatheringPlaceInput
-				gatheringPlace={gatheringPlace}
-				setGatheringPlace={setGatheringPlace}
-			/>
 		</div>
 	);
 }

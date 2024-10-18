@@ -71,10 +71,6 @@
 			"title": "J'identifie les autres risques majeurs qui existent (facultatif)",
 			"accordion": "Je consulte l'ensemble des risques naturels et technologiques qui existent, en plus de ceux qui concernent mon adresse."
 		},
-		"gathering_place": {
-			"title": "Je choisis un lieu de regroupement (facultatif)",
-			"hint": "En cas d'évacuation, le lieu de regroupement est"
-		},
 		"iode_pastille": {
 			"title": "Vous êtes éligible à la pastille d'iode !",
 			"description": "Votre commune se situe dans le périmètre de l'Installation Nucléaire de Base de {{ inb }}. Assurez-vous d'avoir récupéré vos pastilles d'iode auprès d'une pharmacie.",
@@ -205,9 +201,8 @@
 		}
 	},
 	"emergency_kit_screen": {
-		"kit_preparation": "Je prépare sans attendre un kit d'urgence contenant de quoi vivre en autonomie pendant 3 jours en cas d'évacuation précipitée ou de mise à l'abri.",
 		"kit_listing": {
-			"title": "Voici la liste du contenu essentiel de mon kit d'urgence 72h :",
+			"title": "Je constitue mon kit d'urgence",
 			"items": {
 				"item_1": "Une radio à piles (avec piles de recharge)",
 				"item_2": "Des médicaments",
@@ -231,8 +226,13 @@
 			"accessibility": "Je range mon kit d'urgence 72h dans un endroit facile d'accès et je partage sa localisation avec mes proches",
 			"input_placeholder": "Je saisis ici le lieu de rangement de mon kit d'urgence"
 		},
+		"gathering_place": {
+			"title": "J'identifie mon lieu de regroupement (facultatif)",
+			"hint": "Veuillez saisir l'adresse du lieu de regroupement le plus proche en cas d'évacuation",
+			"placeholder": "Si vous ne connaissez pas votre lieu de regroupement, vous pouvez le solliciter auprès de votre mairie"
+		},
 		"useful_numbers": {
-			"title": "Les numéros utiles",
+			"title": "Je référence les numéros utiles (facultatif)",
 			"emergency": {
 				"subtitle": "À composer en cas d'urgence",
 				"112": "Numéro unique d'appel d'urgence en <k1>Europe</k1> : <k2>112</k2>",

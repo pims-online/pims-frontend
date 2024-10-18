@@ -6,6 +6,7 @@ import EmergencyKitListing from './EmergencyKitListing';
 import EmergencyKitStorage from './EmergencyKitStorage';
 import EmergencyKitNumbers from './emergency-kit-numbers/EmergencyKitNumbers';
 import EmergencyKitNextStepAlert from './EmergencyKitNextStepAlert';
+import GatheringPlaceInput from './GatheringPlaceInput';
 
 type Props = {
 	setIsNavigateNextLocked: (nextValue: boolean) => void;
@@ -21,6 +22,8 @@ export default function EmergencyKitScreen(props: Props) {
 		kitListChecked,
 		setKitListChecked,
 		inseeCode,
+		gatheringPlace,
+		setGatheringPlace,
 	} = useContext(AppContext);
 
 	const isKitStorageSet = !!emergencyKitStorage;
@@ -59,6 +62,10 @@ export default function EmergencyKitScreen(props: Props) {
 			<EmergencyKitStorage
 				storage={emergencyKitStorage}
 				setStorage={setEmergencyKitStorage}
+			/>
+			<GatheringPlaceInput
+				gatheringPlace={gatheringPlace}
+				setGatheringPlace={setGatheringPlace}
 			/>
 			<EmergencyKitNumbers
 				kitNumbers={usefulNumbers}

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Checkbox } from '@codegouvfr/react-dsfr/Checkbox';
 
 import { AppContext } from '@/providers';
-import { Container, RequiredFieldIndicator } from '@/components';
+import { Container, Title, RequiredFieldIndicator } from '@/components';
 
 type Props = {
 	kitListChecked: boolean;
@@ -16,9 +16,7 @@ export default function EmergencyKitListing(props: Props) {
 
 	return (
 		<Container withoutMarginBottom className="fr-mb-8v">
-			<p className="pims-components__list-introducer">
-				{t('kit_listing.title')}
-			</p>
+			<Title text={t('kit_listing.title')} contained />
 			<ol className="fr-mb-6v fr-mt-0">
 				{iodePastilleEligibility && (
 					<li key="kit-listing-item-iode-pastille">

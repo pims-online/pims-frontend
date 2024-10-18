@@ -10,16 +10,20 @@ type Props = {
 };
 
 export default function GatheringPlaceInput(props: Props) {
-	const { t } = useTranslation('information_screen');
+	const { t } = useTranslation('emergency_kit_screen');
 
 	return (
 		<Container>
 			<Title text={t('gathering_place.title')} contained />
+			<p className="pims-components__text-indicator">
+				{t('gathering_place.hint')}
+			</p>
 			<Input
-				label={t('gathering_place.hint')}
+				label=""
 				nativeInputProps={{
 					value: props.gatheringPlace,
 					onChange: (e) => props.setGatheringPlace(e.currentTarget.value),
+					placeholder: t('gathering_place.placeholder'),
 				}}
 				data-fr-analytics-rating
 				id="pims-step-1__input-gathering-place"
