@@ -1,3 +1,16 @@
-export default function Divider() {
-	return <hr className="pims-components__divider" />;
+import { clsx } from 'clsx';
+
+type Props = {
+	className?: string;
+};
+
+export default function Divider(props: Props) {
+	return (
+		<hr
+			className={clsx(
+				'pims-components__divider fr-mb-4v',
+				props.className || ''
+			)}
+		/>
+	);
 }

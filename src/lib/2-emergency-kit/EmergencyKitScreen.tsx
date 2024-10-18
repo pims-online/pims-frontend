@@ -1,6 +1,7 @@
 import { useEffect, useContext } from 'react';
 
-import { AppContext } from '../../providers';
+import { AppContext } from '@/providers';
+import { Divider } from '@/components';
 
 import EmergencyKitListing from './EmergencyKitListing';
 import EmergencyKitStorage from './EmergencyKitStorage';
@@ -63,10 +64,12 @@ export default function EmergencyKitScreen(props: Props) {
 				storage={emergencyKitStorage}
 				setStorage={setEmergencyKitStorage}
 			/>
+			<Divider />
 			<GatheringPlaceInput
 				gatheringPlace={gatheringPlace}
 				setGatheringPlace={setGatheringPlace}
 			/>
+			<Divider />
 			<EmergencyKitNumbers
 				kitNumbers={usefulNumbers}
 				setKitNumbers={setUsefulNumbers}

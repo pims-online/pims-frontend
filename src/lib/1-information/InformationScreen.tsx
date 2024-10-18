@@ -2,6 +2,8 @@ import { useContext, useEffect } from 'react';
 
 import { AppContext } from '../../providers';
 
+import { Divider } from '@/components';
+
 import SectionAddressInput from './SectionAddressInput';
 import DisplayRiskListAll from './DisplayRiskListAll';
 import DisplayRiskListAround from './DisplayRiskListAround';
@@ -33,6 +35,7 @@ export default function InformationScreen(props: Props) {
 			<SectionAddressInput />
 			<DisplayRiskListAround riskIdList={riskIdList} />
 			<IodePastilleEligibility />
+			<Divider />
 			<DisplayRiskListAll />
 		</div>
 	);

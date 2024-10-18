@@ -1,3 +1,5 @@
+import { Divider } from '@/components';
+
 import FinalizeButton from './FinalizeButton';
 import InformationCheck from './InformationCheck';
 import PimsConfiguration from './PimsConfiguration';
@@ -21,6 +23,7 @@ export default function SummaryScreen(props: Props) {
 				navigateToInformationScreen={navigateToInformationScreen}
 				navigateToEmergencyKitScreen={navigateToEmergencyKitScreen}
 			/>
+			<Divider />
 			<PimsConfiguration />
 			<FinalizeButton navigateToFinalScreen={navigateToFinalScreen} />
 		</div>

@@ -284,6 +284,6 @@
 }
 
 .pims-components__divider {
-	background-size: 100% 4px;
+	background-size: 100% 2px;
 	background-image: linear-gradient(0deg, var(--pims-blue), var(--pims-blue));
 }
