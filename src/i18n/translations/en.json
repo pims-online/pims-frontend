@@ -60,22 +60,21 @@
 	},
 	"information_screen": {
 		"address": {
-			"title": "Know the risks near my home",
+			"title": "I identify the major risks around me",
 			"call_to_action": "Please enter your address",
 			"search_bar_label": "Exact address"
 		},
-		"get_geolocation": "Use my current position",
+		"get_geolocation": "Use my current location",
 		"safe_behavior": "Safety behaviors",
-		"no_risks_around": "There are no identified risks around your position.",
-		"see_more_risks": "I check all the natural and technological risks that exist, in addition to those concerning my address.",
-		"gathering_place": {
-			"title": "Gathering place",
-			"hint": "In the event of an evacuation, the gathering place is"
+		"no_risks_around": "No risks have been identified around your location.",
+		"see_more_risks": {
+			"title": "I identify other major risks that exist (optional)",
+			"accordion": "I review all natural and technological risks that exist, in addition to those affecting my address."
 		},
 		"iode_pastille": {
-			"title": "You are eligible for the iodine tablet!",
-			"description": "Your commune is located within the perimeter of the {{ inb }} Basic Nuclear Facility. Make sure you have collected your iodine tablets from a pharmacy.",
-			"pharmacy_map": "Find here the map of pharmacies partnering the iodine tablet distribution campaign."
+			"title": "You are eligible for iodine tablets!",
+			"description": "Your municipality is located within the perimeter of the Basic Nuclear Installation of {{ inb }}. Make sure to collect your iodine tablets from a pharmacy.",
+			"pharmacy_map": "Access the map of partner pharmacies for the iodine tablet distribution campaign."
 		}
 	},
 	"risks": {
@@ -202,138 +201,146 @@
 		}
 	},
 	"emergency_kit_screen": {
-		"kit_preparation": "I prepare without delay an emergency kit containing enough to live autonomously for 3 days in case of sudden evacuation or sheltering.",
 		"kit_listing": {
-			"title": "Here is the list of essential contents for my 72-hour emergency kit:",
+			"title": "I prepare my emergency kit",
 			"items": {
 				"item_1": "A battery-powered radio (with spare batteries)",
 				"item_2": "Medications",
 				"item_3": "A first aid kit (alcohol, bandages, gauze, ...)",
-				"item_4": "Basic tools (multi-tool knife, can opener, ...)",
-				"item_5": "Non-perishable food that does not require cooking (canned goods, baby food jars)",
-				"item_6": "Warm clothes and a survival blanket",
+				"item_4": "Basic tools (multi-tool, can opener, ...)",
+				"item_5": "Non-perishable food that requires no cooking (canned goods, baby food)",
+				"item_6": "Warm clothing and an emergency blanket",
 				"item_7": "A flashlight (with spare batteries, candles, lighter)",
-				"item_8": "A mobile phone charger",
-				"item_9": "Prescription glasses",
+				"item_8": "A phone charger",
+				"item_9": "Your glasses",
 				"item_10": "Cash",
-				"item_11": "A sufficient amount of drinking water (6 liters per person)",
-				"item_12": "Photocopies of essential documents in a waterproof pouch",
-				"item_13": "Spare keys for the house and car",
+				"item_11": "Sufficient drinking water (6 liters per person)",
+				"item_12": "Copies of essential documents in a waterproof pouch",
+				"item_13": "Spare house and car keys",
 				"item_14": "Games to pass the time",
-				"iode_pastille": "The iodine tablets retrieved in pharmacy "
+				"iode_pastille": "Iodine tablets collected from a pharmacy"
 			},
-			"checkbox": "I have acknowledged the essential contents of my emergency kit"
+			"checkbox": "I have reviewed the essential contents of my emergency kit"
 		},
 		"kit_storage": {
-			"accessibility": "I store my 72-hour emergency kit in an easily accessible place and share its location with my loved ones",
-			"input_placeholder": "I enter here the storage location of my emergency kit"
+			"accessibility": "I store my 72-hour emergency kit in an easily accessible location and share its whereabouts with my relatives",
+			"input_placeholder": "Enter here where your emergency kit is stored"
+		},
+		"gathering_place": {
+			"title": "I identify my gathering place (optional)",
+			"hint": "Please enter the address of the nearest gathering place in case of evacuation",
+			"placeholder": "If you're unsure of your gathering place, ask your town hall"
 		},
 		"useful_numbers": {
-			"title": "Useful numbers",
+			"title": "I list useful numbers (optional)",
 			"emergency": {
-				"subtitle": "To dial in case of emergency",
-				"112": "Single emergency call number in <k1>Europe</k1>: <k2>112</k2>",
-				"114": "Emergency call number for the <k1>hearing impaired</k1>: <k2>114</k2>"
+				"subtitle": "To call in case of emergency",
+				"112": "Emergency number for <k1>Europe</k1>: <k2>112</k2>",
+				"114": "Emergency number for the <k1>hearing impaired</k1>: <k2>114</k2>"
 			},
 			"inputs": {
-				"subtitle": "Contact details to be completed",
-				"town_hall": "Town hall:",
+				"subtitle": "Contact details to fill in",
+				"town_hall": "Town Hall:",
 				"insurance": "Insurance:",
 				"relatives": "Relatives:",
 				"others": "Others:",
-				"suggested_number": "Suggested number : {{ suggestedNumber }}"
+				"suggested_number": "Suggested number: {{ suggestedNumber }}"
 			}
 		},
-		"go_to_next_step": "To proceed to the next step, you must have checked that you have acknowledged the contents of the emergency kit, and filled in your kit storage location."
+		"go_to_next_step": "To proceed to the next step, you must check that you have reviewed the emergency kit contents and entered the location where your kit is stored."
 	},
 	"alert_screen": {
-		"crisis": "During the crisis, <k1>I follow the evolution of the situation.</k1>",
+		"alea": "In case of a hazard, the authorities will issue safety instructions either through vigilance or public alert systems. Follow these instructions: you will help ensure your safety and support the efforts of emergency services.",
 		"weather_vigilance": {
-			"title": "Weather vigilance",
-			"awareness": "I monitor the evolution of vigilance:"
+			"title": "I stay aware of weather alerts",
+			"awareness": "I monitor the evolution of weather alerts:"
 		},
 		"alert_systems": {
-			"title": "Population alert",
-			"activation": "In case of life-threatening risk, the authorities can activate:",
+			"title": "I know how to act during a public alert",
+			"activation": "In life-threatening situations, authorities may activate:",
 			"fr_alert": {
 				"title": "The FR-Alert system",
-				"content": "The <k1>FR-Alert system</k1> sends a message directly to all mobile phones (without registration or download) with the associated instructions.",
-				"simulation": "Push on the following button to see and example of an FR-Alert notification:",
-				"button": "The FR-Alert sound"
+				"content": "The <k1>FR-Alert system</k1> sends messages directly to the mobile phones of individuals in a hazard zone. To receive an FR-Alert message, no registration or app download is needed: simply keep your phone on, with an updated operating system, and connected to your network provider.",
+				"simulation": "To simulate receiving an FR-Alert message:",
+				"button": "FR-Alert sound"
 			},
 			"saip": {
-				"title": "The SAIP sirens",
-				"content": "The <k1>SAIP sirens</k1> trigger a sound signal of 3 times 1'41.",
-				"button": "The SAIP sirens"
+				"title": "SAIP sirens",
+				"content": "There are more than <k1>2200 SAIP sirens</k1> across the country. In case of an alert, the SAIP sirens in and around the hazard area will emit a distinctive sound signal of 3 times 41 seconds.",
+				"simulation": "To simulate the SAIP alert sound:",
+				"button": "SAIP sirens"
 			},
 			"saip_guidelines": {
-				"introduction": "Then you must:",
-				"no_phone": "<k1>Avoid making phone calls</k1> to keep the networks available for emergency services",
-				"stay_safe": "<k1>Stay sheltered</k1> and only evacuate your home if ordered by the authorities",
-				"listen_carefully": "<k1>Listen carefully</k1> to the authorities' instructions"
+				"introduction": "In that case:",
+				"no_phone": "<k1>Avoid making phone calls</k1> to keep the lines free for emergency services",
+				"stay_safe": "<k1>Stay indoors</k1> and only evacuate if ordered by authorities",
+				"listen_carefully": "<k1>Listen carefully</k1> to the instructions from authorities"
 			},
 			"public_medias": {
 				"title": "Public media",
-				"content": "Public media will be the relay of the authorities in emergency situations to communicate with the population."
+				"content": "Public media and the social media of government services, Radio France, and France Télévisions are the channels through which authorities communicate with the public during crises."
 			}
 		},
 		"fr_alert_discovery": {
 			"button": "Simulate the notification",
 			"notification": {
 				"title": "FR-ALERT: Extreme Alert 11/11/2023 09:19 AM",
-				"body_1": "ALERT FLOOD",
-				"body_2": "Message from the prefecture of Pas de Calais",
-				"body_3": "Exceptional flood that may exceed historical levels.",
+				"body_1": "FLOOD ALERT",
+				"body_2": "Message from the Prefecture of Pas-de-Calais",
+				"body_3": "Exceptional flooding may exceed historical levels.",
 				"body_4": {
-					"item_1": "1. Move away from watercourses.",
-					"item_2": "2. Seek refuge as high as possible.",
-					"item_3": "3. In case of flooding in your home, turn off water, gas, electricity.",
-					"item_4": "4. Postpone or cancel your travels.",
-					"item_5": "5. Contact 18 in case of extreme necessity (life-threatening emergencies)."
+					"item_1": "1. Stay away from waterways.",
+					"item_2": "2. Seek the highest possible refuge.",
+					"item_3": "3. If your home is flooded, cut off water, gas, and electricity.",
+					"item_4": "4. Postpone or cancel your trips.",
+					"item_5": "5. Call 18 only in case of extreme necessity (life-threatening emergencies)."
 				},
-				"body_5": "Follow the authorities' instructions and stay in a safe place until the end of the alert is given."
+				"body_5": "Follow the authorities' instructions and stay in a safe place until the alert is lifted."
 			}
 		},
 		"radio_frequencies": {
-			"title": "Follow the official instructions, you will contribute to your safety and support the actions of emergency services!",
 			"near_station": "Radio stations near you:"
 		}
 	},
 	"involvement_screen": {
-		"jnr": {
-			"title": "I participate in awareness actions near my home during the National Resilience Day!",
-			"link": "I find the events around my location on <k1>the NRD map</k1>"
+		"jafar": {
+			"title": "I participate in local awareness activities for the Day of Action for Risks (JAFAR)",
+			"content": "JAFAR takes place every year on October 13th and aims, through an open call for online projects, to promote risk awareness actions.",
+			"items": {
+				"item_1": "I declare an awareness action I'm organizing",
+				"item_2": "I find nearby events on <k1>the JAFAR map</k1>"
+			}
 		},
 		"participation": {
 			"title": "I get involved",
 			"items": {
-				"item_1": "I train in life-saving techniques with firefighters or an accredited civil protection association",
+				"item_1": "I get trained in life-saving skills by firefighters or an accredited civil safety association",
 				"item_2": "I become a volunteer firefighter and participate in rescue operations",
-				"item_3": "I join my municipality's civil protection reserve to participate in the support and assistance of the population",
+				"item_3": "I join my town's civil safety reserve to help support and assist the public",
 				"item_4": "I register on the public volunteer platform: <k1>{{- urlVolunteering }}</k1>"
 			}
 		},
 		"information": {
-			"title": "I get information from dedicated sites",
+			"title": "I stay informed through dedicated sites",
 			"items": {
-				"item_1": "I get information on effects and threats: <k1>{{- urlGeorisques }}</k1>, <k2>{{- urlGouvRisks }}</k2>",
-				"item_2": "I get information on building preservation measures: <k1>{{- urlBuildingPreservations }}</k1>"
+				"item_1": "I learn about risks and threats: <k1>{{- urlGeorisques }}</k1>, <k2>{{- urlGouvRisks }}</k2>",
+				"item_2": "I find out about building preservation measures: <k1>{{- urlBuildingPreservations }}</k1>"
 			}
 		}
 	},
 	"summary_screen": {
 		"information_check": {
-			"title": "I verify my data",
-			"warning": "By clicking on the 'Modify' buttons, you will be redirected to the corresponding pages.",
+			"title": "I verify my data (optional)",
+			"modification": "To modify your entries, click 'Modify': you will be redirected to the corresponding step",
 			"modify_button": "Modify",
 			"items": {
 				"address": "I verify my address",
 				"gathering_place": "I verify my gathering place",
-				"gathering_place_unknown": "You have not entered this information",
-				"kit_storage": "I verify the storage location of my 72-hour emergency kit",
+				"unknown": "You have not provided this information.",
+				"kit_storage": "I verify where my 72-hour emergency kit is stored",
 				"useful_numbers": {
-					"subtitle": "I verify the useful numbers",
-					"town_hall": "Town hall: {{ number }}",
+					"subtitle": "I verify useful numbers",
+					"town_hall": "Town Hall: {{ number }}",
 					"insurance": "Insurance: {{ number }}",
 					"relatives": "Relatives: {{ number }}",
 					"others": "Others: {{ number }}"
@@ -341,13 +348,12 @@
 			}
 		},
 		"configuration": {
-			"title": "I configure my PIMS",
-			"name": {
-				"title": "I name my PIMS",
-				"placeholder": "I name my PIMS (home, vacation, grandma's, ...)"
+			"naming": {
+				"title": "I name my PIMS (optional)",
+				"placeholder": "I name my PIMS (home, vacation, grandma, ...)"
 			},
 			"locale": {
-				"title": "I choose the language of my generated PIMS",
+				"title": "I choose the language of my PIMS",
 				"french": "French",
 				"english": "English"
 			}
@@ -358,14 +364,15 @@
 		}
 	},
 	"final_screen": {
-		"success": "Congratulations, your PIMS '{{ customName }}' has been successfully generated in PDF version!",
+		"success": "Congratulations, your PIMS ''{{ customName }}'' has been successfully generated as a PDF!",
+		"success_unnamed": "Congratulations, your PIMS has been successfully generated as a PDF!",
 		"actions": {
-			"introducer": "You can now download it and share it with those around you.",
-			"download": "I download my PIMS",
-			"share": "I share my PIMS",
+			"introducer": "You can now download it and share it with others.",
+			"download": "Download my PIMS",
+			"share": "Share my PIMS with my relatives",
 			"copyToClipboard": "The link has been successfully copied to the clipboard."
 		},
-		"goBackHome": "Go back to the home screen"
+		"goBackHome": "Return to the home screen"
 	},
 	"legal_information_page": {
 		"title": "Legal Information",
