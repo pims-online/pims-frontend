@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 
 import { AppContext } from '../../providers';
 
-import GeorisqueAddressInput from './GeorisqueAddressInput';
+import SectionAddressInput from './SectionAddressInput';
 import DisplayRiskListAll from './DisplayRiskListAll';
 import DisplayRiskListAround from './DisplayRiskListAround';
 import GatheringPlaceInput from './GatheringPlaceInput';
@@ -32,7 +32,7 @@ export default function InformationScreen(props: Props) {
 
 	return (
 		<div>
-			<GeorisqueAddressInput />
+			<SectionAddressInput />
 			<DisplayRiskListAround riskIdList={riskIdList} />
 			<IodePastilleEligibility />
 			<DisplayRiskListAll />

@@ -5,7 +5,7 @@ type Props = {
 	children: React.ReactNode;
 	className?: string;
 	withoutMarginBottom?: boolean;
-	withoutDivider?: boolean;
+	withDivider?: boolean;
 	flexboxAlignment?: 'center' | 'start' | 'responsive';
 	flexboxDirection?: 'column' | 'row' | 'responsive';
 };
@@ -34,7 +34,7 @@ export default function Container(props: Props) {
 			>
 				{props.children}
 			</div>
-			{!props.withoutDivider && <Divider />}
+			{props.withDivider && <Divider />}
 		</>
 	);
 }

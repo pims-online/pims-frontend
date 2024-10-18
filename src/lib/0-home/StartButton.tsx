@@ -15,7 +15,6 @@ export default function StartButton(props: Props) {
 			flexboxAlignment="center"
 			flexboxDirection="column"
 			withoutMarginBottom
-			withoutDivider
 			className="fr-mb-4v"
 		>
 			<h2 id="pims-home-screen__start-process-title">

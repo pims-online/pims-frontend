@@ -31,6 +31,12 @@
 	color: var(--pims-orange);
 }
 
+.pims-components__text-indicator {
+	color: var(--text-title-blue-france);
+	font-weight: 600;
+	width: fit-content;
+}
+
 /* ----- Container ----- */
 
 .pims-components__flexbox-base {
