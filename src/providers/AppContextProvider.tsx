@@ -20,8 +20,10 @@ export default function AppContextProvider({
 }: {
 	children: React.ReactNode;
 }) {
+	const searchParams = new URLSearchParams(window.location.search);
+	const addressFromUrl = searchParams.get('address');
 	const [address, setAddress] = useState<string>(
-		APP_CONTEXT_DEFAULT_VALUES.address
+		addressFromUrl || APP_CONTEXT_DEFAULT_VALUES.address
 	);
 	const [coordinates, setCoordinates] = useState<
 		AppContextValues['coordinates']
