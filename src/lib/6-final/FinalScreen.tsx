@@ -15,9 +15,12 @@ export default function FinalScreen(props: Props) {
 	const { navigateToHomeScreen } = props;
 	const { t } = useTranslation('final_screen');
 	const { pimsFileName } = useContext(AppContext);
+	const title = pimsFileName
+		? t('success', { customName: pimsFileName })
+		: t('success_unnamed');
 	return (
 		<div>
-			<Title text={t('success', { customName: pimsFileName })} />
+			<Title text={title} />
 			<FinalActions />
 			<FinalButton
 				navigateToHomeScreen={navigateToHomeScreen}

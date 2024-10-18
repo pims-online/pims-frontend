@@ -365,10 +365,11 @@
 	},
 	"final_screen": {
 		"success": "Bravo, votre PIMS ''{{ customName }}'' a été correctement généré en version PDF !",
+		"success_unnamed": "Bravo, votre PIMS a été correctement généré en version PDF !",
 		"actions": {
 			"introducer": "Vous pouvez dès à présent le télécharger et le partager autour de vous.",
 			"download": "Je télécharge mon PIMS",
-			"share": "Je partage mon PIMS",
+			"share": "Je partage mon PIMS avec mes proches",
 			"copyToClipboard": "Le lien a été correctement copié dans le presse-papiers."
 		},
 		"goBackHome": "Retourner à l'écran d'accueil"
