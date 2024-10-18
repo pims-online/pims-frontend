@@ -1,11 +1,11 @@
-import InvolvementPartJNR from './InvolvementPartJNR';
+import InvolvementPartJAFAR from './InvolvementPartJAFAR';
 import InvolvementPartParticipation from './InvolvementPartParticipation';
 import InvolvementPartInformation from './InvolvementPartInformation';
 
 export default function InvolvementScreen() {
 	return (
 		<div>
-			<InvolvementPartJNR />
+			<InvolvementPartJAFAR />
 			<InvolvementPartParticipation />
 			<InvolvementPartInformation />
 		</div>

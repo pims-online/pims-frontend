@@ -10,7 +10,7 @@ export default function InvolvementPartParticipation() {
 
 	return (
 		<Container>
-			<Title text={t(`${translationKeyPrefix}.title`)} />
+			<Title text={t(`${translationKeyPrefix}.title`)} contained />
 			<ul className="pims-components__arrowed-list">
 				{[...Array(3).keys()].map((id) => (
 					<li key={`${translationKeyPrefix}-list-item-${id + 1}`}>

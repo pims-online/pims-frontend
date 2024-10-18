@@ -14,7 +14,7 @@ export default function InvolvementPartInformation() {
 
 	return (
 		<Container withoutMarginBottom>
-			<Title text={t(`${translationKeyPrefix}.title`)} />
+			<Title text={t(`${translationKeyPrefix}.title`)} contained />
 			<ul className="pims-components__arrowed-list">
 				<li>
 					<Trans
