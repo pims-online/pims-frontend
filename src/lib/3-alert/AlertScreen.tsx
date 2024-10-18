@@ -1,6 +1,4 @@
-import { useTranslation, Trans } from 'react-i18next';
-
-import { Container } from '@/components';
+import { useTranslation } from 'react-i18next';
 
 import WeatherVigilance from './WeatherVigilance';
 import AlertSystems from './alert-systems/AlertSystems';
@@ -11,15 +9,7 @@ export default function AlertScreen() {
 
 	return (
 		<div>
-			<Container>
-				<Trans
-					t={t}
-					i18nKey="crisis"
-					components={{
-						k1: <b className="pims-components__text-color-orange" />,
-					}}
-				/>
-			</Container>
+			<p>{t('alea')}</p>
 			<WeatherVigilance />
 			<AlertSystems />
 			<RadioFrequencies />

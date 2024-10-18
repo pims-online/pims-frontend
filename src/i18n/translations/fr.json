@@ -250,34 +250,35 @@
 		"go_to_next_step": "Pour passer à l'étape suivante, vous devez avoir coché que vous avez pris connaissance du contenu du kit d'urgence, et rempli votre lieu de rangement de votre kit."
 	},
 	"alert_screen": {
-		"crisis": "Pendant la crise, <k1>je suis l'évolution de la situation.</k1>",
+		"alea": "En cas d'aléa, les autorités diffusent des consignes de sauvegarde soit par le biais de vigilance, soit par les moyens d'alerte de la population. Respectez ces consignes : vous participerez à votre sécurité et vous soutiendrez l'action des secours.",
 		"weather_vigilance": {
-			"title": "Les vigilances météo",
+			"title": "Je suis attentif aux vigilances",
 			"awareness": "Je surveille l'évolution des vigilances :"
 		},
 		"alert_systems": {
-			"title": "L'alerte des populations",
+			"title": "Je sais agir en cas d'alerte de la population",
 			"activation": "En cas de risque vital, les autorités peuvent activer :",
 			"fr_alert": {
 				"title": "Le dispositif FR-Alert",
-				"content": "Le <k1>dispositif FR-Alert</k1> diffuse un message directement sur tous les téléphones portables (sans inscription ni téléchargement) avec les consignes associées.",
-				"simulation": "Appuyer sur le bouton suivant pour voir un exemple de notification type FR-Alert :",
+				"content": "Le <k1>dispositif FR-Alert</k1> permet de diffuser un message directement sur les téléphones portables des personnes présentes sur une zone d'aléa. Pour recevoir un message FR-Alert, aucune inscription ou téléchargement n'est nécessaire : il faut simplement avoir un téléphone allumé, avec un système d'exploitation à jour, et connecté au réseau de son opérateur.",
+				"simulation": "Pour simuler la réception d'un message FR-Alert :",
 				"button": "Le son FR-Alert"
 			},
 			"saip": {
 				"title": "Les sirènes SAIP",
-				"content": "Les <k1>sirènes SAIP</<k1> déclenchent un signal sonore de 3 fois 1'41.",
+				"content": "Il existe plus de <k1>2200 sirènes SAIP</k1> sur l'ensemble du territoire national. En cas d'alerte, les sirènes SAIP sur et à proximité de la zone d'aléa diffusent un signal sonore distinctif de 3 fois 41 secondes.",
+				"simulation": "Pour simuler le signal sonore d'alerte SAIP :",
 				"button": "Les sirènes SAIP"
 			},
 			"saip_guidelines": {
-				"introduction": "Il faut alors",
+				"introduction": "Il faut alors :",
 				"no_phone": "<k1>Éviter de téléphoner</k1> afin de laisser les réseaux disponibles pour les secours",
 				"stay_safe": "<k1>Rester à l'abri</k1> et n'évacuez votre domicile que sur ordre des autorités",
 				"listen_carefully": "<k1>Rester à l'écoute</k1> des consignes des autorités"
 			},
 			"public_medias": {
 				"title": "Les médias publics",
-				"content": "Les médias publics seront les relais des autorités en situation d'urgence pour communiquer avec la population."
+				"content": "Les médias publics et les réseaux sociaux des services de l'Etat, de Radio France et de France Télévisions sont les relais des autorités en situation de crise pour communiquer avec la population."
 			}
 		},
 		"fr_alert_discovery": {
@@ -298,7 +299,6 @@
 			}
 		},
 		"radio_frequencies": {
-			"title": "Respectez les consignes officielles, vous participerez à votre sécurité et soutiendrez l'action des secours !",
 			"near_station": "Les stations radios près de chez vous :"
 		}
 	},

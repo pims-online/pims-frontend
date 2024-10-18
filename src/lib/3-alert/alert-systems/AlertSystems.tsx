@@ -11,7 +11,7 @@ export default function AlertSystems() {
 
 	return (
 		<>
-			<Title text={t('alert_systems.title')} />
+			<Title text={t('alert_systems.title')} contained />
 			<p>{t('alert_systems.activation')} </p>
 			<AlertSystemsFrAlert />
 			<AlertSystemsSaip />

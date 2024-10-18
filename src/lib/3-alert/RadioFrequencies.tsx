@@ -2,7 +2,7 @@ import { useEffect, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { AppContext } from '../../providers';
-import { Title, Container, CircularProgress } from '@/components';
+import { Container, CircularProgress } from '@/components';
 
 import { getRadioFrequencies } from './utils';
 
@@ -29,7 +29,6 @@ export default function RadioFrequencies() {
 
 	return (
 		<Container withoutMarginBottom>
-			<Title text={t('radio_frequencies.title')} />
 			<p className="pims-components__list-introducer">
 				{t('radio_frequencies.near_station')}
 			</p>

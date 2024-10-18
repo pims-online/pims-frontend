@@ -38,6 +38,7 @@ export default function FrAlertDiscovery() {
 				withoutMarginBottom
 				flexboxAlignment="center"
 				flexboxDirection="column"
+				className="fr-mt-4v"
 			>
 				<Button
 					priority="tertiary"

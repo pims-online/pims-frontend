@@ -31,7 +31,11 @@ export default function AudioPlayer(props: Props) {
 	};
 
 	return (
-		<Container flexboxDirection="column" flexboxAlignment="center">
+		<Container
+			flexboxDirection="column"
+			flexboxAlignment="center"
+			withoutMarginBottom
+		>
 			<Button priority="tertiary" className="fr-mb-4v" onClick={onClick}>
 				<p className="pims-alert-screen__alert-systems-players-button">
 					<img

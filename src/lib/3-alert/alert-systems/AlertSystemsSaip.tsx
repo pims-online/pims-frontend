@@ -28,6 +28,7 @@ export default function AlertSystemsSaip() {
 				/>
 			</p>
 			<AlertSystemsSaipGuidelines />
+			<p>{t('alert_systems.saip.simulation')}</p>
 			<AudioPlayer
 				logoAlt="Saip Sound"
 				media={mediaSaip}
