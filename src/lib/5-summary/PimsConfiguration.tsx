@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Input } from '@codegouvfr/react-dsfr/Input';
 
 import { AppContext } from '../../providers';
-import { Container, Title, Subtitle } from '@/components';
+import { Container, Title } from '@/components';
 
 export default function PimsConfiguration() {
 	const { t } = useTranslation('summary_screen');
@@ -11,11 +11,10 @@ export default function PimsConfiguration() {
 
 	return (
 		<Container>
-			<Title text={t('configuration.title')} />
-			<Subtitle text={t('configuration.name.title')} />
+			<Title text={t('configuration.naming.title')} contained />
 			<Input
 				label={undefined}
-				hintText={t('configuration.name.placeholder')}
+				hintText={t('configuration.naming.placeholder')}
 				nativeInputProps={{
 					value: pimsFileName,
 					onChange: (e) => setPimsFileName(e.currentTarget.value),

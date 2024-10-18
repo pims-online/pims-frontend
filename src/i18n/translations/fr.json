@@ -330,13 +330,13 @@
 	},
 	"summary_screen": {
 		"information_check": {
-			"title": "Je vérifie mes données",
-			"warning": "En cliquant sur les boutons 'Modifier', vous serez redirigé vers les pages correspondantes.",
+			"title": "Je vérifie mes données (facultatif)",
+			"modification": "Pour modifier votre saisie, cliquez sur le bouton 'Modifier' : vous serez alors redirigé vers l'étape correspondante",
 			"modify_button": "Modifier",
 			"items": {
 				"address": "Je vérifie mon adresse",
 				"gathering_place": "Je vérifie mon lieu de rassemblement",
-				"gathering_place_unknown": "Vous n'avez pas renseigné cette information.",
+				"unknown": "Vous n'avez pas renseigné cette information.",
 				"kit_storage": "Je vérifie le lieu de rangement de mon kit d'urgence 72h",
 				"useful_numbers": {
 					"subtitle": "Je vérifie les numéros utiles",
@@ -348,9 +348,8 @@
 			}
 		},
 		"configuration": {
-			"title": "Je configure mon PIMS",
-			"name": {
-				"title": "Je nomme mon PIMS",
+			"naming": {
+				"title": "Je nomme mon PIMS (facultatif)",
 				"placeholder": "Je nomme mon PIMS (maison, vacances, mamie, ...)"
 			},
 			"locale": {

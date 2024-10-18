@@ -39,8 +39,8 @@ export default function InformationCheck(props: Props) {
 
 	return (
 		<Container>
-			<Title text={t('information_check.title')} />
-			<p>{t('information_check.warning')}</p>
+			<Title text={t('information_check.title')} contained />
+			<p>{t('information_check.modification')}</p>
 			<InformationCheckItem
 				subtitle={t('information_check.items.address')}
 				onClickModify={navigateToInformationScreen}
@@ -50,12 +50,10 @@ export default function InformationCheck(props: Props) {
 			</InformationCheckItem>
 			<InformationCheckItem
 				subtitle={t('information_check.items.gathering_place')}
-				onClickModify={navigateToInformationScreen}
+				onClickModify={navigateToEmergencyKitScreen}
 				itemId="gathering-place"
 			>
-				{gatheringPlace || (
-					<i>{t('information_check.items.gathering_place_unknown')}</i>
-				)}
+				{gatheringPlace}
 			</InformationCheckItem>
 			<InformationCheckItem
 				subtitle={t('information_check.items.kit_storage')}

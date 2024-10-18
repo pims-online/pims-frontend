@@ -18,7 +18,7 @@ export default function InformationCheckItem(props: Props) {
 		<Container>
 			<Subtitle text={props.subtitle} />
 			<Highlight size="lg" classes={{ root: 'fr-ml-0' }}>
-				{props.children}
+				{props.children || <i>{t('information_check.items.unknown')}</i>}
 			</Highlight>
 			<Button
 				onClick={props.onClickModify}
