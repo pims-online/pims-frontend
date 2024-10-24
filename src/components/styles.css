@@ -1,6 +1,7 @@
 /* ----- Page ----- */
 .pims-components__page {
 	padding: 64px 128px;
+	max-width: 1248px;
 }
 
 @media (max-width: 992px) {

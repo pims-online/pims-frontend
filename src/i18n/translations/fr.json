@@ -26,7 +26,7 @@
 			"content": "Pour se tenir prêt à faire face aux risques majeurs (inondation, tempête, accident industriel, ...), il est important de se préparer. Cette démarche vous permet en moins de cinq minutes :",
 			"items": {
 				"item_1": "d'identifier les risques qui vous entourent,",
-				"item_2": "d'y associer les comportements de sauvegardes appropriés pour être moins vulnérable si un évènement survient,",
+				"item_2": "d'y associer les comportements de sauvegarde appropriés pour être moins vulnérable si un évènement survient,",
 				"item_3": "de constituer votre kit d'urgence,",
 				"item_4": "de vous informer sur les modalités de vigilance et d'alerte de la population,",
 				"item_5": "d'élaborer votre PIMS : un document synthétique en format PDF, avec l'ensemble de ces informations, que vous pourrez enregistrer directement sur votre appareil pour pouvoir le consulter dès que nécessaire."
@@ -34,7 +34,7 @@
 		},
 		"recipient": {
 			"title": "A qui la démarche PIMS en ligne s'adresse-t-elle ?",
-			"content": "Cette démarche s'adresse à tous les citoyens, car chacun est concerné par les risques majeurs, et doit donc être acteur de sa propre sécurité et celle d'autrui. Il s'agit d'une démarche claire, simple et rapide qui peut être faite par tous."
+			"content": "Cette démarche s'adresse à tous les citoyens, car chacun est concerné par les risques majeurs, et doit donc être acteur de sa propre sécurité et de celle d'autrui. Il s'agit d'une démarche claire, simple et rapide qui peut être faite par tous."
 		},
 		"information": {
 			"title": "Quelles informations sont nécessaires pour réaliser mon PIMS en ligne ?",
@@ -88,7 +88,7 @@
 			}
 		},
 		"nuclear_accident": {
-			"title": "Accident nucélaire",
+			"title": "Accident nucléaire",
 			"preventions": {
 				"item_1": "Anticipez en retirant vos comprimés d’iode (gratuits) en pharmacie",
 				"item_2": "Abritez-vous dans un bâtiment clos",
@@ -207,7 +207,7 @@
 				"item_1": "Une radio à piles (avec piles de recharge)",
 				"item_2": "Des médicaments",
 				"item_3": "Une trousse de premiers secours (alcool, pansements, compresses, ...)",
-				"item_4": "Des outils de base (couteau multifonctions, ouvre-boîte, ...)",
+				"item_4": "Des outils de base (couteau multifonction, ouvre-boîte, ...)",
 				"item_5": "De la nourriture non périssable et ne nécessitant pas de cuisson (conserves, petits pots de bébé)",
 				"item_6": "Des vêtements chauds et une couverture de survie",
 				"item_7": "Une lampe torche (avec des piles de recharge, bougies, briquet)",
@@ -227,9 +227,9 @@
 			"input_placeholder": "Je saisis ici le lieu de rangement de mon kit d'urgence"
 		},
 		"gathering_place": {
-			"title": "J'identifie mon lieu de regroupement (facultatif)",
+			"title": "J'identifie le lieu de regroupement à rejoindre en cas d'évacuation (facultatif)",
 			"hint": "Veuillez saisir l'adresse du lieu de regroupement le plus proche en cas d'évacuation",
-			"placeholder": "Si vous ne connaissez pas votre lieu de regroupement, vous pouvez le solliciter auprès de votre mairie"
+			"placeholder": "Information disponible en mairie"
 		},
 		"useful_numbers": {
 			"title": "Je référence les numéros utiles (facultatif)",
@@ -271,10 +271,10 @@
 				"button": "Les sirènes SAIP"
 			},
 			"saip_guidelines": {
-				"introduction": "Il faut alors :",
-				"no_phone": "<k1>Éviter de téléphoner</k1> afin de laisser les réseaux disponibles pour les secours",
-				"stay_safe": "<k1>Rester à l'abri</k1> et n'évacuez votre domicile que sur ordre des autorités",
-				"listen_carefully": "<k1>Rester à l'écoute</k1> des consignes des autorités"
+				"introduction": "En cas de signal d'alerte :",
+				"no_phone": "<k1>Évitez de téléphoner</k1> afin de laisser les réseaux disponibles pour les secours",
+				"stay_safe": "<k1>Restez à l'abri</k1> et n'évacuez votre domicile que sur ordre des autorités",
+				"listen_carefully": "<k1>Restez à l'écoute</k1> des consignes des autorités"
 			},
 			"public_medias": {
 				"title": "Les médias publics",
@@ -299,7 +299,7 @@
 			}
 		},
 		"radio_frequencies": {
-			"near_station": "Les stations radios près de chez vous :"
+			"near_station": "Les stations radio près de chez vous :"
 		}
 	},
 	"involvement_screen": {
@@ -307,7 +307,7 @@
 			"title": "Je participe près de chez moi aux actions de sensibilisation de la Journée d'Action Face Aux Risques",
 			"content": "La JAFAR a lieu chaque année le 13 octobre et vise au travers d'un appel à projet en ligne ouvert à tous, à favoriser les actions de sensibilisations aux risques majeurs.",
 			"items": {
-				"item_1": "Je déclare une action de sensibilisation que j'organise",
+				"item_1": "Je déclare une action de sensibilisation que j'organise sur <k1>la plateforme dédiée</k1>",
 				"item_2": "Je trouve les événements proches de chez moi sur <k1>la carte de la JAFAR</k1>"
 			}
 		},
@@ -331,7 +331,7 @@
 	"summary_screen": {
 		"information_check": {
 			"title": "Je vérifie mes données (facultatif)",
-			"modification": "Pour modifier votre saisie, cliquez sur le bouton 'Modifier' : vous serez alors redirigé vers l'étape correspondante",
+			"modification": "Pour modifier votre saisie, cliquez sur le bouton « Modifier » : vous serez alors redirigé vers l'étape correspondante.",
 			"modify_button": "Modifier",
 			"items": {
 				"address": "Je vérifie mon adresse",

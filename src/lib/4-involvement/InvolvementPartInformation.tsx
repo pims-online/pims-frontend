@@ -3,7 +3,7 @@ import { useTranslation, Trans } from 'react-i18next';
 import { Container, Title } from '@/components';
 
 import {
-	INVOLVEMENT_LINK_GEORISQUES,
+	INVOLVEMENT_LINK_CYBERMALVEILLANCE,
 	INVOLVEMENT_LINK_BUILDING_PRESERVATION,
 	INVOLVEMENT_LINK_GOUV_RISKS,
 } from './constants';
@@ -23,7 +23,7 @@ export default function InvolvementPartInformation() {
 						components={{
 							k1: (
 								<a
-									href={`https://${INVOLVEMENT_LINK_GEORISQUES}`}
+									href={`https://${INVOLVEMENT_LINK_CYBERMALVEILLANCE}`}
 									target="_blank"
 									rel="noopener noreferrer"
 									className="pims-components__text-color-orange"
@@ -39,7 +39,7 @@ export default function InvolvementPartInformation() {
 							),
 						}}
 						values={{
-							urlGeorisques: INVOLVEMENT_LINK_GEORISQUES,
+							urlGeorisques: INVOLVEMENT_LINK_CYBERMALVEILLANCE,
 							urlGouvRisks: INVOLVEMENT_LINK_GOUV_RISKS,
 						}}
 					/>

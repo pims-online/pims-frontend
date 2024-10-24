@@ -227,9 +227,9 @@
 			"input_placeholder": "Enter here where your emergency kit is stored"
 		},
 		"gathering_place": {
-			"title": "I identify my gathering place (optional)",
+			"title": "I identify where to gather in case of evacuation (optional)",
 			"hint": "Please enter the address of the nearest gathering place in case of evacuation",
-			"placeholder": "If you're unsure of your gathering place, ask your town hall"
+			"placeholder": "See information in town hall"
 		},
 		"useful_numbers": {
 			"title": "I list useful numbers (optional)",
@@ -271,7 +271,7 @@
 				"button": "SAIP sirens"
 			},
 			"saip_guidelines": {
-				"introduction": "In that case:",
+				"introduction": "In the event of an alarm:",
 				"no_phone": "<k1>Avoid making phone calls</k1> to keep the lines free for emergency services",
 				"stay_safe": "<k1>Stay indoors</k1> and only evacuate if ordered by authorities",
 				"listen_carefully": "<k1>Listen carefully</k1> to the instructions from authorities"
@@ -307,7 +307,7 @@
 			"title": "I participate in local awareness activities for the Day of Action for Risks (JAFAR)",
 			"content": "JAFAR takes place every year on October 13th and aims, through an open call for online projects, to promote risk awareness actions.",
 			"items": {
-				"item_1": "I declare an awareness action I'm organizing",
+				"item_1": "I declare an awareness action I'm organizing on <k1>the dedicated platform</k1>",
 				"item_2": "I find nearby events on <k1>the JAFAR map</k1>"
 			}
 		},
@@ -331,7 +331,7 @@
 	"summary_screen": {
 		"information_check": {
 			"title": "I verify my data (optional)",
-			"modification": "To modify your entries, click 'Modify': you will be redirected to the corresponding step",
+			"modification": "To modify your entries, click « Modify »: you will be redirected to the corresponding step.",
 			"modify_button": "Modify",
 			"items": {
 				"address": "I verify my address",

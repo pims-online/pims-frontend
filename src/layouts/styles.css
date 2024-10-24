@@ -1,13 +1,15 @@
 /* ----- LAYOUT ----- */
 
-.pims-layouts__container {
-	padding: 32px;
+.pims__main-layout {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-@media (max-width: 680px) {
-	.pims-layouts__container {
-		padding: 16px;
-	}
+.pims-layouts__container {
+	padding: 32px 16px;
+	max-width: 1248px;
+	width: 100%;
 }
 
 /* ----- HEADER ----- */

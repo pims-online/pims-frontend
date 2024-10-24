@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import { useIsDark } from '@codegouvfr/react-dsfr/useIsDark';
 
 import Header from './components/header/Header';
@@ -20,7 +21,10 @@ export default function PageLayout(props: Props) {
 
 	const { isDark } = useIsDark();
 	return (
-		<div className={isDark ? 'pims-dark' : 'pims-light'} id={applicationId}>
+		<div
+			className={clsx('pims__main-layout', isDark ? 'pims-dark' : 'pims-light')}
+			id={applicationId}
+		>
 			<ConsentBannerAndConsentManagement />
 			<Header isWidget={useWidgetHeader} />
 			{props.children}
