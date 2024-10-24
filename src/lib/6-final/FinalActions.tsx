@@ -1,10 +1,11 @@
 import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Download } from '@codegouvfr/react-dsfr/Download';
-import { Button } from '@codegouvfr/react-dsfr/Button';
 
-import { AppContext } from '../../providers';
-import { Container } from '@/components';
+import { AppContext } from '@/providers';
+import { Container, Title } from '@/components';
+
+import FinalShareLink from './FinalShareLink';
 
 export default function FinalActions() {
 	const { t } = useTranslation('final_screen');
@@ -15,16 +16,6 @@ export default function FinalActions() {
 			? `${apiResponse.file_size_mo.toFixed(2)} Mo`
 			: `${apiResponse.file_size_ko.toFixed(2)} ko`;
 
-	const handleCopyToClipboard = () => {
-		navigator.clipboard
-			.writeText(apiResponse.pims_url)
-			.then(() => {
-				alert(t('actions.copyToClipboard'));
-			})
-			.catch((error) => {
-				console.error('Failed to copy: ', error);
-			});
-	};
 	return (
 		<Container>
 			<p>{t('actions.introducer')}</p>
@@ -33,21 +24,15 @@ export default function FinalActions() {
 				label={t('actions.download')}
 				linkProps={{
 					href: apiResponse.pims_url,
-					target: '_blank',
-					rel: 'noopener noreferrer',
+					// target: '_blank',
+					// rel: 'noopener noreferrer',
 				}}
 				data-fr-analytics-rating
 				id="pims-step-6__download-file"
+				className="fr-mb-6v"
 			/>
-			<Button
-				onClick={handleCopyToClipboard}
-				size="medium"
-				priority="primary"
-				data-fr-analytics-rating
-				id="pims-step-6__button-share-link"
-			>
-				{t('actions.share')}
-			</Button>
+			<Title text={t('actions.share')} />
+			<FinalShareLink />
 		</Container>
 	);
 }

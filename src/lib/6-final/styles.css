@@ -1,0 +1,30 @@
+.pims-final-screen__button-list button,
+.pims-final-screen__button-list a {
+	margin-right: 8px;
+	margin-bottom: 8px;
+}
+
+.pims__share-button {
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	border: none;
+	position: relative;
+	padding: 0;
+	cursor: pointer;
+}
+
+.pims__bt-copy-to-clipboard {
+	background-color: #34495e !important;
+}
+
+.pims__bt-sms {
+	background-color: #3385d6 !important;
+	background-image: none !important; /* Override DSFR a/href style */
+}
+
+.pims__bt-sms::after {
+	display: none !important;
+}

@@ -372,6 +372,11 @@
 			"share": "Je partage mon PIMS avec mes proches",
 			"copyToClipboard": "Le lien a été correctement copié dans le presse-papiers."
 		},
+		"share": {
+			"subject": "Plan Individuel de Mise en Sureté",
+			"body": "Je viens de générer un PIMS depuis la plateforme {{- pimsUrl }}. Le voici, n'hésitez pas à regarder et partager : {{- url }}",
+			"body_only": "Je viens de générer mon Plan Individuel de Mise en Sureté depuis la plateforme {{- pimsUrl }}. Le voici, n'hésitez pas à regarder et partager : {{- url }}"
+		},
 		"goBackHome": "Retourner à l'écran d'accueil"
 	},
 	"legal_information_page": {

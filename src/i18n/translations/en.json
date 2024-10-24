@@ -372,6 +372,11 @@
 			"share": "Share my PIMS with my relatives",
 			"copyToClipboard": "The link has been successfully copied to the clipboard."
 		},
+		"share": {
+			"subject": "Individual Safety Plan",
+			"body": "I just generated an ISP from the platform {{- pimsUrl }}. Here it is, feel free to take a look and share: {{- url }}",
+			"body_only": "I just generated my Individual Safety Plan from the platform {{- pimsUrl }}. Here it is, feel free to take a look and share: {{- url }}"
+		},
 		"goBackHome": "Return to the home screen"
 	},
 	"legal_information_page": {

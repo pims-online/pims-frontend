@@ -18,6 +18,7 @@ export default function FinalScreen(props: Props) {
 	const title = pimsFileName
 		? t('success', { customName: pimsFileName })
 		: t('success_unnamed');
+
 	return (
 		<div>
 			<Title text={title} />

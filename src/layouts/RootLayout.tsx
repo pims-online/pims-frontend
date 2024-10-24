@@ -12,7 +12,7 @@ import HomeScreen from '@/lib/0-home/HomeScreen';
 import FinalScreen from '@/lib/6-final/FinalScreen';
 
 export default function RootLayout() {
-	const startIndex = 0;
+	const startIndex = 6;
 	const currentIndexInitValue =
 		import.meta.env.VITE_ENVIRONMENT === 'local' ? startIndex : 0;
 	const [currentIndex, setCurrentIndex] = useState(currentIndexInitValue);
