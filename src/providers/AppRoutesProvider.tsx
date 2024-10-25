@@ -1,10 +1,11 @@
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import LegalInformationPage from '@/pages/LegalInformationPage';
-import MainPage from '@/pages/MainPage';
-import SiteMapPage from '@/pages/SiteMapPage';
-import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
-import AccessibilityPage from '@/pages/AccessibilityPage';
+const MainPage = lazy(() => import('@/pages/MainPage'));
+const LegalInformationPage = lazy(() => import('@/pages/LegalInformationPage'));
+const SiteMapPage = lazy(() => import('@/pages/SiteMapPage'));
+const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicyPage'));
+const AccessibilityPage = lazy(() => import('@/pages/AccessibilityPage'));
 
 import {
 	HREF_ROUTE_LEGAL_INFORMATION,
