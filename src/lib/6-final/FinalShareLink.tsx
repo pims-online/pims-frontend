@@ -5,7 +5,6 @@ import {
 	FacebookShareButton,
 	FacebookMessengerShareButton,
 	LineShareButton,
-	LinkedinShareButton,
 	TwitterShareButton,
 	WhatsappShareButton,
 } from 'react-share';
@@ -14,7 +13,6 @@ import {
 	FacebookIcon,
 	FacebookMessengerIcon,
 	LineIcon,
-	LinkedinIcon,
 	XIcon,
 	WhatsappIcon,
 } from 'react-share';
@@ -36,10 +34,6 @@ export default function FinalShareLink() {
 	// ----- Texts -----
 	const messageSubject = t('share.subject');
 	const messageBody = t('share.body', { pimsUrl: pimsAppUrl, url: '' });
-	const messageBodyWithLink = t('share.body', {
-		pimsUrl: pimsAppUrl,
-		url: url,
-	});
 	const messageBodyOnly = t('share.body_only', {
 		pimsUrl: pimsAppUrl,
 		url: '',
@@ -97,7 +91,11 @@ export default function FinalShareLink() {
 				<FacebookIcon {...iconProps} />
 			</FacebookShareButton>
 
-			<FacebookMessengerShareButton url={url} appId="">
+			<FacebookMessengerShareButton
+				url={url}
+				redirectUri={url}
+				appId="531197663039275"
+			>
 				<FacebookMessengerIcon {...iconProps} />
 			</FacebookMessengerShareButton>
 
@@ -108,14 +106,6 @@ export default function FinalShareLink() {
 			<WhatsappShareButton url={url} title={messageBodyOnly} separator="">
 				<WhatsappIcon {...iconProps} />
 			</WhatsappShareButton>
-
-			<LinkedinShareButton
-				url={url}
-				title={messageSubject}
-				summary={messageBodyWithLink}
-			>
-				<LinkedinIcon {...iconProps} />
-			</LinkedinShareButton>
 
 			<LineShareButton url={url} title={messageBodyOnlyWithLink}>
 				<LineIcon {...iconProps} />
