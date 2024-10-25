@@ -31,7 +31,7 @@ export default function FinalActions() {
 				id="pims-step-6__download-file"
 				className="fr-mb-6v"
 			/>
-			<Title text={t('actions.share')} />
+			<Title text={t('actions.share')} contained />
 			<FinalShareLink />
 		</Container>
 	);

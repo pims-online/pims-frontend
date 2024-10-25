@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Title } from '@/components';
+import { Title, Divider } from '@/components';
 import { AppContext } from '../../providers';
 
 import FinalButton from './FinalButton';
@@ -23,6 +23,7 @@ export default function FinalScreen(props: Props) {
 		<div>
 			<Title text={title} />
 			<FinalActions />
+			<Divider />
 			<FinalButton
 				navigateToHomeScreen={navigateToHomeScreen}
 				buttonTitle={t('goBackHome')}

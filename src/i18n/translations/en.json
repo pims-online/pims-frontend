@@ -368,8 +368,8 @@
 		"success_unnamed": "Congratulations, your PIMS has been successfully generated as a PDF!",
 		"actions": {
 			"introducer": "You can now download it and share it with others.",
-			"download": "Download my PIMS",
-			"share": "Share my PIMS with my relatives",
+			"download": "I download my PIMS",
+			"share": "I share my PIMS with my relatives",
 			"copyToClipboard": "The link has been successfully copied to the clipboard."
 		},
 		"share": {
