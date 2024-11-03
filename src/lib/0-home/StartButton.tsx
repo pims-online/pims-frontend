@@ -3,12 +3,19 @@ import { Button } from '@codegouvfr/react-dsfr/Button';
 
 import { Container } from '@/components';
 
+import { warmupPdfGeneratorEnvironment } from './utils';
+
 type Props = {
 	navigateToFirstStep: () => void;
 };
 
 export default function StartButton(props: Props) {
 	const { t } = useTranslation('home_screen');
+
+	const handleStartClick = () => {
+		warmupPdfGeneratorEnvironment();
+		props.navigateToFirstStep();
+	};
 
 	return (
 		<Container
@@ -25,7 +32,7 @@ export default function StartButton(props: Props) {
 			</p>
 			<Button
 				size="medium"
-				onClick={props.navigateToFirstStep}
+				onClick={handleStartClick}
 				priority="primary"
 				data-fr-analytics-rating
 				id="pims-step-0__button-start"
