@@ -4,6 +4,7 @@ import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
 import { clsx } from 'clsx';
 
 import { Divider } from '@/components';
+import { useTrackEvents } from '@/providers/analytics';
 
 import { useScrollToTop } from '../utils';
 
@@ -15,6 +16,7 @@ type Props = {
 };
 
 export default function Navigator(props: Props) {
+	// ----- Props -----
 	const {
 		currentStep,
 		setCurrentStep,
@@ -22,13 +24,23 @@ export default function Navigator(props: Props) {
 		setIsNavigateNextLocked,
 	} = props;
 
+	// ----- Hooks -----
 	const { t } = useTranslation('common');
-
 	const scrollToTop = useScrollToTop();
+	const trackEvent = useTrackEvents();
+
+	// ----- Utils -----
+	const navigatorId = 'pims-layouts__button-navigator';
 
 	const setNextCurrentStep = (nextStep: number) => {
 		setCurrentStep(nextStep);
 		scrollToTop();
+		trackEvent({
+			action: 'click',
+			category: 'navigation',
+			label: navigatorId,
+			value: nextStep,
+		});
 	};
 
 	const nextButtonHidden = currentStep === 5;
@@ -68,7 +80,7 @@ export default function Navigator(props: Props) {
 				]}
 				className="fr-mt-4v"
 				data-fr-analytics-rating
-				id="pims-layouts__button-navigator"
+				id={navigatorId}
 			/>
 		</>
 	);
