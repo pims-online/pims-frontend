@@ -1,12 +1,13 @@
 const BACKEND_DOMAIN = import.meta.env.VITE_BACKEND_URL;
 
 const triggerLambdaWarmup = async () => {
-	const finalUrl = `${BACKEND_DOMAIN}/warmup-pims`;
+	const finalUrl = `${BACKEND_DOMAIN}/download-pims`;
 	const response = await fetch(finalUrl, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
 		},
+		body: JSON.stringify({ warmup: true }),
 	});
 	return response;
 };
