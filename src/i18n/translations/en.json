@@ -303,12 +303,12 @@
 		}
 	},
 	"involvement_screen": {
-		"jafar": {
-			"title": "I participate in local awareness activities for the Day of Action for Risks (JAFAR)",
-			"content": "JAFAR takes place every year on October 13th and aims, through an open call for online projects, to promote risk awareness actions.",
+		"jnr": {
+			"title": "I participate in local awareness activities for the National Resilience Day (JNR)",
+			"content": "JNR takes place every year on October 13th and aims, through an open call for online projects, to promote risk awareness actions.",
 			"items": {
 				"item_1": "I declare an awareness action I'm organizing on <k1>the dedicated platform</k1>",
-				"item_2": "I find nearby events on <k1>the JAFAR map</k1>"
+				"item_2": "I find nearby events on <k1>the JNR map</k1>"
 			}
 		},
 		"participation": {

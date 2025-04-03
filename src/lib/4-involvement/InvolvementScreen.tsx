@@ -1,13 +1,13 @@
 import { Divider } from '@/components';
 
-import InvolvementPartJAFAR from './InvolvementPartJAFAR';
+import InvolvementPartJNR from './InvolvementPartJNR';
 import InvolvementPartParticipation from './InvolvementPartParticipation';
 import InvolvementPartInformation from './InvolvementPartInformation';
 
 export default function InvolvementScreen() {
 	return (
 		<div>
-			<InvolvementPartJAFAR />
+			<InvolvementPartJNR />
 			<Divider />
 			<InvolvementPartParticipation />
 			<Divider />

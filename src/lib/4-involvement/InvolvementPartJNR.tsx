@@ -7,18 +7,18 @@ import {
 	INVOLVEMENT_LINK_ACTIONS_PLATFORM,
 } from './constants';
 
-export default function InvolvementPartJAFAR() {
+export default function InvolvementPartJNR() {
 	const { t } = useTranslation('involvement_screen');
 
 	return (
 		<Container>
-			<Title text={t('jafar.title')} contained />
-			<p>{t('jafar.content')}</p>
+			<Title text={t('jnr.title')} contained />
+			<p>{t('jnr.content')}</p>
 			<ul className="pims-components__arrowed-list">
 				<li>
 					<Trans
 						t={t}
-						i18nKey="jafar.items.item_1"
+						i18nKey="jnr.items.item_1"
 						components={{
 							k1: (
 								<a
@@ -34,7 +34,7 @@ export default function InvolvementPartJAFAR() {
 				<li>
 					<Trans
 						t={t}
-						i18nKey="jafar.items.item_2"
+						i18nKey="jnr.items.item_2"
 						components={{
 							k1: (
 								<a

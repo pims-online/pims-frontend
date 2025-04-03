@@ -303,12 +303,12 @@
 		}
 	},
 	"involvement_screen": {
-		"jafar": {
-			"title": "Je participe près de chez moi aux actions de sensibilisation de la Journée d'Action Face Aux Risques",
-			"content": "La JAFAR a lieu chaque année le 13 octobre et vise au travers d'un appel à projet en ligne ouvert à tous, à favoriser les actions de sensibilisations aux risques majeurs.",
+		"jnr": {
+			"title": "Je participe près de chez moi aux actions de sensibilisation de la Journée Nationale de la Résilience",
+			"content": "La JNR a lieu chaque année le 13 octobre et vise au travers d'un appel à projet en ligne ouvert à tous, à favoriser les actions de sensibilisations aux risques majeurs.",
 			"items": {
 				"item_1": "Je déclare une action de sensibilisation que j'organise sur <k1>la plateforme dédiée</k1>",
-				"item_2": "Je trouve les événements proches de chez moi sur <k1>la carte de la JAFAR</k1>"
+				"item_2": "Je trouve les événements proches de chez moi sur <k1>la carte de la JNR</k1>"
 			}
 		},
 		"participation": {
