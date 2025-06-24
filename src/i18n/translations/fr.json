@@ -7,8 +7,8 @@
 		"step_five": "Je génère mon PIMS"
 	},
 	"header": {
-		"service_title": "Prêts ? Parés !",
-		"service_tagline": "Plan Individuel de Mise en Sureté",
+		"service_title": "Plan Individuel de Mise en Sureté",
+		"service_tagline": "Prêts ? Parés !",
 		"marianne": "Gouvernement",
 		"main_page_link": "Accueil - Téléprocédure PIMS",
 		"footer": "Le PIMS en ligne est développé par la Direction Générale de la Sécurité Civile et de la Gestion des Crises"
@@ -20,6 +20,7 @@
 		"select_language": "Sélectionner la langue"
 	},
 	"home_screen": {
+		"title": "Le Plan Individuel de Mise en Sûreté (PIMS)",
 		"protection": "Face aux risques majeurs : se protéger et protéger ses proches en quelques minutes",
 		"online_procedure": {
 			"title": "Votre démarche PIMS en ligne",

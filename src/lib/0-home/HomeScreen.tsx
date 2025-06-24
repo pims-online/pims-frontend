@@ -15,12 +15,15 @@ export default function HomeScreen(props: Props) {
 
 	return (
 		<div>
-			<h4
+			<h1>
+				{t('title')}
+			</h1>
+			<h3
 				id="pims-home-screen__title-protection"
 				className="fr-mb-8v fr-py-3v fr-px-3w"
 			>
 				{t('protection')}
-			</h4>
+			</h3>
 			<SectionOnlineProcedure />
 			<SectionTemplate i18nKey="recipient" />
 			<SectionTemplate i18nKey="information" />
