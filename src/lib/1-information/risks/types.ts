@@ -1,6 +1,6 @@
 export type RiskItem = {
+	identifier: string;
 	georisqueApiIdentifier: string;
-	keyTranslation: string;
 	preventionListLength: number;
 	iconFileName: Array<string>;
 };

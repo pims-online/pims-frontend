@@ -1,3 +1,4 @@
+import { RISK_IDENTIFIER_MAP } from '../risks/constants';
 import type {
 	GeoplateformeApiResponse,
 	GeoplateformeApiFeature,
@@ -156,13 +157,22 @@ export const getRisksAroundCoordinates = async (
 export const getEffectiveRiskIdentifierListFromGeorisqueResponse = (
 	georisqueResponse: GeorisqueApiResponse
 ): Array<string> => {
-	const technologicalRisks = Object.entries(
-		georisqueResponse.risquesTechnologiques
-	)
-		.filter((entry) => entry[1].present === true)
-		.map((entry) => entry[0]);
-	const naturalRisks = Object.entries(georisqueResponse.risquesNaturels)
-		.filter((entry) => entry[1].present === true)
-		.map((entry) => entry[0]);
-	return [...naturalRisks, ...technologicalRisks];
+	const riskIdList = new Array<string>();
+
+	const allRisks = Object.entries(georisqueResponse.risquesTechnologiques).concat(Object.entries(georisqueResponse.risquesNaturels));
+	allRisks.forEach(entry => {
+		if (entry[1].present !== true) {
+			return;
+		}
+
+		const identifier = RISK_IDENTIFIER_MAP.get(entry[0]);
+		if (identifier === undefined) {
+			console.warn(`Unknown GeoRisque identifier: ${entry[0]}`);
+			return;
+		}
+		
+		riskIdList.push(identifier);
+	});
+
+	return riskIdList;
 };

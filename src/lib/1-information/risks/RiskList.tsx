@@ -17,11 +17,11 @@ export default function RiskList(props: Props) {
 	}, [riskIdList]);
 
 	const getPreventionList = (
-		keyTranslation: string,
+		identifier: string,
 		nbPrenventions: number
 	) => {
 		return [...Array(nbPrenventions).keys()].map((id) =>
-			t(`${keyTranslation}.preventions.item_${id + 1}`)
+			t(`${identifier}.preventions.item_${id + 1}`)
 		);
 	};
 
@@ -30,11 +30,11 @@ export default function RiskList(props: Props) {
 			<tbody>
 				{riskItemList.map((item, index) => (
 					<RiskItem
-						key={`risk-list-item-${item.keyTranslation}-${index}`}
-						title={t(`${item.keyTranslation}.title`)}
+						key={`risk-list-item-${item.identifier}-${index}`}
+						title={t(`${item.identifier}.title`)}
 						iconsPaths={item.iconFileName}
 						preventionList={getPreventionList(
-							item.keyTranslation,
+							item.identifier,
 							item.preventionListLength
 						)}
 						isFirstItem={index === 0}

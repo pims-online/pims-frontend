@@ -15,120 +15,120 @@ import iconVolcanicEruption from '@/assets/risk-icons/volcanic_eruption.svg';
 import type { RiskItem } from './types';
 
 export const ITEM_INDUSTRIAL_ACCIDENT: RiskItem = {
+	identifier: 'industrial_accident',
 	georisqueApiIdentifier: 'icpe',
-	keyTranslation: 'industrial_accident',
 	preventionListLength: 4,
 	iconFileName: [iconIndustrialAccident],
 };
 
 export const ITEM_NUCLEAR_ACCIDENT: RiskItem = {
+	identifier: 'nuclear_accident',
 	georisqueApiIdentifier: 'nucleaire',
-	keyTranslation: 'nuclear_accident',
 	preventionListLength: 4,
 	iconFileName: [iconNuclearAccident],
 };
 
 export const ITEM_DANGEROUS_TRANSPORTATION_ACCIDENT: RiskItem = {
+	identifier: 'dangerous_transportation_accident',
 	georisqueApiIdentifier: 'canalisationMatièresDangereuses',
-	keyTranslation: 'dangerous_transportation_accident',
 	preventionListLength: 4,
 	iconFileName: [iconDangerousTransportationAccident],
 };
 
 export const ITEM_AVALANCHE: RiskItem = {
+	identifier: 'avalanche',
 	georisqueApiIdentifier: 'avalanche',
-	keyTranslation: 'avalanche',
 	preventionListLength: 2,
 	iconFileName: [iconAvalanche],
 };
 
 export const ITEM_VOLCANIC_ERUPTION: RiskItem = {
+	identifier: 'volcanic_eruption',
 	georisqueApiIdentifier: 'eruptionVolcanique',
-	keyTranslation: 'volcanic_eruption',
 	preventionListLength: 3,
 	iconFileName: [iconVolcanicEruption],
 };
 
 export const ITEM_FOREST_FIRE: RiskItem = {
+	identifier: 'forest_fire',
 	georisqueApiIdentifier: 'feuForet',
-	keyTranslation: 'forest_fire',
 	preventionListLength: 3,
 	iconFileName: [iconForestFire],
 };
 
 export const ITEM_FLOODING: RiskItem = {
+	identifier: 'flooding',
 	georisqueApiIdentifier: 'inondation',
-	keyTranslation: 'flooding',
 	preventionListLength: 4,
 	iconFileName: [iconFlooding],
 };
 
 export const ITEM_LANDSLIDE: RiskItem = {
+	identifier: 'landslide',
 	georisqueApiIdentifier: 'mouvementTerrain',
-	keyTranslation: 'landslide',
 	preventionListLength: 2,
 	iconFileName: [iconLandslide],
 };
 
 export const ITEM_DAM_BREAK: RiskItem = {
+	identifier: 'dam_break',
 	georisqueApiIdentifier: 'ruptureBarrage',
-	keyTranslation: 'dam_break',
 	preventionListLength: 2,
 	iconFileName: [iconDamBreak],
 };
 
 export const ITEM_EARTHQUAKE: RiskItem = {
+	identifier: 'earthquake',
 	georisqueApiIdentifier: 'seisme',
-	keyTranslation: 'earthquake',
 	preventionListLength: 3,
 	iconFileName: [iconEarthquake],
 };
 
 export const ITEM_STORM: RiskItem = {
+	identifier: 'storm',
 	georisqueApiIdentifier: 'cyclone',
-	keyTranslation: 'storm',
 	preventionListLength: 4,
 	iconFileName: [iconStorm1, iconStorm2],
 };
 
 export const ITEM_TSUNAMI: RiskItem = {
+	identifier: 'tsunami',
 	georisqueApiIdentifier: 'risqueCotier',
-	keyTranslation: 'tsunami',
 	preventionListLength: 2,
 	iconFileName: [iconTsunami],
 };
 
 export const ITEM_COASTLINE_RETREAT: RiskItem = {
+	identifier: 'coastline_retreat',
 	georisqueApiIdentifier: 'reculTraitCote',
-	keyTranslation: 'coastline_retreat',
 	preventionListLength: 0,
 	iconFileName: [],
 };
 
 export const ITEM_CLAY_SWELLING: RiskItem = {
+	identifier: 'clay_swelling',
 	georisqueApiIdentifier: 'retraitGonflementArgile',
-	keyTranslation: 'clay_swelling',
 	preventionListLength: 0,
 	iconFileName: [],
 };
 
 export const ITEM_RADON: RiskItem = {
+	identifier: 'radon',
 	georisqueApiIdentifier: 'radon',
-	keyTranslation: 'radon',
 	preventionListLength: 0,
 	iconFileName: [],
 };
 
 export const ITEM_SOIL_POLLUTION: RiskItem = {
+	identifier: 'soil_pollution',
 	georisqueApiIdentifier: 'pollutionSols',
-	keyTranslation: 'soil_pollution',
 	preventionListLength: 0,
 	iconFileName: [],
 };
 
 export const ITEM_MINING_RISKS: RiskItem = {
+	identifier: 'mining_risks',
 	georisqueApiIdentifier: 'risqueMinier',
-	keyTranslation: 'mining_risks',
 	preventionListLength: 0,
 	iconFileName: [],
 };
@@ -152,3 +152,15 @@ export const RISK_LIST: RiskItem[] = [
 	// ITEM_SOIL_POLLUTION,
 	// ITEM_MINING_RISKS,
 ];
+
+// A mapping of georisque identifier to internal risk identifier
+export const RISK_IDENTIFIER_MAP: Map<string, string> = new Map<string, string>();
+RISK_LIST.forEach(risk => {
+	RISK_IDENTIFIER_MAP.set(risk.georisqueApiIdentifier, risk.identifier);
+});
+
+// A mapping of internal risk identifier to risk item
+export const RISK_MAP: Map<string, RiskItem> = new Map<string, RiskItem>();
+RISK_LIST.forEach(risk => {
+	RISK_MAP.set(risk.identifier, risk);
+});

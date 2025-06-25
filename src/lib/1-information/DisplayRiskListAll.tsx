@@ -14,7 +14,7 @@ export default function DisplayRiskListAll() {
 			<Title text={t('see_more_risks.title')} contained />
 			<Accordion label={t('see_more_risks.accordion')}>
 				<RiskList
-					riskIdList={RISK_LIST.map((item) => item.georisqueApiIdentifier)}
+					riskIdList={RISK_LIST.map((item) => item.identifier)}
 				/>
 			</Accordion>
 		</Container>
