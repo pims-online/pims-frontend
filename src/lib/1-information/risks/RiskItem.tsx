@@ -3,12 +3,13 @@ import { clsx } from 'clsx';
 type Props = {
 	iconsPaths: Array<string>;
 	title: string;
+	intensity: string | undefined;
 	preventionList: Array<string>;
 	isFirstItem?: boolean;
 };
 
 export default function RiskItem(props: Props) {
-	const { iconsPaths, title, preventionList, isFirstItem } = props;
+	const { iconsPaths, title, intensity, preventionList, isFirstItem } = props;
 
 	return (
 		<>
@@ -21,6 +22,10 @@ export default function RiskItem(props: Props) {
 					>
 						{title}
 					</h5>
+					{intensity !== undefined &&
+					<p className="pims-information-screen__risk-item-intensity">
+						{intensity}
+					</p>}
 				</td>
 			</tr>
 			<tr>

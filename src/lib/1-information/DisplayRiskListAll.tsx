@@ -15,6 +15,7 @@ export default function DisplayRiskListAll() {
 			<Accordion label={t('see_more_risks.accordion')}>
 				<RiskList
 					riskIdList={RISK_LIST.map((item) => item.identifier)}
+					riskIntensityMap={undefined}
 				/>
 			</Accordion>
 		</Container>

@@ -176,3 +176,25 @@ export const getEffectiveRiskIdentifierListFromGeorisqueResponse = (
 
 	return riskIdList;
 };
+
+/**
+ * Given a Georisque Response, return a mapping of georisque label to risk intensity level at the targetted address
+ */
+export const getRiskIntensityMapFromGeorisqueResponse = (
+	georisqueResponse: GeorisqueApiResponse
+): Map<string, string> => {
+	const intensityMap = new Map<string, string>();
+
+	const allRisks = Object.entries(georisqueResponse.risquesTechnologiques).concat(Object.entries(georisqueResponse.risquesNaturels));
+	allRisks.forEach((entry) => {
+		const identifier = RISK_IDENTIFIER_MAP.get(entry[0]);
+		if (identifier === undefined) {
+			console.warn(`Unknown GeoRisque identifier: ${entry[0]}`);
+			return;
+		}
+
+		intensityMap.set(identifier, entry[1].libelleStatutAdresse);
+	});
+
+	return intensityMap;
+};

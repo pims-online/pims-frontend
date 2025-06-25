@@ -6,10 +6,12 @@ import { getRiskItemList } from './utils';
 
 type Props = {
 	riskIdList: Array<string>;
+	riskIntensityMap: Map<string, string> | undefined;
 };
 
 export default function RiskList(props: Props) {
 	const riskIdList = props.riskIdList;
+	const riskIntensityMap = props.riskIntensityMap;
 	const { t } = useTranslation('risks');
 
 	const riskItemList = useMemo(() => {
@@ -32,6 +34,7 @@ export default function RiskList(props: Props) {
 					<RiskItem
 						key={`risk-list-item-${item.identifier}-${index}`}
 						title={t(`${item.identifier}.title`)}
+						intensity={riskIntensityMap !== undefined ? riskIntensityMap.get(item.identifier) : undefined}
 						iconsPaths={item.iconFileName}
 						preventionList={getPreventionList(
 							item.identifier,

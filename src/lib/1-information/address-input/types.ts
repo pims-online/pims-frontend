@@ -58,6 +58,8 @@ type GeorisqueApiResponseInput = {
 type GeorisqueApiResponseRiskItem = {
 	present: boolean;
 	libelle: string;
+	libelleStatutCommune: string;
+	libelleStatutAdresse: string;
 };
 
 type GeorisqueApiResponseRisks = {

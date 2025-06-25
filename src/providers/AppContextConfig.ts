@@ -35,6 +35,9 @@ export type AppContextValues = {
 	// State to manage the identifiers of the risks identified around the address
 	riskIdList: Array<string> | undefined;
 	setRiskIdList: Dispatch<SetStateAction<Array<string> | undefined>>;
+	// State to manage the intensity of the risks at the given position
+	riskIntensityMap: Map<string, string> | undefined;
+	setRiskIntensityMap: Dispatch<Map<string, string> | undefined>;
 	// State to manage eligibility to iode pastille
 	iodePastilleEligibility: string;
 	setIodePastilleEligibility: Dispatch<SetStateAction<string>>;
@@ -72,6 +75,7 @@ export const APP_CONTEXT_DEFAULT_VALUES = {
 	},
 	inseeCode: '',
 	riskIdList: undefined,
+	riskIntensityMap: undefined,
 	gatheringPlace: '',
 	kitListChecked: false,
 	emergencyKitStorage: '',

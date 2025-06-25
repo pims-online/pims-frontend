@@ -21,6 +21,11 @@
 	border-spacing: 0px;
 }
 
+.pims-information-screen__risk-item-intensity {
+	color: var(--border-action-high-blue-france);
+	margin-bottom: 0.5rem;
+}
+
 .pims-information-screen__risk-item-prevention-container {
 	width: 100%;
 }

@@ -6,10 +6,11 @@ import RiskList from './risks/RiskList';
 
 type Props = {
 	riskIdList: Array<string> | undefined;
+	riskIntensityMap: Map<string, string> | undefined;
 };
 
 export default function DisplayRiskListAround(props: Props) {
-	const { riskIdList } = props;
+	const { riskIdList, riskIntensityMap } = props;
 	const { t } = useTranslation('information_screen');
 
 	return (
@@ -17,7 +18,7 @@ export default function DisplayRiskListAround(props: Props) {
 			{riskIdList && riskIdList.length > 0 && (
 				<>
 					<Title text={t('safe_behavior')} />
-					<RiskList riskIdList={riskIdList} />
+					<RiskList riskIdList={riskIdList} riskIntensityMap={riskIntensityMap} />
 				</>
 			)}
 			{riskIdList && riskIdList.length === 0 && <h6>{t('no_risks_around')}</h6>}

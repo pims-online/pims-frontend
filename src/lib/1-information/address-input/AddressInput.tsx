@@ -15,10 +15,11 @@ import {
 	getAutocompletedAddresses,
 	getRisksAroundCoordinates,
 	getEffectiveRiskIdentifierListFromGeorisqueResponse,
+	getRiskIntensityMapFromGeorisqueResponse,
 } from './utils';
 
 export default function AddressInput() {
-	const { setRiskIdList, address, setAddress, setCoordinates, setInseeCode } =
+	const { setRiskIdList, setRiskIntensityMap, address, setAddress, setCoordinates, setInseeCode } =
 		useContext(AppContext);
 
 	// ----- State management -----
@@ -47,12 +48,17 @@ export default function AddressInput() {
 		georisqueResponse: GeorisqueApiResponse | undefined
 	) => {
 		// 1. Get the identifiers of the risks to focus
-		const riskIdList: Array<string> = georisqueResponse
+		const riskIdList: Array<string> | undefined = georisqueResponse
 			? getEffectiveRiskIdentifierListFromGeorisqueResponse(georisqueResponse)
-			: [];
+			: undefined;
+		
+		const riskIntensityMap: Map<string, string> | undefined = georisqueResponse
+			? getRiskIntensityMapFromGeorisqueResponse(georisqueResponse)
+			: undefined;
 
-		// 2. Update the riskIdList -> display the Risk list
+		// 2. Update the state -> display the Risk list
 		setRiskIdList(riskIdList);
+		setRiskIntensityMap(riskIntensityMap);
 
 		// 3. Hide the address list
 		setShowAddressFeatureList(false);

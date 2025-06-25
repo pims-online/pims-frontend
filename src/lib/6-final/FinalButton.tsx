@@ -15,6 +15,7 @@ export default function FinalButton(props: Props) {
 		setCoordinates,
 		setInseeCode,
 		setRiskIdList,
+		setRiskIntensityMap,
 		setIodePastilleEligibility,
 		setGatheringPlace,
 		setKitListChecked,
@@ -29,6 +30,7 @@ export default function FinalButton(props: Props) {
 		setCoordinates(APP_CONTEXT_DEFAULT_VALUES.coordinates);
 		setInseeCode(APP_CONTEXT_DEFAULT_VALUES.inseeCode);
 		setRiskIdList(APP_CONTEXT_DEFAULT_VALUES.riskIdList);
+		setRiskIntensityMap(APP_CONTEXT_DEFAULT_VALUES.riskIntensityMap);
 		setIodePastilleEligibility(
 			APP_CONTEXT_DEFAULT_VALUES.iodePastilleEligibility
 		);
