@@ -79,6 +79,15 @@
 		}
 	},
 	"risks": {
+		"address": "At your address: ",
+		"intensity": {
+			"intensity_present": "existing risk",
+			"intensity_low": "low risk",
+			"intensity_mid": "moderate risk",
+			"intensity_high": "high risk",
+			"intensity_unknown": "unknown intensity",
+			"intensity_relevant": "concerned"
+		},
 		"industrial_accident": {
 			"title": "Industrial accident",
 			"preventions": {

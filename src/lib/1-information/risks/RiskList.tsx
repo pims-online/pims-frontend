@@ -27,22 +27,45 @@ export default function RiskList(props: Props) {
 		);
 	};
 
+	const getIntensity = (
+		identifier: string
+	) => {
+		if (riskIntensityMap === undefined) {
+			return undefined;
+		}
+
+		const intensityId = riskIntensityMap.get(identifier);
+		if (intensityId === undefined) {
+			console.warn(`Unknown intensity for risk ${identifier}`);
+			return undefined;
+		}
+
+		return t("address") + t(`intensity.${intensityId}`);
+	};
+
+	const risks = riskItemList.map((item, index) => {
+		const title = t(`${item.identifier}.title`);
+		const intensity = getIntensity(item.identifier)
+		const preventionList = getPreventionList(
+				item.identifier,
+				item.preventionListLength
+			);
+
+		return (
+			<RiskItem
+			key={`risk-list-item-${item.identifier}-${index}`}
+			title={title}
+			intensity={intensity}
+			iconsPaths={item.iconFileName}
+			preventionList={preventionList}
+			isFirstItem={index === 0}
+		/>);
+	});
+
 	return (
 		<table className="pims-information-screen__risk-list-table">
 			<tbody>
-				{riskItemList.map((item, index) => (
-					<RiskItem
-						key={`risk-list-item-${item.identifier}-${index}`}
-						title={t(`${item.identifier}.title`)}
-						intensity={riskIntensityMap !== undefined ? riskIntensityMap.get(item.identifier) : undefined}
-						iconsPaths={item.iconFileName}
-						preventionList={getPreventionList(
-							item.identifier,
-							item.preventionListLength
-						)}
-						isFirstItem={index === 0}
-					/>
-				))}
+				{risks}
 			</tbody>
 		</table>
 	);

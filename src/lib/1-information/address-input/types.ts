@@ -48,6 +48,14 @@ export type GeoplateformeApiFeatureProperties = {
 
 // ---- GEORISQUE API -----
 
+type GeorisqueApiRiskIntensity =
+	"Risque Existant" |
+	"Risque Existant - faible" |
+	"Risque Existant - modéré" |
+	"Risque Existant - important" |
+	"Risque Inconnu" |
+	"Concerné";
+
 type GeorisqueApiResponseInput = {
 	adresse: string;
 	longitude: number;
@@ -58,8 +66,8 @@ type GeorisqueApiResponseInput = {
 type GeorisqueApiResponseRiskItem = {
 	present: boolean;
 	libelle: string;
-	libelleStatutCommune: string;
-	libelleStatutAdresse: string;
+	libelleStatutCommune: GeorisqueApiRiskIntensity | undefined;
+	libelleStatutAdresse: GeorisqueApiRiskIntensity | undefined;
 };
 
 type GeorisqueApiResponseRisks = {

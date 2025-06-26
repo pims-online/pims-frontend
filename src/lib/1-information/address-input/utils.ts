@@ -1,4 +1,4 @@
-import { RISK_IDENTIFIER_MAP } from '../risks/constants';
+import { RISK_IDENTIFIER_MAP, RISK_INTENSITY_MAP } from '../risks/constants';
 import type {
 	GeoplateformeApiResponse,
 	GeoplateformeApiFeature,
@@ -193,7 +193,17 @@ export const getRiskIntensityMapFromGeorisqueResponse = (
 			return;
 		}
 
-		intensityMap.set(identifier, entry[1].libelleStatutAdresse);
+		if (entry[1].libelleStatutAdresse === undefined) {
+			return;
+		}
+
+		const intensity = RISK_INTENSITY_MAP.get(entry[1].libelleStatutAdresse)
+		if (intensity === undefined) {
+			console.warn(`Unknown GeoRisque risk level: ${entry[1].libelleStatutAdresse}`)
+			return;
+		}
+
+		intensityMap.set(identifier, intensity);
 	});
 
 	return intensityMap;

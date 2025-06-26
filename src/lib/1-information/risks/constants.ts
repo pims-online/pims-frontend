@@ -164,3 +164,12 @@ export const RISK_MAP: Map<string, RiskItem> = new Map<string, RiskItem>();
 RISK_LIST.forEach(risk => {
 	RISK_MAP.set(risk.identifier, risk);
 });
+
+
+export const RISK_INTENSITY_MAP: Map<string, string> = new Map<string, string>();
+RISK_INTENSITY_MAP.set("Risque Existant", "intensity_present");
+RISK_INTENSITY_MAP.set("Risque Existant - faible", "intensity_low");
+RISK_INTENSITY_MAP.set("Risque Existant - modéré", "intensity_mid");
+RISK_INTENSITY_MAP.set("Risque Existant - important", "intensity_high");
+RISK_INTENSITY_MAP.set("Risque Inconnu", "intensity_unknown");
+RISK_INTENSITY_MAP.set("Risque Concerne", "intensity_relevant");
