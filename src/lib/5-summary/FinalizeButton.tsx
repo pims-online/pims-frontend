@@ -6,6 +6,7 @@ import { AppContext } from '../../providers';
 import { Container, CircularProgress } from '@/components';
 
 import { generatePims } from './utils';
+import { RISK_MAP } from '../1-information/risks/constants';
 
 type Props = {
 	navigateToFinalScreen: () => void;
@@ -31,12 +32,24 @@ export default function FinalizeButton(props: Props) {
 	const handleFinalizeButton = async () => {
 		setIsProcessing(true);
 
+		const getRiskIdList = () => {
+			if (riskIdList === undefined) {
+				return [];
+			}
+
+			const georisqueIdList = riskIdList
+									.map((riskId) => RISK_MAP.get(riskId)?.georisqueApiIdentifier)
+									.filter((risk) => risk !== undefined);
+
+			return georisqueIdList;
+		};
+
 		const params = {
 			address,
 			locale: pimsLocale,
 			filename: pimsFileName,
 			usefulNumbers,
-			riskIdList: riskIdList || [],
+			riskIdList: getRiskIdList(),
 			emergencyKitStorage,
 			radioFrequencies,
 			screenWidth: window.innerWidth,
