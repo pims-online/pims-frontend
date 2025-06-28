@@ -195,13 +195,13 @@ export const getRiskIntensityMapFromGeorisqueResponse = (
 			return;
 		}
 
-		if (entry[1].libelleStatutAdresse === undefined) {
+		if (entry[1].libelleStatutCommune === undefined) {
 			return;
 		}
 
-		const intensity = RISK_INTENSITY_MAP.get(entry[1].libelleStatutAdresse)
+		const intensity = RISK_INTENSITY_MAP.get(entry[1].libelleStatutCommune)
 		if (intensity === undefined) {
-			console.warn(`Unknown GeoRisque risk level: ${entry[1].libelleStatutAdresse}`)
+			console.warn(`Unknown GeoRisque risk level: ${entry[1].libelleStatutCommune}`)
 			return;
 		}
 

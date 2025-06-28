@@ -79,7 +79,7 @@
 		}
 	},
 	"risks": {
-		"address": "At your address: ",
+		"scale_city": "In my city: ",
 		"intensity": {
 			"intensity_present": "existing risk",
 			"intensity_low": "low risk",

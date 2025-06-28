@@ -40,7 +40,7 @@ export default function RiskList(props: Props) {
 			return undefined;
 		}
 
-		return t("address") + t(`intensity.${intensityId}`);
+		return t("scale_city") + t(`intensity.${intensityId}`);
 	};
 
 	const risks = riskItemList.map((item, index) => {

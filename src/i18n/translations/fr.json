@@ -79,7 +79,7 @@
 		}
 	},
 	"risks": {
-		"address": "A votre adresse : ", 
+		"scale_city": "Sur ma commune : ", 
 		"intensity": {
 			"intensity_present": "risque existant",
 			"intensity_low": "risqe faible",
