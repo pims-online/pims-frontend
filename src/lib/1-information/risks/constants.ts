@@ -140,6 +140,17 @@ export const ITEM_MINING_RISKS: RiskItem = {
 	iconFileName: [],
 };
 
+// A list of ignored Géorisque identifiers
+export const IGNORED_RISKS_IDENTIFIERS: string[] = [
+	"canalisationsMatieresDangereuses",
+	"pollutionSols",
+	"risqueMinier",
+	"remonteeNappe",
+	"reculTraitCote",
+	"retraitGonflementArgile",
+	"radon",
+]
+
 export const RISK_LIST: RiskItem[] = [
 	ITEM_INDUSTRIAL_ACCIDENT,
 	ITEM_NUCLEAR_ACCIDENT,
@@ -163,6 +174,9 @@ export const RISK_LIST: RiskItem[] = [
 
 // A mapping of georisque identifier to internal risk identifier
 export const RISK_IDENTIFIER_MAP: Map<string, string[]> = new Map<string, string[]>();
+IGNORED_RISKS_IDENTIFIERS.forEach(ignoredIdentifier => {
+	RISK_IDENTIFIER_MAP.set(ignoredIdentifier, []);
+});
 RISK_LIST.forEach(risk => {
 	const previousRisks = RISK_IDENTIFIER_MAP.get(risk.georisqueApiIdentifier);
 	const risks = (previousRisks !== undefined) ? previousRisks : [];
@@ -176,7 +190,7 @@ RISK_LIST.forEach(risk => {
 	RISK_MAP.set(risk.identifier, risk);
 });
 
-
+// A mapping of Géorisque intensity identifier to internal intensity identifier
 export const RISK_INTENSITY_MAP: Map<string, string> = new Map<string, string>();
 RISK_INTENSITY_MAP.set("Risque Existant", "intensity_present");
 RISK_INTENSITY_MAP.set("Risque Existant - faible", "intensity_low");
