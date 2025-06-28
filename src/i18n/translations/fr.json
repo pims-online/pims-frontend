@@ -147,6 +147,15 @@
 				"item_4": "Reportez ou annulez vos déplacements"
 			}
 		},
+		"coastal_flooding": {
+			"title": "Submersion marine",
+			"preventions": {
+				"item_1": "Éloignez-vous des côtes, des plages ou des rivières",
+				"item_2": "Si vous ne le pouvez pas, réfugiez-vous le plus haut possible",
+				"item_3": "Reportez ou annulez vos déplacements",
+				"item_4": "En mer : dirigez-vous vers le large"
+			}
+		},
 		"landslide": {
 			"title": "Mouvement de terrain",
 			"preventions": {

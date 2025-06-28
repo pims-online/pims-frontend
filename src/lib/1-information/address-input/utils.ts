@@ -165,13 +165,15 @@ export const getEffectiveRiskIdentifierListFromGeorisqueResponse = (
 			return;
 		}
 
-		const identifier = RISK_IDENTIFIER_MAP.get(entry[0]);
-		if (identifier === undefined) {
+		const identifiers = RISK_IDENTIFIER_MAP.get(entry[0]);
+		if (identifiers === undefined) {
 			console.warn(`Unknown GeoRisque identifier: ${entry[0]}`);
 			return;
 		}
 		
-		riskIdList.push(identifier);
+		identifiers.forEach(identifier => {
+			riskIdList.push(identifier);
+		});
 	});
 
 	return riskIdList;
@@ -187,8 +189,8 @@ export const getRiskIntensityMapFromGeorisqueResponse = (
 
 	const allRisks = Object.entries(georisqueResponse.risquesTechnologiques).concat(Object.entries(georisqueResponse.risquesNaturels));
 	allRisks.forEach((entry) => {
-		const identifier = RISK_IDENTIFIER_MAP.get(entry[0]);
-		if (identifier === undefined) {
+		const identifiers = RISK_IDENTIFIER_MAP.get(entry[0]);
+		if (identifiers === undefined) {
 			console.warn(`Unknown GeoRisque identifier: ${entry[0]}`);
 			return;
 		}
@@ -203,7 +205,9 @@ export const getRiskIntensityMapFromGeorisqueResponse = (
 			return;
 		}
 
-		intensityMap.set(identifier, intensity);
+		identifiers.forEach(identifier => {
+			intensityMap.set(identifier, intensity);
+		});
 	});
 
 	return intensityMap;

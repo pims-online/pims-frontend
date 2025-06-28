@@ -93,10 +93,17 @@ export const ITEM_STORM: RiskItem = {
 
 export const ITEM_TSUNAMI: RiskItem = {
 	identifier: 'tsunami',
-	georisqueApiIdentifier: 'risqueCotier',
+	georisqueApiIdentifier: 'risqueCotier',		// Note : same Géorisque identifier as coastal flooding.
 	preventionListLength: 2,
 	iconFileName: [iconTsunami],
 };
+
+export const ITEM_COASTAL_FLOODING: RiskItem = {
+	identifier: "coastal_flooding",
+	georisqueApiIdentifier: 'risqueCotier',		// Note : same Géorisque identifier as tsunami.
+	preventionListLength: 4,
+	iconFileName: [iconTsunami],
+}
 
 export const ITEM_COASTLINE_RETREAT: RiskItem = {
 	identifier: 'coastline_retreat',
@@ -145,7 +152,8 @@ export const RISK_LIST: RiskItem[] = [
 	ITEM_DAM_BREAK,
 	ITEM_EARTHQUAKE,
 	ITEM_STORM,
-	// ITEM_TSUNAMI,
+	ITEM_TSUNAMI,
+	ITEM_COASTAL_FLOODING,
 	// ITEM_COASTLINE_RETREAT,
 	// ITEM_CLAY_SWELLING,
 	// ITEM_RADON,
@@ -154,9 +162,12 @@ export const RISK_LIST: RiskItem[] = [
 ];
 
 // A mapping of georisque identifier to internal risk identifier
-export const RISK_IDENTIFIER_MAP: Map<string, string> = new Map<string, string>();
+export const RISK_IDENTIFIER_MAP: Map<string, string[]> = new Map<string, string[]>();
 RISK_LIST.forEach(risk => {
-	RISK_IDENTIFIER_MAP.set(risk.georisqueApiIdentifier, risk.identifier);
+	const previousRisks = RISK_IDENTIFIER_MAP.get(risk.georisqueApiIdentifier);
+	const risks = (previousRisks !== undefined) ? previousRisks : [];
+	risks.push(risk.identifier);
+	RISK_IDENTIFIER_MAP.set(risk.georisqueApiIdentifier, risks);
 });
 
 // A mapping of internal risk identifier to risk item

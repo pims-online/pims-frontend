@@ -182,7 +182,16 @@
 			"title": "Tsunami",
 			"preventions": {
 				"item_1": "On land: evacuate the coastline immediately on foot",
-				"item_2": "At sea: head offshore"
+				"item_2": "At sea: head out to the open sea"
+			}
+		},
+		"coastal_flooding": {
+			"title": "Coastal flooding",
+			"preventions": {
+				"item_1": "Keep as far away as possible from coastal areas, beaches and rivers",
+				"item_2": "Or climb to high ground and wait until the alert is over",
+				"item_3": "Postpone or cancel your trips",
+				"item_4": "At sea: head out to the open sea"
 			}
 		},
 		"coastline_retreat": {
