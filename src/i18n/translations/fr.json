@@ -298,6 +298,10 @@
 			"public_medias": {
 				"title": "Les médias publics",
 				"content": "Les médias publics et les réseaux sociaux des services de l'Etat, de Radio France et de France Télévisions sont les relais des autorités en situation de crise pour communiquer avec la population."
+			},
+			"more_info": {
+				"title": "Plus d'informations",
+				"content": "Pour en savoir plus, consultez "
 			}
 		},
 		"fr_alert_discovery": {

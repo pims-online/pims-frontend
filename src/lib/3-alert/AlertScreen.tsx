@@ -4,7 +4,6 @@ import { Divider } from '@/components';
 
 import WeatherVigilance from './WeatherVigilance';
 import AlertSystems from './alert-systems/AlertSystems';
-import RadioFrequencies from './RadioFrequencies';
 
 export default function AlertScreen() {
 	const { t } = useTranslation('alert_screen');
@@ -15,7 +14,6 @@ export default function AlertScreen() {
 			<WeatherVigilance />
 			<Divider />
 			<AlertSystems />
-			<RadioFrequencies />
 		</div>
 	);
 }

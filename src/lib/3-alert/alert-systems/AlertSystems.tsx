@@ -5,6 +5,7 @@ import { Title } from '@/components';
 import AlertSystemsFrAlert from './AlertSystemsFrAlert';
 import AlertSystemsSaip from './AlertSystemsSaip';
 import AlertSystemsPublicMedia from './AlertSystemsPublicMedias';
+import AlertSystemsMoreInfo from './AlertSystemsMoreInfo';
 
 export default function AlertSystems() {
 	const { t } = useTranslation('alert_screen');
@@ -16,6 +17,7 @@ export default function AlertSystems() {
 			<AlertSystemsFrAlert />
 			<AlertSystemsSaip />
 			<AlertSystemsPublicMedia />
+			<AlertSystemsMoreInfo />
 		</>
 	);
 }

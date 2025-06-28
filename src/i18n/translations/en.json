@@ -298,6 +298,10 @@
 			"public_medias": {
 				"title": "Public media",
 				"content": "Public media and the social media of government services, Radio France, and France Télévisions are the channels through which authorities communicate with the public during crises."
+			},
+			"more_info": {
+				"title": "Learn more",
+				"content": "More information on "
 			}
 		},
 		"fr_alert_discovery": {
