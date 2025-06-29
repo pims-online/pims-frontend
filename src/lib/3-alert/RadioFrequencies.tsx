@@ -37,7 +37,7 @@ export default function RadioFrequencies() {
 			) : (
 				<ul className="pims-components__toothed-list">
 					<li>France Inter : {radioFrequencies.franceInter.join(', ')}</li>
-					<li>France Bleu : {radioFrequencies.franceBleu.join(', ')}</li>
+					<li>Ici : {radioFrequencies.ici.join(', ')}</li>
 					<li>France Info : {radioFrequencies.franceInfo.join(', ')}</li>
 				</ul>
 			)}

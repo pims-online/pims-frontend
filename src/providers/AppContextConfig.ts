@@ -12,7 +12,7 @@ export type UsefulNumbers = {
 };
 export type RadioFrequencies = {
 	franceInfo: Array<string>;
-	franceBleu: Array<string>;
+	ici: Array<string>;
 	franceInter: Array<string>;
 };
 export type Locale = 'fr' | 'en';
@@ -88,7 +88,7 @@ export const APP_CONTEXT_DEFAULT_VALUES = {
 	radioFrequencies: {
 		franceInter: [],
 		franceInfo: [],
-		franceBleu: [],
+		ici: [],
 	} as RadioFrequencies,
 	iodePastilleEligibility: '',
 	pimsFileName: '',

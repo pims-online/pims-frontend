@@ -49,7 +49,7 @@ const parseRadioFrequencies = (htmlContent: string): RadioFrequencies => {
 	const frequencies: RadioFrequencies = {
 		franceInter: [],
 		franceInfo: [],
-		franceBleu: [],
+		ici: [],
 	};
 
 	// Look up for div containing frequencies data
@@ -65,8 +65,8 @@ const parseRadioFrequencies = (htmlContent: string): RadioFrequencies => {
 			frequency = frequency.replace('MHz', ' FM');
 
 			if (radioBrand && frequency) {
-				if (radioBrand.includes('France Bleu')) {
-					frequencies.franceBleu.push(frequency);
+				if (radioBrand.includes('Ici')) {
+					frequencies.ici.push(frequency);
 				}
 				if (radioBrand.includes('franceinfo')) {
 					frequencies.franceInfo.push(frequency);
@@ -95,7 +95,7 @@ export const getRadioFrequencies = async ({
 		const frequencies: RadioFrequencies = {
 			franceInter: [],
 			franceInfo: [],
-			franceBleu: [],
+			ici: [],
 		};
 		return frequencies;
 	}
