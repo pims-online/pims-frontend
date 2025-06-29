@@ -7,7 +7,7 @@ import type { KitNumbers } from './types';
 type Props = {
 	kitNumbers: KitNumbers;
 	setKitNumbers: Dispatch<SetStateAction<KitNumbers>>;
-	inseeCode?: string | number;
+	inseeCode?: number;
 };
 
 export default function EmergencyKitNumbersInputs(props: Props) {

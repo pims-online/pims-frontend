@@ -28,7 +28,7 @@ export default function AppContextProvider({
 	const [coordinates, setCoordinates] = useState<
 		AppContextValues['coordinates']
 	>(APP_CONTEXT_DEFAULT_VALUES.coordinates);
-	const [inseeCode, setInseeCode] = useState<number | string>(
+	const [inseeCode, setInseeCode] = useState<number | undefined>(
 		APP_CONTEXT_DEFAULT_VALUES.inseeCode
 	);
 	const [riskIdList, setRiskIdList] = useState<Array<string> | undefined>(

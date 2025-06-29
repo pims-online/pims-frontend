@@ -4,8 +4,8 @@ const ANNUAIRE_API_URL = 'https://api-lannuaire.service-public.fr/';
 const EXPLORE_PATH =
 	'/api/explore/v2.1/catalog/datasets/api-lannuaire-administration/records';
 
-export const getTownHallNumber = async (inseeCode?: number | string) => {
-	if (!inseeCode) return '';
+export const getTownHallNumber = async (inseeCode?: number) => {
+	if (inseeCode === undefined) return '';
 
 	const queryParam = '?where';
 	const queryName = 'nom%20LIKE%20%22Mairie%22'; // Filter to have only Mairie

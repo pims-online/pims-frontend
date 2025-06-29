@@ -30,8 +30,8 @@ export type AppContextValues = {
 	coordinates: Coordinates;
 	setCoordinates: Dispatch<SetStateAction<Coordinates>>;
 	// State to manage the insee code of the city
-	inseeCode: number | string;
-	setInseeCode: Dispatch<SetStateAction<number | string>>;
+	inseeCode: number | undefined;
+	setInseeCode: Dispatch<SetStateAction<number | undefined>>;
 	// State to manage the identifiers of the risks identified around the address
 	riskIdList: Array<string> | undefined;
 	setRiskIdList: Dispatch<SetStateAction<Array<string> | undefined>>;
@@ -73,7 +73,7 @@ export const APP_CONTEXT_DEFAULT_VALUES = {
 		latitude: undefined,
 		longitude: undefined,
 	},
-	inseeCode: '',
+	inseeCode: undefined,
 	riskIdList: undefined,
 	riskIntensityMap: undefined,
 	gatheringPlace: '',

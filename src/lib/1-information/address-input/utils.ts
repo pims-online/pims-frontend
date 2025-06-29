@@ -99,7 +99,7 @@ export const getGeoplateformeFeaturesFromCoordinates = async (
 export const mockGeoplateformeFeature = (
 	coordinates?: Array<number>,
 	address?: string,
-	inseeCode?: string | number
+	inseeCode?: number
 ) => {
 	return {
 		geometry: {
@@ -107,7 +107,7 @@ export const mockGeoplateformeFeature = (
 		},
 		properties: {
 			label: address,
-			citycode: inseeCode,
+			citycode: `${inseeCode}`,
 		},
 	} as GeoplateformeApiFeature;
 };
@@ -118,19 +118,22 @@ export const mockGeoplateformeFeature = (
 export const getRisksAroundCoordinates = async (
 	coordinates?: Array<number>,
 	address?: string,
-	inseeCode?: string | number
+	inseeCode?: number
 ): Promise<GeorisqueApiResponse | undefined> => {
 	// Documentation : https://www.georisques.gouv.fr/doc-api#/Rapport%20PDF%20et%20JSON/generateRapportRisqueJson
 	let finalUrl = URL_GEORISQUE + 'resultats_rapport_risque?';
 
 	// We add query params from the most precised to the lowest
-	if (coordinates) {
+	if (coordinates !== undefined) {
 		finalUrl = finalUrl + 'latlon=' + (coordinates || []).join(',');
-	} else if (address) {
+	} else if (address !== undefined) {
 		const queryParams = new URLSearchParams(address).toString();
 		finalUrl = finalUrl + 'adresse=' + queryParams;
-	} else {
+	} else if (inseeCode !== undefined) {
 		finalUrl = finalUrl + 'code_insee=' + inseeCode;
+	} else {
+		console.error('getRisksAroundCoordinates expects one argument to be provided');
+		return undefined;
 	}
 
 	try {

@@ -17,7 +17,7 @@ export default function IodePastilleEligibility() {
 	useEffect(() => {
 		// Once an insee code has been detected (after the address was set), make
 		// a call to the backend to know if this city is eligible to iode pastille
-		if (inseeCode) {
+		if (inseeCode !== undefined) {
 			getIodePastilleEligibility(
 				inseeCode,
 				setIodePastilleEligibility,

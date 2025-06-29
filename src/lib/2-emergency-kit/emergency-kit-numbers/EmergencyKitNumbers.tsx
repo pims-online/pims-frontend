@@ -10,7 +10,7 @@ import EmergencyKitNumbersInputs from './EmergencyKitNumbersInputs';
 type Props = {
 	kitNumbers: KitNumbers;
 	setKitNumbers: Dispatch<SetStateAction<KitNumbers>>;
-	inseeCode?: string | number;
+	inseeCode?: number;
 };
 
 export default function EmergencyKitNumbers(props: Props) {

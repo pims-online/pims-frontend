@@ -14,7 +14,7 @@ export type PimsParams = {
 	locale: AppContextValues['pimsLocale'];
 	filename: string;
 	screenWidth: number;
-	inseeCode: number | string;
+	inseeCode: number | undefined;
 };
 
 type ApiResponse = AppContextValues['apiResponse'];
@@ -24,6 +24,11 @@ export const generatePims = async (
 	setApiResponse: Dispatch<SetStateAction<ApiResponse>>
 ): Promise<boolean> => {
 	const finalUrl = `${BACKEND_DOMAIN}/download-pims`;
+
+	if (params.inseeCode === undefined) {
+		console.error('Cannot generate PIMS: inseeCode missing');
+		return false;
+	}
 
 	try {
 		const response = await fetch(finalUrl, {

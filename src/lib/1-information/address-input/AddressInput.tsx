@@ -80,7 +80,7 @@ export default function AddressInput() {
 			const geoplateformeFeature = await handler();
 			const coordinates = geoplateformeFeature.geometry.coordinates;
 			const address = geoplateformeFeature.properties.label;
-			const inseeCode = geoplateformeFeature.properties.citycode;
+			const inseeCode = parseInt(geoplateformeFeature.properties.citycode, 10);
 
 			// 3 - Update the context data based on the feature
 			setCoordinates({
