@@ -337,10 +337,10 @@
 		"participation": {
 			"title": "I get involved",
 			"items": {
-				"item_1": "I get trained in life-saving skills by firefighters or an accredited civil safety association",
-				"item_2": "I become a volunteer firefighter and participate in rescue operations",
+				"item_1": "I get trained in life-saving skills by firefighters or an accredited civil safety association: <k1>First aid training (fr)</k1>",
+				"item_2": "I become a volunteer firefighter and participate in rescue operations: <k1>Become a volunteer firefighter (fr)</k1>",
 				"item_3": "I join my town's civil safety reserve to help support and assist the public",
-				"item_4": "I register on the public volunteer platform: <k1>{{- urlVolunteering }}</k1>"
+				"item_4": "I register on the public volunteer platform: <k1>{{- url }}</k1>"
 			}
 		},
 		"information": {

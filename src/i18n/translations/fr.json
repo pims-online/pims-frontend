@@ -337,10 +337,10 @@
 		"participation": {
 			"title": "Je m'implique",
 			"items": {
-				"item_1": "Je me forme aux gestes qui sauvent auprès des sapeurs-pompiers ou d'une association agréée de sécurité civile",
-				"item_2": "Je deviens pompier volontaire et je participe aux actions de secours",
+				"item_1": "Je me forme aux gestes qui sauvent auprès des sapeurs-pompiers ou d'une association agréée de sécurité civile : <k1>Se former aux gestes qui sauvent</k1>",
+				"item_2": "Je deviens pompier volontaire et je participe aux actions de secours : <k1>Devenir sapeur-pompier volontaire</k1>",
 				"item_3": "J'intègre la réserve de sécurité civile de ma commune pour participer au soutien et à l'assistance de la population",
-				"item_4": "Je m'inscris sur la plateforme publique du bénévolat : <k1>{{- urlVolunteering }}</k1>"
+				"item_4": "Je m'inscris sur la plateforme publique du bénévolat : <k1>{{- url }}</k1>"
 			}
 		},
 		"information": {
