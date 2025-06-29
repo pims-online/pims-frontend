@@ -27,6 +27,7 @@ export default function FinalizeButton(props: Props) {
 		setApiResponse,
 		gatheringPlace,
 		inseeCode,
+		dicrimInfo,
 	} = useContext(AppContext);
 
 	const handleFinalizeButton = async () => {
@@ -55,6 +56,7 @@ export default function FinalizeButton(props: Props) {
 			screenWidth: window.innerWidth,
 			gatheringPlace,
 			inseeCode,
+			dicrimInfo,
 		};
 
 		const isSuccess = await generatePims(params, setApiResponse);

@@ -54,6 +54,9 @@ export default function AppContextProvider({
 	const [radioFrequencies, setRadioFrequencies] = useState<
 		AppContextValues['radioFrequencies']
 	>(APP_CONTEXT_DEFAULT_VALUES.radioFrequencies);
+	const [dicrimInfo, setDicrimInfo] = useState<
+		AppContextValues['dicrimInfo']
+	>(APP_CONTEXT_DEFAULT_VALUES.dicrimInfo);
 	const [pimsFileName, setPimsFileName] = useState<string>(
 		APP_CONTEXT_DEFAULT_VALUES.pimsFileName
 	);
@@ -90,6 +93,8 @@ export default function AppContextProvider({
 		setUsefulNumbers,
 		radioFrequencies,
 		setRadioFrequencies,
+		dicrimInfo,
+		setDicrimInfo,
 		pimsFileName,
 		setPimsFileName,
 		pimsLocale,

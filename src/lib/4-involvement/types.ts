@@ -15,8 +15,3 @@ export type PaginatedResponseDicrimModel = {
     next: string,
     previous: string,
 }
-
-export type DicrimInfo = {
-    url: string,
-    cityName: string,
-}

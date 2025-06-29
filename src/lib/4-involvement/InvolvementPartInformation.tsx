@@ -7,21 +7,17 @@ import {
 	INVOLVEMENT_LINK_BUILDING_PRESERVATION,
 	INVOLVEMENT_LINK_GOUV_RISKS,
 } from './constants';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { getDicrimLink as getDicrimInfo } from './utils';
-import { DicrimInfo } from './types';
+import { AppContext } from '@/providers';
 
 
-type Props = {
-	inseeCode: number | undefined,
-};
+export default function InvolvementPartInformation() {
+	const { inseeCode, dicrimInfo, setDicrimInfo } = useContext(AppContext);
 
-export default function InvolvementPartInformation(props: Props) {
-	const { inseeCode } = props;
 	const { t } = useTranslation('involvement_screen');
 	const translationKeyPrefix = 'information';
-
-	const [dicrimInfo, setDicrimInfo] = useState<DicrimInfo | undefined>(undefined);
+	
 
 	useEffect(() => {
 		const fetchLink = async () => {
@@ -60,6 +56,7 @@ export default function InvolvementPartInformation(props: Props) {
 			)
 		}
 	}
+
 
 	return (
 		<Container withoutMarginBottom>

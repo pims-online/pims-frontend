@@ -1,4 +1,5 @@
-import { DicrimInfo, PaginatedResponseDicrimModel } from "./types";
+import { DicrimInfo } from "@/providers/AppContextConfig";
+import { PaginatedResponseDicrimModel } from "./types";
 
 
 // Returns the download link to the DICRIM of a municipality.

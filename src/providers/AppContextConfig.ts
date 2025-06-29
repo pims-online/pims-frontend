@@ -15,6 +15,10 @@ export type RadioFrequencies = {
 	ici: Array<string>;
 	franceInter: Array<string>;
 };
+export type DicrimInfo = {
+    url: string,
+    cityName: string,
+}
 export type Locale = 'fr' | 'en';
 export type ApiResponse = {
 	pims_url: string;
@@ -56,6 +60,9 @@ export type AppContextValues = {
 	// State to manage the radio frequencies of 3 informative brands
 	radioFrequencies: RadioFrequencies;
 	setRadioFrequencies: Dispatch<SetStateAction<RadioFrequencies>>;
+	// State to manage the link to the DICRIM
+	dicrimInfo: DicrimInfo | undefined;
+	setDicrimInfo: Dispatch<SetStateAction<DicrimInfo | undefined>>;
 	// State to manage the final name of the file
 	pimsFileName: string;
 	setPimsFileName: Dispatch<SetStateAction<string>>;
@@ -90,6 +97,7 @@ export const APP_CONTEXT_DEFAULT_VALUES = {
 		franceInfo: [],
 		ici: [],
 	} as RadioFrequencies,
+	dicrimInfo: undefined,
 	iodePastilleEligibility: '',
 	pimsFileName: '',
 } as AppContextValues;
