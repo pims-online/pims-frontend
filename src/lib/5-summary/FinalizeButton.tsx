@@ -38,7 +38,7 @@ export default function FinalizeButton(props: Props) {
 			}
 
 			const georisqueIdList = riskList
-									.map((risk) => risk.type.georisqueApiIdentifier);
+									.map((risk) => risk.type.identifier);
 
 			return georisqueIdList;
 		};
