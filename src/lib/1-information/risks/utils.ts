@@ -1,14 +1,14 @@
-import type { RiskItem } from './types';
+import type { RiskType } from './types';
 import { RISK_MAP } from './constants';
 
 
 /**
- * Given a list of identifier, return a list of RiskItem in the same order
+ * Given a list of identifier, return a list of RiskType in the same order
  */
 export const getRiskItemList = (
 	riskIdentifierList: Array<string>
-): Array<RiskItem> => {
-	const riskList = new Array<RiskItem>();
+): Array<RiskType> => {
+	const riskList = new Array<RiskType>();
 
 	riskIdentifierList.forEach(identifier => {
 		const risk = RISK_MAP.get(identifier);

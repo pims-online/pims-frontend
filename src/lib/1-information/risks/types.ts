@@ -1,4 +1,4 @@
-export type RiskItem = {
+export type RiskType = {
 	identifier: string;
 	georisqueApiIdentifier: string;
 	preventionListLength: number;
