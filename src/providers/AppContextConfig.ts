@@ -15,6 +15,17 @@ export type RadioFrequencies = {
 	ici: Array<string>;
 	franceInter: Array<string>;
 };
+export type RiskType = {
+	identifier: string;
+	georisqueApiIdentifier: string;
+	preventionListLength: number;
+	iconFileName: Array<string>;
+};
+export type Risk = {
+	type: RiskType,
+	intensityInCity: string | undefined,
+	intensityAtAddress: string | undefined,
+}
 export type DicrimInfo = {
     url: string,
     cityName: string,
@@ -36,12 +47,9 @@ export type AppContextValues = {
 	// State to manage the insee code of the city
 	inseeCode: number | undefined;
 	setInseeCode: Dispatch<SetStateAction<number | undefined>>;
-	// State to manage the identifiers of the risks identified around the address
-	riskIdList: Array<string> | undefined;
-	setRiskIdList: Dispatch<SetStateAction<Array<string> | undefined>>;
-	// State to manage the intensity of the risks at the given position
-	riskIntensityMap: Map<string, string> | undefined;
-	setRiskIntensityMap: Dispatch<Map<string, string> | undefined>;
+	// State to manage the list of risks
+	riskList: Array<Risk> | undefined;
+	setRiskList: Dispatch<SetStateAction<Array<Risk> | undefined>>;
 	// State to manage eligibility to iode pastille
 	iodePastilleEligibility: string;
 	setIodePastilleEligibility: Dispatch<SetStateAction<string>>;
@@ -81,8 +89,7 @@ export const APP_CONTEXT_DEFAULT_VALUES = {
 		longitude: undefined,
 	},
 	inseeCode: undefined,
-	riskIdList: undefined,
-	riskIntensityMap: undefined,
+	riskList: undefined,
 	gatheringPlace: '',
 	kitListChecked: false,
 	emergencyKitStorage: '',

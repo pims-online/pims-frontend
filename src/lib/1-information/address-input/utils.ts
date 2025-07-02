@@ -1,4 +1,5 @@
-import { RISK_IDENTIFIER_MAP, RISK_INTENSITY_MAP } from '../risks/constants';
+import { Risk } from '@/providers/AppContextConfig';
+import { RISK_TYPE_MAP, RISK_INTENSITY_MAP } from '../risks/constants';
 import type {
 	GeoplateformeApiResponse,
 	GeoplateformeApiFeature,
@@ -154,64 +155,67 @@ export const getRisksAroundCoordinates = async (
 	return undefined;
 };
 
-/**
- * Given a Georisque Response, return the list of the identifiers of the risks identified by georisque
- */
-export const getEffectiveRiskIdentifierListFromGeorisqueResponse = (
+/*
+	Given a Géorisque risk intensity, return the corresponding internal intensity identifier
+*/
+const importRiskIntensity = (
+	intensityStr: string | undefined
+): string | undefined => {
+	if (intensityStr === undefined) {
+		return undefined;
+	}
+
+	const intensity = RISK_INTENSITY_MAP.get(intensityStr)
+	if (intensity === undefined) {
+		console.warn(`Unknown GeoRisque risk level: ${intensityStr}`)
+		return undefined;
+	}
+
+	return intensity;
+}
+
+/*
+	Given a georisqueResponse, returns the associated risk list
+*/
+export const importRiskList = (
 	georisqueResponse: GeorisqueApiResponse
-): Array<string> => {
-	const riskIdList = new Array<string>();
+): Array<Risk> => {
+	const riskList = new Array<Risk>();
 
 	const allRisks = Object.entries(georisqueResponse.risquesTechnologiques).concat(Object.entries(georisqueResponse.risquesNaturels));
 	allRisks.forEach(entry => {
-		if (entry[1].present !== true) {
+		const georisqueId = entry[0];
+		const georisqueRisk = entry[1];
+
+		if (georisqueRisk.present !== true) {
 			return;
 		}
 
-		const identifiers = RISK_IDENTIFIER_MAP.get(entry[0]);
-		if (identifiers === undefined) {
-			console.warn(`Unknown GeoRisque identifier: ${entry[0]}`);
+		const types = RISK_TYPE_MAP.get(georisqueId);
+		if (types === undefined) {
+			console.warn(`Unknown GeoRisque identifier: ${georisqueId}`);
 			return;
 		}
+
+		if (georisqueRisk.libelleStatutAdresse === undefined) {
+			console.warn(`Unknown intensity at address for risk ${georisqueId}`);
+		}
+		if (georisqueRisk.libelleStatutCommune === undefined) {
+			console.warn(`Unknown intensity in city for risk ${georisqueId}`);
+		}
+		const intensityAtAddress = importRiskIntensity(georisqueRisk.libelleStatutAdresse);
+		const intensityInCity 	 = importRiskIntensity(georisqueRisk.libelleStatutCommune);
 		
-		identifiers.forEach(identifier => {
-			riskIdList.push(identifier);
+		types.forEach(type => {
+			const risk: Risk = {
+				type: type,
+				intensityAtAddress: intensityAtAddress,
+				intensityInCity: intensityInCity,
+			};
+
+			riskList.push(risk);
 		});
 	});
 
-	return riskIdList;
-};
-
-/**
- * Given a Georisque Response, return a mapping of georisque label to risk intensity level at the targetted address
- */
-export const getRiskIntensityMapFromGeorisqueResponse = (
-	georisqueResponse: GeorisqueApiResponse
-): Map<string, string> => {
-	const intensityMap = new Map<string, string>();
-
-	const allRisks = Object.entries(georisqueResponse.risquesTechnologiques).concat(Object.entries(georisqueResponse.risquesNaturels));
-	allRisks.forEach((entry) => {
-		const identifiers = RISK_IDENTIFIER_MAP.get(entry[0]);
-		if (identifiers === undefined) {
-			console.warn(`Unknown GeoRisque identifier: ${entry[0]}`);
-			return;
-		}
-
-		if (entry[1].libelleStatutCommune === undefined) {
-			return;
-		}
-
-		const intensity = RISK_INTENSITY_MAP.get(entry[1].libelleStatutCommune)
-		if (intensity === undefined) {
-			console.warn(`Unknown GeoRisque risk level: ${entry[1].libelleStatutCommune}`)
-			return;
-		}
-
-		identifiers.forEach(identifier => {
-			intensityMap.set(identifier, intensity);
-		});
-	});
-
-	return intensityMap;
-};
+	return riskList;
+}

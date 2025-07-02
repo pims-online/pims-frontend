@@ -9,6 +9,7 @@ import { useState, createContext } from 'react';
 import {
 	type AppContextValues,
 	APP_CONTEXT_DEFAULT_VALUES,
+	Risk,
 } from './AppContextConfig';
 
 export const AppContext = createContext<AppContextValues>(
@@ -31,11 +32,8 @@ export default function AppContextProvider({
 	const [inseeCode, setInseeCode] = useState<number | undefined>(
 		APP_CONTEXT_DEFAULT_VALUES.inseeCode
 	);
-	const [riskIdList, setRiskIdList] = useState<Array<string> | undefined>(
-		APP_CONTEXT_DEFAULT_VALUES.riskIdList
-	);
-	const [riskIntensityMap, setRiskIntensityMap] = useState<Map<string, string> | undefined>(
-		APP_CONTEXT_DEFAULT_VALUES.riskIntensityMap
+	const [riskList, setRiskList] = useState<Array<Risk> | undefined>(
+		APP_CONTEXT_DEFAULT_VALUES.riskList
 	);
 	const [iodePastilleEligibility, setIodePastilleEligibility] =
 		useState<string>(APP_CONTEXT_DEFAULT_VALUES.iodePastilleEligibility);
@@ -77,10 +75,8 @@ export default function AppContextProvider({
 		setCoordinates,
 		inseeCode,
 		setInseeCode,
-		riskIdList,
-		setRiskIdList,
-		riskIntensityMap,
-		setRiskIntensityMap,
+		riskList,
+		setRiskList,
 		iodePastilleEligibility,
 		setIodePastilleEligibility,
 		gatheringPlace,

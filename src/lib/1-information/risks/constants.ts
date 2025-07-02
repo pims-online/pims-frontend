@@ -12,7 +12,7 @@ import iconStorm2 from '@/assets/risk-icons/storm_2.svg';
 import iconTsunami from '@/assets/risk-icons/tsunami.svg';
 import iconVolcanicEruption from '@/assets/risk-icons/volcanic_eruption.svg';
 
-import type { RiskType } from './types';
+import { RiskType } from '@/providers/AppContextConfig';
 
 export const ITEM_INDUSTRIAL_ACCIDENT: RiskType = {
 	identifier: 'industrial_accident',
@@ -173,22 +173,16 @@ export const RISK_TYPES: RiskType[] = [
 	// ITEM_MINING_RISKS,
 ];
 
-// A mapping of georisque identifier to internal risk identifier
-export const RISK_IDENTIFIER_MAP: Map<string, string[]> = new Map<string, string[]>();
+// A mapping of georisque identifier to internal risk types
+export const RISK_TYPE_MAP: Map<string, RiskType[]> = new Map<string, RiskType[]>();
 IGNORED_RISKS_IDENTIFIERS.forEach(ignoredIdentifier => {
-	RISK_IDENTIFIER_MAP.set(ignoredIdentifier, []);
+	RISK_TYPE_MAP.set(ignoredIdentifier, []);
 });
 RISK_TYPES.forEach(risk => {
-	const previousRisks = RISK_IDENTIFIER_MAP.get(risk.georisqueApiIdentifier);
+	const previousRisks = RISK_TYPE_MAP.get(risk.georisqueApiIdentifier);
 	const risks = (previousRisks !== undefined) ? previousRisks : [];
-	risks.push(risk.identifier);
-	RISK_IDENTIFIER_MAP.set(risk.georisqueApiIdentifier, risks);
-});
-
-// A mapping of internal risk identifier to risk item
-export const RISK_MAP: Map<string, RiskType> = new Map<string, RiskType>();
-RISK_TYPES.forEach(risk => {
-	RISK_MAP.set(risk.identifier, risk);
+	risks.push(risk);
+	RISK_TYPE_MAP.set(risk.georisqueApiIdentifier, risks);
 });
 
 // A mapping of Géorisque intensity identifier to internal intensity identifier

@@ -1,22 +1,15 @@
-import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { Risk } from '@/providers/AppContextConfig';
 import RiskItem from './RiskItem';
-import { getRiskItemList } from './utils';
 
 type Props = {
-	riskIdList: Array<string>;
-	riskIntensityMap: Map<string, string> | undefined;
+	riskList: Array<Risk>;
 };
 
 export default function RiskList(props: Props) {
-	const riskIdList = props.riskIdList;
-	const riskIntensityMap = props.riskIntensityMap;
+	const riskList = props.riskList;
 	const { t } = useTranslation('risks');
-
-	const riskItemList = useMemo(() => {
-		return getRiskItemList(riskIdList);
-	}, [riskIdList]);
 
 	const getPreventionList = (
 		identifier: string,
@@ -28,35 +21,29 @@ export default function RiskList(props: Props) {
 	};
 
 	const getIntensity = (
-		identifier: string
+		intensityId: string | undefined
 	) => {
-		if (riskIntensityMap === undefined) {
-			return undefined;
-		}
-
-		const intensityId = riskIntensityMap.get(identifier);
 		if (intensityId === undefined) {
-			console.warn(`Unknown intensity for risk ${identifier}`);
 			return undefined;
 		}
 
 		return t("scale_city") + t(`intensity.${intensityId}`);
 	};
 
-	const risks = riskItemList.map((item, index) => {
-		const title = t(`${item.identifier}.title`);
-		const intensity = getIntensity(item.identifier)
+	const risks = riskList.map((risk, index) => {
+		const title = t(`${risk.type.identifier}.title`);
+		const intensity = getIntensity(risk.intensityInCity)
 		const preventionList = getPreventionList(
-				item.identifier,
-				item.preventionListLength
+				risk.type.identifier,
+				risk.type.preventionListLength
 			);
 
 		return (
 			<RiskItem
-			key={`risk-list-item-${item.identifier}-${index}`}
+			key={`risk-list-item-${risk.type.identifier}-${index}`}
 			title={title}
 			intensity={intensity}
-			iconsPaths={item.iconFileName}
+			iconsPaths={risk.type.iconFileName}
 			preventionList={preventionList}
 			isFirstItem={index === 0}
 		/>);
