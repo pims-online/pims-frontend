@@ -5,7 +5,7 @@ import { Button } from '@codegouvfr/react-dsfr/Button';
 import { AppContext } from '../../providers';
 import { Container, CircularProgress } from '@/components';
 
-import { generatePims } from './utils';
+import { generatePims, PimsParams, SerialisedRisk, serialiseRisk } from './utils';
 
 type Props = {
 	navigateToFinalScreen: () => void;
@@ -32,23 +32,20 @@ export default function FinalizeButton(props: Props) {
 	const handleFinalizeButton = async () => {
 		setIsProcessing(true);
 
-		const getRiskIdList = () => {
+		const serialiseRisks = (): SerialisedRisk[] => {
 			if (riskList === undefined) {
 				return [];
 			}
 
-			const georisqueIdList = riskList
-									.map((risk) => risk.type.identifier);
-
-			return georisqueIdList;
+			return riskList.map(serialiseRisk);
 		};
 
-		const params = {
+		const params: PimsParams = {
 			address,
 			locale: pimsLocale,
 			filename: pimsFileName,
 			usefulNumbers,
-			riskIdList: getRiskIdList(),
+			riskList: serialiseRisks(),
 			emergencyKitStorage,
 			radioFrequencies,
 			screenWidth: window.innerWidth,

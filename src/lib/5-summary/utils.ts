@@ -1,14 +1,20 @@
 import type { Dispatch, SetStateAction } from 'react';
 
 import type { AppContextValues } from '../../providers';
-import { DicrimInfo } from '@/providers/AppContextConfig';
+import { DicrimInfo, Risk } from '@/providers/AppContextConfig';
 
 const BACKEND_DOMAIN = import.meta.env.VITE_BACKEND_URL;
+
+export type SerialisedRisk = {
+	typeIdentifier: string;
+	intensityInCity: string | undefined,
+	intensityAtAddress: string | undefined,
+};
 
 export type PimsParams = {
 	address: string;
 	usefulNumbers: AppContextValues['usefulNumbers'];
-	riskIdList: Array<string>;
+	riskList: Array<SerialisedRisk>;
 	emergencyKitStorage: string;
 	radioFrequencies: AppContextValues['radioFrequencies'];
 	gatheringPlace: string;
@@ -20,6 +26,16 @@ export type PimsParams = {
 };
 
 type ApiResponse = AppContextValues['apiResponse'];
+
+export const serialiseRisk = (risk: Risk): SerialisedRisk => {
+	const serialisedRisk: SerialisedRisk = {
+		"typeIdentifier": risk.type.identifier,
+		"intensityAtAddress": risk.intensityAtAddress,
+		"intensityInCity": risk.intensityInCity,
+	};
+
+	return serialisedRisk;
+}
 
 export const generatePims = async (
 	params: PimsParams,
