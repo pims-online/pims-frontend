@@ -22,6 +22,7 @@ export type PimsParams = {
 	filename: string;
 	screenWidth: number;
 	inseeCode: number | undefined;
+	comment: string;
 };
 
 type ApiResponse = AppContextValues['apiResponse'];

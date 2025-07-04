@@ -67,6 +67,9 @@ export type AppContextValues = {
 	// State to manage the final name of the file
 	pimsFileName: string;
 	setPimsFileName: Dispatch<SetStateAction<string>>;
+	// State to manage the comment of the PIMS
+	pimsComment: string;
+	setPimsComment: Dispatch<SetStateAction<string>>;
 	// State to manage the locale of the file
 	pimsLocale: Locale;
 	setPimsLocale: Dispatch<SetStateAction<Locale>>;
@@ -99,4 +102,5 @@ export const APP_CONTEXT_DEFAULT_VALUES = {
 	} as RadioFrequencies,
 	iodePastilleEligibility: '',
 	pimsFileName: '',
+	pimsComment: '',
 } as AppContextValues;

@@ -371,9 +371,15 @@
 			}
 		},
 		"configuration": {
-			"naming": {
-				"title": "I name my PIMS (optional)",
-				"placeholder": "I name my PIMS (home, vacation, grandma, ...)"
+			"title": "I configure my PIMS (optional)",
+			"name": {
+				"label": "Name",
+				"hint": "The name of your PIMS",
+				"placeholder": "home, vacation, grandma, ..."
+			},
+			"comment": {
+				"label": "Comment",
+				"hint": "A comment for your PIMS"
 			},
 			"locale": {
 				"title": "I choose the language of my PIMS",

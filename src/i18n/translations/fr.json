@@ -371,9 +371,15 @@
 			}
 		},
 		"configuration": {
-			"naming": {
-				"title": "Je nomme mon PIMS (facultatif)",
-				"placeholder": "Je nomme mon PIMS (maison, vacances, mamie, ...)"
+			"title": "Je configure mon PIMS (facultatif)",
+			"name": {
+				"label": "Nom",
+				"hint": "Le nom de votre PIMS",
+				"placeholder": "maison, vacances, mamie, ..."
+			},
+			"comment": {
+				"label": "Commentaire",
+				"hint": "Un commentaire pour votre PIMS"
 			},
 			"locale": {
 				"title": "Je choisis la langue de mon PIMS",

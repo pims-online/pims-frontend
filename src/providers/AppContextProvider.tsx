@@ -55,6 +55,9 @@ export default function AppContextProvider({
 	const [pimsFileName, setPimsFileName] = useState<string>(
 		APP_CONTEXT_DEFAULT_VALUES.pimsFileName
 	);
+	const [pimsComment, setPimsComment] = useState<string>(
+		APP_CONTEXT_DEFAULT_VALUES.pimsComment
+	);
 	const [pimsLocale, setPimsLocale] =
 		useState<AppContextValues['pimsLocale']>('fr');
 	const [apiResponse, setApiResponse] = useState<
@@ -65,7 +68,7 @@ export default function AppContextProvider({
 		file_size_mo: 0,
 	});
 
-	const appContextValues = {
+	const appContextValues: AppContextValues = {
 		address,
 		setAddress,
 		coordinates,
@@ -92,6 +95,8 @@ export default function AppContextProvider({
 		setPimsLocale,
 		apiResponse,
 		setApiResponse,
+		pimsComment,
+		setPimsComment,
 	};
 
 	return (

@@ -22,6 +22,7 @@ export default function FinalButton(props: Props) {
 		setUsefulNumbers,
 		setRadioFrequencies,
 		setPimsFileName,
+		setPimsComment,
 	} = useContext(AppContext);
 	const onClickReset = () => {
 		// 1 - Reset the values of the context
@@ -38,6 +39,7 @@ export default function FinalButton(props: Props) {
 		setUsefulNumbers(APP_CONTEXT_DEFAULT_VALUES.usefulNumbers);
 		setRadioFrequencies(APP_CONTEXT_DEFAULT_VALUES.radioFrequencies);
 		setPimsFileName(APP_CONTEXT_DEFAULT_VALUES.pimsFileName);
+		setPimsComment(APP_CONTEXT_DEFAULT_VALUES.pimsComment);
 		// 2 - Navigate back to home screen
 		props.navigateToHomeScreen();
 	};
