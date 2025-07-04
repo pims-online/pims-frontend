@@ -346,10 +346,8 @@
 		"information": {
 			"title": "Je m'informe sur les sites dédiés",
 			"items": {
-				"item_1_with_link": "Je consulte le Document d'Information Communal sur les Risques Majeurs (DICRIM) : <k1>DICRIM - {{- cityName }}</k1>",
-				"item_1_no_link": "Je consulte le Document d'Information Communal sur les Risques Majeurs (DICRIM)",
-				"item_2": "Je m'informe sur les effets et les menaces : <k1>{{- urlGeorisques }}</k1>, <k2>{{- urlGouvRisks }}</k2>",
-				"item_3": "Je m'informe sur les mesures de préservation du bâti : <k1>{{- urlBuildingPreservations }}</k1>"
+				"item_1": "Je m'informe sur les effets et les menaces : <k1>{{- urlGeorisques }}</k1>, <k2>{{- urlGouvRisks }}</k2>",
+				"item_2": "Je m'informe sur les mesures de préservation du bâti : <k1>{{- urlBuildingPreservations }}</k1>"
 			}
 		}
 	},

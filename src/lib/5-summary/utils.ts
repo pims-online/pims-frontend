@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from 'react';
 
 import type { AppContextValues } from '../../providers';
-import { DicrimInfo, Risk } from '@/providers/AppContextConfig';
+import { Risk } from '@/providers/AppContextConfig';
 
 const BACKEND_DOMAIN = import.meta.env.VITE_BACKEND_URL;
 
@@ -22,7 +22,6 @@ export type PimsParams = {
 	filename: string;
 	screenWidth: number;
 	inseeCode: number | undefined;
-	dicrimInfo: DicrimInfo | undefined;
 };
 
 type ApiResponse = AppContextValues['apiResponse'];

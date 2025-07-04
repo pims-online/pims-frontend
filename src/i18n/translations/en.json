@@ -346,10 +346,8 @@
 		"information": {
 			"title": "I stay informed through dedicated sites",
 			"items": {
-				"item_1_with_link": "I look up the municipal information document on major risks (DICRIM) : <k1>DICRIM - {{- cityName }} (fr)</k1>",
-				"item_1_no_link": "I look up the municipal information document on major risks (DICRIM)",
-				"item_2": "I learn about risks and threats: <k1>{{- urlGeorisques }}</k1>, <k2>{{- urlGouvRisks }}</k2>",
-				"item_3": "I find out about building preservation measures: <k1>{{- urlBuildingPreservations }}</k1>"
+				"item_1": "I learn about risks and threats: <k1>{{- urlGeorisques }}</k1>, <k2>{{- urlGouvRisks }}</k2>",
+				"item_2": "I find out about building preservation measures: <k1>{{- urlBuildingPreservations }}</k1>"
 			}
 		}
 	},
