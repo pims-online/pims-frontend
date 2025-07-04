@@ -82,7 +82,7 @@
 		"scale_city": "Sur ma commune : ", 
 		"intensity": {
 			"intensity_present": "risque existant",
-			"intensity_low": "risqe faible",
+			"intensity_low": "risque faible",
 			"intensity_mid": "risque modéré",
 			"intensity_high": "risque important",
 			"intensity_unknown": "intensité inconnue",
