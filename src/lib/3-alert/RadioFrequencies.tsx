@@ -1,23 +1,30 @@
 import { useEffect, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AppContext } from '../../providers';
+import { APP_CONTEXT_DEFAULT_VALUES, AppContext } from '../../providers';
 import { Container, CircularProgress } from '@/components';
 
 import { getRadioFrequencies } from './utils';
 
 export default function RadioFrequencies() {
 	const { t } = useTranslation('alert_screen');
-	const { radioFrequencies, setRadioFrequencies, coordinates } =
+	const { radioFrequencies, setRadioFrequencies, inseeCode } =
 		useContext(AppContext);
 	const [isProcessing, setIsProcessing] = useState(false);
 
 	useEffect(() => {
 		const fetchFrequencies = async () => {
+			if (inseeCode === undefined) {
+				setRadioFrequencies(APP_CONTEXT_DEFAULT_VALUES.radioFrequencies);
+				return;
+			}
+
 			setIsProcessing(true);
 			try {
-				const data = await getRadioFrequencies(coordinates);
-				setRadioFrequencies(data);
+				const data = await getRadioFrequencies(inseeCode);
+				if (data !== undefined) {
+					setRadioFrequencies(data);
+				}
 			} catch (error) {
 				console.error(error);
 			}
@@ -25,7 +32,7 @@ export default function RadioFrequencies() {
 		};
 
 		fetchFrequencies();
-	}, [coordinates, setRadioFrequencies, setIsProcessing]);
+	}, [inseeCode, setRadioFrequencies, setIsProcessing]);
 
 	return (
 		<Container withoutMarginBottom>
@@ -36,9 +43,9 @@ export default function RadioFrequencies() {
 				<CircularProgress color="blue" size="medium" />
 			) : (
 				<ul className="pims-components__toothed-list">
-					<li>France Inter : {radioFrequencies.franceInter.join(', ')}</li>
-					<li>Ici : {radioFrequencies.ici.join(', ')}</li>
-					<li>France Info : {radioFrequencies.franceInfo.join(', ')}</li>
+					<li>France Inter : {radioFrequencies.franceInter.join(' / ')}</li>
+					<li>Ici : {radioFrequencies.ici.join(' / ')}</li>
+					<li>France Info : {radioFrequencies.franceInfo.join(' / ')}</li>
 				</ul>
 			)}
 		</Container>
