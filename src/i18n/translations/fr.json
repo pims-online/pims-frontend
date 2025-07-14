@@ -76,6 +76,11 @@
 			"title": "Vous êtes éligible à la pastille d'iode !",
 			"description": "Votre commune se situe dans le périmètre de l'Installation Nucléaire de Base de {{ inb }}. Assurez-vous d'avoir récupéré vos pastilles d'iode auprès d'une pharmacie.",
 			"pharmacy_map": "Accédez à la cartographie des pharmacies partenaires de la campagne de distribution des comprimés d'iodes."
+		},
+		"strim_obligation": {
+			"title": "Obligation légale de débroussaillement",
+			"description": "Vous êtes soumis à l'obligation légale de débrousaillement.",
+			"learn_more": "En savoir plus"
 		}
 	},
 	"risks": {

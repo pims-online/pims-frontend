@@ -8,6 +8,7 @@ import SectionAddressInput from './SectionAddressInput';
 import DisplayRiskListAll from './DisplayRiskListAll';
 import DisplayRiskListAround from './DisplayRiskListAround';
 import IodePastilleEligibility from './iode-pastille-eligibility/IodePastilleEligibility';
+import StrimmingObligation from './strimming-obligation/StrimmingObligation';
 
 type Props = {
 	setIsNavigateNextLocked: (nextValue: boolean) => void;
@@ -35,6 +36,7 @@ export default function InformationScreen(props: Props) {
 			<SectionAddressInput />
 			<DisplayRiskListAround riskList={riskList} />
 			<IodePastilleEligibility />
+			<StrimmingObligation />
 			<Divider />
 			<DisplayRiskListAll />
 		</div>

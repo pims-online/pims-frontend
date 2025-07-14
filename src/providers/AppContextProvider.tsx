@@ -10,6 +10,7 @@ import {
 	type AppContextValues,
 	APP_CONTEXT_DEFAULT_VALUES,
 	Risk,
+	StrimmingObligation,
 } from './AppContextConfig';
 
 export const AppContext = createContext<AppContextValues>(
@@ -37,6 +38,8 @@ export default function AppContextProvider({
 	);
 	const [iodePastilleEligibility, setIodePastilleEligibility] =
 		useState<string>(APP_CONTEXT_DEFAULT_VALUES.iodePastilleEligibility);
+	const [strimmingObligation, setStrimmingObligation] =
+		useState<StrimmingObligation | undefined>(APP_CONTEXT_DEFAULT_VALUES.strimmingObligation);
 	const [gatheringPlace, setGatheringPlace] = useState<string>(
 		APP_CONTEXT_DEFAULT_VALUES.gatheringPlace
 	);
@@ -79,6 +82,8 @@ export default function AppContextProvider({
 		setRiskList,
 		iodePastilleEligibility,
 		setIodePastilleEligibility,
+		strimmingObligation,
+		setStrimmingObligation,
 		gatheringPlace,
 		setGatheringPlace,
 		kitListChecked,

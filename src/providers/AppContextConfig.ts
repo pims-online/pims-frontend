@@ -26,6 +26,9 @@ export type Risk = {
 	intensityInCity: string | undefined,
 	intensityAtAddress: string | undefined,
 }
+export type StrimmingObligation = {
+	url: string|undefined,
+}
 export type Locale = 'fr' | 'en';
 export type ApiResponse = {
 	pims_url: string;
@@ -49,6 +52,9 @@ export type AppContextValues = {
 	// State to manage eligibility to iode pastille
 	iodePastilleEligibility: string;
 	setIodePastilleEligibility: Dispatch<SetStateAction<string>>;
+	// State to manage strimming obligation
+	strimmingObligation: StrimmingObligation | undefined;
+	setStrimmingObligation: Dispatch<SetStateAction<StrimmingObligation | undefined>>;
 	// State to manage the gathering place
 	gatheringPlace: string;
 	setGatheringPlace: Dispatch<SetStateAction<string>>;
@@ -100,6 +106,7 @@ export const APP_CONTEXT_DEFAULT_VALUES = {
 		franceInfo: [],
 		ici: [],
 	} as RadioFrequencies,
+	strimmingObligation: undefined,
 	iodePastilleEligibility: '',
 	pimsFileName: '',
 	pimsComment: '',

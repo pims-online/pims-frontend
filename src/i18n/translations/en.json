@@ -76,6 +76,11 @@
 			"title": "You are eligible for iodine tablets!",
 			"description": "Your municipality is located within the perimeter of the Basic Nuclear Installation of {{ inb }}. Make sure to collect your iodine tablets from a pharmacy.",
 			"pharmacy_map": "Access the map of partner pharmacies for the iodine tablet distribution campaign."
+		},
+		"strim_obligation": {
+			"title": "Strimming obligation",
+			"description": "You are subject to the legal obligation to clear undergrowth.",
+			"learn_more" : "Learn more"
 		}
 	},
 	"risks": {

@@ -16,6 +16,7 @@ export default function FinalButton(props: Props) {
 		setInseeCode,
 		setRiskList,
 		setIodePastilleEligibility,
+		setStrimmingObligation,
 		setGatheringPlace,
 		setKitListChecked,
 		setEmergencyKitStorage,
@@ -33,6 +34,7 @@ export default function FinalButton(props: Props) {
 		setIodePastilleEligibility(
 			APP_CONTEXT_DEFAULT_VALUES.iodePastilleEligibility
 		);
+		setStrimmingObligation(APP_CONTEXT_DEFAULT_VALUES.strimmingObligation);
 		setGatheringPlace(APP_CONTEXT_DEFAULT_VALUES.gatheringPlace);
 		setKitListChecked(APP_CONTEXT_DEFAULT_VALUES.kitListChecked);
 		setEmergencyKitStorage(APP_CONTEXT_DEFAULT_VALUES.emergencyKitStorage);
