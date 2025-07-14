@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from 'react';
 
 import type { AppContextValues } from '../../providers';
-import { Risk } from '@/providers/AppContextConfig';
+import { Risk, StrimmingObligation } from '@/providers/AppContextConfig';
 
 const BACKEND_DOMAIN = import.meta.env.VITE_BACKEND_URL;
 
@@ -15,6 +15,7 @@ export type PimsParams = {
 	address: string;
 	usefulNumbers: AppContextValues['usefulNumbers'];
 	riskList: Array<SerialisedRisk>;
+	strimmingObligation: StrimmingObligation | undefined;
 	emergencyKitStorage: string;
 	radioFrequencies: AppContextValues['radioFrequencies'];
 	gatheringPlace: string;
