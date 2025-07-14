@@ -2,7 +2,7 @@ import { StrimmingObligation } from "@/providers/AppContextConfig";
 
 
 
-export const fetchStrimmingObligation = async (inseeCode : number): Promise<StrimmingObligation|undefined> => {
+export const fetchStrimmingObligation = async (inseeCode : string): Promise<StrimmingObligation|undefined> => {
     try {
         const url = `https://georisques.gouv.fr/api/v1/old?code_insee=${inseeCode}`;
         const response = await fetch(url);

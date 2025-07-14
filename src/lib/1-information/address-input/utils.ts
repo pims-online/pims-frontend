@@ -119,7 +119,7 @@ export const mockGeoplateformeFeature = (
 export const getRisksAroundCoordinates = async (
 	coordinates?: Array<number>,
 	address?: string,
-	inseeCode?: number
+	inseeCode?: string
 ): Promise<GeorisqueApiResponse | undefined> => {
 	// Documentation : https://www.georisques.gouv.fr/doc-api#/Rapport%20PDF%20et%20JSON/generateRapportRisqueJson
 	let finalUrl = URL_GEORISQUE + 'resultats_rapport_risque?';

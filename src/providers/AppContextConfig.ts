@@ -44,8 +44,8 @@ export type AppContextValues = {
 	coordinates: Coordinates;
 	setCoordinates: Dispatch<SetStateAction<Coordinates>>;
 	// State to manage the insee code of the city
-	inseeCode: number | undefined;
-	setInseeCode: Dispatch<SetStateAction<number | undefined>>;
+	inseeCode: string | undefined;
+	setInseeCode: Dispatch<SetStateAction<string | undefined>>;
 	// State to manage the list of risks
 	riskList: Array<Risk> | undefined;
 	setRiskList: Dispatch<SetStateAction<Array<Risk> | undefined>>;

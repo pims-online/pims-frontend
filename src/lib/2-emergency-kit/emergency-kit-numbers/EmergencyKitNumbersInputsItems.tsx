@@ -11,7 +11,7 @@ type KitNumbersKeys = keyof KitNumbers;
 type Props = {
 	kitNumbers: KitNumbers;
 	setKitNumbers: Dispatch<SetStateAction<KitNumbers>>;
-	inseeCode?: number;
+	inseeCode?: string;
 };
 
 export default function EmergencyKitNumbersInputsItems(props: Props) {

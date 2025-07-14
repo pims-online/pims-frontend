@@ -4,7 +4,7 @@ type RadioFrequencies = AppContextValues['radioFrequencies'];
 
 
 export const getRadioFrequencies = async (
-	insee_code : number|undefined,
+	insee_code : string|undefined,
 ): Promise<RadioFrequencies|undefined> => {
 	if (insee_code === undefined) {
 		return undefined;

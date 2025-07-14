@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from 'react';
 const BACKEND_DOMAIN = import.meta.env.VITE_BACKEND_URL;
 
 export const getIodePastilleEligibility = async (
-	inseeCode: number,
+	inseeCode: string,
 	setIodePastilleEligibility: Dispatch<SetStateAction<string>>,
 	setIsFetchingAPI: Dispatch<SetStateAction<boolean>>
 ): Promise<void> => {

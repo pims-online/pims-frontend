@@ -75,7 +75,7 @@ export default function AddressInput() {
 			const geoplateformeFeature = await handler();
 			const coordinates = geoplateformeFeature.geometry.coordinates;
 			const address = geoplateformeFeature.properties.label;
-			const inseeCode = parseInt(geoplateformeFeature.properties.citycode, 10);
+			const inseeCode = geoplateformeFeature.properties.citycode;
 
 			// 3 - Update the context data based on the feature
 			setCoordinates({

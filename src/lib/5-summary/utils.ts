@@ -21,7 +21,7 @@ export type PimsParams = {
 	locale: AppContextValues['pimsLocale'];
 	filename: string;
 	screenWidth: number;
-	inseeCode: number | undefined;
+	inseeCode: string | undefined;
 	comment: string;
 };
 

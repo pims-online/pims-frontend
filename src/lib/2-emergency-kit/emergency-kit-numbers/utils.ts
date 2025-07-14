@@ -4,7 +4,7 @@ const ANNUAIRE_API_URL = 'https://api-lannuaire.service-public.fr/';
 const EXPLORE_PATH =
 	'/api/explore/v2.1/catalog/datasets/api-lannuaire-administration/records';
 
-export const getTownHallNumber = async (inseeCode?: number) => {
+export const getTownHallNumber = async (inseeCode?: string) => {
 	if (inseeCode === undefined) return '';
 
 	const queryParam = '?where';
