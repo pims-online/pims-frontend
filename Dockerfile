@@ -8,11 +8,10 @@ WORKDIR /home/node/app
 USER node
 
 # Install dependencies
-COPY --chown=node:node package*.json ./
+COPY --chown=node:node . .
 RUN npm install
 
 # Build project
-COPY --chown=node:node . .
 RUN npm run build
 
 
