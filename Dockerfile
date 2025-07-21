@@ -14,6 +14,9 @@ RUN npm install
 # Build project
 RUN npm run build
 
+# Workaround for url bug
+RUN ln -s assets dist/undefinedassets
+
 
 # ===== Step 2 : Package it into an nginx server =====
 FROM nginx:latest AS production
