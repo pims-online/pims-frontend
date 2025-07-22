@@ -43,9 +43,9 @@ export default function RadioFrequencies() {
 				<CircularProgress color="blue" size="medium" />
 			) : (
 				<ul className="pims-components__toothed-list">
-					<li>France Inter : {radioFrequencies.franceInter.join(' / ')}</li>
-					<li>Ici : {radioFrequencies.ici.join(' / ')}</li>
-					<li>France Info : {radioFrequencies.franceInfo.join(' / ')}</li>
+					<li>France Inter : {radioFrequencies.franceInter.join(' / ')} MHz</li>
+					<li>ICI : {radioFrequencies.ici.join(' / ')} MHz</li>
+					<li>franceinfo : {radioFrequencies.franceInfo.join(' / ')} MHz</li>
 				</ul>
 			)}
 		</Container>
