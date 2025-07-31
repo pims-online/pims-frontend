@@ -170,14 +170,9 @@ Liens utiles :
 - [Document pdf à destination des développeurs pour comprendre comment utiliser l'API](https://api-lannuaire.service-public.fr/explore/dataset/api-lannuaire-administration/information/)
 - [Tutoriel plus technique pour utiliser l'API](<https://help.opendatasoft.com/apis/ods-explore-v2/#section/Opendatasoft-Query-Language-(ODSQL)/Language-elements>)
 
-##### Proxy Radiofrance
+#### API de fréquences radio
 
-Un Proxy a été développé pour récupérer, à partir d'un jeu de coordonnées latitude & longitude, les fréquences Radio france.
-Comme il n'y a pas d'API radio france permettant de récupérer ces données, le proxy a pour seul objectif de récupérer un contenu html rendu sur cette page : <https://www.radiofrance.com/frequences>. L'utilisation d'un proxy a été rendue nécessaire à cause de problèmes CORS.
-
-Le contenu html est ensuite parsé pour extraire les données souhaitées.
-
-Ce proxy est codé sur le repository [pims-proxy](https://github.com/david-bretaud-dev/pims-proxy) et déployé à l'url <https://pims-proxy.vercel.app>.
+Le backend de PIMS met à disposition une API qui donne la fréquence des stations de Radio-France pour chaque ville de France. 
 
 ### :tada: Widget as Web Component
 
