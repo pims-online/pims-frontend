@@ -11,6 +11,9 @@ USER node
 COPY --chown=node:node . .
 RUN npm install
 
+# Apply security patches
+RUN npm audit fix
+
 # Build project
 RUN npm run build
 
