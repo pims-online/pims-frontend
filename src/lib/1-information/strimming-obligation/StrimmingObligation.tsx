@@ -25,7 +25,7 @@ export default function StrimmingObligation() {
             setIsFetching(false);
         };
         fetchAsync();
-    }, [inseeCode]);
+    }, [inseeCode, setStrimmingObligation]);
 
     const getStrimmingObligationJSXLink = () => {
         if (strimmingObligation === undefined) {

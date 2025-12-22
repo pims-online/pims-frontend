@@ -17,7 +17,7 @@ export const getRadioFrequencies = async (
 		const response = await fetch(url);
 		const text: RadioFrequencies = await response.json();
 		return text;
-	} catch (error) {
+	} catch {
 		return undefined;
 	}
 };
