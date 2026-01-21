@@ -2,13 +2,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path, { resolve } from 'path';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
-import dotenv from 'dotenv';
-
-// Load environment variables from .env file
-dotenv.config();
-
-// Vite import.meta.env is accessible only in the application code
-const URL = process.env.VITE_APP_URL;
 
 /** ----- BUILD STRUCTURE : dist/assets -----
  *
@@ -102,11 +95,6 @@ export default defineConfig({
 					return finalPath;
 				},
 			},
-		},
-	},
-	experimental: {
-		renderBuiltUrl(filename: string) {
-			return URL + filename;
 		},
 	},
 });
