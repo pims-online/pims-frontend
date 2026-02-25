@@ -1,6 +1,6 @@
 
 # ===== Step 1 : Build web content =====
-FROM docker.io/node:lts AS builder
+FROM docker.io/node:lts-alpine AS builder
 
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 WORKDIR /home/node/app
