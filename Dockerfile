@@ -24,4 +24,9 @@ FROM docker.io/nginx:latest AS production
 # Import built content
 COPY --from=builder /home/node/app/dist /var/www/html
 
+# Serve files from the built content
+RUN sed 's%root.*%root   /var/www/html;%' -i /etc/nginx/conf.d/default.conf
+# Set default page
+RUN sed 's%index.*%try_files $uri $uri/ /index.html;%' -i /etc/nginx/conf.d/default.conf
+
 EXPOSE 80
