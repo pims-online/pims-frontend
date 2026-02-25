@@ -1,6 +1,6 @@
 
 # ===== Step 1 : Build web content =====
-FROM node:lts AS builder
+FROM docker.io/node:lts AS builder
 
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 WORKDIR /home/node/app
@@ -19,7 +19,7 @@ RUN npm run build
 
 
 # ===== Step 2 : Package it into an nginx server =====
-FROM nginx:latest AS production
+FROM docker.io/nginx:latest AS production
 
 # Import built content
 COPY --from=builder /home/node/app/dist /var/www/html
