@@ -192,4 +192,6 @@ RISK_INTENSITY_MAP.set("Risque Existant - faible", "intensity_low");
 RISK_INTENSITY_MAP.set("Risque Existant - modéré", "intensity_mid");
 RISK_INTENSITY_MAP.set("Risque Existant - important", "intensity_high");
 RISK_INTENSITY_MAP.set("Risque Inconnu", "intensity_unknown");
+RISK_INTENSITY_MAP.set("Risque non Connu", "intensity_unknown");
 RISK_INTENSITY_MAP.set("Risque Concerne", "intensity_relevant");
+RISK_INTENSITY_MAP.set("Risque non Concerne", "intensity_irrelevant");

@@ -91,7 +91,8 @@
 			"intensity_mid": "moderate risk",
 			"intensity_high": "high risk",
 			"intensity_unknown": "unknown intensity",
-			"intensity_relevant": "concerned"
+			"intensity_relevant": "concerned",
+			"intensity_irrelevant": "not concerned"
 		},
 		"industrial_accident": {
 			"title": "Industrial accident",
