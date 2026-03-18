@@ -7,8 +7,8 @@
 		"step_five": "I generate my PIMS"
 	},
 	"header": {
-		"service_title": "Ready? Prepared!",
-		"service_tagline": "Individual Safety Plan",
+		"service_title": "Individual Safety Plan",
+		"service_tagline": "Ready? Prepared!",
 		"marianne": "Government",
 		"main_page_link": "Home - PIMS Online Procedure",
 		"footer": "The online PIMS is developed by the Directorate General for Civil Security and Crisis Management"
@@ -30,7 +30,7 @@
 				"item_2": "associate them with appropriate safety behaviors to be less vulnerable if an event occurs,",
 				"item_3": "prepare your emergency kit,",
 				"item_4": "get information on the public alert and vigilance procedures,",
-				"item_5": "create your PIMS: a synthetic document in PDF format, with all this information, which you can save directly to your device for easy access when needed."
+				"item_5": "create your PIMS: a synthetic document in PDF format, with all this information, that you can save directly to your device for easy access when needed."
 			}
 		},
 		"recipient": {
@@ -195,7 +195,7 @@
 			"title": "Coastal flooding",
 			"preventions": {
 				"item_1": "Keep as far away as possible from coastal areas, beaches and rivers",
-				"item_2": "Or climb to high ground and wait until the alert is over",
+				"item_2": "Otherwise climb to high ground and wait until the alert is over",
 				"item_3": "Postpone or cancel your trips",
 				"item_4": "At sea: head out to the open sea"
 			}
@@ -232,7 +232,7 @@
 				"item_1": "A battery-powered radio (with spare batteries)",
 				"item_2": "Medications and their prescriptions",
 				"item_3": "A first aid kit (alcohol, bandages, gauze, ...)",
-				"item_4": "Basic tools (multi-tool, can opener, ...)",
+				"item_4": "Basic tools (multi-purpose knife, can opener, ...)",
 				"item_5": "Non-perishable food that requires no cooking (canned goods, baby food)",
 				"item_6": "Warm clothing and an emergency blanket",
 				"item_7": "A flashlight (with spare batteries, candles, lighter)",
@@ -248,8 +248,8 @@
 			"checkbox": "I have reviewed the essential contents of my emergency kit"
 		},
 		"kit_storage": {
-			"accessibility": "I store my 72-hour emergency kit in an easily accessible location and share its whereabouts with my relatives",
-			"input_placeholder": "Enter here where your emergency kit is stored"
+			"accessibility": "I store my 72-hour emergency kit in an easily accessible location and share its location with my relatives",
+			"input_placeholder": "I enter where my emergency kit is stored"
 		},
 		"gathering_place": {
 			"title": "I identify where to gather in case of evacuation (optional)",
@@ -285,7 +285,7 @@
 			"activation": "In life-threatening situations, authorities may activate:",
 			"fr_alert": {
 				"title": "The FR-Alert system",
-				"content": "The <k1>FR-Alert system</k1> sends messages directly to the mobile phones of individuals in a hazard zone. To receive an FR-Alert message, no registration or app download is needed: simply keep your phone on, with an updated operating system, and connected to your network provider.",
+				"content": "The <k1>FR-Alert system</k1> sends messages directly to the mobile phones of individuals in a hazard zone. To receive an FR-Alert message, no registration or app download is needed: simply keep your phone on, with an up to date operating system and a connection to your network provider.",
 				"simulation": "To simulate receiving an FR-Alert message:",
 				"button": "FR-Alert sound"
 			},
@@ -299,11 +299,11 @@
 				"introduction": "In the event of an alarm:",
 				"no_phone": "<k1>Avoid making phone calls</k1> to keep the lines free for emergency services",
 				"stay_safe": "<k1>Stay indoors</k1> and only evacuate if ordered by authorities",
-				"listen_carefully": "<k1>Listen carefully</k1> to the instructions from authorities"
+				"listen_carefully": "<k1>Listen carefully</k1> for instructions from authorities"
 			},
 			"public_medias": {
 				"title": "Public media",
-				"content": "Public media and the social media of government services, Radio France, and France Télévisions are the channels through which authorities communicate with the public during crises."
+				"content": "Public media and the social media of government services, Radio France, and France Télévisions relay communications from the authorities to the public during crises."
 			},
 			"more_info": {
 				"title": "Learn more",
@@ -311,7 +311,7 @@
 			}
 		},
 		"fr_alert_discovery": {
-			"button": "Simulate the notification",
+			"button": "Simulate a notification",
 			"notification": {
 				"title": "FR-ALERT: Extreme Alert 11/11/2023 09:19 AM",
 				"body_1": "FLOOD ALERT",
@@ -334,9 +334,9 @@
 	"involvement_screen": {
 		"jnr": {
 			"title": "I participate in local awareness activities for the National Resilience Day (JNR)",
-			"content": "JNR takes place every year on October 13th and aims, through an open call for online projects, to promote risk awareness actions.",
+			"content": "JNR takes place every year on October 13th and aims to promote risk-awareness actions through an online and open call for projects.",
 			"items": {
-				"item_1": "I declare an awareness action I'm organizing on <k1>the dedicated platform</k1>",
+				"item_1": "I organise an awareness action and declare it on <k1>the dedicated platform</k1>",
 				"item_2": "I find nearby events on <k1>the JNR map</k1>"
 			}
 		},
@@ -345,30 +345,31 @@
 			"items": {
 				"item_1": "I get trained in life-saving skills by firefighters or an accredited civil safety association: <k1>First aid training (fr)</k1>",
 				"item_2": "I become a volunteer firefighter and participate in rescue operations: <k1>Become a volunteer firefighter (fr)</k1>",
-				"item_3": "I join my town's civil safety reserve to help support and assist the public",
+				"item_3": "I join my town's civil security reserve to help support and assist the public",
 				"item_4": "I register on the public volunteer platform: <k1>{{- url }}</k1>"
 			}
 		},
 		"information": {
 			"title": "I stay informed through dedicated sites",
 			"items": {
-				"item_1": "I learn about risks and threats: <k1>{{- urlGeorisques }}</k1>, <k2>{{- urlGouvRisks }}</k2>",
-				"item_2": "I find out about building preservation measures: <k1>{{- urlBuildingPreservations }}</k1>"
+				"item_1": "I learn about risks and threats: <k1>{{- urlGouvRisks }}</k1>",
+				"item_2": "I protect myself from cyber risks : <k1>{{- urlCybermalveillance }}</k1>",
+				"item_3": "I find out about <k1>building preservation measures</k1>"
 			}
 		}
 	},
 	"summary_screen": {
 		"information_check": {
-			"title": "I verify my data (optional)",
+			"title": "I check my data (optional)",
 			"modification": "To modify your entries, click « Modify »: you will be redirected to the corresponding step.",
 			"modify_button": "Modify",
 			"items": {
-				"address": "I verify my address",
-				"gathering_place": "I verify my gathering place",
+				"address": "I check my address",
+				"gathering_place": "I check my gathering place",
 				"unknown": "You have not provided this information.",
-				"kit_storage": "I verify where my 72-hour emergency kit is stored",
+				"kit_storage": "I check where my 72-hour emergency kit is stored",
 				"useful_numbers": {
-					"subtitle": "I verify useful numbers",
+					"subtitle": "I check the useful numbers",
 					"town_hall": "Town Hall: {{ number }}",
 					"insurance": "Insurance: {{ number }}",
 					"relatives": "Relatives: {{ number }}",
@@ -412,7 +413,7 @@
 			"body": "I just generated an ISP from the platform {{- pimsUrl }}. Here it is, feel free to take a look and share: {{- url }}",
 			"body_only": "I just generated my Individual Safety Plan from the platform {{- pimsUrl }}. Here it is, feel free to take a look and share: {{- url }}"
 		},
-		"goBackHome": "Return to the home screen"
+		"goBackHome": "Back to home screen"
 	},
 	"legal_information_page": {
 		"title": "Legal Information",
@@ -450,7 +451,7 @@
 	},
 	"site_map_page": {
 		"title": "Site Map",
-		"main": "Home - Online Procedures",
+		"main": "Home - Online procedure",
 		"site_map": "Site Map",
 		"legal_information": "Legal Information",
 		"accessibility": "Accessibility statement",
@@ -489,7 +490,7 @@
 			"via_email": "via the following email address:",
 			"via_letter": "or by mail at the following address:",
 			"data_policy": "All personal data collected is treated with the strictest confidentiality. In particular, state services are committed to respecting the confidentiality of emails transmitted through electronic messaging. Emails and email addresses are only kept for as long as necessary to process them.",
-			"contact_cnil": "In the event of a dispute regarding the exercise of your rights, or if you believe your claim concerns a violation of the Data Protection Law, you may contact the National Commission on Informatics and Liberty (CNIL) at the following contacts:"
+			"contact_cnil": "In the event of a dispute regarding the exercise of your rights, or if you believe your claim concerns a violation of the Data Protection Law \"Informatique et liberté\", you may contact the National Commission on Informatics and Liberty (CNIL) at the following contacts:"
 		},
 		"cookies": {
 			"title": "Trackers and Cookies",

@@ -24,14 +24,6 @@ export default function InvolvementPartInformation() {
 						components={{
 							k1: (
 								<a
-									href={`https://${INVOLVEMENT_LINK_CYBERMALVEILLANCE}`}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="pims-components__text-color-orange"
-								/>
-							),
-							k2: (
-								<a
 									href={`https://${INVOLVEMENT_LINK_GOUV_RISKS}`}
 									target="_blank"
 									rel="noopener noreferrer"
@@ -40,7 +32,6 @@ export default function InvolvementPartInformation() {
 							),
 						}}
 						values={{
-							urlGeorisques: INVOLVEMENT_LINK_CYBERMALVEILLANCE,
 							urlGouvRisks: INVOLVEMENT_LINK_GOUV_RISKS,
 						}}
 					/>
@@ -52,7 +43,7 @@ export default function InvolvementPartInformation() {
 						components={{
 							k1: (
 								<a
-									href={`https://${INVOLVEMENT_LINK_BUILDING_PRESERVATION}`}
+									href={`https://${INVOLVEMENT_LINK_CYBERMALVEILLANCE}`}
 									target="_blank"
 									rel="noopener noreferrer"
 									className="pims-components__text-color-orange"
@@ -60,7 +51,23 @@ export default function InvolvementPartInformation() {
 							),
 						}}
 						values={{
-							urlBuildingPreservations: INVOLVEMENT_LINK_BUILDING_PRESERVATION,
+							urlCybermalveillance: INVOLVEMENT_LINK_CYBERMALVEILLANCE,
+						}}
+					/>
+				</li>
+				<li>
+					<Trans
+						t={t}
+						i18nKey={`${translationKeyPrefix}.items.item_3`}
+						components={{
+							k1: (
+								<a
+									href={`https://${INVOLVEMENT_LINK_BUILDING_PRESERVATION}`}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="pims-components__text-color-orange"
+								/>
+							),
 						}}
 					/>
 				</li>

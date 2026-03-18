@@ -229,13 +229,13 @@
 		"kit_listing": {
 			"title": "Je constitue mon kit d'urgence",
 			"items": {
-				"item_1": "Une radio à piles (avec piles de recharge)",
+				"item_1": "Une radio à piles (avec piles de rechange)",
 				"item_2": "Des médicaments et leurs ordonnances",
 				"item_3": "Une trousse de premiers secours (alcool, pansements, compresses, ...)",
 				"item_4": "Des outils de base (couteau multifonction, ouvre-boîte, ...)",
 				"item_5": "De la nourriture non périssable et ne nécessitant pas de cuisson (conserves, petits pots de bébé)",
 				"item_6": "Des vêtements chauds et une couverture de survie",
-				"item_7": "Une lampe torche (avec des piles de recharge, bougies, briquet)",
+				"item_7": "Une lampe torche (avec des piles de rechange, bougies, briquet)",
 				"item_8": "Un chargeur de téléphone portable",
 				"item_9": "Ses lunettes de vue",
 				"item_10": "De l'argent liquide",
@@ -336,7 +336,7 @@
 			"title": "Je participe près de chez moi aux actions de sensibilisation de la Journée Nationale de la Résilience",
 			"content": "La JNR a lieu chaque année le 13 octobre et vise au travers d'un appel à projet en ligne ouvert à tous, à favoriser les actions de sensibilisations aux risques majeurs.",
 			"items": {
-				"item_1": "Je déclare une action de sensibilisation que j'organise sur <k1>la plateforme dédiée</k1>",
+				"item_1": "J'organise une action de sensibilisation, et la déclare sur <k1>la plateforme dédiée</k1>",
 				"item_2": "Je trouve les événements proches de chez moi sur <k1>la carte de la JNR</k1>"
 			}
 		},
@@ -352,8 +352,9 @@
 		"information": {
 			"title": "Je m'informe sur les sites dédiés",
 			"items": {
-				"item_1": "Je m'informe sur les effets et les menaces : <k1>{{- urlGeorisques }}</k1>, <k2>{{- urlGouvRisks }}</k2>",
-				"item_2": "Je m'informe sur les mesures de préservation du bâti : <k1>{{- urlBuildingPreservations }}</k1>"
+				"item_1": "Je m'informe sur les risques et les menaces : <k1>{{- urlGouvRisks }}</k1>",
+				"item_2": "Je m'informe sur les risques cyber : <k1>{{- urlCybermalveillance }}</k1>",
+				"item_3": "Je m'informe sur les <k1>mesures de préservation du bâti</k1>"
 			}
 		}
 	},
