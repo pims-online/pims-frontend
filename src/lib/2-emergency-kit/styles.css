@@ -1,10 +1,6 @@
 .pims-emergency-kit-screen__emergency-number-value {
-	color: var(--pims-orange);
 	margin-left: 4px;
 	font-size: 1.5rem;
-}
-
-.pims-emergency-kit-screen__input-list {
 }
 
 .pims-emergency-kit-screen__input-list li {

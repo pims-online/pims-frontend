@@ -23,13 +23,7 @@
 }
 
 .pims-components__title-contained {
-	color: var(--pims-orange);
-	background-color: var(--pims-blue);
 	width: fit-content;
-}
-
-.pims-components__subtitle {
-	color: var(--pims-orange);
 }
 
 .pims-components__text-indicator {
@@ -89,7 +83,6 @@
 }
 
 .pims-components__toothed-list {
-	border-left: 4px solid var(--pims-orange);
 	list-style-type: none;
 	border-radius: 4px;
 	padding-left: 8px;
@@ -127,7 +120,6 @@
 	content: '⎆';
 	position: absolute;
 	left: 0;
-	color: var(--pims-orange);
 }
 
 /* ----- Circular Progress ----- */
@@ -224,18 +216,6 @@
 	right: -5px;
 }
 
-.pims-components__cp-orange {
-	color: var(--pims-orange-transparent);
-}
-
-.pims-components__cp-orange::before {
-	color: var(--pims-orange);
-}
-
-.pims-components__cp-orange span::before {
-	color: var(--pims-orange);
-}
-
 .pims-components__cp-blue {
 	color: var(--background-alt-blue-france-active);
 }
@@ -272,19 +252,10 @@
 	gap: 8px;
 }
 
-.pims-components__text-color-orange {
-	color: var(--pims-orange);
-}
-
 .pims-components__text-red-marianne {
 	color: var(--text-action-high-red-marianne);
 }
 
-.pims-components__text-red-marianne-inverted {
-	color: var(--pims-red-marianne-inverted);
-}
-
 .pims-components__divider {
 	background-size: 100% 2px;
-	background-image: linear-gradient(0deg, var(--pims-blue), var(--pims-blue));
 }

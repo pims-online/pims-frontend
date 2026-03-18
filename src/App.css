@@ -3,17 +3,6 @@ Margin and padding should be set with the fr-m*-* and fr-p*-* classes
 --> See Classes CSS in https://www.systeme-de-design.gouv.fr/fondamentaux/espacement
 */
 
-:root {
-	--pims-blue: #2149a0; /* DGSCGC Color System*/
-	--pims-orange: #ec952d; /* DGSCGC Color System*/
-	--pims-orange-old: #f09939;
-	--pims-orange-transparent: #f0993980;
-	--pims-green-text-light: #b6d094;
-	--pims-green-text-dark: #4f5c3e;
-	--pims-green-background-light: #2d3842;
-	--pims-green-background-dark: #2d3842; /*#c8c8c8; */
-}
-
 body {
 	min-height: 100vh;
 }
@@ -26,18 +15,4 @@ h5,
 h6,
 p {
 	padding: 0;
-}
-
-/* Light and dark modes */
-
-.pims-light {
-	--pims-green-background: var(--pims-green-background-light);
-	--pims-green-text: var(--pims-green-text-light);
-	--pims-red-marianne-inverted: #f95c5e;
-}
-
-.pims-dark {
-	--pims-green-background: var(--pims-green-background-dark);
-	--pims-green-text: var(--pims-green-text-dark);
-	--pims-red-marianne-inverted: #c9191e;
 }
