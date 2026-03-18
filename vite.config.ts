@@ -15,8 +15,8 @@ import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
  * │	├── ...
  * │	└── ...
  * ├── js
- * │	└── widget.js
- * └── main.js
+ * │	└── widget-BcMY7tSa.js
+ * └── main-BcMY7tSa.js
  *
  * SVG files are converted into Data URIs by Vite when their size are < 4KB
  */
@@ -46,8 +46,8 @@ export default defineConfig({
 			) {
 				// Inject css in files (outputChunk) matching the following names
 				return (
-					outputChunk.fileName == 'assets/js/widget.js' ||
-					outputChunk.fileName == 'assets/main.js'
+					outputChunk.fileName.startsWith('assets/js/widget-') ||
+					outputChunk.fileName.startsWith('assets/main-')
 				);
 			},
 		}),
@@ -72,8 +72,8 @@ export default defineConfig({
 				entryFileNames: (assetInfo) => {
 					console.log('Entry : ', assetInfo?.name);
 					return assetInfo.name === 'widget'
-						? 'assets/js/[name].js'
-						: 'assets/[name].js';
+						? 'assets/js/[name]-[hash].js'
+						: 'assets/[name]-[hash].js';
 				},
 				assetFileNames: (assetInfo) => {
 					// Assets are static files (images, svg) greater than 4KB
