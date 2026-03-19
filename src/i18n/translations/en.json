@@ -328,7 +328,8 @@
 			}
 		},
 		"radio_frequencies": {
-			"near_station": "Radio stations near you:"
+			"near_station": "Radio stations near you:",
+			"unavailable": "unavailable"
 		}
 	},
 	"involvement_screen": {

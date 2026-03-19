@@ -328,7 +328,8 @@
 			}
 		},
 		"radio_frequencies": {
-			"near_station": "Les stations radio près de chez vous :"
+			"near_station": "Les stations radio près de chez vous :",
+			"unavailable": "indisponible"
 		}
 	},
 	"involvement_screen": {

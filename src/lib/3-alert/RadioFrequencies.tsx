@@ -34,6 +34,14 @@ export default function RadioFrequencies() {
 		fetchFrequencies();
 	}, [inseeCode, setRadioFrequencies, setIsProcessing]);
 
+	const frequenciesToString = (rawFreqs: string[]) => {
+		if (rawFreqs.length == 0) {
+			return <span className='pims-alert-screen__alert-systems-radio-freq-unavailable'>{t("radio_frequencies.unavailable")}</span>;
+		} else {
+			return <>{rawFreqs.join(" / ")} Mhz</>;
+		}
+	}
+
 	return (
 		<Container withoutMarginBottom>
 			<p className="pims-components__list-introducer">
@@ -43,9 +51,9 @@ export default function RadioFrequencies() {
 				<CircularProgress color="blue" size="medium" />
 			) : (
 				<ul className="pims-components__toothed-list">
-					<li>France Inter : {radioFrequencies.franceInter.join(' / ')} MHz</li>
-					<li>ICI : {radioFrequencies.ici.join(' / ')} MHz</li>
-					<li>franceinfo : {radioFrequencies.franceInfo.join(' / ')} MHz</li>
+					<li>France Inter : {frequenciesToString(radioFrequencies.franceInter)}</li>
+					<li>ICI : {frequenciesToString(radioFrequencies.ici)}</li>
+					<li>franceinfo : {frequenciesToString(radioFrequencies.franceInfo)}</li>
 				</ul>
 			)}
 		</Container>

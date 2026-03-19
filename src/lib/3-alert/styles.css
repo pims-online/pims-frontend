@@ -31,6 +31,10 @@
 	align-items: center;
 }
 
+.pims-alert-screen__alert-systems-radio-freq-unavailable {
+	color: var(--text-disabled-grey);
+}
+
 @media (max-width: 680px) {
 	.pims-alert-screen__saip-guidelines-grid-container {
 		grid-template-columns: none;
