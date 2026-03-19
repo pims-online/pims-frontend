@@ -257,14 +257,14 @@
 			"placeholder": "Information disponible en mairie"
 		},
 		"useful_numbers": {
-			"title": "Je référence les numéros utiles (facultatif)",
+			"title": "Je référence les numéros utiles",
 			"emergency": {
 				"subtitle": "À composer en cas d'urgence",
 				"112": "Numéro unique d'appel d'urgence en <k1>Europe</k1> : <k2>112</k2>",
 				"114": "Numéro d'appel d'urgence pour les <k1>malentendants</k1> : <k2>114</k2>"
 			},
 			"inputs": {
-				"subtitle": "Coordonnées à compléter",
+				"subtitle": "Coordonnées à compléter (facultatif)",
 				"town_hall": "Mairie :",
 				"insurance": "Assurance :",
 				"relatives": "Proches :",
@@ -336,8 +336,8 @@
 			"title": "Je participe près de chez moi aux actions de sensibilisation de la Journée Nationale de la Résilience",
 			"content": "La JNR a lieu chaque année le 13 octobre et vise au travers d'un appel à projet en ligne ouvert à tous, à favoriser les actions de sensibilisations aux risques majeurs.",
 			"items": {
-				"item_1": "J'organise une action de sensibilisation, et la déclare sur <k1>la plateforme dédiée</k1>",
-				"item_2": "Je trouve les événements proches de chez moi sur <k1>la carte de la JNR</k1>"
+				"item_1": "Je trouve les événements proches de chez moi sur <k1>la carte de la JNR</k1>",
+				"item_2": "J'organise une action de sensibilisation, et la déclare sur <k1>la plateforme dédiée</k1>"
 			}
 		},
 		"participation": {
