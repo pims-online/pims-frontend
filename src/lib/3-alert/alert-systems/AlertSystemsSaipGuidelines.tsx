@@ -2,26 +2,33 @@ import { useTranslation, Trans } from 'react-i18next';
 import { clsx } from 'clsx';
 
 import iconNoPhone from '@/assets/alert-icons/no_phone.png';
-import iconStaySafe from '@/assets/alert-icons/stay_home.png';
+import iconStaySafeLight from '@/assets/alert-icons/stay_home_light.svg';
+import iconStaySafeDark from '@/assets/alert-icons/stay_home_dark.svg';
 import iconListenCarefully from '@/assets/alert-icons/radio_on.png';
 
 import { Container } from '@/components';
+import { useIsDark } from '@codegouvfr/react-dsfr/useIsDark';
 
 export default function AlertSystemsSaipGuidelines() {
 	const { t } = useTranslation('alert_screen');
 
+	const { isDark } = useIsDark();
+
 	const items = [
 		{
 			translationKey: 'no_phone',
-			icon: iconNoPhone,
+			iconLight: iconNoPhone,
+			iconDark: iconNoPhone,
 		},
 		{
 			translationKey: 'stay_safe',
-			icon: iconStaySafe,
+			iconLight: iconStaySafeLight,
+			iconDark: iconStaySafeDark,
 		},
 		{
 			translationKey: 'listen_carefully',
-			icon: iconListenCarefully,
+			iconLight: iconListenCarefully,
+			iconDark: iconListenCarefully,
 		},
 	];
 
@@ -43,7 +50,7 @@ export default function AlertSystemsSaipGuidelines() {
 						)}
 					>
 						<img
-							src={item.icon}
+							src={isDark ? item.iconDark : item.iconLight}
 							width={80}
 							height={80}
 							alt={item.translationKey}
