@@ -3,8 +3,8 @@ import { useIsDark } from '@codegouvfr/react-dsfr/useIsDark';
 
 import { Container, Subtitle } from '@/components';
 import mediaSaip from '@/assets/media/sound_saip.mp3';
-import iconSaipLightMode from '@/assets/alert-icons/logo_saip_light_mode.png';
-import iconSaipDarkMode from '@/assets/alert-icons/logo_saip_dark_mode.png';
+import iconSaipLightMode from '@/assets/alert-icons/logo_saip_light_mode.min.svg';
+import iconSaipDarkMode from '@/assets/alert-icons/logo_saip_dark_mode.min.svg';
 
 import AlertSystemsSaipGuidelines from './AlertSystemsSaipGuidelines';
 import AudioPlayer from './AudioPlayer';
