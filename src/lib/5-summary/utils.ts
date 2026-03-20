@@ -15,7 +15,7 @@ export type PimsParams = {
 	address: string;
 	usefulNumbers: AppContextValues['usefulNumbers'];
 	riskList: Array<SerialisedRisk>;
-	strimmingObligation: StrimmingObligation | undefined;
+	strimmingObligation: StrimmingObligation;
 	emergencyKitStorage: string;
 	radioFrequencies: AppContextValues['radioFrequencies'];
 	gatheringPlace: string;

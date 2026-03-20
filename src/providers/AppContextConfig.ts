@@ -27,7 +27,8 @@ export type Risk = {
 	intensityAtAddress: string | undefined,
 }
 export type StrimmingObligation = {
-	url: string|undefined,
+	url: string,
+	affected: boolean,
 }
 export type Locale = 'fr' | 'en';
 export type ApiResponse = {

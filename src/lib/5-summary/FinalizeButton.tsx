@@ -33,6 +33,10 @@ export default function FinalizeButton(props: Props) {
 	const handleFinalizeButton = async () => {
 		setIsProcessing(true);
 
+		if (strimmingObligation === undefined) {
+			throw new Error("Cannot generate PIMS as strimmingObligation is undefined");
+		}
+
 		const serialiseRisks = (): SerialisedRisk[] => {
 			if (riskList === undefined) {
 				return [];

@@ -6,6 +6,13 @@ export const fetchStrimmingObligation = async (inseeCode : string): Promise<Stri
     try {
         const url = `https://georisques.gouv.fr/api/v1/old?code_insee=${inseeCode}`;
         const response = await fetch(url);
+
+        if (response.status === 404) {
+            return {
+                url: '',
+                affected: false,
+            };
+        }
     
         if (!response.ok) {
             return undefined;
@@ -16,12 +23,14 @@ export const fetchStrimmingObligation = async (inseeCode : string): Promise<Stri
 
         if (typeof detailUrl !== "string") {
             return {
-                "url": undefined,
+                url: '',
+                affected: false,
             };
         }
     
         return {
-            "url": detailUrl,
+            url: detailUrl,
+            affected: true,
         }
     } catch {
         return undefined;

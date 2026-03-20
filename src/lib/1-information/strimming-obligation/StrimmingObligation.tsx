@@ -29,10 +29,8 @@ export default function StrimmingObligation() {
     }, [inseeCode, setStrimmingObligation]);
 
     const getStrimmingObligationJSXLink = () => {
-        if (strimmingObligation === undefined) {
+        if (strimmingObligation === undefined || !strimmingObligation.affected) {
             return <></>;
-        } else if (strimmingObligation.url === undefined) {
-            return <></>
         } else {
             return (
                 <a
@@ -58,7 +56,7 @@ export default function StrimmingObligation() {
                 >
                     <CircularProgress color="blue" size="medium" />
                 </Container>
-    } else if (strimmingObligation !== undefined) {
+    } else if (strimmingObligation !== undefined && strimmingObligation.affected) {
         return (
             <Container
                     flexboxAlignment='start'
