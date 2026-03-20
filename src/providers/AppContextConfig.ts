@@ -50,8 +50,8 @@ export type AppContextValues = {
 	riskList: Array<Risk> | undefined;
 	setRiskList: Dispatch<SetStateAction<Array<Risk> | undefined>>;
 	// State to manage eligibility to iode pastille
-	iodePastilleEligibility: string;
-	setIodePastilleEligibility: Dispatch<SetStateAction<string>>;
+	iodePastilleEligibility: string | undefined;
+	setIodePastilleEligibility: Dispatch<SetStateAction<string | undefined>>;
 	// State to manage strimming obligation
 	strimmingObligation: StrimmingObligation | undefined;
 	setStrimmingObligation: Dispatch<SetStateAction<StrimmingObligation | undefined>>;
@@ -107,7 +107,7 @@ export const APP_CONTEXT_DEFAULT_VALUES = {
 		ici: [],
 	} as RadioFrequencies,
 	strimmingObligation: undefined,
-	iodePastilleEligibility: '',
+	iodePastilleEligibility: undefined,
 	pimsFileName: '',
 	pimsComment: '',
 } as AppContextValues;

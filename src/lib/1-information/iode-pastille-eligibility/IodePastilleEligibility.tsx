@@ -15,6 +15,8 @@ export default function IodePastilleEligibility() {
 	const { t } = useTranslation('information_screen');
 
 	useEffect(() => {
+		setIodePastilleEligibility(undefined);
+
 		// Once an insee code has been detected (after the address was set), make
 		// a call to the backend to know if this city is eligible to iode pastille
 		if (inseeCode !== undefined) {
@@ -26,35 +28,41 @@ export default function IodePastilleEligibility() {
 		}
 	}, [inseeCode, setIodePastilleEligibility]);
 
-	// If fetching has ended and user is not eligible, then we return nothing
-	if (!iodePastilleEligibility && !isFetchingAPI) return null;
-
-	return (
-		<Container
-			flexboxAlignment={isFetchingAPI ? 'center' : 'start'}
-			flexboxDirection="column"
-		>
-			{isFetchingAPI ? (
+	if (isFetchingAPI) {
+		return (
+			<Container
+				flexboxAlignment='center'
+				flexboxDirection="column"
+			>
 				<CircularProgress color="blue" size="medium" />
-			) : (
-				<>
-					<Alert
-						severity="warning"
-						title={t('iode_pastille.title')}
-						description={t('iode_pastille.description', {
-							inb: iodePastilleEligibility,
-						})}
-					/>
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://www.sante.fr/campagne-distribution-iode"
-						className="fr-mt-2v"
-					>
-						{t('iode_pastille.pharmacy_map')}
-					</a>
-				</>
-			)}
-		</Container>
-	);
+			</Container>
+		);
+	}
+
+	if (iodePastilleEligibility) {
+		return (
+			<Container
+				flexboxAlignment='start'
+				flexboxDirection="column"
+			>
+				<Alert
+					severity="warning"
+					title={t('iode_pastille.title')}
+					description={t('iode_pastille.description', {
+						inb: iodePastilleEligibility,
+					})}
+				/>
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://www.sante.fr/campagne-distribution-iode"
+					className="fr-mt-2v"
+				>
+					{t('iode_pastille.pharmacy_map')}
+				</a>
+			</Container>
+		);
+	}
+
+	return null;
 }

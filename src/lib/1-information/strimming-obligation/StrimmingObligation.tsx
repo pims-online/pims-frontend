@@ -13,8 +13,9 @@ export default function StrimmingObligation() {
     const [isFetching, setIsFetching] = useState<boolean>(false);
     
     useEffect(() => {
+        setStrimmingObligation(undefined);
+
         if (inseeCode === undefined) {
-            setStrimmingObligation(undefined);
             return;
         }
 

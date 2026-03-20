@@ -69,6 +69,7 @@ export default function AddressInput() {
 		// 1 - Display that we are fetching something
 		setIsFetchingAPI(true);
 		setShowAddressFeatureList(false);
+		setRiskList(undefined);
 
 		try {
 			// 2 - Apply the handler to get the Geoplateforme feature

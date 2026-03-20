@@ -4,10 +4,10 @@ const BACKEND_DOMAIN = import.meta.env.VITE_BACKEND_URL;
 
 export const getIodePastilleEligibility = async (
 	inseeCode: string,
-	setIodePastilleEligibility: Dispatch<SetStateAction<string>>,
+	setIodePastilleEligibility: Dispatch<SetStateAction<string|undefined>>,
 	setIsFetchingAPI: Dispatch<SetStateAction<boolean>>
 ): Promise<void> => {
-	const updateEligibility = (value: string) => {
+	const updateEligibility = (value: string|undefined) => {
 		setIodePastilleEligibility(value);
 		setIsFetchingAPI(false);
 		return;
@@ -32,10 +32,10 @@ export const getIodePastilleEligibility = async (
 			updateEligibility(data.inb_name);
 		} else {
 			console.error('Failed to get eligibility to iode pastille');
-			updateEligibility('');
+			updateEligibility(undefined);
 		}
 	} catch (error) {
 		console.error(error);
-		updateEligibility('');
+		updateEligibility(undefined);
 	}
 };

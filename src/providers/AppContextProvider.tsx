@@ -37,7 +37,7 @@ export default function AppContextProvider({
 		APP_CONTEXT_DEFAULT_VALUES.riskList
 	);
 	const [iodePastilleEligibility, setIodePastilleEligibility] =
-		useState<string>(APP_CONTEXT_DEFAULT_VALUES.iodePastilleEligibility);
+		useState<string|undefined>(APP_CONTEXT_DEFAULT_VALUES.iodePastilleEligibility);
 	const [strimmingObligation, setStrimmingObligation] =
 		useState<StrimmingObligation | undefined>(APP_CONTEXT_DEFAULT_VALUES.strimmingObligation);
 	const [gatheringPlace, setGatheringPlace] = useState<string>(
