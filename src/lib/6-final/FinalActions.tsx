@@ -3,9 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Download } from '@codegouvfr/react-dsfr/Download';
 
 import { AppContext } from '@/providers';
-import { Container, Title } from '@/components';
-
-import FinalShareLink from './FinalShareLink';
+import { Container } from '@/components';
 
 export default function FinalActions() {
 	const { t } = useTranslation('final_screen');
@@ -31,8 +29,6 @@ export default function FinalActions() {
 				id="pims-step-6__download-file"
 				className="fr-mb-6v"
 			/>
-			<Title text={t('actions.share')} contained />
-			<FinalShareLink />
 		</Container>
 	);
 }

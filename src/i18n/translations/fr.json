@@ -404,15 +404,9 @@
 		"success": "Bravo, votre PIMS ''{{ customName }}'' a été correctement généré en version PDF !",
 		"success_unnamed": "Bravo, votre PIMS a été correctement généré en version PDF !",
 		"actions": {
-			"introducer": "Vous pouvez dès à présent le télécharger et le partager autour de vous.",
+			"introducer": "Vous pouvez dès à présent le télécharger.",
 			"download": "Je télécharge mon PIMS",
-			"share": "Je partage mon PIMS avec mes proches",
 			"copyToClipboard": "Le lien a été correctement copié dans le presse-papiers."
-		},
-		"share": {
-			"subject": "Plan Individuel de Mise en Sureté",
-			"body": "Je viens de générer un PIMS depuis la plateforme {{- pimsUrl }}. Le voici, n'hésitez pas à regarder et partager : {{- url }}",
-			"body_only": "Je viens de générer mon Plan Individuel de Mise en Sureté depuis la plateforme {{- pimsUrl }}. Le voici, n'hésitez pas à regarder et partager : {{- url }}"
 		},
 		"goBackHome": "Retourner à l'écran d'accueil"
 	},

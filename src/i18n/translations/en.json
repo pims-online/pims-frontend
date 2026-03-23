@@ -404,15 +404,9 @@
 		"success": "Congratulations, your PIMS ''{{ customName }}'' has been successfully generated as a PDF!",
 		"success_unnamed": "Congratulations, your PIMS has been successfully generated as a PDF!",
 		"actions": {
-			"introducer": "You can now download it and share it with others.",
+			"introducer": "You can now download it.",
 			"download": "I download my PIMS",
-			"share": "I share my PIMS with my relatives",
 			"copyToClipboard": "The link has been successfully copied to the clipboard."
-		},
-		"share": {
-			"subject": "Individual Safety Plan",
-			"body": "I just generated an ISP from the platform {{- pimsUrl }}. Here it is, feel free to take a look and share: {{- url }}",
-			"body_only": "I just generated my Individual Safety Plan from the platform {{- pimsUrl }}. Here it is, feel free to take a look and share: {{- url }}"
 		},
 		"goBackHome": "Back to home screen"
 	},
