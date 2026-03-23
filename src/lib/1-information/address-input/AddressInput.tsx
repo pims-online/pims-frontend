@@ -121,7 +121,6 @@ export default function AddressInput() {
 				/>
 			)}
 			<GeolocationButton
-				setAddressFeatureList={setAddressFeatureList}
 				onAddressChosen={chooseAddress}
 			/>
 			{isFetchingAPI && (

@@ -36,10 +36,11 @@ export const getAutocompletedAddresses = (
  * Use the navigator feature to retrieve the user current position
  */
 export const getUserLocation = (
-	fetchGeoplateforme: (latitude: number, longitude: number) => Promise<void>
+	successCallback: (position: GeolocationPosition) => Promise<void>,
+	failureCallback: (error: GeolocationPositionError) => Promise<void>
 ) => {
 	// if geolocation is supported by the users browser
-	const options = {
+	const options: PositionOptions = {
 		enableHighAccuracy: true,
 		timeout: 4000,
 		maximumAge: 0,
@@ -48,15 +49,9 @@ export const getUserLocation = (
 		// get the current users location
 		navigator.geolocation.getCurrentPosition(
 			// If position can be retrieved
-			async (position) => {
-				const { latitude, longitude } = position.coords;
-
-				await fetchGeoplateforme(latitude, longitude);
-			},
+			successCallback,
 			// If there was an error getting the users location
-			(error) => {
-				console.error('Error getting user location:', error);
-			},
+			failureCallback,
 			options
 		);
 	}

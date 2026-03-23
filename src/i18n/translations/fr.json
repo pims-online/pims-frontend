@@ -66,6 +66,7 @@
 			"search_bar_label": "Adresse exacte"
 		},
 		"get_geolocation": "Utiliser ma position actuelle",
+		"geolocation_failed": "Échec de la géolocalisation",
 		"safe_behavior": "Les comportements de sauvegarde",
 		"no_risks_around": "Il n'y a pas de risques identifiés autour de votre position.",
 		"see_more_risks": {
