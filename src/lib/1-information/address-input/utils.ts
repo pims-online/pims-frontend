@@ -97,22 +97,6 @@ export const getGeoplateformeFeaturesFromCoordinates = async (
 	}
 };
 
-export const mockGeoplateformeFeature = (
-	coordinates?: Array<number>,
-	address?: string,
-	inseeCode?: number
-) => {
-	return {
-		geometry: {
-			coordinates: coordinates,
-		},
-		properties: {
-			label: address,
-			citycode: `${inseeCode}`,
-		},
-	} as GeoplateformeApiFeature;
-};
-
 /**
  * Given a set of coordinates, query the georisque API to retrieve the risks related to the address
  */

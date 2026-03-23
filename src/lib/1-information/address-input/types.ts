@@ -1,8 +1,6 @@
 // ----- HANDLERS -----
 
-export type Handler = () => Promise<GeoplateformeApiFeature>;
-
-export type HandlerWrapper = (handler: Handler) => () => Promise<void>;
+export type AddressChosenCallback = (geoplateformeFeature: GeoplateformeApiFeature) => Promise<void>;
 
 // ----- GEOPLATEFORME API -----
 

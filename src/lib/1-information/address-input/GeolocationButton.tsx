@@ -8,18 +8,18 @@ import {
 	getUserLocation,
 	getGeoplateformeFeaturesFromCoordinates,
 } from './utils';
-import type { GeoplateformeApiFeature, HandlerWrapper } from './types';
+import type { GeoplateformeApiFeature, AddressChosenCallback } from './types';
 
 type Props = {
 	setAddressFeatureList: Dispatch<
 		SetStateAction<Array<GeoplateformeApiFeature>>
 	>;
-	handlerWrapper: HandlerWrapper;
+	onAddressChosen: AddressChosenCallback;
 };
 
 export default function GeolocationButton(props: Props) {
 	const { t } = useTranslation('information_screen');
-	const { setAddressFeatureList, handlerWrapper } = props;
+	const { setAddressFeatureList, onAddressChosen } = props;
 	const [isProcessing, setIsProcessing] = useState(false);
 
 	const isGeolocationAPISupported = !!navigator.geolocation;
@@ -36,21 +36,15 @@ export default function GeolocationButton(props: Props) {
 			latitude,
 			longitude,
 		});
-		setAddressFeatureList(featureList || []);
+		setAddressFeatureList(featureList);
 
 		// 2 - Notify the user that it has been done
 		setIsProcessing(false);
 
 		// 3 - If list is not empty
-		if ((featureList || []).length > 0) {
-			// 4 - Select the address of the first item
-			const selectedFeature = featureList[0];
-			const getFeature = async () => {
-				return selectedFeature;
-			};
-			// 5 - Trigger full handler
-			const fullHandler = handlerWrapper(getFeature);
-			fullHandler();
+		if (featureList.length > 0) {
+			// 4 - Select the first address of the list
+			onAddressChosen(featureList[0]);
 		}
 	};
 

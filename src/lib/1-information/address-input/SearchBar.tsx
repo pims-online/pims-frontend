@@ -1,14 +1,13 @@
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SearchBar as DSFRSearchBar } from '@codegouvfr/react-dsfr/SearchBar';
-import { mockGeoplateformeFeature } from './utils';
 import type { GeoplateformeApiFeature } from './types';
 
-import type { HandlerWrapper } from './types';
+import type { AddressChosenCallback } from './types';
 type Props = {
 	address: string;
 	setAddress: Dispatch<SetStateAction<string>>;
-	handlerWrapper: HandlerWrapper;
+	onAddressChosen: AddressChosenCallback;
 	addressFeatureList: Array<GeoplateformeApiFeature>;
 	setShowAddressFeatureList: Dispatch<SetStateAction<boolean>>;
 };
@@ -19,30 +18,25 @@ export default function SearchBar(props: Props) {
 		address,
 		setAddress,
 		setShowAddressFeatureList,
-		handlerWrapper,
+		onAddressChosen,
 		addressFeatureList,
 	} = props;
 
 	const onChangeInputAddress = (event: React.ChangeEvent<HTMLInputElement>) => {
+		// Skip update if the address is already as expected (the change is probably comming from outside this component)
+		if (event.currentTarget.value === address) {
+			return;
+		}
 		setAddress(event.currentTarget.value);
 		setShowAddressFeatureList(true);
 	};
 
-	// If the user pressed Enter in the Input search bar, we need to trigger
-	// the fetch to geoplateforme based on the current address and select the best option
-	const geoplateformeHandler = async () => {
-		// If the featureList is not empty, return the first item
-		if ((addressFeatureList || []).length > 0) {
-			return addressFeatureList[0];
-		}
-		// Else, return only the address, with the structure of a GeoplateformeApiFeature
-		return mockGeoplateformeFeature(undefined, address, undefined);
-	};
-
 	const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
 		if (event.key === 'Enter') {
-			const fullHandler = handlerWrapper(geoplateformeHandler);
-			fullHandler();
+			// If the featureList is not empty, pick the first item
+			if (addressFeatureList.length > 0) {
+				onAddressChosen(addressFeatureList[0]);
+			}
 		}
 	};
 

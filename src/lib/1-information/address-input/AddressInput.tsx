@@ -9,7 +9,6 @@ import SearchBar from './SearchBar';
 import type {
 	GeoplateformeApiFeature,
 	GeorisqueApiResponse,
-	HandlerWrapper,
 } from './types';
 import {
 	getAutocompletedAddresses,
@@ -24,12 +23,14 @@ export default function AddressInput() {
 
 	// ----- State management -----
 
+	// The address typed by the user, may not be valid
+	const [tmpAddress, setTmpAddress] = useState<string>(address || '');
 	// State to manage the results of the query on data.geopf api
 	const [addressFeatureList, setAddressFeatureList] = useState<
 		Array<GeoplateformeApiFeature>
 	>([]);
 	// State to manage when to show the results of the data.geopf query, to help select a recognized address
-	const [showAddressFeatureList, setShowAddressFeatureList] = useState(true);
+	const [showAddressFeatureList, setShowAddressFeatureList] = useState(false);
 	// State to manage API loading
 	const [isFetchingAPI, setIsFetchingAPI] = useState(false);
 
@@ -37,10 +38,10 @@ export default function AddressInput() {
 
 	// Every time the address is updated, make a request on data.geopf to update the list
 	useEffect(() => {
-		if (address) {
-			getAutocompletedAddresses(address, setAddressFeatureList);
+		if (tmpAddress) {
+			getAutocompletedAddresses(tmpAddress, setAddressFeatureList);
 		}
-	}, [address]);
+	}, [tmpAddress]);
 
 	// ----- Georisque response handler -----
 
@@ -65,7 +66,8 @@ export default function AddressInput() {
 	// But what is before and after remains the same
 	// Thus, we provider a wrapper for handlers, where the handlers
 	// Should be async method returning one Geoplateforme Feature
-	const handlerWrapper: HandlerWrapper = (handler) => async () => {
+	const chooseAddress =
+		async (geoplateformeFeature: GeoplateformeApiFeature) => {
 		// 1 - Display that we are fetching something
 		setIsFetchingAPI(true);
 		setShowAddressFeatureList(false);
@@ -73,7 +75,6 @@ export default function AddressInput() {
 
 		try {
 			// 2 - Apply the handler to get the Geoplateforme feature
-			const geoplateformeFeature = await handler();
 			const coordinates = geoplateformeFeature.geometry.coordinates;
 			const address = geoplateformeFeature.properties.label;
 			const inseeCode = geoplateformeFeature.properties.citycode;
@@ -84,6 +85,7 @@ export default function AddressInput() {
 				latitude: coordinates[1], //georisqueResponse.latitude,
 			});
 			setInseeCode(inseeCode);
+			setTmpAddress(address);
 			setAddress(address);
 
 			// 4 - Fetch Georisque API
@@ -106,21 +108,21 @@ export default function AddressInput() {
 	return (
 		<>
 			<SearchBar
-				address={address}
-				setAddress={setAddress}
-				handlerWrapper={handlerWrapper}
+				address={tmpAddress}
+				setAddress={setTmpAddress}
+				onAddressChosen={chooseAddress}
 				addressFeatureList={addressFeatureList}
 				setShowAddressFeatureList={setShowAddressFeatureList}
 			/>
 			{showAddressFeatureList && addressFeatureList?.length > 0 && (
 				<AddressFeatureList
-					handlerWrapper={handlerWrapper}
+					onAddressChosen={chooseAddress}
 					addressFeatureList={addressFeatureList}
 				/>
 			)}
 			<GeolocationButton
 				setAddressFeatureList={setAddressFeatureList}
-				handlerWrapper={handlerWrapper}
+				onAddressChosen={chooseAddress}
 			/>
 			{isFetchingAPI && (
 				<Container
