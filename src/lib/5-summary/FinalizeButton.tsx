@@ -16,7 +16,7 @@ export default function FinalizeButton(props: Props) {
 	const { t } = useTranslation('summary_screen');
 	const [isProcessing, setIsProcessing] = useState(false);
 	const {
-		address,
+		position,
 		pimsLocale,
 		pimsFileName,
 		usefulNumbers,
@@ -26,7 +26,6 @@ export default function FinalizeButton(props: Props) {
 		radioFrequencies,
 		setApiResponse,
 		gatheringPlace,
-		inseeCode,
 		pimsComment,
 	} = useContext(AppContext);
 
@@ -35,6 +34,10 @@ export default function FinalizeButton(props: Props) {
 
 		if (strimmingObligation === undefined) {
 			throw new Error("Cannot generate PIMS as strimmingObligation is undefined");
+		}
+
+		if (position === undefined) {
+			throw new Error("Cannot generate PIMS as position is undefined");
 		}
 
 		const serialiseRisks = (): SerialisedRisk[] => {
@@ -46,7 +49,7 @@ export default function FinalizeButton(props: Props) {
 		};
 
 		const params: PimsParams = {
-			address,
+			address: position.address,
 			locale: pimsLocale,
 			filename: pimsFileName,
 			usefulNumbers,
@@ -56,7 +59,7 @@ export default function FinalizeButton(props: Props) {
 			radioFrequencies,
 			screenWidth: window.innerWidth,
 			gatheringPlace,
-			inseeCode,
+			inseeCode: position.inseeCode,
 			comment: pimsComment,
 		};
 

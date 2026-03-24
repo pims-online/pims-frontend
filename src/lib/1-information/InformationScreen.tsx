@@ -16,7 +16,7 @@ type Props = {
 
 export default function InformationScreen(props: Props) {
 	const { setIsNavigateNextLocked } = props;
-	const { riskList, iodePastilleEligibility, strimmingObligation, coordinates } = useContext(AppContext);
+	const { riskList, iodePastilleEligibility, strimmingObligation, position } = useContext(AppContext);
 
 	useEffect(() => {
 		// Block navigation while the coordinates of the user and the related risks are unknown
@@ -24,14 +24,13 @@ export default function InformationScreen(props: Props) {
 			riskList === undefined ||
 			iodePastilleEligibility === undefined ||
 			strimmingObligation === undefined ||
-			coordinates.latitude === undefined ||
-			coordinates.longitude === undefined
+			position === undefined
 		) {
 			setIsNavigateNextLocked(true);
 		} else {
 			setIsNavigateNextLocked(false);
 		}
-	}, [riskList, iodePastilleEligibility, strimmingObligation, coordinates, setIsNavigateNextLocked]);
+	}, [riskList, iodePastilleEligibility, strimmingObligation, position, setIsNavigateNextLocked]);
 
 	return (
 		<div>

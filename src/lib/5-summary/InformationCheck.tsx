@@ -13,7 +13,7 @@ type Props = {
 
 export default function InformationCheck(props: Props) {
 	const { t } = useTranslation('summary_screen');
-	const { emergencyKitStorage, usefulNumbers, address, gatheringPlace } =
+	const { emergencyKitStorage, usefulNumbers, position, gatheringPlace } =
 		useContext(AppContext);
 	const { navigateToInformationScreen, navigateToEmergencyKitScreen } = props;
 
@@ -46,7 +46,7 @@ export default function InformationCheck(props: Props) {
 				onClickModify={navigateToInformationScreen}
 				itemId="address"
 			>
-				{address}
+				{position?.address || "undefined"}
 			</InformationCheckItem>
 			<InformationCheckItem
 				subtitle={t('information_check.items.gathering_place')}

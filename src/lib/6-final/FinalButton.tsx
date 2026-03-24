@@ -11,9 +11,7 @@ type Props = {
 
 export default function FinalButton(props: Props) {
 	const {
-		setAddress,
-		setCoordinates,
-		setInseeCode,
+		setPosition,
 		setRiskList,
 		setIodePastilleEligibility,
 		setStrimmingObligation,
@@ -24,12 +22,11 @@ export default function FinalButton(props: Props) {
 		setRadioFrequencies,
 		setPimsFileName,
 		setPimsComment,
+		setApiResponse,
 	} = useContext(AppContext);
 	const onClickReset = () => {
 		// 1 - Reset the values of the context
-		setAddress(APP_CONTEXT_DEFAULT_VALUES.address);
-		setCoordinates(APP_CONTEXT_DEFAULT_VALUES.coordinates);
-		setInseeCode(APP_CONTEXT_DEFAULT_VALUES.inseeCode);
+		setPosition(APP_CONTEXT_DEFAULT_VALUES.position);
 		setRiskList(APP_CONTEXT_DEFAULT_VALUES.riskList);
 		setIodePastilleEligibility(
 			APP_CONTEXT_DEFAULT_VALUES.iodePastilleEligibility
@@ -42,6 +39,7 @@ export default function FinalButton(props: Props) {
 		setRadioFrequencies(APP_CONTEXT_DEFAULT_VALUES.radioFrequencies);
 		setPimsFileName(APP_CONTEXT_DEFAULT_VALUES.pimsFileName);
 		setPimsComment(APP_CONTEXT_DEFAULT_VALUES.pimsComment);
+		setApiResponse(APP_CONTEXT_DEFAULT_VALUES.apiResponse);
 		// 2 - Navigate back to home screen
 		props.navigateToHomeScreen();
 	};

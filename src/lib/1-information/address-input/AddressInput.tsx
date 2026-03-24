@@ -15,16 +15,18 @@ import {
 	getRisksAroundCoordinates,
 	importRiskList,
 } from './utils';
-import { Risk } from '@/providers/AppContextConfig';
+import { Position, Risk } from '@/providers/AppContextConfig';
 
 export default function AddressInput() {
-	const { setRiskList, address, setAddress, setCoordinates, setInseeCode } =
+	const { setRiskList, position, setPosition } =
 		useContext(AppContext);
 
 	// ----- State management -----
 
 	// The address typed by the user, may not be valid
-	const [tmpAddress, setTmpAddress] = useState<string>(address || '');
+	const searchParams = new URLSearchParams(window.location.search);
+	const addressFromUrl = searchParams.get('address');
+	const [tmpAddress, setTmpAddress] = useState<string>(position?.address || addressFromUrl || '');
 	// State to manage the results of the query on data.geopf api
 	const [addressFeatureList, setAddressFeatureList] = useState<
 		Array<GeoplateformeApiFeature>
@@ -80,13 +82,16 @@ export default function AddressInput() {
 			const inseeCode = geoplateformeFeature.properties.citycode;
 
 			// 3 - Update the context data based on the feature
-			setCoordinates({
-				longitude: coordinates[0], // georisqueResponse.longitude,
-				latitude: coordinates[1], //georisqueResponse.latitude,
-			});
-			setInseeCode(inseeCode);
 			setTmpAddress(address);
-			setAddress(address);
+			const position: Position = {
+				address,
+				coords: {
+					longitude: coordinates[0],
+					latitude: coordinates[1],
+				},
+				inseeCode,
+			};
+			setPosition(position);
 
 			// 4 - Fetch Georisque API
 			const georisqueResponse = await getRisksAroundCoordinates(

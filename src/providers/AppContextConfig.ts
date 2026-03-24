@@ -1,8 +1,13 @@
 import { Dispatch, SetStateAction } from 'react';
 
 export type Coordinates = {
-	latitude: number | undefined;
-	longitude: number | undefined;
+	latitude: number;
+	longitude: number;
+};
+export type Position = {
+	address: string;
+	inseeCode: string;
+	coords: Coordinates;
 };
 export type UsefulNumbers = {
 	townHall: string;
@@ -38,15 +43,9 @@ export type ApiResponse = {
 };
 
 export type AppContextValues = {
-	// State to manage the content of the Address Input Search Bar
-	address: string;
-	setAddress: Dispatch<SetStateAction<string>>;
-	// State to manage the coordinates (latitude, longitude) related to the address
-	coordinates: Coordinates;
-	setCoordinates: Dispatch<SetStateAction<Coordinates>>;
-	// State to manage the insee code of the city
-	inseeCode: string | undefined;
-	setInseeCode: Dispatch<SetStateAction<string | undefined>>;
+	// State to manage the position of the PIMS as a single object
+	position: Position|undefined;
+	setPosition: Dispatch<SetStateAction<Position|undefined>>;
 	// State to manage the list of risks
 	riskList: Array<Risk> | undefined;
 	setRiskList: Dispatch<SetStateAction<Array<Risk> | undefined>>;
@@ -86,12 +85,7 @@ export type AppContextValues = {
 };
 
 export const APP_CONTEXT_DEFAULT_VALUES = {
-	address: '',
-	coordinates: {
-		latitude: undefined,
-		longitude: undefined,
-	},
-	inseeCode: undefined,
+	position: undefined,
 	riskList: undefined,
 	gatheringPlace: '',
 	kitListChecked: false,

@@ -9,7 +9,7 @@ import { Container, CircularProgress } from '@/components';
 import { getIodePastilleEligibility } from './utils';
 
 export default function IodePastilleEligibility() {
-	const { iodePastilleEligibility, setIodePastilleEligibility, inseeCode } =
+	const { iodePastilleEligibility, setIodePastilleEligibility, position } =
 		useContext(AppContext);
 	const [isFetchingAPI, setIsFetchingAPI] = useState(false);
 	const { t } = useTranslation('information_screen');
@@ -19,14 +19,14 @@ export default function IodePastilleEligibility() {
 
 		// Once an insee code has been detected (after the address was set), make
 		// a call to the backend to know if this city is eligible to iode pastille
-		if (inseeCode !== undefined) {
+		if (position !== undefined) {
 			getIodePastilleEligibility(
-				inseeCode,
+				position.inseeCode,
 				setIodePastilleEligibility,
 				setIsFetchingAPI
 			);
 		}
-	}, [inseeCode, setIodePastilleEligibility]);
+	}, [position, setIodePastilleEligibility]);
 
 	if (isFetchingAPI) {
 		return (

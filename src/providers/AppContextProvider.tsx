@@ -9,6 +9,7 @@ import { useState, createContext } from 'react';
 import {
 	type AppContextValues,
 	APP_CONTEXT_DEFAULT_VALUES,
+	Position,
 	Risk,
 	StrimmingObligation,
 } from './AppContextConfig';
@@ -22,17 +23,7 @@ export default function AppContextProvider({
 }: {
 	children: React.ReactNode;
 }) {
-	const searchParams = new URLSearchParams(window.location.search);
-	const addressFromUrl = searchParams.get('address');
-	const [address, setAddress] = useState<string>(
-		addressFromUrl || APP_CONTEXT_DEFAULT_VALUES.address
-	);
-	const [coordinates, setCoordinates] = useState<
-		AppContextValues['coordinates']
-	>(APP_CONTEXT_DEFAULT_VALUES.coordinates);
-	const [inseeCode, setInseeCode] = useState<string | undefined>(
-		APP_CONTEXT_DEFAULT_VALUES.inseeCode
-	);
+	const [position, setPosition] = useState<Position|undefined>(undefined);
 	const [riskList, setRiskList] = useState<Array<Risk> | undefined>(
 		APP_CONTEXT_DEFAULT_VALUES.riskList
 	);
@@ -72,12 +63,8 @@ export default function AppContextProvider({
 	});
 
 	const appContextValues: AppContextValues = {
-		address,
-		setAddress,
-		coordinates,
-		setCoordinates,
-		inseeCode,
-		setInseeCode,
+		position,
+		setPosition,
 		riskList,
 		setRiskList,
 		iodePastilleEligibility,

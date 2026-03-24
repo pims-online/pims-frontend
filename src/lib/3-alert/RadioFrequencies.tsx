@@ -8,20 +8,20 @@ import { getRadioFrequencies } from './utils';
 
 export default function RadioFrequencies() {
 	const { t } = useTranslation('alert_screen');
-	const { radioFrequencies, setRadioFrequencies, inseeCode } =
+	const { radioFrequencies, setRadioFrequencies, position } =
 		useContext(AppContext);
 	const [isProcessing, setIsProcessing] = useState(false);
 
 	useEffect(() => {
 		const fetchFrequencies = async () => {
-			if (inseeCode === undefined) {
+			if (position === undefined) {
 				setRadioFrequencies(APP_CONTEXT_DEFAULT_VALUES.radioFrequencies);
 				return;
 			}
 
 			setIsProcessing(true);
 			try {
-				const data = await getRadioFrequencies(inseeCode);
+				const data = await getRadioFrequencies(position.inseeCode);
 				if (data !== undefined) {
 					setRadioFrequencies(data);
 				}
@@ -32,7 +32,7 @@ export default function RadioFrequencies() {
 		};
 
 		fetchFrequencies();
-	}, [inseeCode, setRadioFrequencies, setIsProcessing]);
+	}, [position]);
 
 	const frequenciesToString = (rawFreqs: string[]) => {
 		if (rawFreqs.length == 0) {

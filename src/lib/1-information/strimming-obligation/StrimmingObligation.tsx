@@ -8,25 +8,25 @@ import { fetchStrimmingObligation } from "./utils";
 
 
 export default function StrimmingObligation() {
-    const {inseeCode, strimmingObligation, setStrimmingObligation} = useContext(AppContext);
+    const {position, strimmingObligation, setStrimmingObligation} = useContext(AppContext);
     const { t } = useTranslation('information_screen');
     const [isFetching, setIsFetching] = useState<boolean>(false);
     
     useEffect(() => {
         setStrimmingObligation(undefined);
 
-        if (inseeCode === undefined) {
+        if (position === undefined) {
             return;
         }
 
         const fetchAsync = async () => {
             setIsFetching(true);
-            const strimmingObligation = await fetchStrimmingObligation(inseeCode);
+            const strimmingObligation = await fetchStrimmingObligation(position.inseeCode);
             setStrimmingObligation(strimmingObligation);
             setIsFetching(false);
         };
         fetchAsync();
-    }, [inseeCode, setStrimmingObligation]);
+    }, [position]);
 
     const getStrimmingObligationJSXLink = () => {
         if (strimmingObligation === undefined || !strimmingObligation.affected) {
@@ -45,7 +45,7 @@ export default function StrimmingObligation() {
         }
     }
 
-    if (inseeCode === undefined) {
+    if (position === undefined) {
         return <></>;
     }
 
