@@ -82,6 +82,7 @@ export default function AddressInput(props: Props) {
 		async (geoplateformeFeature: GeoplateformeApiFeature) => {
 		// 1 - Display that we are fetching something
 		setIsFetchingAPI(true);
+		setIsHighlighted(false);
 		setShowAddressFeatureList(false);
 		setRiskList(undefined);
 
