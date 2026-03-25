@@ -63,7 +63,8 @@
 		"address": {
 			"title": "I identify the major risks around me",
 			"call_to_action": "Please enter your address",
-			"search_bar_label": "Exact address"
+			"search_bar_label": "Exact address",
+			"address_missing": "Address missing"
 		},
 		"get_geolocation": "Use my current location",
 		"geolocation_failed": "Geolocation failed",
@@ -246,11 +247,13 @@
 				"item_14": "Games to pass the time",
 				"iode_pastille": "Iodine tablets collected from a pharmacy"
 			},
-			"checkbox": "I have reviewed the essential contents of my emergency kit"
+			"checkbox": "I have reviewed the essential contents of my emergency kit",
+			"checkbox_required": "Action required"
 		},
 		"kit_storage": {
 			"accessibility": "I store my 72-hour emergency kit in an easily accessible location and share its location with my relatives",
-			"input_placeholder": "I enter where my emergency kit is stored"
+			"input_placeholder": "I enter where my emergency kit is stored",
+			"missing_value": "Storage location of your kit required"
 		},
 		"gathering_place": {
 			"title": "I identify where to gather in case of evacuation (optional)",
@@ -272,8 +275,7 @@
 				"others": "Others:",
 				"suggested_number": "Suggested number: {{ suggestedNumber }}"
 			}
-		},
-		"go_to_next_step": "To proceed to the next step, you must check that you have reviewed the emergency kit contents and entered the location where your kit is stored."
+		}
 	},
 	"alert_screen": {
 		"alea": "In case of a hazard, the authorities will issue safety instructions either through vigilance or public alert systems. Follow these instructions: you will help ensure your safety and support the efforts of emergency services.",

@@ -1,15 +1,17 @@
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
-import { SearchBar as DSFRSearchBar } from '@codegouvfr/react-dsfr/SearchBar';
 import type { GeoplateformeApiFeature } from './types';
 
 import type { AddressChosenCallback } from './types';
+import Input from '@codegouvfr/react-dsfr/Input';
 type Props = {
 	address: string;
 	setAddress: Dispatch<SetStateAction<string>>;
 	onAddressChosen: AddressChosenCallback;
 	addressFeatureList: Array<GeoplateformeApiFeature>;
 	setShowAddressFeatureList: Dispatch<SetStateAction<boolean>>;
+	highlighted: boolean;
+	setHighlighted: Dispatch<SetStateAction<boolean>>;
 };
 
 export default function SearchBar(props: Props) {
@@ -20,13 +22,18 @@ export default function SearchBar(props: Props) {
 		setShowAddressFeatureList,
 		onAddressChosen,
 		addressFeatureList,
+		highlighted,
+		setHighlighted,
 	} = props;
 
 	const onChangeInputAddress = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setHighlighted(false);
+
 		// Skip update if the address is already as expected (the change is probably comming from outside this component)
 		if (event.currentTarget.value === address) {
 			return;
 		}
+
 		setAddress(event.currentTarget.value);
 		setShowAddressFeatureList(true);
 	};
@@ -41,22 +48,17 @@ export default function SearchBar(props: Props) {
 	};
 
 	return (
-		<DSFRSearchBar
-			renderInput={({ className, id, type }) => (
-				<input
-					className={className}
-					id={id}
-					placeholder={t('address.search_bar_label')}
-					type={type}
-					value={address}
-					// Note: The default behavior for an input of type 'text' is to clear the input value when the escape key is pressed.
-					// However, due to a bug in @gouvfr/dsfr the escape key event is not propagated to the input element.
-					// As a result this onChange is not called when the escape key is pressed.
-					onChange={onChangeInputAddress}
-					// Same goes for the keydown event so this is useless but we hope the bug will be fixed soon
-					onKeyDown={handleKeyDown}
-				/>
-			)}
+		<Input
+			label="Veuillez renseigner votre adresse"
+			iconId='fr-icon-search-line'
+			nativeInputProps={{
+				placeholder: t('address.search_bar_label'),
+				value: address,
+				onChange: onChangeInputAddress,
+				onKeyDown: handleKeyDown,
+			}}
+			state={highlighted ? "error" : undefined}
+			stateRelatedMessage={highlighted ? t("address.address_missing") : undefined}
 			data-fr-analytics-rating
 			id="pims-step-1__input-address-search-bar"
 		/>

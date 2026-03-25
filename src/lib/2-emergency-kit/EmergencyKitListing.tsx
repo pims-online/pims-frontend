@@ -1,21 +1,46 @@
-import { useContext } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Checkbox } from '@codegouvfr/react-dsfr/Checkbox';
 
 import { AppContext } from '@/providers';
 import { Container, Title, RequiredFieldIndicator } from '@/components';
+import { NavigationLock } from '@/layouts/types';
 
 type Props = {
-	kitListChecked: boolean;
-	setKitListChecked: (nextValue: boolean) => void;
+	registerNavLock: (name: string, lock?: NavigationLock) => void
 };
 
 export default function EmergencyKitListing(props: Props) {
+	const { registerNavLock } = props;
+
 	const { t } = useTranslation('emergency_kit_screen');
-	const { iodePastilleEligibility } = useContext(AppContext);
+	const { iodePastilleEligibility, kitListChecked, setKitListChecked } = useContext(AppContext);
+	const [isHighlighted, setHighlighted] = useState<boolean>(false);
+
+	const onCheckboxChange = (e: ChangeEvent<HTMLInputElement, HTMLInputElement>) => {
+		setHighlighted(false);
+		setKitListChecked(e.currentTarget.checked);
+	};
+
+	const highlight = () => {
+		setHighlighted(true);
+	};
+
+	useEffect(() => {
+		const lockName = "kit_list_checked";
+		if (kitListChecked) {
+			registerNavLock(lockName, undefined);
+		} else {
+			const lock: NavigationLock = {
+				highlight,
+				htmlElementId: 'pims-step-2__emergency-kit',
+			}
+			registerNavLock(lockName, lock);
+		}
+	}, [kitListChecked]);
 
 	return (
-		<Container withoutMarginBottom className="fr-mb-8v">
+		<Container withoutMarginBottom className="fr-mb-8v" id="pims-step-2__emergency-kit">
 			<Title text={t('kit_listing.title')} contained />
 			<ol className="fr-mb-6v fr-mt-0">
 				{iodePastilleEligibility && (
@@ -38,21 +63,24 @@ export default function EmergencyKitListing(props: Props) {
 					className="fr-mb-0"
 					options={[
 						{
-							label: '',
+							label: 
+								<>
+									<p className="fr-mb-0">
+										{`${t('kit_listing.checkbox')} `}
+										<RequiredFieldIndicator />
+									</p>
+								</>,
 							nativeInputProps: {
-								checked: props.kitListChecked,
-								onChange: (e) =>
-									props.setKitListChecked(e.currentTarget.checked),
+								checked: kitListChecked,
+								onChange: onCheckboxChange,
 							},
 						},
 					]}
+					state={isHighlighted ? "error" : "default"}
+					stateRelatedMessage={isHighlighted && t("kit_listing.checkbox_required")}
 					data-fr-analytics-rating
 					id="pims-step-2__checkbox-emergency-kit-read"
 				/>
-				<p className="fr-mb-0">
-					{`${t('kit_listing.checkbox')} `}
-					<RequiredFieldIndicator />
-				</p>
 			</Container>
 		</Container>
 	);

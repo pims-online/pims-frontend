@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 
 import { AppContext } from '../../../providers';
 import { Container, CircularProgress } from '@/components';
+import { NavigationLock } from '@/layouts/types';
 
 import AddressFeatureList from './AddressFeatureList';
 import GeolocationButton from './GeolocationButton';
@@ -17,7 +18,14 @@ import {
 } from './utils';
 import { Position, Risk } from '@/providers/AppContextConfig';
 
-export default function AddressInput() {
+
+type Props = {
+	registerNavLock: (name: string, lock?: NavigationLock) => void;
+}
+
+export default function AddressInput(props: Props) {
+	const { registerNavLock } = props;
+
 	const { setRiskList, position, setPosition } =
 		useContext(AppContext);
 
@@ -35,6 +43,8 @@ export default function AddressInput() {
 	const [showAddressFeatureList, setShowAddressFeatureList] = useState(false);
 	// State to manage API loading
 	const [isFetchingAPI, setIsFetchingAPI] = useState(false);
+	// State to manage whether the input field is highlighted 
+	const [isHighlighted, setIsHighlighted] = useState<boolean>(false);
 
 	// ----- Geoplateforme autocomplete -----
 
@@ -110,6 +120,24 @@ export default function AddressInput() {
 		setIsFetchingAPI(false);
 	};
 
+
+	const highlight = () => {
+		setIsHighlighted(true);
+	};
+
+	useEffect(() => {
+		const lockName = "address";
+		if (position === undefined) {
+			const lock: NavigationLock = {
+				highlight,
+				htmlElementId: 'pims-step-1__input-address-search-bar',
+			};
+			registerNavLock(lockName, lock);
+		} else {
+			registerNavLock(lockName, undefined);
+		}
+	}, [position]);
+
 	return (
 		<>
 			<SearchBar
@@ -118,6 +146,8 @@ export default function AddressInput() {
 				onAddressChosen={chooseAddress}
 				addressFeatureList={addressFeatureList}
 				setShowAddressFeatureList={setShowAddressFeatureList}
+				highlighted={isHighlighted}
+				setHighlighted={setIsHighlighted}
 			/>
 			{showAddressFeatureList && addressFeatureList?.length > 0 && (
 				<AddressFeatureList

@@ -1,7 +1,4 @@
-import { useContext, useEffect } from 'react';
-
-import { AppContext } from '../../providers';
-
+import { NavigationLock } from '@/layouts/types';
 import { Divider } from '@/components';
 
 import SectionAddressInput from './SectionAddressInput';
@@ -11,31 +8,20 @@ import IodePastilleEligibility from './iode-pastille-eligibility/IodePastilleEli
 import StrimmingObligation from './strimming-obligation/StrimmingObligation';
 
 type Props = {
-	setIsNavigateNextLocked: (nextValue: boolean) => void;
+	registerNavLock: (name: string, lock?: NavigationLock) => void;
 };
 
 export default function InformationScreen(props: Props) {
-	const { setIsNavigateNextLocked } = props;
-	const { riskList, iodePastilleEligibility, strimmingObligation, position } = useContext(AppContext);
+	const { registerNavLock } = props;
 
-	useEffect(() => {
-		// Block navigation while the coordinates of the user and the related risks are unknown
-		if (
-			riskList === undefined ||
-			iodePastilleEligibility === undefined ||
-			strimmingObligation === undefined ||
-			position === undefined
-		) {
-			setIsNavigateNextLocked(true);
-		} else {
-			setIsNavigateNextLocked(false);
-		}
-	}, [riskList, iodePastilleEligibility, strimmingObligation, position, setIsNavigateNextLocked]);
+	// TODO: Single loading wheel
+	// TODO: Lock navigation until all risks are fetched
+	// TODO: Display popup when failing to fetch risks
 
 	return (
 		<div>
-			<SectionAddressInput />
-			<DisplayRiskListAround riskList={riskList} />
+			<SectionAddressInput registerNavLock={registerNavLock} />
+			<DisplayRiskListAround />
 			<IodePastilleEligibility />
 			<StrimmingObligation />
 			<Divider />

@@ -3,6 +3,7 @@ import Divider from './Divider';
 
 type Props = {
 	children: React.ReactNode;
+	id?: string;
 	className?: string;
 	withoutMarginBottom?: boolean;
 	withDivider?: boolean;
@@ -13,7 +14,7 @@ type Props = {
 export default function Container(props: Props) {
 	return (
 		<>
-			<div
+			<div id={props.id}
 				className={clsx(props.className || '', {
 					'fr-mb-10v': !props.withoutMarginBottom,
 					'pims-components__flexbox-alignment-center':

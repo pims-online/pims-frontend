@@ -63,7 +63,8 @@
 		"address": {
 			"title": "J'identifie les risques majeurs qui m'entourent",
 			"call_to_action": "Veuillez renseigner votre adresse",
-			"search_bar_label": "Adresse exacte"
+			"search_bar_label": "Adresse exacte",
+			"address_missing": "Adresse manquante"
 		},
 		"get_geolocation": "Utiliser ma position actuelle",
 		"geolocation_failed": "Échec de la géolocalisation",
@@ -246,11 +247,13 @@
 				"item_14": "Des jeux pour occuper le temps",
 				"iode_pastille": "Les pastilles d'iode récupérées en pharmacie"
 			},
-			"checkbox": "J'ai pris connaissance du contenu essentiel de mon kit d'urgence"
+			"checkbox": "J'ai pris connaissance du contenu essentiel de mon kit d'urgence",
+			"checkbox_required": "Action requise"
 		},
 		"kit_storage": {
 			"accessibility": "Je range mon kit d'urgence 72h dans un endroit facile d'accès et je partage sa localisation avec mes proches",
-			"input_placeholder": "Je saisis ici le lieu de rangement de mon kit d'urgence"
+			"input_placeholder": "Je saisis ici le lieu de rangement de mon kit d'urgence",
+			"missing_value": "Lieu de rangement de votre kit requis"
 		},
 		"gathering_place": {
 			"title": "J'identifie le lieu de regroupement à rejoindre en cas d'évacuation (facultatif)",
@@ -272,8 +275,7 @@
 				"others": "Autres :",
 				"suggested_number": "Numéro proposé : {{ suggestedNumber }}"
 			}
-		},
-		"go_to_next_step": "Pour passer à l'étape suivante, vous devez avoir coché que vous avez pris connaissance du contenu du kit d'urgence, et rempli votre lieu de rangement de votre kit."
+		}
 	},
 	"alert_screen": {
 		"alea": "En cas d'aléa, les autorités diffusent des consignes de sauvegarde soit par le biais de vigilance, soit par les moyens d'alerte de la population. Respectez ces consignes : vous participerez à votre sécurité et vous soutiendrez l'action des secours.",

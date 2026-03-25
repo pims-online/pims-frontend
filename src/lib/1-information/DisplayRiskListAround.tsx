@@ -3,14 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { Container, Title } from '@/components';
 
 import RiskList from './risks/RiskList';
-import { Risk } from '@/providers/AppContextConfig';
+import { useContext } from 'react';
+import { AppContext } from '@/providers';
 
-type Props = {
-	riskList: Array<Risk> | undefined;
-};
-
-export default function DisplayRiskListAround(props: Props) {
-	const { riskList } = props;
+export default function DisplayRiskListAround() {
+	const { riskList } = useContext(AppContext);
 	const { t } = useTranslation('information_screen');
 
 	return (

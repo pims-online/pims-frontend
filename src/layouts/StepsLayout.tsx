@@ -1,7 +1,8 @@
 import { useState, Dispatch, SetStateAction } from 'react';
 
 // ----- UTILS -----
-import { useScrollToTop } from './utils';
+import { useScrollToTop, useRegisterNavLock } from './utils';
+import { NavigationLock } from './types'
 
 // ----- LAYOUT COMPONENTS -----
 import Stepper from './components/stepper/Stepper';
@@ -22,7 +23,8 @@ type Props = {
 
 export default function StepsLayout(props: Props) {
 	const { currentIndex, setCurrentIndex } = props;
-	const [isNavigateNextLocked, setIsNavigateNextLocked] = useState(false);
+	const [navigationLocks, _] = useState<Map<string, NavigationLock>>(new Map());
+	const registerNavLock = useRegisterNavLock(navigationLocks);
 	const scrollToTop = useScrollToTop();
 
 	const navigateToFinalScreen = () => {
@@ -40,14 +42,18 @@ export default function StepsLayout(props: Props) {
 		scrollToTop();
 	};
 
+	const clearNavLocks = () => {
+		navigationLocks.clear();
+	}
+
 	return (
 		<div>
 			<Stepper currentStep={currentIndex} />
 			{currentIndex === SCREENS.INFORMATION_SCREEN && (
-				<InformationScreen setIsNavigateNextLocked={setIsNavigateNextLocked} />
+				<InformationScreen registerNavLock={registerNavLock} />
 			)}
 			{currentIndex === SCREENS.EMERGENCY_KIT_SCREEN && (
-				<EmergencyKitScreen setIsNavigateNextLocked={setIsNavigateNextLocked} />
+				<EmergencyKitScreen registerNavLock={registerNavLock} />
 			)}
 			{currentIndex === SCREENS.ALERT_SCREEN && <AlertScreen />}
 			{currentIndex === SCREENS.INVOLVEMENT_SCREEN && <InvolvementScreen />}
@@ -61,8 +67,8 @@ export default function StepsLayout(props: Props) {
 			<Navigator
 				currentStep={currentIndex}
 				setCurrentStep={setCurrentIndex}
-				isNavigateNextLocked={isNavigateNextLocked}
-				setIsNavigateNextLocked={setIsNavigateNextLocked}
+				navigationLocks={navigationLocks}
+				clearNavigationLocks={clearNavLocks}
 			/>
 		</div>
 	);

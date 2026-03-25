@@ -1,68 +1,36 @@
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 
+import { NavigationLock } from '@/layouts/types';
 import { AppContext } from '@/providers';
 import { Divider } from '@/components';
 
 import EmergencyKitListing from './EmergencyKitListing';
 import EmergencyKitStorage from './EmergencyKitStorage';
 import EmergencyKitNumbers from './emergency-kit-numbers/EmergencyKitNumbers';
-import EmergencyKitNextStepAlert from './EmergencyKitNextStepAlert';
 import GatheringPlaceInput from './GatheringPlaceInput';
 
 type Props = {
-	setIsNavigateNextLocked: (nextValue: boolean) => void;
+	registerNavLock: (name: string, lock?: NavigationLock) => void;
 };
 
 export default function EmergencyKitScreen(props: Props) {
-	const { setIsNavigateNextLocked } = props;
+	const { registerNavLock } = props;
 	const {
-		emergencyKitStorage,
-		setEmergencyKitStorage,
 		usefulNumbers,
 		setUsefulNumbers,
-		kitListChecked,
-		setKitListChecked,
 		position,
 		gatheringPlace,
 		setGatheringPlace,
 	} = useContext(AppContext);
 
-	const isKitStorageSet = !!emergencyKitStorage;
-	// const isTownHallNumberSet = !!usefulNumbers.townHall;
-	// const isInsuranceNumberSet = !!usefulNumbers.insurance;
-	// const isRelativesNumberSet = !!usefulNumbers.relatives;
-
-	useEffect(() => {
-		if (
-			kitListChecked &&
-			isKitStorageSet
-			// isKitStorageSet &&
-			// isTownHallNumberSet &&
-			// isInsuranceNumberSet &&
-			// isRelativesNumberSet
-		) {
-			setIsNavigateNextLocked(false);
-		} else {
-			setIsNavigateNextLocked(true);
-		}
-	}, [
-		setIsNavigateNextLocked,
-		kitListChecked,
-		isKitStorageSet,
-		// isTownHallNumberSet,
-		// isInsuranceNumberSet,
-		// isRelativesNumberSet,
-	]);
 
 	return (
 		<div>
 			<EmergencyKitListing
-				kitListChecked={kitListChecked}
-				setKitListChecked={setKitListChecked}
+				registerNavLock={registerNavLock}
 			/>
 			<EmergencyKitStorage
-				storage={emergencyKitStorage}
-				setStorage={setEmergencyKitStorage}
+				registerNavLock={registerNavLock}
 			/>
 			<Divider />
 			<GatheringPlaceInput
@@ -75,7 +43,6 @@ export default function EmergencyKitScreen(props: Props) {
 				setKitNumbers={setUsefulNumbers}
 				inseeCode={position?.inseeCode}
 			/>
-			<EmergencyKitNextStepAlert />
 		</div>
 	);
 }

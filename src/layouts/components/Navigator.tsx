@@ -7,12 +7,13 @@ import { Divider } from '@/components';
 import { useTrackEvents } from '@/providers/analytics';
 
 import { useScrollToTop } from '../utils';
+import { NavigationLock } from '../types'
 
 type Props = {
 	currentStep: number;
 	setCurrentStep: Dispatch<SetStateAction<number>>;
-	isNavigateNextLocked: boolean;
-	setIsNavigateNextLocked: (nextValue: boolean) => void;
+	navigationLocks: Map<string, NavigationLock>,
+	clearNavigationLocks: () => void
 };
 
 export default function Navigator(props: Props) {
@@ -20,8 +21,8 @@ export default function Navigator(props: Props) {
 	const {
 		currentStep,
 		setCurrentStep,
-		isNavigateNextLocked,
-		setIsNavigateNextLocked,
+		navigationLocks,
+		clearNavigationLocks,
 	} = props;
 
 	// ----- Hooks -----
@@ -43,6 +44,49 @@ export default function Navigator(props: Props) {
 		});
 	};
 
+	const scrollToUppermostLock = () => {
+		// 1. Find uppermost lock
+		let uppermostTop: number|undefined = undefined;
+		let uppermostId: string|undefined = undefined;
+		navigationLocks.forEach((lock, _name, _map) => {
+			if (lock.htmlElementId === undefined) {
+				return;
+			}
+			const rect = document.getElementById(lock.htmlElementId)?.getBoundingClientRect()
+			if (rect === undefined) {
+				return;
+			}
+			const top = rect.top;
+			if (uppermostTop === undefined || top > uppermostTop) {
+				uppermostTop = top;
+				uppermostId = lock.htmlElementId;
+			}
+		});
+
+		// 2. Put the uppermost lock into view
+		if (uppermostId !== undefined) {
+			const options: ScrollIntoViewOptions = {
+				block: 'nearest',
+				behavior: 'smooth'
+			}
+			document.getElementById(uppermostId)?.scrollIntoView(options);
+		}
+	};
+
+	const onClickHandler = () => {
+		if (navigationLocks.size > 0) {
+			// 1. Trigger each lock
+			navigationLocks.forEach((lock, _name, _map) => {
+				lock.highlight();
+			});
+
+			// 2. Scroll to uppermost lock
+			scrollToUppermostLock()
+		} else {
+			setNextCurrentStep(currentStep + 1);
+		}
+	};
+
 	const nextButtonHidden = currentStep === 5;
 
 	return (
@@ -62,7 +106,7 @@ export default function Navigator(props: Props) {
 						priority: 'secondary',
 						type: 'button',
 						onClick: () => {
-							setIsNavigateNextLocked(false); // Reset
+							clearNavigationLocks(); // Reset
 							setNextCurrentStep(currentStep - 1);
 						},
 					},
@@ -71,10 +115,8 @@ export default function Navigator(props: Props) {
 						iconId: 'fr-icon-arrow-right-s-line',
 						priority: 'primary',
 						type: 'button',
-						onClick: () => {
-							setNextCurrentStep(currentStep + 1);
-						},
-						disabled: isNavigateNextLocked || nextButtonHidden,
+						onClick: onClickHandler,
+						disabled: nextButtonHidden,
 						className: clsx({ 'button-hidden': nextButtonHidden }),
 					},
 				]}
