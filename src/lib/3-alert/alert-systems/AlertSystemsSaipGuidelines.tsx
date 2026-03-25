@@ -4,7 +4,8 @@ import { clsx } from 'clsx';
 import iconNoPhone from '@/assets/alert-icons/no_phone.png';
 import iconStaySafeLight from '@/assets/alert-icons/stay_home_light.svg';
 import iconStaySafeDark from '@/assets/alert-icons/stay_home_dark.svg';
-import iconListenCarefully from '@/assets/alert-icons/radio_on.png';
+import iconListenCarefullyLight from '@/assets/alert-icons/listen_carefully_light.svg'
+import iconListenCarefullyDark from '@/assets/alert-icons/listen_carefully_dark.svg'
 
 import { Container } from '@/components';
 import { useIsDark } from '@codegouvfr/react-dsfr/useIsDark';
@@ -27,8 +28,8 @@ export default function AlertSystemsSaipGuidelines() {
 		},
 		{
 			translationKey: 'listen_carefully',
-			iconLight: iconListenCarefully,
-			iconDark: iconListenCarefully,
+			iconLight: iconListenCarefullyLight,
+			iconDark: iconListenCarefullyDark,
 		},
 	];
 
