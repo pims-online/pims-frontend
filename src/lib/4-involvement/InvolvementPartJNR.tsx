@@ -22,7 +22,7 @@ export default function InvolvementPartJNR() {
 						components={{
 							k1: (
 								<a
-									href={`https://${INVOLVEMENT_LINK_ACTIONS_PLATFORM}`}
+									href={`https://${INVOLVEMENT_LINK_JNR}`}
 									target="_blank"
 									rel="noopener noreferrer"
 									className="pims-components__text-color-orange"
@@ -38,7 +38,7 @@ export default function InvolvementPartJNR() {
 						components={{
 							k1: (
 								<a
-									href={`https://${INVOLVEMENT_LINK_JNR}`}
+									href={`https://${INVOLVEMENT_LINK_ACTIONS_PLATFORM}`}
 									target="_blank"
 									rel="noopener noreferrer"
 									className="pims-components__text-color-orange"
