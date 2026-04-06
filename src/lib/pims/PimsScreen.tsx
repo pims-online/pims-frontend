@@ -11,7 +11,6 @@ import firefighterIcon from '@/assets/involvement-icons/firefighter.svg';
 import reserveIcon from '@/assets/involvement-icons/municipal_reserve.svg';
 import volunteerIcon from '@/assets/involvement-icons/volunteer.svg';
 import Highlight from "@codegouvfr/react-dsfr/Highlight";
-import Tile from '@codegouvfr/react-dsfr/Tile';
 import { PimsTitle } from "./PimsTitle";
 import { JSX } from "react";
 
@@ -94,31 +93,19 @@ export const PimsScreen = () => {
         },
     ];
 
-    const involvementsHtmls: JSX.Element[] = involvements.map((involvement, index) => {
-        if (involvement.link !== undefined) {
-            return <div className='pims-pdf-involvement__wrapper' key={`pims-pdf-involvement-wrapper-${index}`}>
-                <Tile 
-                    imageSvg={involvement.imageUrl !== undefined}
-                    imageUrl={involvement.imageUrl}
-                    title={involvement.title}
-                    desc={involvement.description}
-                    linkProps={{href: involvement.link}}
-                    orientation='vertical'
-                    className='pims-pdf-involvement__tile'
-                />
+    const involvementsHtmls: JSX.Element[] = involvements.map((involvement, _index) => {
+        return <>
+            <h3>{involvement.title}</h3>
+            <div className="pims-pdf-involvement__item-container">
+                <img src={involvement.imageUrl}/>
+                <div>
+                    <p>
+                        {involvement.description}<br/>
+                        {(involvement.link !== undefined) ? <a href={involvement.link}>{involvement.link}</a> : undefined}
+                    </p>
+                </div>
             </div>
-        } else {
-            return <div className='pims-pdf-involvement__wrapper' key={`pims-pdf-involvement-wrapper-${index}`}>
-                <Tile 
-                    imageSvg={involvement.imageUrl !== undefined}
-                    imageUrl={involvement.imageUrl}
-                    title={involvement.title}
-                    desc={involvement.description}
-                    orientation='vertical'
-                    className='pims-pdf-involvement__tile'
-                />
-            </div>
-        }
+        </>
     });
 
     return <div className='pims__main-layout'>
@@ -235,9 +222,7 @@ export const PimsScreen = () => {
                 </div>
                 <div>
                     <PimsTitle strongText={'JE M\'IMPLIQUE'} icon={step4Light}/>
-                    <div className='pims-pdf-involvement__container'>
-                        {involvementsHtmls}
-                    </div>
+                    {involvementsHtmls}
                 </div>
             </section>
     </div>

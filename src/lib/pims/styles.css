@@ -64,15 +64,13 @@
 	margin-left: 2rem;
 }
 
-.pims-pdf-involvement__container {
+.pims-pdf-involvement__item-container {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
 }
 
-.pims-pdf-involvement__wrapper {
-	margin: 2em;
-	width: 400px;
+.pims-pdf-involvement__item-container img {
+	margin-left: 1rem;
+	margin-right: 1.5rem;
 }
 
 .pims-pdf-involvement__tile {
