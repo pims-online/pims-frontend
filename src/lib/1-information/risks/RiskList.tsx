@@ -5,10 +5,11 @@ import RiskItem from './RiskItem';
 
 type Props = {
 	riskList: Array<Risk>;
+	compact?: boolean;
 };
 
 export default function RiskList(props: Props) {
-	const riskList = props.riskList;
+	const { riskList, compact } = props;
 	const { t } = useTranslation('risks');
 
 	const getPreventionList = (
@@ -40,13 +41,14 @@ export default function RiskList(props: Props) {
 
 		return (
 			<RiskItem
-			key={`risk-list-item-${risk.type.identifier}-${index}`}
-			title={title}
-			intensity={intensity}
-			iconsPaths={risk.type.iconFileName}
-			preventionList={preventionList}
-			isFirstItem={index === 0}
-		/>);
+				key={`risk-list-item-${risk.type.identifier}-${index}`}
+				title={title}
+				intensity={intensity}
+				iconsPaths={risk.type.iconFileName}
+				preventionList={preventionList}
+				isFirstItem={index === 0}
+				compact={compact}
+			/>);
 	});
 
 	return (

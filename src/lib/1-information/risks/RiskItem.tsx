@@ -6,18 +6,22 @@ type Props = {
 	intensity: string | undefined;
 	preventionList: Array<string>;
 	isFirstItem?: boolean;
+	compact?: boolean;
 };
 
 export default function RiskItem(props: Props) {
-	const { iconsPaths, title, intensity, preventionList, isFirstItem } = props;
+	const { iconsPaths, title, intensity, preventionList, isFirstItem, compact } = props;
 
 	return (
 		<>
 			<tr>
 				<td colSpan={2} className="fr-p-0 fr-m-0">
 					<h5
-						className={clsx('fr-mb-2v', {
-							'fr-mt-6v': !isFirstItem, // Instead of using border-spacing on the table
+						className={clsx({
+							'pims-information-screen__risk-item-title-compact': compact,
+							'fr-mb-2v': !compact,
+							'fr-mt-6v': !isFirstItem && !compact, // Instead of using border-spacing on the table
+							'fr-mt-3v': !isFirstItem && compact,
 						})}
 					>
 						{title}
