@@ -39,7 +39,7 @@ export default defineConfig({
 	},
 	plugins: [
 		react(),
-		cssInjectedByJsPlugin({
+		/*cssInjectedByJsPlugin({
 			styleId: 'vite-injected-css',
 			jsAssetsFilterFunction: function customJsAssetsfilterFunction(
 				outputChunk
@@ -47,10 +47,11 @@ export default defineConfig({
 				// Inject css in files (outputChunk) matching the following names
 				return (
 					outputChunk.fileName.startsWith('assets/js/widget-') ||
-					outputChunk.fileName.startsWith('assets/main-')
+					outputChunk.fileName.startsWith('assets/main-') ||
+					outputChunk.fileName.startsWith('assets/pims-')
 				);
 			},
-		}),
+		}),*/
 	],
 	build: {
 		assetsInlineLimit(filePath) {
@@ -66,13 +67,14 @@ export default defineConfig({
 		rollupOptions: {
 			input: {
 				main: resolve(__dirname, 'index.html'),
+				pims: resolve(__dirname, "pims-preview.html"),
 				widget: resolve(__dirname, './src/widget.tsx'),
 			},
 			output: {
 				entryFileNames: (assetInfo) => {
 					console.log('Entry : ', assetInfo?.name);
-					return assetInfo.name === 'widget'
-						? 'assets/js/[name]-[hash].js'
+					return ['widget'].includes(assetInfo.name)
+						? 'assets/js/[name].js'
 						: 'assets/[name]-[hash].js';
 				},
 				assetFileNames: (assetInfo) => {
@@ -95,6 +97,12 @@ export default defineConfig({
 					return finalPath;
 				},
 			},
+		},
+	},
+	css: {
+		lightningcss: {
+			/* Workaround for the @media zero bug */
+			errorRecovery: true,
 		},
 	},
 });
