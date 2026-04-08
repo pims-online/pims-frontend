@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { Footer as FooterDSFR } from '@codegouvfr/react-dsfr/Footer';
+import { Footer as FooterDSFR, addFooterTranslations } from '@codegouvfr/react-dsfr/Footer';
+import { addConsentManagementTranslations } from '@codegouvfr/react-dsfr/consentManagement';
 import { headerFooterDisplayItem } from '@codegouvfr/react-dsfr/Display';
 
 import {
@@ -12,6 +13,22 @@ import {
 	FooterConsentManagementItem,
 	FooterPersonalDataPolicyItem,
 } from './consentManagement';
+
+
+addFooterTranslations({
+	"lang": "en",
+	"messages": {
+		"terms": "Legal information",
+	}
+});
+
+addConsentManagementTranslations({
+    "lang": "en",
+    "messages": {
+		"personal data": "Personnal data"
+	}
+});
+
 
 export default function Footer() {
 	const { t } = useTranslation('header');
