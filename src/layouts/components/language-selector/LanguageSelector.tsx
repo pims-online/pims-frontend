@@ -1,6 +1,5 @@
 import { useContext, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { setUseLang } from '@codegouvfr/react-dsfr/spa';
 
 import { AppContext } from '../../../providers';
 
@@ -21,7 +20,6 @@ export default function LanguageSelector(props: Props) {
 	const updateLocale = useCallback(
 		(nextValue: 'en' | 'fr') => {
 			_i18n.changeLanguage(nextValue);
-			setUseLang({ useLang: () => nextValue });
 			setPimsLocale(nextValue);
 			localStorage.setItem('i18nextLng', nextValue);
 		},

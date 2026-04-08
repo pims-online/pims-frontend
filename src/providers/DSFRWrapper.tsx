@@ -1,5 +1,7 @@
 import { startReactDsfr } from '@codegouvfr/react-dsfr/spa';
 
+import { useTranslation } from 'react-i18next';
+
 function loadAssets(cdn_url?: string) {
 	// When local or within the build, we don't need to pass the CDN URL, as it is in the same root directory.
 	// This is required only for the Widget, that is implemented in another site, thus need to load assets from the cdn
@@ -55,7 +57,13 @@ export default function DSFRWrapper({
 	children: React.ReactNode;
 	forWidget?: boolean;
 }) {
-	startReactDsfr({ defaultColorScheme: 'system' });
+	startReactDsfr({ 
+		defaultColorScheme: 'system', 
+		useLang: () => {
+			const { i18n } = useTranslation('');
+			return i18n.language
+		}
+	});
 	const viteAppUrl = import.meta.env.VITE_APP_URL;
 	const cdnUrl = forWidget ? viteAppUrl : '';
 	loadAssets(cdnUrl);
