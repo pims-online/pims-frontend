@@ -19,7 +19,7 @@ export type PimsParams = {
 	emergencyKitStorage: string;
 	radioFrequencies: AppContextValues['radioFrequencies'];
 	gatheringPlace: string;
-	locale: AppContextValues['pimsLocale'];
+	locale: string;
 	filename: string;
 	screenWidth: number;
 	inseeCode: string | undefined;

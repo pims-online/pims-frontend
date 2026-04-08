@@ -391,11 +391,6 @@
 			"comment": {
 				"label": "Commentaire",
 				"hint": "Un commentaire pour votre PIMS"
-			},
-			"locale": {
-				"title": "Je choisis la langue de mon PIMS",
-				"french": "Français",
-				"english": "Anglais"
 			}
 		},
 		"finalize_button": {

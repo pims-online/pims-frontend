@@ -52,8 +52,6 @@ export default function AppContextProvider({
 	const [pimsComment, setPimsComment] = useState<string>(
 		APP_CONTEXT_DEFAULT_VALUES.pimsComment
 	);
-	const [pimsLocale, setPimsLocale] =
-		useState<AppContextValues['pimsLocale']>('fr');
 	const [apiResponse, setApiResponse] = useState<
 		AppContextValues['apiResponse']
 	>({
@@ -83,8 +81,6 @@ export default function AppContextProvider({
 		setRadioFrequencies,
 		pimsFileName,
 		setPimsFileName,
-		pimsLocale,
-		setPimsLocale,
 		apiResponse,
 		setApiResponse,
 		pimsComment,

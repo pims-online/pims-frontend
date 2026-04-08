@@ -35,7 +35,6 @@ export type StrimmingObligation = {
 	url: string,
 	affected: boolean,
 }
-export type Locale = 'fr' | 'en';
 export type ApiResponse = {
 	pims_url: string;
 	file_size_ko: number;
@@ -76,9 +75,6 @@ export type AppContextValues = {
 	// State to manage the comment of the PIMS
 	pimsComment: string;
 	setPimsComment: Dispatch<SetStateAction<string>>;
-	// State to manage the locale of the file
-	pimsLocale: Locale;
-	setPimsLocale: Dispatch<SetStateAction<Locale>>;
 	// State to manage the API response after generating the pdf
 	apiResponse: ApiResponse;
 	setApiResponse: Dispatch<SetStateAction<ApiResponse>>;

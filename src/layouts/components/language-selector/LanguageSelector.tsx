@@ -1,7 +1,5 @@
-import { useContext, useEffect, useCallback } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import { AppContext } from '../../../providers';
 
 import LanguageSelectorMobile from './LanguageSelectorMobile';
 import LanguageSelectorDesktop from './LanguageSelectorDesktop';
@@ -11,31 +9,17 @@ type Props = {
 };
 
 export default function LanguageSelector(props: Props) {
-	const { setPimsLocale } = useContext(AppContext);
-	const {
-		i18n: _i18n, //: { changeLanguage, language },
-	} = useTranslation('');
-	const currentLanguage = _i18n.language;
-
+	const { i18n } = useTranslation('');
+	
 	const updateLocale = useCallback(
 		(nextValue: 'en' | 'fr') => {
-			_i18n.changeLanguage(nextValue);
-			setPimsLocale(nextValue);
+			i18n.changeLanguage(nextValue);
 			localStorage.setItem('i18nextLng', nextValue);
 		},
-		[setPimsLocale, _i18n]
+		[i18n]
 	);
-
-	// At first use, the user does not have i18nextLng defined, so react-i18n uses the fallback
-	// Without having the language set
-	const initialI18nextLng = localStorage.getItem('i18nextLng');
-	useEffect(() => {
-		if (!initialI18nextLng || !['fr', 'en'].includes(initialI18nextLng)) {
-			// Force language to fr
-			updateLocale('fr');
-		}
-	}, [initialI18nextLng, updateLocale]);
-
+	
+	const currentLanguage = i18n.language;
 	if (props.selectorKind === 'desktop') {
 		return (
 			<div>

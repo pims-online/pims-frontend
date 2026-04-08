@@ -13,11 +13,10 @@ type Props = {
 
 export default function FinalizeButton(props: Props) {
 	const { navigateToFinalScreen } = props;
-	const { t } = useTranslation('summary_screen');
+	const { i18n, t } = useTranslation('summary_screen');
 	const [isProcessing, setIsProcessing] = useState(false);
 	const {
 		position,
-		pimsLocale,
 		pimsFileName,
 		usefulNumbers,
 		riskList,
@@ -50,7 +49,7 @@ export default function FinalizeButton(props: Props) {
 
 		const params: PimsParams = {
 			address: position.address,
-			locale: pimsLocale,
+			locale: i18n.language,
 			filename: pimsFileName,
 			usefulNumbers,
 			riskList: serialiseRisks(),
