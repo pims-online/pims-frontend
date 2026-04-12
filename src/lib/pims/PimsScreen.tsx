@@ -16,6 +16,7 @@ type Props = {
     emergencyKitLocation: string;
     strimmingObligation: boolean;
     iodePastilleElegibility: boolean;
+    cityName: string
     radioFreqs: RadioFrequencies;
 };
 
@@ -31,6 +32,7 @@ export default function PimsScreen(props: Props) {
         emergencyKitLocation,
         strimmingObligation,
         iodePastilleElegibility,
+        cityName,
         radioFreqs 
     } = props;
 
@@ -54,7 +56,7 @@ export default function PimsScreen(props: Props) {
                     strimmingObligation={strimmingObligation}
                     iodePastilleElegibility={iodePastilleElegibility}
                 />
-                <AlertSection radioFreqs={radioFreqs}/>
+                <AlertSection city={cityName} radioFreqs={radioFreqs}/>
                 <InvolvementSection/>
             </section>
     </div>

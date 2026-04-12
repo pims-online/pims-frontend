@@ -64,6 +64,7 @@ export function PimsApp() {
                 radioFreqs={radioFreqs} 
                 emergencyKitLocation="Dans l'escalier de la cave"
                 strimmingObligation={true}
+                cityName="Grenoble"
                 iodePastilleElegibility={true}
             />
         </I18nextProvider>
