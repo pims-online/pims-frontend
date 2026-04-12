@@ -5,22 +5,9 @@ import { useTranslation } from "react-i18next";
 import step1Light from '@/assets/step-icons/step-1-light.svg';
 import step2Light from '@/assets/step-icons/step-2-light.svg';
 import step3Light from '@/assets/step-icons/step-3-light.svg';
-import step4Light from '@/assets/step-icons/step-4-light.svg';
-import firstAidIcon from '@/assets/involvement-icons/first_aid.svg';
-import firefighterIcon from '@/assets/involvement-icons/firefighter.svg';
-import reserveIcon from '@/assets/involvement-icons/municipal_reserve.svg';
-import volunteerIcon from '@/assets/involvement-icons/volunteer.svg';
 import Highlight from "@codegouvfr/react-dsfr/Highlight";
 import { PimsTitle } from "./PimsTitle";
-import { JSX } from "react";
-
-type Involvement = {
-    title: string;
-    description: string;
-    link?: string;
-    linkText?: string;
-    imageUrl?: string;
-};
+import InvolvementSection from "./InvolvementSection";
 
 export const PimsScreen = () => {
 
@@ -58,55 +45,6 @@ export const PimsScreen = () => {
             intensityInCity: 'intensity_present',
         },
     ]
-
-    const involvements: Involvement[] = [
-        {
-            title: 'Gestes qui sauvent',
-            description: 'Formez-vous aux gestes qui sauvent auprès des sapeurs-pompiers ou d’une association agréée de sécurité civile.',
-            link: 'https://www.securite-civile.interieur.gouv.fr/sengager/engagement-citoyen/se-former-aux-gestes-qui-sauvent',
-            linkText: 'Se former au gestes qui sauvent',
-            imageUrl: firstAidIcon,
-        },
-        {
-            title: 'Pompier volontaire',
-            description: 'Devenez pompier volontaire et participez aux actions de secours.',
-            link: 'https://www.securite-civile.interieur.gouv.fr/sengager/devenir-sapeur-pompier-volontaire',
-            linkText: 'Devenir pompier volontaire',
-            imageUrl: firefighterIcon,
-        },
-        {
-            title: 'Réserve communale',
-            description: 'Intégrez la réserve communale de sécurité civile pour participer au soutien et à l’assistance de la population.',
-            imageUrl: reserveIcon,
-        },
-        {
-            title: 'Devenir bénévole',
-            description: 'Inscrivez-vous sur la plateforme publique du bénévolat.',
-            link: 'https://www.jeveuxaider.gouv.fr/',
-            imageUrl: volunteerIcon,
-        },
-        {
-            title: 'Journée Nationale de la Résilience',
-            description: 'Participez près de chez vous aux actions de sensibilisation de la journée nationale de la résilience !',
-            link: 'https://carte-jnr.fr/',
-            imageUrl: undefined,
-        },
-    ];
-
-    const involvementsHtmls: JSX.Element[] = involvements.map((involvement, _index) => {
-        return <>
-            <h3>{involvement.title}</h3>
-            <div className="pims-pdf-involvement__item-container">
-                <img src={involvement.imageUrl}/>
-                <div>
-                    <p>
-                        {involvement.description}<br/>
-                        {(involvement.link !== undefined) ? <a href={involvement.link}>{involvement.link}</a> : undefined}
-                    </p>
-                </div>
-            </div>
-        </>
-    });
 
     return <div className='pims__main-layout'>
             <section className='pims-layouts__container'>
@@ -220,10 +158,7 @@ export const PimsScreen = () => {
                         </ul>
                     </Highlight>
                 </div>
-                <div>
-                    <PimsTitle strongText={'JE M\'IMPLIQUE'} icon={step4Light}/>
-                    {involvementsHtmls}
-                </div>
+                <InvolvementSection/>
             </section>
     </div>
 };
