@@ -1,16 +1,15 @@
-import RiskList from "../1-information/risks/RiskList";
 import { RadioFrequencies, Risk } from "@/providers/AppContextConfig";
-import { RISK_TYPES } from "../1-information/risks/constants";
-import step1Light from '@/assets/step-icons/step-1-light.svg';
 import Highlight from "@codegouvfr/react-dsfr/Highlight";
-import { PimsTitle } from "./PimsTitle";
 import InvolvementSection from "./InvolvementSection";
 import AlertSection from "./AlertSection";
 import PrepareSection from "./PrepareSection";
+import InformSection from "./InformSection";
 
 
 type Props = {
-    emergencyKitLocation: string
+    riskList: Risk[];
+    gatheringPlace: string;
+    emergencyKitLocation: string;
     strimmingObligation: boolean;
     iodePastilleElegibility: boolean;
     radioFreqs: RadioFrequencies;
@@ -19,44 +18,13 @@ type Props = {
 
 export default function PimsScreen(props: Props) {
     const {
+        riskList,
+        gatheringPlace,
         emergencyKitLocation,
         strimmingObligation,
         iodePastilleElegibility,
         radioFreqs 
     } = props;
-
-    const risks: Risk[] = [
-        {
-            type: RISK_TYPES[0],
-            intensityAtAddress: 'intensity_relevant',
-            intensityInCity: 'intensity_relevant',
-        },
-        {
-            type: RISK_TYPES[8],
-            intensityAtAddress: 'intensity_relevant',
-            intensityInCity: 'intensity_relevant',
-        },
-        {
-            type: RISK_TYPES[6],
-            intensityAtAddress: 'intensity_present',
-            intensityInCity: 'intensity_present',
-        },
-        {
-            type: RISK_TYPES[9],
-            intensityAtAddress: 'intensity_mid',
-            intensityInCity: 'intensity_mid',
-        },
-        {
-            type: RISK_TYPES[7],
-            intensityAtAddress: 'intensity_present',
-            intensityInCity: 'intensity_present',
-        },
-        {
-            type: RISK_TYPES[5],
-            intensityAtAddress: 'intensity_present',
-            intensityInCity: 'intensity_present',
-        },
-    ]
 
     return <div className='pims__main-layout'>
             <section className='pims-layouts__container'>
@@ -81,20 +49,11 @@ export default function PimsScreen(props: Props) {
                         </ul>
                     </Highlight>
                 </div>
-                <div>
-                    <PimsTitle strongText={'JE M\'INFORME'} lightText={'sur les risques qui m\'entourent'} icon={step1Light}/>
-                    <Highlight>
-                        <span className="pims-pdf-information__strimming-obligation-title">Obligation légale de débroussaillement</span><br/>
-                        Vous êtes soumis à l'obligation légale de débroussaillement
-                    </Highlight>
-                    {/* Intégrer les risques ici */}
-                    <RiskList riskList={risks} compact/>
-                    {/* Lieu de regroupement */}
-                    <Highlight>
-                        <h4>Lieu de regroupement</h4>
-                        <b>Le Parking</b>
-                    </Highlight>
-                </div>
+                <InformSection
+                    strimmingObligation={strimmingObligation}
+                    riskList={riskList}
+                    gatheringPlace={gatheringPlace}
+                />
                 <PrepareSection
                     emergencyKitLocation={emergencyKitLocation}
                     strimmingObligation={strimmingObligation}
