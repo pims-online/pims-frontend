@@ -20,7 +20,7 @@ export default function Alert(props: Props) {
 		if (rawFreqs.length == 0) {
 			return <span className='pims-alert-screen__alert-systems-radio-freq-unavailable'>{t("radio_frequencies.unavailable")}</span>;
 		} else {
-			return <>{rawFreqs.join(" / ")} Mhz</>;
+			return <>{rawFreqs.join(" / ")} MHz</>;
 		}
 	}
 
