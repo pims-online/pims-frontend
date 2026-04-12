@@ -30,7 +30,7 @@ export default function Alert(props: Props) {
             <p className="pims-pdf-alert__subtitle">Pendant la crise, je suis l’évolution de la situation.</p>
             <h3>Les vigilances météo</h3>
             <p>
-                Je surveille l’évolution des vigilances : <a href='https://vigilance.meteofrance.fr'>météo-france</a> <a href='https://www.vigicrues.gouv.fr'>vigicrues</a>
+                Je surveille l’évolution des vigilances sur <a href='https://vigilance.meteofrance.fr'>vigilance.meteofrance.fr</a> et <a href='https://vigicrues.gouv.fr'>www.vigicrues.gouv.fr</a>.
                 <br/>
                 En situation orange ou rouge, des conseils
                 élaborés par les pouvoirs publics sont
