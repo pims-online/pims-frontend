@@ -40,13 +40,13 @@ const involvements: Involvement[] = [
     {
         title: 'Devenir bénévole',
         description: 'Inscrivez-vous sur la plateforme publique du bénévolat.',
-        link: 'https://www.jeveuxaider.gouv.fr/',
+        link: 'https://www.jeveuxaider.gouv.fr',
         imageUrl: volunteerIcon,
     },
     {
         title: 'Journée Nationale de la Résilience',
         description: 'Participez près de chez vous aux actions de sensibilisation de la journée nationale de la résilience !',
-        link: 'https://carte-jnr.fr/',
+        link: 'https://carte-jnr.fr',
         imageUrl: undefined,
     },
 ];
