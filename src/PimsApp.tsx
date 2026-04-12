@@ -13,7 +13,12 @@ export function PimsApp() {
 
 	return (
         <I18nextProvider i18n={i18n}>
-            <PimsScreen radioFreqs={radioFreqs}/>
+            <PimsScreen 
+                radioFreqs={radioFreqs} 
+                emergencyKitLocation="Dans l'escalier de la cave"
+                strimmingObligation={true}
+                iodePastilleElegibility={true}
+            />
         </I18nextProvider>
 	);
 };
