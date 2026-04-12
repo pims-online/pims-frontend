@@ -1,15 +1,22 @@
 import RiskList from "../1-information/risks/RiskList";
-import { Risk } from "@/providers/AppContextConfig";
+import { RadioFrequencies, Risk } from "@/providers/AppContextConfig";
 import { RISK_TYPES } from "../1-information/risks/constants";
 import { useTranslation } from "react-i18next";
 import step1Light from '@/assets/step-icons/step-1-light.svg';
 import step2Light from '@/assets/step-icons/step-2-light.svg';
-import step3Light from '@/assets/step-icons/step-3-light.svg';
 import Highlight from "@codegouvfr/react-dsfr/Highlight";
 import { PimsTitle } from "./PimsTitle";
 import InvolvementSection from "./InvolvementSection";
+import AlertSection from "./AlertSection";
 
-export const PimsScreen = () => {
+
+type Props = {
+    radioFreqs: RadioFrequencies;
+};
+
+
+export default function PimsScreen(props: Props) {
+    const { radioFreqs } = props;
 
 	const { t } = useTranslation('emergency_kit_screen');
 
@@ -114,50 +121,7 @@ export const PimsScreen = () => {
                     <p>Enlevez les broussailles combustibles proches de votre maison et de ses voies d'accès.</p>
                     {/* Kit d'urgence */}
                 </div>
-                <div>
-                    <PimsTitle strongText={'J\'AGIS'} lightText={'en cas d\'aléa ou d\'alerte'} icon={step3Light}/>
-                    <p className="pims-pdf-alert__subtitle">Pendant la crise, je suis l’évolution de la situation.</p>
-                    <h3>Les vigilances météo</h3>
-                    <p>
-                        Je surveille l’évolution des vigilances : <a href='https://vigilance.meteofrance.fr'>météo-france</a> <a href='https://www.vigicrues.gouv.fr'>vigicrues</a>
-                        <br/>
-                        En situation orange ou rouge, des conseils
-                        élaborés par les pouvoirs publics sont
-                        indiqués sur la carte et dans les bulletins
-                        de vigilance. Ils sont simples, adaptés
-                        à chaque phénomène et faciles à adopter.
-                    </p>
-                    <h3>L'alerte des populations</h3>
-                    <p>En cas de risque vital, les autorités peuvent activer :</p>                    
-                    <ul>
-                        <li>
-                            <b>FR Alert</b> qui diffuse un message d’alerte avec les consignes associées directement sur les téléphones portables.
-                            Pas d’inscription ni de téléchargement pour recevoir le message d’alerte.
-                        </li>
-                        <li>
-                            <b>Les sirènes SAIP</b> qui déclenchent un signal sonore de 3 fois 1 minute et 41 secondes.
-                            Il faut alors :
-                            <ul>
-                                <li><b>Éviter de téléphoner</b> afin de laisser les réseaux disponibles pour les secours.</li>
-                                <li><b>Rester à l'abri</b>, n'évacuez votre domicile que sur ordre des autorités.</li>
-                                <li><b>Restez à l'écoute</b> des consignes des autorités.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <b>Les médias publics</b> et les réseaux sociaux des services de l’État, 
-                            Radio France et France Télévisions seront les relais des autorités
-                            en situation d’urgence pour communiquer avec la population.
-                        </li>
-                    </ul>
-                    <Highlight>
-                        <h4>Les stations radio officielles à Grenoble</h4>
-                        <ul>
-                            <li>France Inter : <b>105,1 MHz</b><br/></li>
-                            <li>Ici : <b>98,2 MHz</b><br/></li>
-                            <li>France Info : <b>89,9 MHz</b><br/></li>
-                        </ul>
-                    </Highlight>
-                </div>
+                <AlertSection radioFreqs={radioFreqs}/>
                 <InvolvementSection/>
             </section>
     </div>
