@@ -1,7 +1,7 @@
 import { I18nextProvider } from "react-i18next";
 import PimsScreen from "./lib/pims/PimsScreen";
 import i18n from "./i18n/i18n";
-import { RadioFrequencies, Risk } from "./providers/AppContextConfig";
+import { RadioFrequencies, Risk, UsefulNumbers } from "./providers/AppContextConfig";
 import { RISK_TYPES } from "./lib/1-information/risks/constants";
 
 
@@ -43,11 +43,19 @@ export function PimsApp() {
             intensityAtAddress: 'intensity_present',
             intensityInCity: 'intensity_present',
         },
-    ]
+    ];
+
+    const numbers: UsefulNumbers = {
+        townHall: "04 76 76 36 36",
+        relatives: "06 98 34 68 71",
+        insurance: "01 39 65 78 16",
+        others: "",
+    }
 
 	return (
         <I18nextProvider i18n={i18n}>
             <PimsScreen
+                numbers={numbers}
                 riskList={risks}
                 gatheringPlace="Le Parking"
                 radioFreqs={radioFreqs} 
