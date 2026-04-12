@@ -7,6 +7,9 @@ import PhoneNumbersSection from "./PhoneNumbersSection";
 
 
 type Props = {
+    title: string;
+    address: string;
+    comment: string;
     numbers: UsefulNumbers;
     riskList: Risk[];
     gatheringPlace: string;
@@ -19,6 +22,9 @@ type Props = {
 
 export default function PimsScreen(props: Props) {
     const {
+        title,
+        address,
+        comment,
         numbers,
         riskList,
         gatheringPlace,
@@ -32,10 +38,10 @@ export default function PimsScreen(props: Props) {
             <section className='pims-layouts__container'>
                 {/* Informations générales */}
                 <h1 className='pims-pdf__title'>Votre Plan Individuel de Mise en Sûreté</h1>
-                <p className='pims-pdf__name'>« Chez nous »</p>
-                <p className='pims-pdf__subtitle'>15 Rue Monge 38100 Grenoble</p>
+                <p className='pims-pdf__name'>« {title} »</p>
+                <p className='pims-pdf__subtitle'>{address}</p>
                 <p>
-                    <b>Remarque :</b> Ne pas oublier de couper le gaz en partant
+                    <b>Remarque :</b> {comment}
                 </p>
                 <PhoneNumbersSection numbers={numbers}/>
                 <InformSection

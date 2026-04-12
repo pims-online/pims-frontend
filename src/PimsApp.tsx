@@ -55,6 +55,9 @@ export function PimsApp() {
 	return (
         <I18nextProvider i18n={i18n}>
             <PimsScreen
+                title="Chez nous"
+                address="15 Rue Monge 38100 Grenoble"
+                comment="Ne pas oublier de couper le gaz en partant"
                 numbers={numbers}
                 riskList={risks}
                 gatheringPlace="Le Parking"
