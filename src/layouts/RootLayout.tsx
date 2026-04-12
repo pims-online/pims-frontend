@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 // ----- UTILS -----
-import { useScrollToTop } from './utils';
+import { scrollToTop } from './utils';
 
 // ----- LAYOUT COMPONENTS -----
 import { SCREENS } from './constants.ts';
@@ -16,7 +16,6 @@ export default function RootLayout() {
 	const currentIndexInitValue =
 		import.meta.env.VITE_ENVIRONMENT === 'local' ? startIndex : 0;
 	const [currentIndex, setCurrentIndex] = useState(currentIndexInitValue);
-	const scrollToTop = useScrollToTop();
 
 	const navigateToFirstStep = () => {
 		setCurrentIndex(1);

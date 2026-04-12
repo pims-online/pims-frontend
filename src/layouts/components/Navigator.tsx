@@ -6,7 +6,7 @@ import { clsx } from 'clsx';
 import { Divider } from '@/components';
 import { useTrackEvents } from '@/providers/analytics';
 
-import { useScrollToTop } from '../utils';
+import { scrollToTop } from '../utils';
 import { NavigationLock } from '../types'
 
 type Props = {
@@ -27,7 +27,6 @@ export default function Navigator(props: Props) {
 
 	// ----- Hooks -----
 	const { t } = useTranslation('common');
-	const scrollToTop = useScrollToTop();
 	const trackEvent = useTrackEvents();
 
 	// ----- Utils -----

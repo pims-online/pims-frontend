@@ -9,13 +9,10 @@ export const removeStepInHash = () => {
 	window.history.replaceState(null, '', ' ');
 };
 
-export const useScrollToTop = () => {
-	const scrollToTop = () => {
-		if (window) {
-			setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
-		}
-	};
-	return scrollToTop;
+export function scrollToTop () {
+	if (window) {
+		setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+	}
 };
 
 export function useRegisterNavLock (

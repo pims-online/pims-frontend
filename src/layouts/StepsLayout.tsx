@@ -1,7 +1,7 @@
 import { useState, Dispatch, SetStateAction } from 'react';
 
 // ----- UTILS -----
-import { useScrollToTop, useRegisterNavLock } from './utils';
+import { scrollToTop, useRegisterNavLock } from './utils';
 import { NavigationLock } from './types'
 
 // ----- LAYOUT COMPONENTS -----
@@ -25,7 +25,6 @@ export default function StepsLayout(props: Props) {
 	const { currentIndex, setCurrentIndex } = props;
 	const [navigationLocks, setNavigationLocks] = useState<Map<string, NavigationLock>>(new Map());
 	const registerNavLock = useRegisterNavLock(setNavigationLocks);
-	const scrollToTop = useScrollToTop();
 
 	const navigateToFinalScreen = () => {
 		setCurrentIndex(SCREENS.FINAL_SCREEN);
