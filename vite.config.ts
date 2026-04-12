@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path, { resolve } from 'path';
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 
 /** ----- BUILD STRUCTURE : dist/assets -----
  *

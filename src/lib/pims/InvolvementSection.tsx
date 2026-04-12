@@ -52,7 +52,7 @@ const involvements: Involvement[] = [
 ];
 
 export default function InvolvementSection() {
-    const involvementsNodes: ReactElement[] = involvements.map((involvement, _index) => {
+    const involvementsNodes: ReactElement[] = involvements.map((involvement) => {
         return <>
             <h3>{involvement.title}</h3>
             <div className="pims-pdf-involvement__item-container">

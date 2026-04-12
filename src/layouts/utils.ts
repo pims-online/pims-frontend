@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 import { NavigationLock } from "./types";
 
 export const setStepInHash = (nextStep: number) => {
@@ -17,12 +18,24 @@ export const useScrollToTop = () => {
 	return scrollToTop;
 };
 
-export const useRegisterNavLock = (navLocks: Map<string, NavigationLock>) => {
+export function useRegisterNavLock (
+		setNavLocks: Dispatch<SetStateAction<Map<string, NavigationLock>>>
+	) {
 	const registerNavLock = (name: string, lock: NavigationLock|undefined) => {
 		if (lock === undefined) {
-			navLocks.delete(name);
+			setNavLocks((navLocks) => {
+				const newNavLocks = { ...navLocks }
+				
+				newNavLocks.delete(name)
+				return newNavLocks;
+			})
 		} else {
-			navLocks.set(name, lock);
+			setNavLocks((navLocks) => {
+				const newNavLocks = { ...navLocks }
+				
+				newNavLocks.set(name, lock);
+				return newNavLocks;
+			})
 		}
 	};
 	return registerNavLock;

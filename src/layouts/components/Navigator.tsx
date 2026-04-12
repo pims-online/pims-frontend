@@ -48,7 +48,7 @@ export default function Navigator(props: Props) {
 		// 1. Find uppermost lock
 		let uppermostTop: number|undefined = undefined;
 		let uppermostId: string|undefined = undefined;
-		navigationLocks.forEach((lock, _name, _map) => {
+		navigationLocks.forEach((lock) => {
 			if (lock.htmlElementId === undefined) {
 				return;
 			}
@@ -76,7 +76,7 @@ export default function Navigator(props: Props) {
 	const onClickHandler = () => {
 		if (navigationLocks.size > 0) {
 			// 1. Trigger each lock
-			navigationLocks.forEach((lock, _name, _map) => {
+			navigationLocks.forEach((lock) => {
 				lock.highlight();
 			});
 

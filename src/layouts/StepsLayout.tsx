@@ -23,8 +23,8 @@ type Props = {
 
 export default function StepsLayout(props: Props) {
 	const { currentIndex, setCurrentIndex } = props;
-	const [navigationLocks, _] = useState<Map<string, NavigationLock>>(new Map());
-	const registerNavLock = useRegisterNavLock(navigationLocks);
+	const [navigationLocks, setNavigationLocks] = useState<Map<string, NavigationLock>>(new Map());
+	const registerNavLock = useRegisterNavLock(setNavigationLocks);
 	const scrollToTop = useScrollToTop();
 
 	const navigateToFinalScreen = () => {
@@ -43,7 +43,7 @@ export default function StepsLayout(props: Props) {
 	};
 
 	const clearNavLocks = () => {
-		navigationLocks.clear();
+		setNavigationLocks(new Map());
 	}
 
 	return (
