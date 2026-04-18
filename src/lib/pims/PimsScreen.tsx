@@ -1,4 +1,4 @@
-import { RadioFrequencies, Risk, UsefulNumbers } from "@/providers/AppContextConfig";
+import { PimsContent } from "@/providers/PdfContext";
 import InvolvementSection from "./InvolvementSection";
 import AlertSection from "./AlertSection";
 import PrepareSection from "./PrepareSection";
@@ -6,22 +6,7 @@ import InformSection from "./InformSection";
 import PhoneNumbersSection from "./PhoneNumbersSection";
 
 
-type Props = {
-    title: string;
-    address: string;
-    comment: string;
-    numbers: UsefulNumbers;
-    riskList: Risk[];
-    gatheringPlace: string;
-    emergencyKitLocation: string;
-    strimmingObligation: boolean;
-    iodePastilleElegibility: boolean;
-    cityName: string
-    radioFreqs: RadioFrequencies;
-};
-
-
-export default function PimsScreen(props: Props) {
+export default function PimsScreen(props: PimsContent) {
     const {
         title,
         address,

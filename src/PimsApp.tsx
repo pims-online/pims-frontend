@@ -1,72 +1,26 @@
 import { I18nextProvider } from "react-i18next";
 import PimsScreen from "./lib/pims/PimsScreen";
 import i18n from "./i18n/i18n";
-import { RadioFrequencies, Risk, UsefulNumbers } from "./providers/AppContextConfig";
-import { RISK_TYPES } from "./lib/1-information/risks/constants";
+import { usePimsContent } from "./providers/PdfContext";
+
 
 
 export function PimsApp() {
-    const radioFreqs: RadioFrequencies = {
-        "franceInter": ["105,1"],
-        "ici": ["98,2"],
-        "franceInfo": ["89,9"],
+    const pimsContent = usePimsContent();
+
+    if (pimsContent !== undefined) {
+        return (
+            <I18nextProvider i18n={i18n}>
+                <PimsScreen
+                    {...pimsContent}
+                />
+            </I18nextProvider>
+        );
+    } else {
+        return (
+            <div className='pims__main-layout'>
+                <h1>PIMS content missing</h1>
+            </div>
+            );
     }
-
-    const risks: Risk[] = [
-        {
-            type: RISK_TYPES[0],
-            intensityAtAddress: 'intensity_relevant',
-            intensityInCity: 'intensity_relevant',
-        },
-        {
-            type: RISK_TYPES[8],
-            intensityAtAddress: 'intensity_relevant',
-            intensityInCity: 'intensity_relevant',
-        },
-        {
-            type: RISK_TYPES[6],
-            intensityAtAddress: 'intensity_present',
-            intensityInCity: 'intensity_present',
-        },
-        {
-            type: RISK_TYPES[9],
-            intensityAtAddress: 'intensity_mid',
-            intensityInCity: 'intensity_mid',
-        },
-        {
-            type: RISK_TYPES[7],
-            intensityAtAddress: 'intensity_present',
-            intensityInCity: 'intensity_present',
-        },
-        {
-            type: RISK_TYPES[5],
-            intensityAtAddress: 'intensity_present',
-            intensityInCity: 'intensity_present',
-        },
-    ];
-
-    const numbers: UsefulNumbers = {
-        townHall: "04 76 76 36 36",
-        relatives: "06 98 34 68 71",
-        insurance: "01 39 65 78 16",
-        others: "",
-    }
-
-	return (
-        <I18nextProvider i18n={i18n}>
-            <PimsScreen
-                title="Chez nous"
-                address="15 Rue Monge 38100 Grenoble"
-                comment="Ne pas oublier de couper le gaz en partant"
-                numbers={numbers}
-                riskList={risks}
-                gatheringPlace="Le Parking"
-                radioFreqs={radioFreqs} 
-                emergencyKitLocation="Dans l'escalier de la cave"
-                strimmingObligation={true}
-                cityName="Grenoble"
-                iodePastilleElegibility={true}
-            />
-        </I18nextProvider>
-	);
 };
