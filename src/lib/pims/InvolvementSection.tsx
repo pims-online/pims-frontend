@@ -52,9 +52,12 @@ const involvements: Involvement[] = [
 ];
 
 export default function InvolvementSection() {
-    const involvementsNodes: ReactElement[] = involvements.map((involvement) => {
-        return <>
-            <h3>{involvement.title}</h3>
+    function formatInvolvementItem(involvement: Involvement) {
+        const key = involvement.title.toLowerCase().replace(' ', '_');
+        return <div key={`pims-pdf-involvement__item-container--${key}`}>
+            <h3>
+                {involvement.title}
+            </h3>
             <div className="pims-pdf-involvement__item-container">
                 <img src={involvement.imageUrl}/>
                 <div>
@@ -64,11 +67,13 @@ export default function InvolvementSection() {
                     </p>
                 </div>
             </div>
-        </>
-    });
+        </div>;
+    };
 
-    return <div>
+    const involvementsNodes: ReactElement[] = involvements.map(formatInvolvementItem);
+
+    return <>
             <PimsTitle strongText={'JE M\'IMPLIQUE'} icon={step4Light}/>
             {involvementsNodes}
-        </div>;
+        </>;
 }
