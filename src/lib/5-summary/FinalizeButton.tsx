@@ -55,7 +55,6 @@ export default function FinalizeButton(props: Props) {
 			radioFrequencies,
 			screenWidth: window.innerWidth,
 			gatheringPlace,
-			cityName: position.inseeCode,
 			iodePastilleElegibility: (iodePastilleEligibility !== undefined),
 			comment: pimsComment,
 		};

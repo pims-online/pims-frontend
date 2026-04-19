@@ -8,12 +8,11 @@ import { useTranslation } from "react-i18next";
 
 
 type Props = {
-    city: string;
     radioFreqs: RadioFrequencies;
 };
 
 export default function Alert(props: Props) {
-    const { city, radioFreqs } = props;
+    const { radioFreqs } = props;
     const { t } = useTranslation('alert_screen');
 
 	const frequenciesToString = (rawFreqs: string[]) => {
@@ -61,7 +60,7 @@ export default function Alert(props: Props) {
                 </li>
             </ul>
             <Highlight>
-                <h4>Les stations radio officielles à {city}</h4>
+                <h4>Les stations radio officielles dans votre ville</h4>
                 <ul>
                     <li>France Inter : <b>{frequenciesToString(radioFreqs.franceInter)}</b><br/></li>
                     <li>Ici : <b>{frequenciesToString(radioFreqs.ici)}</b><br/></li>

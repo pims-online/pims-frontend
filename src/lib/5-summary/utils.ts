@@ -24,7 +24,6 @@ export type PimsParams = {
 	filename: string;
 	screenWidth: number;
 	iodePastilleElegibility: boolean;
-	cityName: string;
 	comment: string;
 }
 
@@ -40,7 +39,6 @@ export type SerialisedPimsParams = {
 	filename: string;
 	screenWidth: number;
 	iodePastilleElegibility: boolean;
-	cityName: string;
 	comment: string;
 };
 
@@ -84,7 +82,6 @@ export function serialisePimsParams(params: PimsParams): SerialisedPimsParams {
 		filename: params.filename,
 		screenWidth: params.screenWidth,
 		iodePastilleElegibility: params.iodePastilleElegibility,
-		cityName: params.cityName,
 		comment: params.comment,
 	}
 }
@@ -101,7 +98,6 @@ export function deserialisePimsParams(serialisedParams: SerialisedPimsParams): P
 		locale: serialisedParams.locale,
 		filename: serialisedParams.filename,
 		screenWidth: serialisedParams.screenWidth,
-		cityName: serialisedParams.cityName,
 		iodePastilleElegibility: serialisedParams.iodePastilleElegibility,
 		comment: serialisedParams.comment,
 	}
