@@ -10,7 +10,7 @@ import step1Light from '@/assets/step-icons/step-1-light.svg';
 type Props = {
     strimmingObligation: boolean;
     riskList: Risk[];
-    gatheringPlace: string;
+    gatheringPlace: string|undefined;
 };
 
 export default function InformSection(props: Props) {
@@ -28,9 +28,12 @@ export default function InformSection(props: Props) {
         {/* Risques */}
         <RiskList riskList={riskList} compact/>
         {/* Lieu de regroupement */}
-        <Highlight>
-            <h4>Lieu de regroupement</h4>
-            <b>{gatheringPlace}</b>
-        </Highlight>
+        {
+            (gatheringPlace !== undefined) &&
+            <Highlight>
+                <h4>Lieu de regroupement</h4>
+                <b>{gatheringPlace}</b>
+            </Highlight>
+        }
     </div>
 }

@@ -25,11 +25,9 @@ export default function PimsScreen(props: PimsContent) {
             <section className='pims-layouts__container'>
                 {/* Informations générales */}
                 <h1 className='pims-pdf__title'>Votre Plan Individuel de Mise en Sûreté</h1>
-                <p className='pims-pdf__name'>« {title} »</p>
+                {(title !== undefined) && <p className='pims-pdf__name'>« {title} »</p>}
                 <p className='pims-pdf__subtitle'>{address}</p>
-                <p>
-                    <b>Remarque :</b> {comment}
-                </p>
+                {(comment !== undefined) && <p><b>Remarque :</b> {comment}</p>}
                 <PhoneNumbersSection numbers={numbers}/>
                 <InformSection
                     strimmingObligation={strimmingObligation}

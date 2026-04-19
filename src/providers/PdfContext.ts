@@ -4,16 +4,16 @@ import { RadioFrequencies, Risk, UsefulNumbers } from "./AppContextConfig";
 
 
 export type PimsContent = {
-    title: string;
+    title: string|undefined;
     address: string;
-    comment: string;
+    comment: string|undefined;
     numbers: UsefulNumbers;
     riskList: Risk[];
-    gatheringPlace: string;
+    gatheringPlace: string|undefined;
     emergencyKitLocation: string;
     strimmingObligation: boolean;
     iodePastilleElegibility: boolean;
-    cityName: string
+    cityName: string;
     radioFreqs: RadioFrequencies;
 };
 
