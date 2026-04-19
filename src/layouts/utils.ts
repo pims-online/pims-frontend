@@ -19,21 +19,23 @@ export function useRegisterNavLock (
 		setNavLocks: Dispatch<SetStateAction<Map<string, NavigationLock>>>
 	) {
 	const registerNavLock = (name: string, lock: NavigationLock|undefined) => {
-		if (lock === undefined) {
-			setNavLocks((navLocks) => {
-				const newNavLocks = { ...navLocks }
-				
-				newNavLocks.delete(name)
-				return newNavLocks;
+		setNavLocks((navLocks) => {
+			// 1. Copy navigation locks
+			const newNavLocks = new Map<string, NavigationLock>();
+			navLocks.forEach((value, key) => {
+				newNavLocks.set(key, value);
 			})
-		} else {
-			setNavLocks((navLocks) => {
-				const newNavLocks = { ...navLocks }
-				
+			
+			// 2. Edit the new locks
+			if (lock === undefined) {
+				newNavLocks.delete(name);
+			} else {
 				newNavLocks.set(name, lock);
-				return newNavLocks;
-			})
-		}
+			}
+
+			// 3. Apply changes
+			return newNavLocks;
+		})
 	};
 	return registerNavLock;
 }
