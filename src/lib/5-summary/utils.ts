@@ -19,12 +19,12 @@ export type PimsParams = {
 	strimmingObligation: StrimmingObligation;
 	emergencyKitStorage: string;
 	radioFrequencies: AppContextValues['radioFrequencies'];
-	gatheringPlace: string;
+	gatheringPlace: string|undefined;
 	locale: string;
-	title: string;
+	title: string|undefined;
 	screenWidth: number;
 	iodePastilleElegibility: boolean;
-	comment: string;
+	comment: string|undefined;
 }
 
 export type SerialisedPimsParams = {
@@ -34,12 +34,12 @@ export type SerialisedPimsParams = {
 	strimmingObligation: StrimmingObligation;
 	emergencyKitStorage: string;
 	radioFrequencies: AppContextValues['radioFrequencies'];
-	gatheringPlace: string;
+	gatheringPlace: string|undefined;
 	locale: string;
-	title: string;
+	title: string|undefined;
 	screenWidth: number;
 	iodePastilleElegibility: boolean;
-	comment: string;
+	comment: string|undefined;
 };
 
 type ApiResponse = AppContextValues['apiResponse'];

@@ -18,7 +18,7 @@ export default function PimsConfiguration() {
 				nativeInputProps={{
 					placeholder: t('configuration.name.placeholder'),
 					value: pimsTitle,
-					onChange: (e) => setPimsTitle(e.currentTarget.value),
+					onChange: (e) => setPimsTitle(e.currentTarget.value || undefined),
 				}}
 				data-fr-analytics-rating
 				id="pims-step-5__input-name"
@@ -28,7 +28,7 @@ export default function PimsConfiguration() {
 				hintText={t('configuration.comment.hint')}
 				nativeTextAreaProps={{
 					value: pimsComment,
-					onChange: (e) => setPimsComment(e.currentTarget.value),
+					onChange: (e) => setPimsComment(e.currentTarget.value || undefined),
 				}}
 				textArea
 				data-fr-analytics-rating

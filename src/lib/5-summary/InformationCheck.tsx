@@ -53,7 +53,7 @@ export default function InformationCheck(props: Props) {
 				onClickModify={navigateToEmergencyKitScreen}
 				itemId="gathering-place"
 			>
-				{gatheringPlace}
+				{gatheringPlace || ''}
 			</InformationCheckItem>
 			<InformationCheckItem
 				subtitle={t('information_check.items.kit_storage')}

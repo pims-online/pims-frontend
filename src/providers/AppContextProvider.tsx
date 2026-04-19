@@ -31,7 +31,7 @@ export default function AppContextProvider({
 		useState<string|undefined>(APP_CONTEXT_DEFAULT_VALUES.iodePastilleEligibility);
 	const [strimmingObligation, setStrimmingObligation] =
 		useState<StrimmingObligation | undefined>(APP_CONTEXT_DEFAULT_VALUES.strimmingObligation);
-	const [gatheringPlace, setGatheringPlace] = useState<string>(
+	const [gatheringPlace, setGatheringPlace] = useState<string | undefined>(
 		APP_CONTEXT_DEFAULT_VALUES.gatheringPlace
 	);
 	const [kitListChecked, setKitListChecked] = useState<boolean>(
@@ -46,10 +46,10 @@ export default function AppContextProvider({
 	const [radioFrequencies, setRadioFrequencies] = useState<
 		AppContextValues['radioFrequencies']
 	>(APP_CONTEXT_DEFAULT_VALUES.radioFrequencies);
-	const [pimsTitle, setPimsTitle] = useState<string>(
+	const [pimsTitle, setPimsTitle] = useState<string | undefined>(
 		APP_CONTEXT_DEFAULT_VALUES.pimsTitle
 	);
-	const [pimsComment, setPimsComment] = useState<string>(
+	const [pimsComment, setPimsComment] = useState<string | undefined>(
 		APP_CONTEXT_DEFAULT_VALUES.pimsComment
 	);
 	const [apiResponse, setApiResponse] = useState<

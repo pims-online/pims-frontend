@@ -55,8 +55,8 @@ export type AppContextValues = {
 	strimmingObligation: StrimmingObligation | undefined;
 	setStrimmingObligation: Dispatch<SetStateAction<StrimmingObligation | undefined>>;
 	// State to manage the gathering place
-	gatheringPlace: string;
-	setGatheringPlace: Dispatch<SetStateAction<string>>;
+	gatheringPlace: string | undefined;
+	setGatheringPlace: Dispatch<SetStateAction<string | undefined>>;
 	// State to manage whether the kit list has been read
 	kitListChecked: boolean;
 	setKitListChecked: Dispatch<SetStateAction<boolean>>;
@@ -70,11 +70,11 @@ export type AppContextValues = {
 	radioFrequencies: RadioFrequencies;
 	setRadioFrequencies: Dispatch<SetStateAction<RadioFrequencies>>;
 	// State to manage the final name of the file
-	pimsTitle: string;
-	setPimsTitle: Dispatch<SetStateAction<string>>;
+	pimsTitle: string | undefined;
+	setPimsTitle: Dispatch<SetStateAction<string | undefined>>;
 	// State to manage the comment of the PIMS
-	pimsComment: string;
-	setPimsComment: Dispatch<SetStateAction<string>>;
+	pimsComment: string | undefined;
+	setPimsComment: Dispatch<SetStateAction<string | undefined>>;
 	// State to manage the API response after generating the pdf
 	apiResponse: ApiResponse;
 	setApiResponse: Dispatch<SetStateAction<ApiResponse>>;
@@ -83,7 +83,7 @@ export type AppContextValues = {
 export const APP_CONTEXT_DEFAULT_VALUES = {
 	position: undefined,
 	riskList: undefined,
-	gatheringPlace: '',
+	gatheringPlace: undefined,
 	kitListChecked: false,
 	emergencyKitStorage: '',
 	usefulNumbers: {
@@ -99,6 +99,6 @@ export const APP_CONTEXT_DEFAULT_VALUES = {
 	} as RadioFrequencies,
 	strimmingObligation: undefined,
 	iodePastilleEligibility: undefined,
-	pimsTitle: '',
-	pimsComment: '',
+	pimsTitle: undefined,
+	pimsComment: undefined,
 } as AppContextValues;
