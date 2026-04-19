@@ -46,8 +46,8 @@ export default function AppContextProvider({
 	const [radioFrequencies, setRadioFrequencies] = useState<
 		AppContextValues['radioFrequencies']
 	>(APP_CONTEXT_DEFAULT_VALUES.radioFrequencies);
-	const [pimsFileName, setPimsFileName] = useState<string>(
-		APP_CONTEXT_DEFAULT_VALUES.pimsFileName
+	const [pimsTitle, setPimsTitle] = useState<string>(
+		APP_CONTEXT_DEFAULT_VALUES.pimsTitle
 	);
 	const [pimsComment, setPimsComment] = useState<string>(
 		APP_CONTEXT_DEFAULT_VALUES.pimsComment
@@ -79,8 +79,8 @@ export default function AppContextProvider({
 		setUsefulNumbers,
 		radioFrequencies,
 		setRadioFrequencies,
-		pimsFileName,
-		setPimsFileName,
+		pimsTitle,
+		setPimsTitle,
 		apiResponse,
 		setApiResponse,
 		pimsComment,

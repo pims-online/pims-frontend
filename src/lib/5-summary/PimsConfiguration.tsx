@@ -7,7 +7,7 @@ import { Container, Title } from '@/components';
 
 export default function PimsConfiguration() {
 	const { t } = useTranslation('summary_screen');
-	const { pimsFileName, setPimsFileName, pimsComment, setPimsComment } = useContext(AppContext);
+	const { pimsTitle, setPimsTitle, pimsComment, setPimsComment } = useContext(AppContext);
 
 	return (
 		<Container>
@@ -17,8 +17,8 @@ export default function PimsConfiguration() {
 				hintText={t('configuration.name.hint')}
 				nativeInputProps={{
 					placeholder: t('configuration.name.placeholder'),
-					value: pimsFileName,
-					onChange: (e) => setPimsFileName(e.currentTarget.value),
+					value: pimsTitle,
+					onChange: (e) => setPimsTitle(e.currentTarget.value),
 				}}
 				data-fr-analytics-rating
 				id="pims-step-5__input-name"

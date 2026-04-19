@@ -17,7 +17,7 @@ export default function FinalizeButton(props: Props) {
 	const [isProcessing, setIsProcessing] = useState(false);
 	const {
 		position,
-		pimsFileName,
+		pimsTitle,
 		usefulNumbers,
 		riskList,
 		strimmingObligation,
@@ -47,7 +47,7 @@ export default function FinalizeButton(props: Props) {
 		const params: PimsParams = {
 			address: position.address,
 			locale: i18n.language,
-			filename: pimsFileName,
+			title: pimsTitle,
 			usefulNumbers,
 			riskList: riskList,
 			strimmingObligation,

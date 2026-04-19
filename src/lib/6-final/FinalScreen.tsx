@@ -14,9 +14,9 @@ type Props = {
 export default function FinalScreen(props: Props) {
 	const { navigateToHomeScreen } = props;
 	const { t } = useTranslation('final_screen');
-	const { pimsFileName } = useContext(AppContext);
-	const title = pimsFileName
-		? t('success', { customName: pimsFileName })
+	const { pimsTitle } = useContext(AppContext);
+	const title = pimsTitle
+		? t('success', { customName: pimsTitle })
 		: t('success_unnamed');
 
 	return (

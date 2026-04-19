@@ -21,7 +21,7 @@ export type PimsParams = {
 	radioFrequencies: AppContextValues['radioFrequencies'];
 	gatheringPlace: string;
 	locale: string;
-	filename: string;
+	title: string;
 	screenWidth: number;
 	iodePastilleElegibility: boolean;
 	comment: string;
@@ -36,7 +36,7 @@ export type SerialisedPimsParams = {
 	radioFrequencies: AppContextValues['radioFrequencies'];
 	gatheringPlace: string;
 	locale: string;
-	filename: string;
+	title: string;
 	screenWidth: number;
 	iodePastilleElegibility: boolean;
 	comment: string;
@@ -79,7 +79,7 @@ export function serialisePimsParams(params: PimsParams): SerialisedPimsParams {
 		radioFrequencies: params.radioFrequencies,
 		gatheringPlace: params.gatheringPlace,
 		locale: params.locale,
-		filename: params.filename,
+		title: params.title,
 		screenWidth: params.screenWidth,
 		iodePastilleElegibility: params.iodePastilleElegibility,
 		comment: params.comment,
@@ -96,7 +96,7 @@ export function deserialisePimsParams(serialisedParams: SerialisedPimsParams): P
 		radioFrequencies: serialisedParams.radioFrequencies,
 		gatheringPlace: serialisedParams.gatheringPlace,
 		locale: serialisedParams.locale,
-		filename: serialisedParams.filename,
+		title: serialisedParams.title,
 		screenWidth: serialisedParams.screenWidth,
 		iodePastilleElegibility: serialisedParams.iodePastilleElegibility,
 		comment: serialisedParams.comment,

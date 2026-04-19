@@ -8,7 +8,7 @@ import PhoneNumbersSection from "./PhoneNumbersSection";
 
 export default function PimsScreen(props: PimsParams) {
     const {
-        filename: title,
+        title,
         address,
         comment,
         usefulNumbers: numbers,

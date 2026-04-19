@@ -70,8 +70,8 @@ export type AppContextValues = {
 	radioFrequencies: RadioFrequencies;
 	setRadioFrequencies: Dispatch<SetStateAction<RadioFrequencies>>;
 	// State to manage the final name of the file
-	pimsFileName: string;
-	setPimsFileName: Dispatch<SetStateAction<string>>;
+	pimsTitle: string;
+	setPimsTitle: Dispatch<SetStateAction<string>>;
 	// State to manage the comment of the PIMS
 	pimsComment: string;
 	setPimsComment: Dispatch<SetStateAction<string>>;
@@ -99,6 +99,6 @@ export const APP_CONTEXT_DEFAULT_VALUES = {
 	} as RadioFrequencies,
 	strimmingObligation: undefined,
 	iodePastilleEligibility: undefined,
-	pimsFileName: '',
+	pimsTitle: '',
 	pimsComment: '',
 } as AppContextValues;

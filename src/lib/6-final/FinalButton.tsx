@@ -20,7 +20,7 @@ export default function FinalButton(props: Props) {
 		setEmergencyKitStorage,
 		setUsefulNumbers,
 		setRadioFrequencies,
-		setPimsFileName,
+		setPimsTitle: setPimsFileName,
 		setPimsComment,
 		setApiResponse,
 	} = useContext(AppContext);
@@ -37,7 +37,7 @@ export default function FinalButton(props: Props) {
 		setEmergencyKitStorage(APP_CONTEXT_DEFAULT_VALUES.emergencyKitStorage);
 		setUsefulNumbers(APP_CONTEXT_DEFAULT_VALUES.usefulNumbers);
 		setRadioFrequencies(APP_CONTEXT_DEFAULT_VALUES.radioFrequencies);
-		setPimsFileName(APP_CONTEXT_DEFAULT_VALUES.pimsFileName);
+		setPimsFileName(APP_CONTEXT_DEFAULT_VALUES.pimsTitle);
 		setPimsComment(APP_CONTEXT_DEFAULT_VALUES.pimsComment);
 		setApiResponse(APP_CONTEXT_DEFAULT_VALUES.apiResponse);
 		// 2 - Navigate back to home screen
