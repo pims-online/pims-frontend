@@ -1,5 +1,5 @@
 import { Risk } from '@/providers/AppContextConfig';
-import { RISK_TYPE_MAP, RISK_INTENSITY_MAP } from '../risks/constants';
+import { GEORISQUE_TYPE_MAP, RISK_INTENSITY_MAP } from '../risks/constants';
 import type {
 	GeoplateformeApiResponse,
 	GeoplateformeApiFeature,
@@ -170,7 +170,7 @@ export const importRiskList = (
 			return;
 		}
 
-		const types = RISK_TYPE_MAP.get(georisqueId);
+		const types = GEORISQUE_TYPE_MAP.get(georisqueId);
 		if (types === undefined) {
 			console.warn(`Unknown GeoRisque identifier: ${georisqueId}`);
 			return;

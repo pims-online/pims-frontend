@@ -5,7 +5,7 @@ import { Button } from '@codegouvfr/react-dsfr/Button';
 import { AppContext } from '../../providers';
 import { Container, CircularProgress } from '@/components';
 
-import { generatePims, PimsParams, SerialisedRisk, serialiseRisk } from './utils';
+import { generatePims, PimsParams } from './utils';
 
 type Props = {
 	navigateToFinalScreen: () => void;
@@ -26,6 +26,7 @@ export default function FinalizeButton(props: Props) {
 		setApiResponse,
 		gatheringPlace,
 		pimsComment,
+		iodePastilleEligibility
 	} = useContext(AppContext);
 
 	const handleFinalizeButton = async () => {
@@ -39,26 +40,23 @@ export default function FinalizeButton(props: Props) {
 			throw new Error("Cannot generate PIMS as position is undefined");
 		}
 
-		const serialiseRisks = (): SerialisedRisk[] => {
-			if (riskList === undefined) {
-				return [];
-			}
-
-			return riskList.map(serialiseRisk);
-		};
+		if (riskList === undefined) {
+			throw new Error("Cannot generate PIMS as risks are undefined");
+		}
 
 		const params: PimsParams = {
 			address: position.address,
 			locale: i18n.language,
 			filename: pimsFileName,
 			usefulNumbers,
-			riskList: serialiseRisks(),
+			riskList: riskList,
 			strimmingObligation,
 			emergencyKitStorage,
 			radioFrequencies,
 			screenWidth: window.innerWidth,
 			gatheringPlace,
-			inseeCode: position.inseeCode,
+			cityName: position.inseeCode,
+			iodePastilleElegibility: (iodePastilleEligibility !== undefined),
 			comment: pimsComment,
 		};
 

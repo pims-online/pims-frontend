@@ -173,16 +173,22 @@ export const RISK_TYPES: RiskType[] = [
 	// ITEM_MINING_RISKS,
 ];
 
+// A mapping of internal risk identifier to internal risk type
+export const RISK_MAP_TYPE: Map<string, RiskType> = new Map<string, RiskType>();
+RISK_TYPES.forEach(risk => {
+	RISK_MAP_TYPE.set(risk.identifier, risk);
+});
+
 // A mapping of georisque identifier to internal risk types
-export const RISK_TYPE_MAP: Map<string, RiskType[]> = new Map<string, RiskType[]>();
+export const GEORISQUE_TYPE_MAP: Map<string, RiskType[]> = new Map<string, RiskType[]>();
 IGNORED_RISKS_IDENTIFIERS.forEach(ignoredIdentifier => {
-	RISK_TYPE_MAP.set(ignoredIdentifier, []);
+	GEORISQUE_TYPE_MAP.set(ignoredIdentifier, []);
 });
 RISK_TYPES.forEach(risk => {
-	const previousRisks = RISK_TYPE_MAP.get(risk.georisqueApiIdentifier);
+	const previousRisks = GEORISQUE_TYPE_MAP.get(risk.georisqueApiIdentifier);
 	const risks = (previousRisks !== undefined) ? previousRisks : [];
 	risks.push(risk);
-	RISK_TYPE_MAP.set(risk.georisqueApiIdentifier, risks);
+	GEORISQUE_TYPE_MAP.set(risk.georisqueApiIdentifier, risks);
 });
 
 // A mapping of Géorisque intensity identifier to internal intensity identifier

@@ -1,160 +1,21 @@
 import { I18nextProvider } from "react-i18next";
 import PimsScreen from "./lib/pims/PimsScreen";
 import i18n from "./i18n/i18n";
-import { RadioFrequencies, Risk, UsefulNumbers } from "./providers/AppContextConfig";
-import { RISK_TYPES } from "./lib/1-information/risks/constants";
-import { PimsContent } from "./providers/PdfContext";
+import { deserialisePimsParams, PimsParams, SerialisedPimsParams } from "./lib/5-summary/utils";
 
-
-function getOptionnalStrParam(params: URLSearchParams, name: string): string|undefined {
-    const value = params.get(name);
-    if (value === null) {
-        return undefined;
-    }
-
-    return value;
-}
-
-function getMandatoryStrParam(params: URLSearchParams, name: string): string {
-    const value = params.get(name);
-    if (value === null) {
-        throw new Error(`Missing mandatory argument '${name}'`);
-    }
-
-    return value;
-}
-
-function getMandatoryBoolParam(params: URLSearchParams, name: string): boolean {
-    const value = params.get(name);
-    if (value === null) {
-        throw new Error(`Missing mandatory argument '${name}'`);
-    } else if (value === "true") {
-        return true;
-    } else if (value === "false") {
-        return false;
-    } else {
-        throw new Error(`Invalid format for argument '${name}'. Expecting 'true' or 'false'.`);
-    }
-}
-
-function deserialiseList(s: string): string[] {
-    const frags: string[] = [];
-    let currentFrag: string[] = [];
-    for (let i = 0; i < s.length; i++) {
-        const c = s[i];
-        
-        if (c == "\\") {
-            // Discard the backslash, and do not interpret the next char as active
-            i++;
-            currentFrag.push(s[i]);
-        } else if (c == ",") {
-            // Finished a fragment
-            frags.push(currentFrag.join(""));
-            currentFrag = [];
-        } else {
-            // Append the char to the end of the current fragment
-            currentFrag.push(c);
-        }
-    }
-    if (currentFrag.length > 0) {
-        frags.push(currentFrag.join(""));
-    }
-
-    return frags;
-}
-
-function getFrequencyList(params: URLSearchParams, name: string): string[] {
-    const rawFrequencies = params.get(name);
-    if (rawFrequencies === null) {
-        return [];
-    }
-
-    const frequencies = deserialiseList(rawFrequencies);
-    return frequencies;
-}
-
-
-function getPimsParams(): PimsContent {
+function getPimsParams(): PimsParams {
     // ===== Parse params =====
     const params = new URLSearchParams(window.location.search);
+    const rawQuerry = params.get("q");
 
-    const title = getOptionnalStrParam(params, "title");
-    const address = getMandatoryStrParam(params, "address");
-    const comment = getOptionnalStrParam(params, "comment");
-
-    // TODO: Numbers
-    // TODO: Risk list
-
-    const gatheringPlace = getOptionnalStrParam(params, "gathering_place");
-
-    const radioFreqs: RadioFrequencies = {
-        franceInter: getFrequencyList(params, "france_inter_frequencies"),
-        ici: getFrequencyList(params, "ici_frequencies"),
-        franceInfo: getFrequencyList(params, "france_info_frequencies"),
+    if (rawQuerry === null) {
+        throw new Error("Missing required param 'q'");
     }
-
-    const emergencyKitLocation = getMandatoryStrParam(params, "emergency_kit_location");
-    const strimmingObligation = getMandatoryBoolParam(params, "strimming_obligation");
-    const cityName = getMandatoryStrParam(params, "city_name");
-    const iodePastilleElegibility = getMandatoryBoolParam(params, "iode_pastille_elegebility");
-
-
-    // ===== Mockup for not implemented params =====
-
-    const risks: Risk[] = [
-        {
-            type: RISK_TYPES[0],
-            intensityAtAddress: 'intensity_relevant',
-            intensityInCity: 'intensity_relevant',
-        },
-        {
-            type: RISK_TYPES[8],
-            intensityAtAddress: 'intensity_relevant',
-            intensityInCity: 'intensity_relevant',
-        },
-        {
-            type: RISK_TYPES[6],
-            intensityAtAddress: 'intensity_present',
-            intensityInCity: 'intensity_present',
-        },
-        {
-            type: RISK_TYPES[9],
-            intensityAtAddress: 'intensity_mid',
-            intensityInCity: 'intensity_mid',
-        },
-        {
-            type: RISK_TYPES[7],
-            intensityAtAddress: 'intensity_present',
-            intensityInCity: 'intensity_present',
-        },
-        {
-            type: RISK_TYPES[5],
-            intensityAtAddress: 'intensity_present',
-            intensityInCity: 'intensity_present',
-        },
-    ];
-
-    const numbers: UsefulNumbers = {
-        townHall: "04 76 76 36 36",
-        relatives: "06 98 34 68 71",
-        insurance: "01 39 65 78 16",
-        others: "",
-    }
-
     
-    return {
-        title,
-        address,
-        comment,
-        numbers,
-        riskList: risks,
-        gatheringPlace,
-        emergencyKitLocation,
-        strimmingObligation,
-        iodePastilleElegibility,
-        cityName,
-        radioFreqs,
-    }
+    const serialisedContent: SerialisedPimsParams = JSON.parse(atob(rawQuerry))
+    const content: PimsParams = deserialisePimsParams(serialisedContent);
+
+    return content;
 }
 
 

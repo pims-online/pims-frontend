@@ -1,4 +1,4 @@
-import { PimsContent } from "@/providers/PdfContext";
+import { PimsParams } from "../5-summary/utils";
 import InvolvementSection from "./InvolvementSection";
 import AlertSection from "./AlertSection";
 import PrepareSection from "./PrepareSection";
@@ -6,19 +6,19 @@ import InformSection from "./InformSection";
 import PhoneNumbersSection from "./PhoneNumbersSection";
 
 
-export default function PimsScreen(props: PimsContent) {
+export default function PimsScreen(props: PimsParams) {
     const {
-        title,
+        filename: title,
         address,
         comment,
-        numbers,
+        usefulNumbers: numbers,
         riskList,
         gatheringPlace,
-        emergencyKitLocation,
+        emergencyKitStorage: emergencyKitLocation,
         strimmingObligation,
         iodePastilleElegibility,
         cityName,
-        radioFreqs 
+        radioFrequencies: radioFreqs, 
     } = props;
 
     return <div className='pims__main-layout'>

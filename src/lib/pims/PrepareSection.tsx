@@ -2,13 +2,14 @@ import { useTranslation } from "react-i18next";
 import Highlight from "@codegouvfr/react-dsfr/Highlight";
 
 import { PimsTitle } from "./PimsTitle";
+import { StrimmingObligation } from "@/providers/AppContextConfig";
 
 import step2Light from '@/assets/step-icons/step-2-light.svg';
 
 
 type Props = {
     emergencyKitLocation: string;
-    strimmingObligation: boolean;
+    strimmingObligation: StrimmingObligation;
     iodePastilleElegibility: boolean;
 };
 
@@ -47,7 +48,7 @@ export default function PrepareSection(props: Props) {
                 ))}
             </ol>
             {/* Obligation légale de débroussaillement */}
-            {strimmingObligation ? <>
+            {strimmingObligation.affected ? <>
                 <h4>Débroussaillez votre terrain</h4>
                 <p>Enlevez les broussailles combustibles proches de votre maison et de ses voies d'accès.</p>
             </> : null}
