@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import { RadioFrequencies, Risk, UsefulNumbers } from "./AppContextConfig";
 
 
@@ -16,17 +14,3 @@ export type PimsContent = {
     cityName: string;
     radioFreqs: RadioFrequencies;
 };
-
-
-export var setPimsContent: (pimsContent: PimsContent) => void = () => {};
-
-
-export function usePimsContent(): PimsContent|undefined {
-    const [pimsContent, _setPimsContent] = useState<PimsContent>();
-
-    useEffect(() => {
-        setPimsContent = _setPimsContent;
-    }, [_setPimsContent]);
-
-    return pimsContent;
-}
