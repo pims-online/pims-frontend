@@ -37,6 +37,42 @@ function getMandatoryBoolParam(params: URLSearchParams, name: string): boolean {
     }
 }
 
+function deserialiseList(s: string): string[] {
+    const frags: string[] = [];
+    let currentFrag: string[] = [];
+    for (let i = 0; i < s.length; i++) {
+        const c = s[i];
+        
+        if (c == "\\") {
+            // Discard the backslash, and do not interpret the next char as active
+            i++;
+            currentFrag.push(s[i]);
+        } else if (c == ",") {
+            // Finished a fragment
+            frags.push(currentFrag.join(""));
+            currentFrag = [];
+        } else {
+            // Append the char to the end of the current fragment
+            currentFrag.push(c);
+        }
+    }
+    if (currentFrag.length > 0) {
+        frags.push(currentFrag.join(""));
+    }
+
+    return frags;
+}
+
+function getFrequencyList(params: URLSearchParams, name: string): string[] {
+    const rawFrequencies = params.get(name);
+    if (rawFrequencies === null) {
+        return [];
+    }
+
+    const frequencies = deserialiseList(rawFrequencies);
+    return frequencies;
+}
+
 
 function getPimsParams(): PimsContent {
     // ===== Parse params =====
@@ -51,7 +87,11 @@ function getPimsParams(): PimsContent {
 
     const gatheringPlace = getOptionnalStrParam(params, "gathering_place");
 
-    // TODO: Radio frequencies
+    const radioFreqs: RadioFrequencies = {
+        franceInter: getFrequencyList(params, "france_inter_frequencies"),
+        ici: getFrequencyList(params, "ici_frequencies"),
+        franceInfo: getFrequencyList(params, "france_info_frequencies"),
+    }
 
     const emergencyKitLocation = getMandatoryStrParam(params, "emergency_kit_location");
     const strimmingObligation = getMandatoryBoolParam(params, "strimming_obligation");
@@ -60,11 +100,6 @@ function getPimsParams(): PimsContent {
 
 
     // ===== Mockup for not implemented params =====
-    const radioFreqs: RadioFrequencies = {
-        "franceInter": ["105,1"],
-        "ici": ["98,2"],
-        "franceInfo": ["89,9"],
-    }
 
     const risks: Risk[] = [
         {
