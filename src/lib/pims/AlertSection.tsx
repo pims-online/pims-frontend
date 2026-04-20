@@ -31,7 +31,7 @@ export default function Alert(props: Props) {
                 t={t}
                 i18nKey={`population_alert.saip_guidelines.${key}`}
                 components={{
-                    k1: <b/>
+                    b: <b/>
                 }}
             />
         </li>

@@ -424,7 +424,7 @@
 			"title_light": "sur les risques qui m'entourent",
 			"strimming_obligation": {
 				"title": "Obligation légale de débroussaillement",
-				"description": "Vous êtes soumis à l'obligation légale de débroussaillement"
+				"description": "Vous êtes soumis à l'obligation légale de débroussaillement."
 			},
 			"gathering_place": "Lieu de regroupement"
 		},
@@ -432,7 +432,7 @@
 			"title_strong": "JE ME PRÉPARE",
 			"title_light": "à faire face",
 			"kit": {
-				"headline": "Préparez un kit d’urgence contenant de quoi vivre pendant 3 jours",
+				"headline": "Préparez un kit d’urgence contenant de quoi vivre pendant 3 jours.",
 				"location_instruction": "Placez le kit d’urgence dans un endroit facile d’accès et partagez sa localisation avec vos proches.",
 				"location": "Votre kit est rangé : ",
 				"presentation": "Il vous permettra d’être autonome en cas d’évacuation ou de mise à l’abri dans votre domicile. Constituez-le sans attendre et vérifiez régulièrement son contenu. Voici la liste des objets et équipements essentiels à mettre dans ce kit d’urgence, qui doit rester facilement accessible."
@@ -457,9 +457,9 @@
 				"fr_alert": "<b>FR Alert</b> qui diffuse un message d’alerte avec les consignes associées directement sur les téléphones portables. Pas d’inscription ni de téléchargement pour recevoir le message d’alerte.",
 				"saip": "<b>Les sirènes SAIP</b> qui déclenchent un signal sonore de 3 fois 1 minute et 41 secondes.<br/>Il faut alors :",
 				"saip_guidelines": {
-					"no_phone": "<k1>Éviter de téléphoner</k1> afin de laisser les réseaux disponibles pour les secours.",
-					"stay_safe": "<k1>Rester à l'abri</k1> et n'évacuer son domicile que sur ordre des autorités.",
-					"listen_carefully": "<k1>Rester à l'écoute</k1> des consignes des autorités."
+					"no_phone": "<b>Éviter de téléphoner</b> afin de laisser les réseaux disponibles pour les secours.",
+					"stay_safe": "<b>Rester à l'abri</b> et n'évacuer son domicile que sur ordre des autorités.",
+					"listen_carefully": "<b>Rester à l'écoute</b> des consignes des autorités."
 				},
 				"public_medias": "<b>Les médias publics</b> et les réseaux sociaux des services de l’État,  Radio France et France Télévisions seront les relais des autorités en situation d’urgence pour communiquer avec la population."
 			},

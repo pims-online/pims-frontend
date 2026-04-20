@@ -408,6 +408,93 @@
 		},
 		"goBackHome": "Back to home screen"
 	},
+	"pdf": {
+		"title": "Your Individual Safety Plan",
+		"comment": "Comment:",
+		"phone_numbers_section": {
+			"section_title": "Useful numbers",
+			"112": "EU emergency number: ",
+			"114": "Emergency number for deaf or hard-of-hearing persons: ",
+			"town_hall": "Town Hall: ",
+			"insurance": "Insurance: ",
+			"relatives": "Relatives: "
+		},
+		"inform_section": {
+			"title_strong": "I STAY INFORMED",
+			"title_light": "about the risks around me",
+			"strimming_obligation": {
+				"title": "Strimming obligation",
+				"description": "You are subject to the legal obligation to clear undergrowth."
+			},
+			"gathering_place": "Gathering place"
+		},
+		"prepare_section": {
+			"title_strong": "I PREPARE MYSELF",
+			"title_light": "to face the situation",
+			"kit": {
+				"headline": "Prepare an emergency kit with everything needed to last 3 days.",
+				"location_instruction": "Place the emergency kit in an easily accessible place and share its location with your loved ones.",
+				"location": "Your kit is stored: ",
+				"presentation": "It will allow you to be self-sufficient during an evacuation or if you must shelter at home. Put it together without delay and check its contents regularly. Here is a list of essential items and equipment to put in this emergency kit, which should be easily accessible."
+			},
+			"strimming_obligation": {
+				"title": "Débroussaillez votre terrain",
+				"description": "Enlevez les broussailles combustibles proches de votre maison et de ses voies d'accès."
+			}
+		},
+		"alert_section": {
+			"title_strong": "I TAKE ACTION",
+			"title_light": "in the event of a hazard or alert",
+			"subtitle": "During a crisis, I monitor the situation.",
+			"weather_alerts": {
+				"title": "Weather alerts",
+				"links": "I track official weather alerts a <k1>vigilance.meteofrance.fr</k1> and <k2>vigicrues.gouv.fr</k2>.",
+				"explanation": "In orange or red situations, advice drawn up by the public authorities is indicated on the map and in the warning bulletins. It is simple, adapted to each phenomenon and easy to follow."
+			},
+			"population_alert": {
+				"title": "Public alert systems",
+				"description": "In case of life-threatening danger, authorities may activate:",
+				"fr_alert": "<b>FR Alert</b> which sends alert messages with safety instructions directly to your phone. Neither app nor registration is needed.",
+				"saip": "The national <b>SAIP warning sirens</b> emit 3 repeated signals of 1 minute and 41 seconds.<br/>In that case, you must:",
+				"saip_guidelines": {
+					"no_phone": "<b>Avoid making phone calls</b> to keep networks available for emergency services.",
+					"stay_safe": "<b>Stay sheltered</b> and only evacuate if ordered by the authorities.",
+					"listen_carefully": "<b>Keep listening</b> for official instructions."
+				},
+				"public_medias": "<b>Public broadcasters</b> and government social media accounts — including Radio France and France Télévisions — will relay emergency information from the authorities to the public."
+			},
+			"radio_frequencies": {
+				"title": "Official radio stations in your town",
+				"france_inter": "France Inter: ",
+				"ici": "Ici: ",
+				"france_info": "France Info: ",
+				"unavailable": "unavailable"
+			}
+		},
+		"involvement_section": {
+			"title_strong": "I GET INVOLVED",
+			"first_aid": {
+				"title": "Lifesaving first aid",
+				"description": "Learn lifesaving first aid from firefighters or an approved civil safety organization."
+			},
+			"firefighter": {
+				"title": "Volunteer firefighter",
+				"description": "Become a volunteer firefighter and help with emergency response."
+			},
+			"civil_security": {
+				"title": "Civil safety reserve",
+				"description": "Join the local civil safety reserve to support and assist the population."
+			},
+			"volunteering": {
+				"title": "Volunteering",
+				"description": "Sign up to the national volunteering platform."
+			},
+			"jnr": {
+				"title": "National Resilience Day",
+				"description": "Participate in awareness actions near you during the National Resilience Day !"
+			}
+		}
+	},
 	"legal_information_page": {
 		"title": "Legal Information",
 		"edition": {
