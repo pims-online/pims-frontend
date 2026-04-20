@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Highlight from "@codegouvfr/react-dsfr/Highlight";
 
 import { Risk, StrimmingObligation } from "@/providers/AppContextConfig";
@@ -16,24 +17,29 @@ type Props = {
 export default function InformSection(props: Props) {
     const { strimmingObligation, riskList, gatheringPlace } = props;
 
-    return <div>
-        <PimsTitle strongText={'JE M\'INFORME'} lightText={'sur les risques qui m\'entourent'} icon={step1Light}/>
-        {/* Obligation légale de débroussaillement */}
+    const { t } = useTranslation("pdf", { keyPrefix: "inform_section" });
+
+    return <>
+        <PimsTitle strongText={t("title_strong")} lightText={t("title_light")} icon={step1Light}/>
+
+        {/* Strimming obligation */}
         {strimmingObligation.affected ? <>
             <Highlight>
-                <span className="pims-pdf-information__strimming-obligation-title">Obligation légale de débroussaillement</span><br/>
-                Vous êtes soumis à l'obligation légale de débroussaillement
+                <span className="pims-pdf-information__strimming-obligation-title">{t("strimming_obligation.title")}</span><br/>
+                {t("strimming_obligation.description")}
             </Highlight>
         </> : null}
-        {/* Risques */}
+
+        {/* Risks */}
         <RiskList riskList={riskList} compact/>
-        {/* Lieu de regroupement */}
+
+        {/* Gathering place */}
         {
             (gatheringPlace !== undefined) &&
             <Highlight>
-                <h4>Lieu de regroupement</h4>
+                <h4>{t("gathering_place")}</h4>
                 <b>{gatheringPlace}</b>
             </Highlight>
         }
-    </div>
+    </>
 }

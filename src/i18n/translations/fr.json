@@ -408,6 +408,93 @@
 		},
 		"goBackHome": "Retourner à l'écran d'accueil"
 	},
+	"pdf": {
+		"title": "Votre Plan Individuel de Mise en Sûreté",
+		"comment": "Remarque :",
+		"phone_numbers_section": {
+			"section_title": "Les numéros utiles",
+			"112": "Numéro unique d'appel en Europe : ",
+			"114": "Numéro d'appel pour les sourds et malentendants : ",
+			"town_hall": "Mairie : ",
+			"insurance": "Assurance : ",
+			"relatives": "Proches : "
+		},
+		"inform_section": {
+			"title_strong": "JE M'INFORME",
+			"title_light": "sur les risques qui m'entourent",
+			"strimming_obligation": {
+				"title": "Obligation légale de débroussaillement",
+				"description": "Vous êtes soumis à l'obligation légale de débroussaillement"
+			},
+			"gathering_place": "Lieu de regroupement"
+		},
+		"prepare_section": {
+			"title_strong": "JE ME PRÉPARE",
+			"title_light": "à faire face",
+			"kit": {
+				"headline": "Préparez un kit d’urgence contenant de quoi vivre pendant 3 jours",
+				"location_instruction": "Placez le kit d’urgence dans un endroit facile d’accès et partagez sa localisation avec vos proches.",
+				"location": "Votre kit est rangé : ",
+				"presentation": "Il vous permettra d’être autonome en cas d’évacuation ou de mise à l’abri dans votre domicile. Constituez-le sans attendre et vérifiez régulièrement son contenu. Voici la liste des objets et équipements essentiels à mettre dans ce kit d’urgence, qui doit rester facilement accessible."
+			},
+			"strimming_obligation": {
+				"title": "Débroussaillez votre terrain",
+				"description": "Enlevez les broussailles combustibles proches de votre maison et de ses voies d'accès."
+			}
+		},
+		"alert_section": {
+			"title_strong": "J'AGIS",
+			"title_light": "en cas d'aléa ou d'alerte",
+			"subtitle": "Pendant la crise, je suis l’évolution de la situation.",
+			"weather_alerts": {
+				"title": "Les vigilances météo",
+				"links": "Je surveille l’évolution des vigilances sur <k1>vigilance.meteofrance.fr</k1> et <k2>vigicrues.gouv.fr</k2>.",
+				"explanation": "En situation orange ou rouge, des conseils élaborés par les pouvoirs publics sont indiqués sur la carte et dans les bulletins de vigilance. Ils sont simples, adaptés à chaque phénomène et faciles à adopter."
+			},
+			"population_alert": {
+				"title": "L'alerte des populations",
+				"description": "En cas de risque vital, les autorités peuvent activer :",
+				"fr_alert": "<b>FR Alert</b> qui diffuse un message d’alerte avec les consignes associées directement sur les téléphones portables. Pas d’inscription ni de téléchargement pour recevoir le message d’alerte.",
+				"saip": "<b>Les sirènes SAIP</b> qui déclenchent un signal sonore de 3 fois 1 minute et 41 secondes.<br/>Il faut alors :",
+				"saip_guidelines": {
+					"no_phone": "<k1>Éviter de téléphoner</k1> afin de laisser les réseaux disponibles pour les secours.",
+					"stay_safe": "<k1>Rester à l'abri</k1> et n'évacuer son domicile que sur ordre des autorités.",
+					"listen_carefully": "<k1>Rester à l'écoute</k1> des consignes des autorités."
+				},
+				"public_medias": "<b>Les médias publics</b> et les réseaux sociaux des services de l’État,  Radio France et France Télévisions seront les relais des autorités en situation d’urgence pour communiquer avec la population."
+			},
+			"radio_frequencies": {
+				"title": "Les stations radio officielles dans votre ville",
+				"france_inter": "France Inter : ",
+				"ici": "Ici : ",
+				"france_info": "France Info : ",
+				"unavailable": "indisponible"
+			}
+		},
+		"involvement_section": {
+			"title_strong": "JE M'IMPLIQUE",
+			"first_aid": {
+				"title": "Gestes qui sauvent",
+				"description": "Formez-vous aux gestes qui sauvent auprès des sapeurs-pompiers ou d’une association agréée de sécurité civile."
+			},
+			"firefighter": {
+				"title": "Pompier volontaire",
+				"description": "Devenez pompier volontaire et participez aux actions de secours."
+			},
+			"civil_security": {
+				"title": "Réserve communale",
+				"description": "Intégrez la réserve communale de sécurité civile pour participer au soutien et à l’assistance de la population."
+			},
+			"volunteering": {
+				"title": "Devenir bénévole",
+				"description": "Inscrivez-vous sur la plateforme publique du bénévolat."
+			},
+			"jnr": {
+				"title": "Journée Nationale de la Résilience",
+				"description": "Participez près de chez vous aux actions de sensibilisation de la journée nationale de la résilience !"
+			}
+		}
+	},
 	"legal_information_page": {
 		"title": "Mentions légales",
 		"edition": {

@@ -16,42 +16,42 @@ type Props = {
 export default function PrepareSection(props: Props) {
     const { emergencyKitLocation, strimmingObligation, iodePastilleElegibility } = props;
 
-    const { t } = useTranslation('emergency_kit_screen');
+    const { t: t_kitItems } = useTranslation('emergency_kit_screen', {keyPrefix: "kit_listing.items"});
+    const { t } = useTranslation('pdf', {keyPrefix: "prepare_section"});
 
     return (
-        <div>
-            <PimsTitle strongText='JE ME PRÉPARE' lightText='à faire face' icon={step2Light}/>
-            <h4>Préparez un kit d’urgence contenant de quoi vivre pendant 3 jours</h4>
-            {/* Lieu de stockage */}
-            <p>Placez le kit d’urgence dans un endroit facile d’accès et partagez sa localisation avec vos proches.</p>
+        <>
+            <PimsTitle strongText={t("title_strong")} lightText={t("title_light")} icon={step2Light}/>
+            <h4>{t("kit.headline")}</h4>
+
+            {/* Storage location */}
+            <p>{t("kit.location_instruction")}</p>
             <Highlight>
-                Votre kit est rangé : <b>{emergencyKitLocation}</b>
+                {t("kit.location")}<b>{emergencyKitLocation}</b>
             </Highlight>
-            {/* Présentation */}
-            <p>
-                Il vous permettra d’être autonome en cas d’évacuation ou de mise à l’abri dans votre domicile. 
-                Constituez-le sans attendre et vérifiez régulièrement son contenu.
-                Voici la liste des objets et équipements essentiels à mettre dans ce kit d’urgence, 
-                qui doit rester facilement accessible.
-            </p>
-            {/* Liste d'éléments */}
+
+            {/* Presentation */}
+            <p>{t("kit.presentation")}</p>
+            
+            {/* Kit listing */}
             <ol className="fr-mb-6v fr-mt-0">
-                {iodePastilleElegibility ? <>
+                {iodePastilleElegibility && <>
                     <li key="kit-listing-item-iode-pastille">
-                        {t('kit_listing.items.iode_pastille')}
+                        {t_kitItems('iode_pastille')}
                     </li>
-                </> : null}
+                </>}
                 {[...Array(14).keys()].map((value) => (
                     <li key={`kit-listing-item-${value}`}>
-                        {t(`kit_listing.items.item_${value + 1}`)}
+                        {t_kitItems(`item_${value + 1}`)}
                     </li>
                 ))}
             </ol>
-            {/* Obligation légale de débroussaillement */}
-            {strimmingObligation.affected ? <>
-                <h4>Débroussaillez votre terrain</h4>
-                <p>Enlevez les broussailles combustibles proches de votre maison et de ses voies d'accès.</p>
-            </> : null}
-        </div>
+
+            {/* Strimming obligation */}
+            {strimmingObligation.affected && <>
+                <h4>{t("strimming_obligation.title")}</h4>
+                <p>{t("strimming_obligation.description")}</p>
+            </>}
+        </>
     );
 }

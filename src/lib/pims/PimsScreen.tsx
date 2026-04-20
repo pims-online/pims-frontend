@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import { PimsParams } from "../5-summary/utils";
 import InvolvementSection from "./InvolvementSection";
 import AlertSection from "./AlertSection";
@@ -20,13 +22,15 @@ export default function PimsScreen(props: PimsParams) {
         radioFrequencies: radioFreqs, 
     } = props;
 
+    const { t } = useTranslation("pdf");
+
     return <div className='pims__main-layout'>
             <section className='pims-layouts__container'>
                 {/* Informations générales */}
-                <h1 className='pims-pdf__title'>Votre Plan Individuel de Mise en Sûreté</h1>
+                <h1 className='pims-pdf__title'>{t("title")}</h1>
                 {(title !== undefined) && <p className='pims-pdf__name'>« {title} »</p>}
                 <p className='pims-pdf__subtitle'>{address}</p>
-                {(comment !== undefined) && <p><b>Remarque :</b> {comment}</p>}
+                {(comment !== undefined) && <p><b>{t("comment")}</b> {comment}</p>}
                 <PhoneNumbersSection numbers={numbers}/>
                 <InformSection
                     strimmingObligation={strimmingObligation}

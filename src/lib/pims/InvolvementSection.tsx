@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { PimsTitle } from './PimsTitle';
 
@@ -10,8 +11,7 @@ import step4Light from '@/assets/step-icons/step-4-light.svg';
 
 
 type Involvement = {
-    title: string;
-    description: string;
+    i18nKey: string;
     link?: string;
     linkText?: string;
     imageUrl?: string;
@@ -19,61 +19,58 @@ type Involvement = {
 
 const involvements: Involvement[] = [
     {
-        title: 'Gestes qui sauvent',
-        description: 'Formez-vous aux gestes qui sauvent auprès des sapeurs-pompiers ou d’une association agréée de sécurité civile.',
+        i18nKey: "first_aid",
         link: 'https://www.securite-civile.interieur.gouv.fr/sengager/engagement-citoyen/se-former-aux-gestes-qui-sauvent',
-        linkText: 'Se former au gestes qui sauvent',
+        linkText: 'securite-civile.interieur.gouv.fr/sengager/engagement-citoyen/se-former-aux-gestes-qui-sauvent',
         imageUrl: firstAidIcon,
     },
     {
-        title: 'Pompier volontaire',
-        description: 'Devenez pompier volontaire et participez aux actions de secours.',
+        i18nKey: "firefighter",
         link: 'https://www.securite-civile.interieur.gouv.fr/sengager/devenir-sapeur-pompier-volontaire',
-        linkText: 'Devenir pompier volontaire',
+        linkText: 'securite-civile.interieur.gouv.fr/sengager/devenir-sapeur-pompier-volontaire',
         imageUrl: firefighterIcon,
     },
     {
-        title: 'Réserve communale',
-        description: 'Intégrez la réserve communale de sécurité civile pour participer au soutien et à l’assistance de la population.',
+        i18nKey: "civil_security",
         imageUrl: reserveIcon,
     },
     {
-        title: 'Devenir bénévole',
-        description: 'Inscrivez-vous sur la plateforme publique du bénévolat.',
+        i18nKey: "volunteering",
         link: 'https://www.jeveuxaider.gouv.fr',
+        linkText: 'jeveuxaider.gouv.fr',
         imageUrl: volunteerIcon,
     },
     {
-        title: 'Journée Nationale de la Résilience',
-        description: 'Participez près de chez vous aux actions de sensibilisation de la journée nationale de la résilience !',
+        i18nKey: "jnr",
         link: 'https://carte-jnr.fr',
+        linkText: 'carte-jnr.fr',
         imageUrl: undefined,
     },
 ];
 
 export default function InvolvementSection() {
-    function formatInvolvementItem(involvement: Involvement) {
-        const key = involvement.title.toLowerCase().replace(' ', '_');
-        return <div key={`pims-pdf-involvement__item-container--${key}`}>
+    const { t } = useTranslation("pdf", {keyPrefix: "involvement_section"});
+
+    const involvementsNodes: ReactElement[] = involvements.map(
+        (involvement: Involvement) => 
+        <div key={involvement.i18nKey}>
             <h3>
-                {involvement.title}
+                {t(`${involvement.i18nKey}.title`)}
             </h3>
             <div className="pims-pdf-involvement__item-container">
                 <img src={involvement.imageUrl}/>
                 <div>
                     <p>
-                        {involvement.description}<br/>
-                        {(involvement.link !== undefined) ? <a href={involvement.link}>{involvement.link}</a> : undefined}
+                        {t(`${involvement.i18nKey}.description`)}<br/>
+                        {(involvement.link !== undefined) ? <a href={involvement.link}>{involvement.linkText || involvement.link}</a> : undefined}
                     </p>
                 </div>
             </div>
-        </div>;
-    };
-
-    const involvementsNodes: ReactElement[] = involvements.map(formatInvolvementItem);
+        </div>
+    );
 
     return <>
-            <PimsTitle strongText={'JE M\'IMPLIQUE'} icon={step4Light}/>
+            <PimsTitle strongText={t("title_strong")} icon={step4Light}/>
             {involvementsNodes}
         </>;
 }

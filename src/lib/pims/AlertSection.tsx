@@ -1,10 +1,10 @@
+import { Trans, useTranslation } from "react-i18next";
 import Highlight from "@codegouvfr/react-dsfr/Highlight";
 
 import { PimsTitle } from "./PimsTitle";
 import { RadioFrequencies } from "@/providers/AppContextConfig";
 
 import step3Light from '@/assets/step-icons/step-3-light.svg';
-import { useTranslation } from "react-i18next";
 
 
 type Props = {
@@ -13,7 +13,8 @@ type Props = {
 
 export default function Alert(props: Props) {
     const { radioFreqs } = props;
-    const { t } = useTranslation('alert_screen');
+
+    const { t } = useTranslation('pdf', { keyPrefix: "alert_section" });
 
 	const frequenciesToString = (rawFreqs: string[]) => {
 		if (rawFreqs.length == 0) {
@@ -23,49 +24,84 @@ export default function Alert(props: Props) {
 		}
 	}
 
+    const saipGuidelinesKeys = ["no_phone", "stay_safe", "listen_carefully"];
+    const saipGuidelinesNodes = saipGuidelinesKeys.map(
+        (key) => <li key={key}>
+            <Trans
+                t={t}
+                i18nKey={`population_alert.saip_guidelines.${key}`}
+                components={{
+                    k1: <b/>
+                }}
+            />
+        </li>
+    );
+
     return (
-        <div>
-            <PimsTitle strongText={'J\'AGIS'} lightText={'en cas d\'aléa ou d\'alerte'} icon={step3Light}/>
-            <p className="pims-pdf-alert__subtitle">Pendant la crise, je suis l’évolution de la situation.</p>
-            <h3>Les vigilances météo</h3>
+        <>
+            <PimsTitle strongText={t("title_strong")} lightText={t("title_light")} icon={step3Light}/>
+            <p className="pims-pdf-alert__subtitle">{t("subtitle")}</p>
+
+            {/* Weather alerts */}
+            <h3>{t("weather_alerts.title")}</h3>
             <p>
-                Je surveille l’évolution des vigilances sur <a href='https://vigilance.meteofrance.fr'>vigilance.meteofrance.fr</a> et <a href='https://www.vigicrues.gouv.fr'>vigicrues.gouv.fr</a>.
+                <Trans 
+                    t={t}
+                    i18nKey="weather_alerts.links"
+                    components={{
+                        k1: <a href="https://vigilance.meteofrance.fr"/>,
+                        k2: <a href="https://www.vigicrues.gouv.fr"/>
+                    }}
+                />
                 <br/>
-                En situation orange ou rouge, des conseils
-                élaborés par les pouvoirs publics sont
-                indiqués sur la carte et dans les bulletins
-                de vigilance. Ils sont simples, adaptés
-                à chaque phénomène et faciles à adopter.
+                {t("weather_alerts.explanation")}
             </p>
-            <h3>L'alerte des populations</h3>
-            <p>En cas de risque vital, les autorités peuvent activer :</p>                    
+
+            {/* Population alert */}
+            <h3>{t("population_alert.title")}</h3>
+            <p>{t("population_alert.description")}</p>                    
             <ul>
                 <li>
-                    <b>FR Alert</b> qui diffuse un message d’alerte avec les consignes associées directement sur les téléphones portables.
-                    Pas d’inscription ni de téléchargement pour recevoir le message d’alerte.
+                    <Trans
+                        t={t}
+                        i18nKey="population_alert.fr_alert"
+                        components={{
+                            b: <b/>
+                        }}
+                    />
                 </li>
                 <li>
-                    <b>Les sirènes SAIP</b> qui déclenchent un signal sonore de 3 fois 1 minute et 41 secondes.
-                    Il faut alors :
+                    <Trans
+                        t={t}
+                        i18nKey="population_alert.saip"
+                        components={{
+                            b: <b/>,
+                            br: <br/>
+                        }}
+                    />
                     <ul>
-                        <li><b>Éviter de téléphoner</b> afin de laisser les réseaux disponibles pour les secours.</li>
-                        <li><b>Rester à l'abri</b>, n'évacuez votre domicile que sur ordre des autorités.</li>
-                        <li><b>Restez à l'écoute</b> des consignes des autorités.</li>
+                        {saipGuidelinesNodes}
                     </ul>
                 </li>
                 <li>
-                    <b>Les médias publics</b> et les réseaux sociaux des services de l’État, 
-                    Radio France et France Télévisions seront les relais des autorités
-                    en situation d’urgence pour communiquer avec la population.
+                    <Trans 
+                        t={t}
+                        i18nKey="population_alert.public_medias"
+                        components={{
+                            b: <b/>
+                        }}
+                    />
                 </li>
             </ul>
+
+            {/* Radio frequencies */}
             <Highlight>
-                <h4>Les stations radio officielles dans votre ville</h4>
+                <h4>{t("radio_frequencies.title")}</h4>
                 <ul>
-                    <li>France Inter : <b>{frequenciesToString(radioFreqs.franceInter)}</b><br/></li>
-                    <li>Ici : <b>{frequenciesToString(radioFreqs.ici)}</b><br/></li>
-                    <li>France Info : <b>{frequenciesToString(radioFreqs.franceInfo)}</b><br/></li>
+                    <li>{t("radio_frequencies.france_inter")}<b>{frequenciesToString(radioFreqs.franceInter)}</b><br/></li>
+                    <li>{t("radio_frequencies.ici")}<b>{frequenciesToString(radioFreqs.ici)}</b><br/></li>
+                    <li>{t("radio_frequencies.france_info")}<b>{frequenciesToString(radioFreqs.franceInfo)}</b><br/></li>
                 </ul>
             </Highlight>
-        </div>);
+        </>);
 }
