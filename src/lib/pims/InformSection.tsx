@@ -4,6 +4,7 @@ import Highlight from "@codegouvfr/react-dsfr/Highlight";
 import { Risk, StrimmingObligation } from "@/providers/AppContextConfig";
 import RiskList from "../1-information/risks/RiskList";
 import { PimsTitle } from "./PimsTitle";
+import HighlightRaw from "./HighlightRaw";
 
 import step1Light from '@/assets/step-icons/step-1-light.svg';
 
@@ -36,10 +37,10 @@ export default function InformSection(props: Props) {
         {/* Gathering place */}
         {
             (gatheringPlace !== undefined) &&
-            <Highlight>
+            <HighlightRaw>
                 <h4>{t("gathering_place")}</h4>
                 <b>{gatheringPlace}</b>
-            </Highlight>
+            </HighlightRaw>
         }
     </>
 }

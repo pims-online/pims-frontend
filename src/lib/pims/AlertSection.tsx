@@ -1,8 +1,8 @@
 import { Trans, useTranslation } from "react-i18next";
-import Highlight from "@codegouvfr/react-dsfr/Highlight";
 
 import { PimsTitle } from "./PimsTitle";
 import { RadioFrequencies } from "@/providers/AppContextConfig";
+import HighlightRaw from "./HighlightRaw";
 
 import step3Light from '@/assets/step-icons/step-3-light.svg';
 
@@ -95,13 +95,13 @@ export default function Alert(props: Props) {
             </ul>
 
             {/* Radio frequencies */}
-            <Highlight>
+            <HighlightRaw>
                 <h4>{t("radio_frequencies.title")}</h4>
                 <ul>
                     <li>{t("radio_frequencies.france_inter")}<b>{frequenciesToString(radioFreqs.franceInter)}</b><br/></li>
                     <li>{t("radio_frequencies.ici")}<b>{frequenciesToString(radioFreqs.ici)}</b><br/></li>
                     <li>{t("radio_frequencies.france_info")}<b>{frequenciesToString(radioFreqs.franceInfo)}</b><br/></li>
                 </ul>
-            </Highlight>
+            </HighlightRaw>
         </>);
 }

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import Highlight from "@codegouvfr/react-dsfr/Highlight";
 
 import { UsefulNumbers } from "@/providers/AppContextConfig";
+import HighlightRaw from "./HighlightRaw";
 
 
 
@@ -15,7 +15,7 @@ export default function PhoneNumbersSection(props: Props) {
     const { t } = useTranslation("pdf", { keyPrefix: "phone_numbers_section" });
 
     return <>
-        <Highlight>
+        <HighlightRaw>
             <h3>{t("section_title")}</h3>
             <ul>
                 <li>{t("112")}<b>112</b></li>
@@ -31,6 +31,6 @@ export default function PhoneNumbersSection(props: Props) {
                     <li>{t("relatives")}<b>{numbers.relatives}</b></li>
                 }
             </ul>
-        </Highlight>
+        </HighlightRaw>
     </>
 }
