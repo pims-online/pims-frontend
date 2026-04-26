@@ -600,7 +600,8 @@
 			"opposition": {
 				"title": "Moyens d'opposition au dépôt des cookies via votre navigateur",
 				"deactivation": "Vous pouvez à tout moment choisir de désactiver l’ensemble des cookies, même ceux nécessaires au fonctionnement du site. Cependant votre expérience utilisateur risque d’être dégradée. Si vous souhaitez désactiver uniquement les cookies non indispensables au fonctionnement du site, utiliser notre outil de gestion des cookies.",
-				"deactivation_per_browser": "Voici les procédures pour bloquer toute création de cookies à partir des options de votre navigateur :"
+				"deactivation_per_browser": "Voici les procédures pour bloquer toute création de cookies à partir des options de votre navigateur :",
+				"deactivation_caption": "Bloquer la création de cookies sur {{ browser }}"
 			}
 		},
 		"data_policy": {

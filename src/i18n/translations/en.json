@@ -600,7 +600,8 @@
 			"opposition": {
 				"title": "How to Block Cookies via Your Browser",
 				"deactivation": "You can choose to disable all cookies at any time, even those necessary for the website's operation. However, your user experience may be degraded. If you wish to disable only non-essential cookies, use our cookie management tool.",
-				"deactivation_per_browser": "Here are the procedures to block cookie creation from your browser settings:"
+				"deactivation_per_browser": "Here are the procedures to block cookie creation from your browser settings:",
+				"deactivation_caption": "Block cookie creation on {{ browser }}"
 			}
 		},
 		"data_policy": {
