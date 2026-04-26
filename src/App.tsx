@@ -8,12 +8,14 @@ import {
 } from './providers';
 import PageLayout from '@/layouts/PageLayout';
 import MainPage from '@/pages/MainPage';
+import HtmlLanguageUpdater from './components/HtmlLanguageUpdater';
 
 function App() {
 	return (
 		<DSFRWrapper>
 			<AppContextProvider>
 				<I18nextProvider i18n={i18n}>
+					<HtmlLanguageUpdater/>
 					<BrowserRouter>
 						<PageLayout>
 							<AppRoutesProvider />
