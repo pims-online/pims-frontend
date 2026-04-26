@@ -12,7 +12,9 @@
 		"service_tagline": "Prêts ? Parés !",
 		"marianne": "Gouvernement",
 		"main_page_link": "Accueil - Téléprocédure PIMS",
-		"footer": "Le PIMS en ligne est développé par la Direction Générale de la Sécurité Civile et de la Gestion des Crises"
+		"footer": "Le PIMS en ligne est développé par la Direction Générale de la Sécurité Civile et de la Gestion des Crises",
+		"light_theme": "Thème clair",
+		"dark_theme": "Thème foncé"
 	},
 	"common": {
 		"go_next_step": "Étape suivante",

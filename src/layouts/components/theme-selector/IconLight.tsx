@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export default function IconLight() {
+	const { t } = useTranslation("header");
+
 	const iconSize = 20;
 	return (
 		<svg
@@ -9,6 +13,8 @@ export default function IconLight() {
 			stroke="#8585f6" // --artwork-major-blue-france
 			width={iconSize}
 			height={iconSize}
+			role="image"
+			aria-label={t("light_theme")}
 		>
 			<path
 				strokeLinecap="round"

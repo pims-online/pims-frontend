@@ -12,7 +12,9 @@
 		"service_tagline": "Ready? Prepared!",
 		"marianne": "Government",
 		"main_page_link": "Home - PIMS Online Procedure",
-		"footer": "The online PIMS is developed by the Directorate General for Civil Security and Crisis Management"
+		"footer": "The online PIMS is developed by the Directorate General for Civil Security and Crisis Management",
+		"light_theme": "Light theme",
+		"dark_theme": "Dark theme"
 	},
 	"common": {
 		"go_next_step": "Next step",
