@@ -15,6 +15,7 @@ import EmergencyKitScreen from '@/lib/2-emergency-kit/EmergencyKitScreen';
 import AlertScreen from '@/lib/3-alert/AlertScreen';
 import InvolvementScreen from '@/lib/4-involvement/InvolvementScreen';
 import SummaryScreen from '@/lib/5-summary/SummaryScreen';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
 	currentIndex: number;
@@ -23,6 +24,9 @@ type Props = {
 
 export default function StepsLayout(props: Props) {
 	const { currentIndex, setCurrentIndex } = props;
+
+	const { t } = useTranslation('common');
+
 	const [navigationLocks, setNavigationLocks] = useState<Map<string, NavigationLock>>(new Map());
 	const registerNavLock = useRegisterNavLock(setNavigationLocks);
 
@@ -47,6 +51,7 @@ export default function StepsLayout(props: Props) {
 
 	return (
 		<>
+			<h1>{t("title")}</h1>
 			<Stepper currentStep={currentIndex} />
 			<div id="pims-layouts__tab_wrapper" tabIndex={-1}>
 				{currentIndex === SCREENS.INFORMATION_SCREEN && (

@@ -18,10 +18,11 @@
 		"go_next_step": "Étape suivante",
 		"go_previous_step": "Étape précédente",
 		"go_back_home": "Revenir à l'accueil",
-		"select_language": "Sélectionner la langue"
+		"select_language": "Sélectionner la langue",
+		"title": "Le PIMS : Plan Individuel de Mise en Sûreté"
 	},
 	"home_screen": {
-		"title": "Le Plan Individuel de Mise en Sûreté (PIMS)",
+		"title": "Le PIMS : Plan Individuel de Mise en Sûreté",
 		"protection": "Face aux risques majeurs : se protéger et protéger ses proches en quelques minutes",
 		"online_procedure": {
 			"title": "Votre démarche PIMS en ligne",
