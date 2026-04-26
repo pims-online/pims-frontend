@@ -12,7 +12,7 @@ export default function SectionTemplate(props: Props) {
 
 	return (
 		<>
-			<Title text={t(`${props.i18nKey}.title`)} />
+			<Title text={t(`${props.i18nKey}.title`)} level='h5'/>
 			<p>{t(`${props.i18nKey}.content`)}</p>
 			{props?.children && props.children}
 		</>

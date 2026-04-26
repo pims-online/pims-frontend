@@ -12,7 +12,7 @@ export default function InvolvementPartJNR() {
 
 	return (
 		<Container>
-			<Title text={t('jnr.title')} contained />
+			<Title text={t('jnr.title')} level='h5' contained />
 			<p>{t('jnr.content')}</p>
 			<ul className="pims-components__arrowed-list">
 				<li>

@@ -14,7 +14,7 @@ export default function DisplayRiskListAround() {
 		<Container>
 			{riskList && riskList.length > 0 && (
 				<>
-					<Title text={t('safe_behavior')} />
+					<Title text={t('safe_behavior')} level='h5' />
 					<RiskList riskList={riskList} />
 				</>
 			)}

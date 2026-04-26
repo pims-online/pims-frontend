@@ -11,7 +11,7 @@ export default function InvolvementPartParticipation() {
 
 	return (
 		<Container>
-			<Title text={t(`${translationKeyPrefix}.title`)} contained />
+			<Title text={t(`${translationKeyPrefix}.title`)} level='h5' contained />
 			<ul className="pims-components__arrowed-list">
 				<li>
 					<ParticipationItem i={1} url={INVOLVMENT_LINK_FIRST_AID} />

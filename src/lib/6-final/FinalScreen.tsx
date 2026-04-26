@@ -21,7 +21,7 @@ export default function FinalScreen(props: Props) {
 
 	return (
 		<div>
-			<Title text={title} />
+			<Title text={title} level='h5' />
 			<FinalActions />
 			<Divider />
 			<FinalButton

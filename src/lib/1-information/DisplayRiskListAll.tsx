@@ -25,7 +25,7 @@ export default function DisplayRiskListAll() {
 
 	return (
 		<Container>
-			<Title text={t('see_more_risks.title')} contained />
+			<Title text={t('see_more_risks.title')} level='h5' contained />
 			<Accordion label={t('see_more_risks.accordion')}>
 				<RiskList
 					riskList={getAllRisks()}

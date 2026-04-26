@@ -17,7 +17,7 @@ export default function SectionAddressInput(props: Props) {
 
 	return (
 		<Container id="pims-step-1__input-address-section">
-			<Title contained text={t('address.title')}/>
+			<Title contained text={t('address.title')} level='h5'/>
 			<p className="pims-components__text-indicator">
 				{`${t('address.call_to_action')} `}
 				<RequiredFieldIndicator inverted />
