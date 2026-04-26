@@ -52,7 +52,9 @@ export default function StepsLayout(props: Props) {
 	return (
 		<>
 			<h1>{t("title")}</h1>
-			<Stepper currentStep={currentIndex} />
+			<nav>
+				<Stepper currentStep={currentIndex} />
+			</nav>
 			<div id="pims-layouts__tab_wrapper" tabIndex={-1}>
 				{currentIndex === SCREENS.INFORMATION_SCREEN && (
 					<InformationScreen registerNavLock={registerNavLock} />
