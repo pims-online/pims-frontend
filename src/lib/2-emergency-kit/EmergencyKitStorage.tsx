@@ -35,14 +35,15 @@ export default function EmergencyKitStorage(props: Props) {
 		} else {
 			const lock: NavigationLock = {
 				highlight,
-				htmlElementId: 'pims-step-2__emergency-kit',
+				scrollId: 'pims-step-2__input-emergency-kit-storage-wrapper',
+				focusId: 'pims-step-2__input-emergency-kit-storage',
 			}
 			registerNavLock(lockName, lock);
 		}
 	}, [emergencyKitStorage]);
 
 	return (
-		<Container>
+		<Container id="pims-step-2__input-emergency-kit-storage-wrapper">
 			<p className="fr-mb-0">
 				{`${t('kit_storage.accessibility')} `}
 				<RequiredFieldIndicator />

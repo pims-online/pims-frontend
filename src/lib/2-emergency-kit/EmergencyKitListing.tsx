@@ -33,7 +33,8 @@ export default function EmergencyKitListing(props: Props) {
 		} else {
 			const lock: NavigationLock = {
 				highlight,
-				htmlElementId: 'pims-step-2__emergency-kit',
+				scrollId: 'pims-step-2__emergency-kit',
+				focusId: 'pims-step-2__checkbox-emergency-kit-read',
 			}
 			registerNavLock(lockName, lock);
 		}

@@ -6,7 +6,7 @@ import { clsx } from 'clsx';
 import { Divider } from '@/components';
 import { useTrackEvents } from '@/providers/analytics';
 
-import { scrollToTop } from '../utils';
+import { scrollToTop, scrollToUppermostLock } from '../utils';
 import { NavigationLock } from '../types'
 
 type Props = {
@@ -43,35 +43,6 @@ export default function Navigator(props: Props) {
 		});
 	};
 
-	const scrollToUppermostLock = () => {
-		// 1. Find uppermost lock
-		let uppermostTop: number|undefined = undefined;
-		let uppermostId: string|undefined = undefined;
-		navigationLocks.forEach((lock) => {
-			if (lock.htmlElementId === undefined) {
-				return;
-			}
-			const rect = document.getElementById(lock.htmlElementId)?.getBoundingClientRect()
-			if (rect === undefined) {
-				return;
-			}
-			const top = rect.top;
-			if (uppermostTop === undefined || top > uppermostTop) {
-				uppermostTop = top;
-				uppermostId = lock.htmlElementId;
-			}
-		});
-
-		// 2. Put the uppermost lock into view
-		if (uppermostId !== undefined) {
-			const options: ScrollIntoViewOptions = {
-				block: 'nearest',
-				behavior: 'smooth'
-			}
-			document.getElementById(uppermostId)?.scrollIntoView(options);
-		}
-	};
-
 	const onClickHandler = () => {
 		if (navigationLocks.size > 0) {
 			// 1. Trigger each lock
@@ -80,7 +51,7 @@ export default function Navigator(props: Props) {
 			});
 
 			// 2. Scroll to uppermost lock
-			scrollToUppermostLock()
+			scrollToUppermostLock(navigationLocks);
 		} else {
 			setNextCurrentStep(currentStep + 1);
 		}

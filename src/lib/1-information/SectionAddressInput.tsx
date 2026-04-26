@@ -16,8 +16,8 @@ export default function SectionAddressInput(props: Props) {
 	const { t } = useTranslation('information_screen');
 
 	return (
-		<Container>
-			<Title contained text={t('address.title')} />
+		<Container id="pims-step-1__input-address-section">
+			<Title contained text={t('address.title')}/>
 			<p className="pims-components__text-indicator">
 				{`${t('address.call_to_action')} `}
 				<RequiredFieldIndicator inverted />

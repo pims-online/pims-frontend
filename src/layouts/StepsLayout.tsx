@@ -46,29 +46,31 @@ export default function StepsLayout(props: Props) {
 	}
 
 	return (
-		<div>
+		<>
 			<Stepper currentStep={currentIndex} />
-			{currentIndex === SCREENS.INFORMATION_SCREEN && (
-				<InformationScreen registerNavLock={registerNavLock} />
-			)}
-			{currentIndex === SCREENS.EMERGENCY_KIT_SCREEN && (
-				<EmergencyKitScreen registerNavLock={registerNavLock} />
-			)}
-			{currentIndex === SCREENS.ALERT_SCREEN && <AlertScreen />}
-			{currentIndex === SCREENS.INVOLVEMENT_SCREEN && <InvolvementScreen />}
-			{currentIndex === SCREENS.SUMMARY_SCREEN && (
-				<SummaryScreen
-					navigateToFinalScreen={navigateToFinalScreen}
-					navigateToInformationScreen={navigateToInformationScreen}
-					navigateToEmergencyKitScreen={navigateToEmergencyKitScreen}
-				/>
-			)}
+			<div id="pims-layouts__tab_wrapper" tabIndex={-1}>
+				{currentIndex === SCREENS.INFORMATION_SCREEN && (
+					<InformationScreen registerNavLock={registerNavLock} />
+				)}
+				{currentIndex === SCREENS.EMERGENCY_KIT_SCREEN && (
+					<EmergencyKitScreen registerNavLock={registerNavLock} />
+				)}
+				{currentIndex === SCREENS.ALERT_SCREEN && <AlertScreen />}
+				{currentIndex === SCREENS.INVOLVEMENT_SCREEN && <InvolvementScreen />}
+				{currentIndex === SCREENS.SUMMARY_SCREEN && (
+					<SummaryScreen
+						navigateToFinalScreen={navigateToFinalScreen}
+						navigateToInformationScreen={navigateToInformationScreen}
+						navigateToEmergencyKitScreen={navigateToEmergencyKitScreen}
+					/>
+				)}
+			</div>
 			<Navigator
 				currentStep={currentIndex}
 				setCurrentStep={setCurrentIndex}
 				navigationLocks={navigationLocks}
 				clearNavigationLocks={clearNavLocks}
 			/>
-		</div>
+		</>
 	);
 }

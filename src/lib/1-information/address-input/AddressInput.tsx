@@ -131,7 +131,8 @@ export default function AddressInput(props: Props) {
 		if (position === undefined) {
 			const lock: NavigationLock = {
 				highlight,
-				htmlElementId: 'pims-step-1__input-address-search-bar',
+				focusId: 'pims-step-1__input-address-search-bar',
+				scrollId: 'pims-step-1__input-address-section'
 			};
 			registerNavLock(lockName, lock);
 		} else {
