@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 import { UsefulNumbers } from "@/providers/AppContextConfig";
-import HighlightRaw from "./HighlightRaw";
+import HighlightRaw from "@/components/HighlightRaw";
 
 
 

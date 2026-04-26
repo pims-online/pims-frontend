@@ -2,7 +2,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 import { PimsTitle } from "./PimsTitle";
 import { RadioFrequencies } from "@/providers/AppContextConfig";
-import HighlightRaw from "./HighlightRaw";
+import HighlightRaw from "@/components/HighlightRaw";
 
 import step3Light from '@/assets/step-icons/step-3-light.svg';
 

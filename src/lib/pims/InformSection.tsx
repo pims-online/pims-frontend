@@ -4,7 +4,7 @@ import Highlight from "@codegouvfr/react-dsfr/Highlight";
 import { Risk, StrimmingObligation } from "@/providers/AppContextConfig";
 import RiskList from "../1-information/risks/RiskList";
 import { PimsTitle } from "./PimsTitle";
-import HighlightRaw from "./HighlightRaw";
+import HighlightRaw from "@/components/HighlightRaw";
 
 import step1Light from '@/assets/step-icons/step-1-light.svg';
 
