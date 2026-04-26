@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ButtonsGroup } from '@codegouvfr/react-dsfr/ButtonsGroup';
-import { clsx } from 'clsx';
+import { ButtonProps } from '@codegouvfr/react-dsfr/Button';
 
 import { Divider } from '@/components';
 import { useTrackEvents } from '@/providers/analytics';
@@ -57,7 +57,30 @@ export default function Navigator(props: Props) {
 		}
 	};
 
-	const nextButtonHidden = currentStep === 5;
+	
+	const buttons: [ButtonProps, ...ButtonProps[]] = [
+		{
+			children:
+			currentStep === 1 ? t('go_back_home') : t('go_previous_step'),
+			iconId: 'fr-icon-arrow-left-s-line',
+			priority: 'secondary',
+			type: 'button',
+			onClick: () => {
+				clearNavigationLocks(); // Reset
+				setNextCurrentStep(currentStep - 1);
+			},
+		},
+	]
+	const nextButtonPresent = currentStep < 5;
+	if (nextButtonPresent) {
+		buttons.push({
+			children: t('go_next_step'),
+			iconId: 'fr-icon-arrow-right-s-line',
+			priority: 'primary',
+			type: 'button',
+			onClick: onClickHandler,
+		});
+	}
 
 	return (
 		<>
@@ -68,28 +91,7 @@ export default function Navigator(props: Props) {
 				buttonsIconPosition="left"
 				buttonsSize="medium"
 				inlineLayoutWhen="always"
-				buttons={[
-					{
-						children:
-							currentStep === 1 ? t('go_back_home') : t('go_previous_step'),
-						iconId: 'fr-icon-arrow-left-s-line',
-						priority: 'secondary',
-						type: 'button',
-						onClick: () => {
-							clearNavigationLocks(); // Reset
-							setNextCurrentStep(currentStep - 1);
-						},
-					},
-					{
-						children: t('go_next_step'),
-						iconId: 'fr-icon-arrow-right-s-line',
-						priority: 'primary',
-						type: 'button',
-						onClick: onClickHandler,
-						disabled: nextButtonHidden,
-						className: clsx({ 'button-hidden': nextButtonHidden }),
-					},
-				]}
+				buttons={buttons}
 				className="fr-mt-4v"
 				data-fr-analytics-rating
 				id={navigatorId}
