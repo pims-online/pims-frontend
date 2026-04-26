@@ -24,7 +24,7 @@ export default function HeaderWidget(props: Props) {
 			<div className="pims-layouts__widget-header-configs">
 				<img
 					src={iconGovernment}
-					alt="French Government"
+					alt={t("french_government_logo_alt")}
 					width={67}
 					height={40}
 				/>
