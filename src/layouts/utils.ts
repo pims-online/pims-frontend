@@ -11,7 +11,7 @@ export const removeStepInHash = () => {
 
 export function scrollToTop () {
 	if (window) {
-		setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+		window.scrollTo({ top: 0 });
 	}
 };
 
