@@ -11,7 +11,7 @@ export default function AlertSystemsMoreInfo() {
     
     return (
         <Container>
-            <Subtitle text={t('alert_systems.more_info.title')}></Subtitle>
+            <Subtitle text={t('alert_systems.more_info.title')} level='h6'></Subtitle>
             <p>
                 {t('alert_systems.more_info.content')}
                 <a

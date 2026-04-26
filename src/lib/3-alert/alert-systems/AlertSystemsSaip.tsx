@@ -17,7 +17,7 @@ export default function AlertSystemsSaip() {
 
 	return (
 		<Container>
-			<Subtitle text={t('alert_systems.saip.title')} />
+			<Subtitle text={t('alert_systems.saip.title')} level='h6'/>
 			<p>
 				<Trans
 					t={t}
