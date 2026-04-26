@@ -64,7 +64,7 @@
 		"address": {
 			"title": "I identify the major risks around me",
 			"call_to_action": "Please enter your address",
-			"search_bar_label": "Exact address",
+			"search_bar_label": "Postal address",
 			"address_missing": "Address missing"
 		},
 		"get_geolocation": "Use my current location",
