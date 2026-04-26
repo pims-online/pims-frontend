@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Button } from '@codegouvfr/react-dsfr/Button';
 
 import { Container } from '@/components';
+import { Trans, useTranslation } from 'react-i18next';
 
 type Props = {
 	logoSrc: string;
@@ -14,6 +15,8 @@ type Props = {
 export default function AudioPlayer(props: Props) {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const audioRef = useRef<HTMLAudioElement | null>(null);
+
+	const { t } = useTranslation('alert_screen');
 
 	useEffect(() => {
 		if (audioRef?.current) {
@@ -53,7 +56,17 @@ export default function AudioPlayer(props: Props) {
 				ref={audioRef}
 				onPause={() => setIsPlaying(false)}
 				onPlay={() => setIsPlaying(true)}
-			></audio>
+			>
+				<p>
+					<Trans
+						t={t}
+						i18nKey="audio_unsupported"
+						components={{
+							k1: <a href={props.media}>{props.buttonTitle}</a>
+						}}
+					/>
+				</p>
+			</audio>
 		</Container>
 	);
 }

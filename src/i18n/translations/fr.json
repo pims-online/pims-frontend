@@ -334,7 +334,8 @@
 		"radio_frequencies": {
 			"near_station": "Les stations radio près de chez vous :",
 			"unavailable": "indisponible"
-		}
+		},
+		"audio_unsupported": "Télécharger <k1/>."
 	},
 	"involvement_screen": {
 		"jnr": {
