@@ -11,11 +11,8 @@
 }
 
 #pims-home-screen__start-process-subtitle {
-	color: var(--text-label-orange-terre-battue);
 	display: inline-block;
 	white-space: nowrap; /* Prevents subtitle from wrapping */
-	font-stretch: condensed;
-	font-size: 0.75rem;
 }
 
 .pims-home-screen__steps-container {
