@@ -39,7 +39,7 @@ export default function InformationCheck(props: Props) {
 
 	return (
 		<Container>
-			<Title text={t('information_check.title')} level='h5' contained />
+			<Title text={t('information_check.title')} level='h3' contained />
 			<p>{t('information_check.modification')}</p>
 			<InformationCheckItem
 				subtitle={t('information_check.items.address')}

@@ -5,7 +5,7 @@ export default function EmergencyKitNumbersEmergency() {
 
 	return (
 		<div className="pims-emergency-kit-screen__useful-numbers-subcontainer">
-			<h6>{t('useful_numbers.emergency.subtitle')}</h6>
+			<h4>{t('useful_numbers.emergency.subtitle')}</h4>
 			{[112, 114].map((phoneNumber) => (
 				<p key={`emergency-number-${phoneNumber}`}>
 					<Trans

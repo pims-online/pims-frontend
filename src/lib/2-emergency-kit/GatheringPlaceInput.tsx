@@ -13,7 +13,7 @@ export default function GatheringPlaceInput(props: Props) {
 
 	return (
 		<Container>
-			<Title text={t('gathering_place.title')} level='h5' contained />
+			<Title text={t('gathering_place.title')} level='h3' contained />
 			<p className="pims-components__text-indicator">
 				{t('gathering_place.hint')}
 			</p>

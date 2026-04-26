@@ -15,7 +15,7 @@ export default function EmergencyKitNumbersInputs(props: Props) {
 
 	return (
 		<div className="pims-emergency-kit-screen__useful-numbers-subcontainer">
-			<h6>{t('useful_numbers.inputs.subtitle')}</h6>
+			<h4>{t('useful_numbers.inputs.subtitle')}</h4>
 			<EmergencyKitNumbersInputsItems
 				kitNumbers={props.kitNumbers}
 				setKitNumbers={props.setKitNumbers}

@@ -14,7 +14,7 @@ export default function AlertSystemsFrAlert() {
 
 	return (
 		<Container>
-			<Subtitle text={t('alert_systems.fr_alert.title')} level='h6'/>
+			<Subtitle text={t('alert_systems.fr_alert.title')} level='h4'/>
 			<p>
 				<Trans
 					t={t}

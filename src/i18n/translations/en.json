@@ -259,8 +259,8 @@
 			"missing_value": "Storage location of your kit required"
 		},
 		"gathering_place": {
-			"title": "I identify where to gather in case of evacuation (optional)",
-			"hint": "Please enter the address of the nearest gathering place in case of evacuation",
+			"title": "I identify where to gather in case of evacuation",
+			"hint": "Please enter the address of the nearest gathering place in case of evacuation (optional)",
 			"placeholder": "See information in town hall"
 		},
 		"useful_numbers": {

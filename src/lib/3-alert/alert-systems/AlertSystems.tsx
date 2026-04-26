@@ -12,7 +12,7 @@ export default function AlertSystems() {
 
 	return (
 		<>
-			<Title text={t('alert_systems.title')} level='h5' contained />
+			<Title text={t('alert_systems.title')} level='h3' contained />
 			<p>{t('alert_systems.activation')} </p>
 			<AlertSystemsFrAlert />
 			<AlertSystemsSaip />

@@ -7,7 +7,7 @@ export default function AlertSystemsPublicMedia() {
 	const { t } = useTranslation('alert_screen');
 	return (
 		<Container>
-			<Subtitle text={t('alert_systems.public_medias.title')} level='h6'/>
+			<Subtitle text={t('alert_systems.public_medias.title')} level='h4'/>
 			<p>{t('alert_systems.public_medias.content')}</p>
 			<RadioFrequencies />
 		</Container>

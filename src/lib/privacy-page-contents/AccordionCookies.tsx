@@ -74,7 +74,7 @@ export default function AccordionCookies(props: Props) {
 				/>
 			</p>
 			<p>{t('cookies.introduction.use_case')}</p>
-			<h3>{t('cookies.definition.title')}</h3>
+			<h4>{t('cookies.definition.title')}</h4>
 			<p>
 				<span>{t('cookies.definition.content_1')}</span>
 				<br />
@@ -82,7 +82,7 @@ export default function AccordionCookies(props: Props) {
 				<br />
 				<span>{t('cookies.definition.content_3')}</span>
 			</p>
-			<h3>{t('cookies.pims_cookies.title')}</h3>
+			<h4>{t('cookies.pims_cookies.title')}</h4>
 			<p>
 				<Trans
 					t={t}
@@ -99,9 +99,9 @@ export default function AccordionCookies(props: Props) {
 					values={{ domain: FRONTEND_DOMAIN }}
 				/>
 			</p>
-			<h4>{t('cookies.pims_cookies.analytics.title')}</h4>
+			<h5>{t('cookies.pims_cookies.analytics.title')}</h5>
 			<p>{t('cookies.pims_cookies.analytics.content_1')}</p>
-			<h3>{t('cookies.opposition.title')}</h3>
+			<h4>{t('cookies.opposition.title')}</h4>
 			<p>{t('cookies.opposition.deactivation')}</p>
 			<p>{t('cookies.opposition.deactivation_per_browser')}</p>
 			<ul>

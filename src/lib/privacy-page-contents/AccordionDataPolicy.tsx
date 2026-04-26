@@ -22,7 +22,7 @@ export default function AccordionDataPolicy(props: Props) {
 
 	return (
 		<div>
-			<h3>{t('data_policy.object.title')}</h3>
+			<h4>{t('data_policy.object.title')}</h4>
 			<p>
 				<Trans
 					t={t}
@@ -40,7 +40,7 @@ export default function AccordionDataPolicy(props: Props) {
 				/>
 			</p>
 			<p>{t('data_policy.object.content_2')}</p>
-			<h3>{t('data_policy.rights.title')}</h3>
+			<h4>{t('data_policy.rights.title')}</h4>
 			<p>{t('data_policy.rights.law')}</p>
 			<ul>
 				{rightItemList.map((i18nKey) => (

@@ -24,7 +24,7 @@ export default function WeatherVigilance() {
 
 	return (
 		<Container>
-			<Title text={t('weather_vigilance.title')} level='h5' contained />
+			<Title text={t('weather_vigilance.title')} level='h3' contained />
 			<p className="pims-components__list-introducer">
 				{t('weather_vigilance.awareness')}
 			</p>

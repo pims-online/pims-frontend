@@ -259,8 +259,8 @@
 			"missing_value": "Lieu de rangement de votre kit requis"
 		},
 		"gathering_place": {
-			"title": "J'identifie le lieu de regroupement à rejoindre en cas d'évacuation (facultatif)",
-			"hint": "Veuillez saisir l'adresse du lieu de regroupement le plus proche en cas d'évacuation",
+			"title": "J'identifie le lieu de regroupement à rejoindre en cas d'évacuation",
+			"hint": "Veuillez saisir l'adresse du lieu de regroupement le plus proche en cas d'évacuation (facultatif)",
 			"placeholder": "Information disponible en mairie"
 		},
 		"useful_numbers": {

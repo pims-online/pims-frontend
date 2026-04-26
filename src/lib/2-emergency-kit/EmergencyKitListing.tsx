@@ -42,7 +42,7 @@ export default function EmergencyKitListing(props: Props) {
 
 	return (
 		<Container withoutMarginBottom className="fr-mb-8v" id="pims-step-2__emergency-kit">
-			<Title text={t('kit_listing.title')} level='h5' contained />
+			<Title text={t('kit_listing.title')} level='h3' contained />
 			<ol className="fr-mb-6v fr-mt-0">
 				{iodePastilleEligibility && (
 					<li key="kit-listing-item-iode-pastille">

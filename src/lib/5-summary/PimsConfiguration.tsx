@@ -11,7 +11,7 @@ export default function PimsConfiguration() {
 
 	return (
 		<Container>
-			<Title text={t('configuration.title')} level='h5' contained />
+			<Title text={t('configuration.title')} level='h3' contained />
 			<Input
 				label={t('configuration.name.label')}
 				hintText={t('configuration.name.hint')}
