@@ -289,7 +289,7 @@
 			"activation": "En cas de risque vital, les autorités peuvent activer :",
 			"fr_alert": {
 				"title": "Le dispositif FR-Alert",
-				"content": "Le <k1>dispositif FR-Alert</k1> permet de diffuser un message directement sur les téléphones portables des personnes présentes sur une zone d'aléa. Pour recevoir un message FR-Alert, aucune inscription ou téléchargement n'est nécessaire : il faut simplement avoir un téléphone allumé, avec un système d'exploitation à jour, et connecté au réseau de son opérateur.",
+				"content": "Le <k1>dispositif FR-Alert</k1> permet de diffuser une alerte directement sur les téléphones portables des personnes présentes sur une zone d'aléa. Cela consiste en une notification avec les consignes des autorités, accompagnée d'une alarme sonore de 12 secondes. Pour recevoir un message FR-Alert, aucune inscription ou téléchargement n'est nécessaire : il faut simplement avoir un téléphone allumé, avec un système d'exploitation à jour, et connecté au réseau de son opérateur.",
 				"simulation": "Pour simuler la réception d'un message FR-Alert :",
 				"button": "Le son FR-Alert"
 			},

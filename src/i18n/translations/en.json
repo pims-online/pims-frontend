@@ -289,7 +289,7 @@
 			"activation": "In life-threatening situations, authorities may activate:",
 			"fr_alert": {
 				"title": "The FR-Alert system",
-				"content": "The <k1>FR-Alert system</k1> sends messages directly to the mobile phones of individuals in a hazard zone. To receive an FR-Alert message, no registration or app download is needed: simply keep your phone on, with an up to date operating system and a connection to your network provider.",
+				"content": "The <k1>FR-Alert system</k1> sends alerts directly on the mobile phones of individuals in a hazard zone. It consists of a notification with instructions from the authorities, along with a 12 seconds long audible signal. To receive an FR-Alert message, no registration or app download is needed: simply keep your phone on, with an up to date operating system and a connection to your network provider.",
 				"simulation": "To simulate receiving an FR-Alert message:",
 				"button": "FR-Alert sound"
 			},
