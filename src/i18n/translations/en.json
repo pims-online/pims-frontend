@@ -83,7 +83,8 @@
 		"strim_obligation": {
 			"title": "Strimming obligation",
 			"description": "You are subject to the legal obligation to clear undergrowth.",
-			"learn_more" : "Learn more"
+			"learn_more" : "Learn more",
+			"link_aria_label": "Learn more about your strimming obligation"
 		}
 	},
 	"risks": {

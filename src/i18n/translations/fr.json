@@ -83,7 +83,8 @@
 		"strim_obligation": {
 			"title": "Obligation légale de débroussaillement",
 			"description": "Vous êtes soumis à l'obligation légale de débrousaillement.",
-			"learn_more": "En savoir plus"
+			"learn_more": "En savoir plus",
+			"link_aria_label": "En savoir plus sur votre obligation légale de débroussaillement"
 		}
 	},
 	"risks": {

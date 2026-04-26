@@ -38,6 +38,7 @@ export default function StrimmingObligation() {
                     rel="noopener noreferrer"
                     href={strimmingObligation.url}
                     className="fr-mt-2v"
+                    aria-label={t('strim_obligation.link_aria_label')}
                 >
                     {t('strim_obligation.learn_more')}
                 </a>
