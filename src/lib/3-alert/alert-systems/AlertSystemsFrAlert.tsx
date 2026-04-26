@@ -26,7 +26,6 @@ export default function AlertSystemsFrAlert() {
 			</p>
 			<p>{t('alert_systems.fr_alert.simulation')}</p>
 			<AudioPlayer
-				logoAlt="Fr Alert"
 				media={mediaFrAlert}
 				logoSrc={iconFrAlert}
 				logoHeight={imgSide}

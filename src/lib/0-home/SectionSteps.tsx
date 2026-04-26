@@ -18,7 +18,7 @@ export default function SectionSteps() {
 						key={`${translationKeyPrefix}-list-item-${step.id}`}
 						className="pims-home-screen__step-item"
 					>
-						<img src={isDark ? step.darkIcon : step.lightIcon} alt={step.i18nKey} width={80} height={80} />
+						<img src={isDark ? step.darkIcon : step.lightIcon} role="presentation" width={80} height={80} />
 						<div className="pims-home-screen__step-item-text-container">
 							<p>
 								<b className="fr-mr-1w">{step.id}.</b>

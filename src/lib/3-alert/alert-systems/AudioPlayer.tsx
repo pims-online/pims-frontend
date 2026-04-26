@@ -4,7 +4,6 @@ import { Button } from '@codegouvfr/react-dsfr/Button';
 import { Container } from '@/components';
 
 type Props = {
-	logoAlt: string;
 	logoSrc: string;
 	logoWidth: number;
 	logoHeight: number;
@@ -40,7 +39,7 @@ export default function AudioPlayer(props: Props) {
 				<p className="pims-alert-screen__alert-systems-players-button">
 					<img
 						src={props.logoSrc}
-						alt={props.logoAlt}
+						role="presentation"
 						width={props.logoWidth}
 						height={props.logoHeight}
 						className="fr-mr-1w"

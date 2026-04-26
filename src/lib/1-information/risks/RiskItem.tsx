@@ -35,7 +35,7 @@ export default function RiskItem(props: Props) {
 			<tr>
 				<td style={{ minWidth: 80 }} className="fr-p-0 fr-m-0">
 					{iconsPaths.map((path) => (
-						<img key={`image-${path}`} src={path} alt={title} />
+						<img key={`image-${path}`} src={path} role="presentation" />
 					))}
 				</td>
 				<td

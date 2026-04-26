@@ -54,7 +54,7 @@ export default function AlertSystemsSaipGuidelines() {
 							src={isDark ? item.iconDark : item.iconLight}
 							width={80}
 							height={80}
-							aria-hidden={true}
+							role="presentation"
 							className="fr-mb-2v"
 						/>
 						<p>
