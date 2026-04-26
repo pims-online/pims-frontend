@@ -2,8 +2,22 @@ import { useTranslation } from 'react-i18next';
 
 import { Title, Container } from '@/components';
 
-const ALERT_LINK_VIGILANCE_METEOFRANCE = 'https://vigilance.meteofrance.fr';
-const ALERT_LINK_VIGICRUES = 'https://www.vigicrues.gouv.fr';
+type Alert = {
+	link: string;
+	shortLink: string;
+	i18nKey: string
+};
+
+const ALERT_LINK_VIGILANCE_METEOFRANCE: Alert = {
+	link: 'https://vigilance.meteofrance.fr',
+	shortLink: 'vigilance.meteofrance.fr',
+	i18nKey: 'meteofrance',
+};
+const ALERT_LINK_VIGICRUES: Alert = {
+	link: 'https://www.vigicrues.gouv.fr',
+	shortLink: 'vigicrues.gouv.fr',
+	i18nKey: 'vigicrues'
+};
 
 export default function WeatherVigilance() {
 	const { t } = useTranslation('alert_screen');
@@ -16,10 +30,11 @@ export default function WeatherVigilance() {
 			</p>
 			<ul className="pims-components__toothed-list">
 				{[ALERT_LINK_VIGILANCE_METEOFRANCE, ALERT_LINK_VIGICRUES].map(
-					(link) => (
-						<li key={link}>
-							<a href={link} target="_blank" rel="noopener noreferrer">
-								{link}
+					(alert) => (
+						<li key={alert.link}>
+							{t(`weather_vigilance.${alert.i18nKey}`)}
+							<a href={alert.link} target="_blank" rel="noopener noreferrer">
+								{alert.shortLink}
 							</a>
 						</li>
 					)

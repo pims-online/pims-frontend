@@ -283,7 +283,9 @@
 		"alea": "In case of a hazard, the authorities will issue safety instructions either through vigilance or public alert systems. Follow these instructions: you will help ensure your safety and support the efforts of emergency services.",
 		"weather_vigilance": {
 			"title": "I stay aware of weather alerts",
-			"awareness": "I monitor the evolution of weather alerts:"
+			"awareness": "I monitor the evolution of weather alerts:",
+			"meteofrance": "Weather on ",
+			"vigicrues": "Floods on "
 		},
 		"alert_systems": {
 			"title": "I know how to act during a public alert",

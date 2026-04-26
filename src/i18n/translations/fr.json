@@ -283,7 +283,9 @@
 		"alea": "En cas d'aléa, les autorités diffusent des consignes de sauvegarde soit par le biais de vigilance, soit par les moyens d'alerte de la population. Respectez ces consignes : vous participerez à votre sécurité et vous soutiendrez l'action des secours.",
 		"weather_vigilance": {
 			"title": "Je suis attentif aux vigilances",
-			"awareness": "Je surveille l'évolution des vigilances :"
+			"awareness": "Je surveille l'évolution des vigilances :",
+			"meteofrance": "Météo sur ",
+			"vigicrues": "Crues sur "
 		},
 		"alert_systems": {
 			"title": "Je sais agir en cas d'alerte de la population",
