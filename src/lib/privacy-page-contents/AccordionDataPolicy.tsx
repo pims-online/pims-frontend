@@ -44,7 +44,7 @@ export default function AccordionDataPolicy(props: Props) {
 			<p>{t('data_policy.rights.law')}</p>
 			<ul>
 				{rightItemList.map((i18nKey) => (
-					<li>
+					<li key={i18nKey}>
 						<b>{t(`data_policy.rights.${i18nKey}.title`)}</b>
 						<br />
 						<span>{t(`data_policy.rights.${i18nKey}.description`)}</span>
