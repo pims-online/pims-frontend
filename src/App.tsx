@@ -32,7 +32,7 @@ export function WidgetApp(props: {
 	widgetHeaderFooter?: boolean;
 }) {
 	return (
-		<DSFRWrapper forWidget>
+		<DSFRWrapper>
 			<AppContextProvider>
 				<I18nextProvider i18n={i18n}>
 					<PageLayout
