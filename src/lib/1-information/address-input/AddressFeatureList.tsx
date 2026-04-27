@@ -14,13 +14,14 @@ export default function AddressFeatureList(props: Props) {
 			className="fr-py-2v fr-pl-4w fr-pr-2w"
 		>
 			{addressFeatureList.map((addressFeature) => (
-				<li
+				<button 
 					key={`address-feature-${addressFeature.properties.citycode}-${addressFeature.properties.label}`}
+					onClick={() => { onAddressChosen(addressFeature); }}
 				>
-					<button onClick={() => { onAddressChosen(addressFeature); }}>
+					<li>
 						{addressFeature.properties.label}
-					</button>
-				</li>
+					</li>
+				</button>
 			))}
 		</ul>
 	);
