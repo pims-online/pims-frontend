@@ -6,6 +6,7 @@ import DisplayRiskListAll from './DisplayRiskListAll';
 import DisplayRiskListAround from './DisplayRiskListAround';
 import IodePastilleEligibility from './iode-pastille-eligibility/IodePastilleEligibility';
 import StrimmingObligation from './strimming-obligation/StrimmingObligation';
+import TownHallNumberLoader from './town-hall-number/TownHallNumberLoader';
 
 type Props = {
 	registerNavLock: (name: string, lock?: NavigationLock) => void;
@@ -26,6 +27,7 @@ export default function InformationScreen(props: Props) {
 			<StrimmingObligation />
 			<Divider />
 			<DisplayRiskListAll />
+			<TownHallNumberLoader />
 		</div>
 	);
 }

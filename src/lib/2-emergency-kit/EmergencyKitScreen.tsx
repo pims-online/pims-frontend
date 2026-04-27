@@ -18,7 +18,6 @@ export default function EmergencyKitScreen(props: Props) {
 	const {
 		usefulNumbers,
 		setUsefulNumbers,
-		position,
 		gatheringPlace,
 		setGatheringPlace,
 	} = useContext(AppContext);
@@ -41,7 +40,6 @@ export default function EmergencyKitScreen(props: Props) {
 			<EmergencyKitNumbers
 				kitNumbers={usefulNumbers}
 				setKitNumbers={setUsefulNumbers}
-				inseeCode={position?.inseeCode}
 			/>
 		</div>
 	);

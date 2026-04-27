@@ -2,15 +2,13 @@ import { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Title, Container } from '@/components';
-
-import type { KitNumbers } from './types';
+import { UsefulNumbers } from '@/providers/AppContextConfig';
 import EmergencyKitNumbersEmergency from './EmergencyKitNumbersEmergency';
 import EmergencyKitNumbersInputs from './EmergencyKitNumbersInputs';
 
 type Props = {
-	kitNumbers: KitNumbers;
-	setKitNumbers: Dispatch<SetStateAction<KitNumbers>>;
-	inseeCode?: string;
+	kitNumbers: UsefulNumbers;
+	setKitNumbers: Dispatch<SetStateAction<UsefulNumbers>>;
 };
 
 export default function EmergencyKitNumbers(props: Props) {
@@ -24,7 +22,6 @@ export default function EmergencyKitNumbers(props: Props) {
 				<EmergencyKitNumbersInputs
 					kitNumbers={props.kitNumbers}
 					setKitNumbers={props.setKitNumbers}
-					inseeCode={props.inseeCode}
 				/>
 			</Container>
 		</Container>

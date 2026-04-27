@@ -4,13 +4,13 @@ const ANNUAIRE_API_URL = 'https://api-lannuaire.service-public.fr/';
 const EXPLORE_PATH =
 	'/api/explore/v2.1/catalog/datasets/api-lannuaire-administration/records';
 
-export const getTownHallNumber = async (inseeCode?: string) => {
+export async function getTownHallNumber(inseeCode?: string): Promise<string|undefined> {
 	if (inseeCode === undefined) return '';
 
 	const queryParam = '?where';
 	const queryName = 'nom%20LIKE%20%22Mairie%22'; // Filter to have only Mairie
 	const queryinseeCode = `code_insee_commune%20LIKE%20%22${inseeCode}%22`; // Filter to fit to the given code insee
-	const finalQuerySelector = `${queryParam}=${queryName}%20AND%20${queryinseeCode}&limit=20`;
+	const finalQuerySelector = `${queryParam}=${queryName}%20AND%20${queryinseeCode}&limit=1`;
 	const finalUrl = ANNUAIRE_API_URL + EXPLORE_PATH + finalQuerySelector;
 
 	try {
