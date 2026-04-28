@@ -57,7 +57,8 @@ export default function SearchBar(props: Props) {
 				onChange: onChangeInputAddress,
 				onKeyDown: handleKeyDown,
 				required: true,
-				"aria-invalid": highlighted
+				"aria-invalid": highlighted,
+				autoComplete: "street-address"
 			}}
 			state={highlighted ? "error" : undefined}
 			stateRelatedMessage={highlighted ? t("address.address_missing") : undefined}
