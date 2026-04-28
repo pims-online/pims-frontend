@@ -54,6 +54,7 @@ export default function EmergencyKitStorage(props: Props) {
 				nativeInputProps={{
 					value: emergencyKitStorage,
 					onChange: onStorageLocationChanged,
+					required: true
 				}}
 				state={isHighlighted ? "error" : undefined}
 				stateRelatedMessage={t("kit_storage.missing_value")}

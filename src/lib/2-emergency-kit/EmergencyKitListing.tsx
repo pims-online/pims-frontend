@@ -74,6 +74,7 @@ export default function EmergencyKitListing(props: Props) {
 							nativeInputProps: {
 								checked: kitListChecked,
 								onChange: onCheckboxChange,
+								required: true
 							},
 						},
 					]}

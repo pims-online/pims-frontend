@@ -20,7 +20,7 @@ export default function SectionAddressInput(props: Props) {
 			<Title contained text={t('address.title')} level='h3'/>
 			<p className="pims-components__text-indicator">
 				{`${t('address.call_to_action')} `}
-				<RequiredFieldIndicator inverted />
+				<RequiredFieldIndicator/>
 			</p>
 			<AddressInput registerNavLock={registerNavLock} />
 		</Container>
