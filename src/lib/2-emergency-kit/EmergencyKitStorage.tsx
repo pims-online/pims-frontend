@@ -54,7 +54,8 @@ export default function EmergencyKitStorage(props: Props) {
 				nativeInputProps={{
 					value: emergencyKitStorage,
 					onChange: onStorageLocationChanged,
-					required: true
+					required: true,
+					"aria-invalid": isHighlighted
 				}}
 				state={isHighlighted ? "error" : undefined}
 				stateRelatedMessage={t("kit_storage.missing_value")}

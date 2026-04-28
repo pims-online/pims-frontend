@@ -56,7 +56,8 @@ export default function SearchBar(props: Props) {
 				value: address,
 				onChange: onChangeInputAddress,
 				onKeyDown: handleKeyDown,
-				required: true
+				required: true,
+				"aria-invalid": highlighted
 			}}
 			state={highlighted ? "error" : undefined}
 			stateRelatedMessage={highlighted ? t("address.address_missing") : undefined}
