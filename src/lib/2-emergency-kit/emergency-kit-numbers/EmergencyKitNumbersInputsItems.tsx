@@ -67,6 +67,7 @@ export default function EmergencyKitNumbersInputsItems(props: Props) {
 									return nextKitNumbers;
 								}),
 							required: true,
+							type: "tel"
 						}}
 						className="fr-ml-1w pims-emergency-kit__input-container"
 						data-fr-analytics-rating
