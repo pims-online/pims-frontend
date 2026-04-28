@@ -14,13 +14,13 @@
 		"main_page_link": "Home - PIMS Online Procedure",
 		"footer": "The online PIMS is developed by the Directorate General for Civil Security and Crisis Management",
 		"light_theme": "Light theme",
-		"dark_theme": "Dark theme"
+		"dark_theme": "Dark theme",
+		"select_language": "Select language"
 	},
 	"common": {
 		"go_next_step": "Next step",
 		"go_previous_step": "Previous step",
 		"go_back_home": "Return to home",
-		"select_language": "Select language",
 		"title": "The PIMS: Individual Safety Plan"
 	},
 	"home_screen": {

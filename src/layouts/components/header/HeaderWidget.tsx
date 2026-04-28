@@ -34,7 +34,7 @@ export default function HeaderWidget(props: Props) {
 			</div>
 			<div className="pims-layouts__widget-header-configs">
 				<ThemeSelector />
-				<LanguageSelector selectorKind="desktop" />
+				<LanguageSelector />
 			</div>
 		</div>
 	);

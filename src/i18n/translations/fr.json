@@ -14,13 +14,13 @@
 		"main_page_link": "Accueil - Téléprocédure PIMS",
 		"footer": "Le PIMS en ligne est développé par la Direction Générale de la Sécurité Civile et de la Gestion des Crises",
 		"light_theme": "Thème clair",
-		"dark_theme": "Thème foncé"
+		"dark_theme": "Thème foncé",
+		"select_language": "Sélectionner la langue"
 	},
 	"common": {
 		"go_next_step": "Étape suivante",
 		"go_previous_step": "Étape précédente",
 		"go_back_home": "Revenir à l'accueil",
-		"select_language": "Sélectionner la langue",
 		"title": "Le PIMS : Plan Individuel de Mise en Sûreté"
 	},
 	"home_screen": {
