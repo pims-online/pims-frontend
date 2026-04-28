@@ -34,13 +34,18 @@ export default function EmergencyKitNumbersInputsItems(props: Props) {
 			kitNumbersKey: 'others',
 		},
 	];
-	return (
+	return <>
+		<p id="pims-emergency-kit-screen__input-list-label" className="pims-components__text-indicator">
+			{t("useful_numbers.inputs.label")}
+			</p>
 		<ul
 			className={clsx(
 				'fr-m-0',
 				'pims-components__toothed-list',
 				'pims-emergency-kit-screen__input-list'
 			)}
+			role="group"
+			aria-labelledby='pims-emergency-kit-screen__input-list-label'
 		>
 			{inputs.map((input, index) => (
 				<li
@@ -49,11 +54,8 @@ export default function EmergencyKitNumbersInputsItems(props: Props) {
 						'fr-mt-2v': index > 0
 					})}
 				>
-					<p className="fr-mb-1v">
-						{t(`useful_numbers.inputs.${input.translationKey}`)}
-					</p>
 					<Input
-						label={undefined}
+						label={t(`useful_numbers.inputs.${input.translationKey}`)}
 						nativeInputProps={{
 							value: kitNumbers[input.kitNumbersKey],
 							onChange: (e) =>
@@ -73,5 +75,5 @@ export default function EmergencyKitNumbersInputsItems(props: Props) {
 				</li>
 			))}
 		</ul>
-	);
+	</>;
 }

@@ -3,6 +3,10 @@
 	font-size: 1.5rem;
 }
 
+#pims-emergency-kit-screen__input-list-label {
+	margin-bottom: 0;
+}
+
 .pims-emergency-kit-screen__input-list li {
 	display: flex;
 	flex-direction: row;

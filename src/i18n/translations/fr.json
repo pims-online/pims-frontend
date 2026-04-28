@@ -257,12 +257,13 @@
 		},
 		"kit_storage": {
 			"accessibility": "Je range mon kit d'urgence 72h dans un endroit facile d'accès et je partage sa localisation avec mes proches",
-			"input_placeholder": "Je saisis ici le lieu de rangement de mon kit d'urgence",
+			"input_placeholder": "Le lieu de rangement du kit d'urgence",
 			"missing_value": "Lieu de rangement de votre kit requis"
 		},
 		"gathering_place": {
 			"title": "J'identifie le lieu de regroupement à rejoindre en cas d'évacuation",
 			"hint": "Veuillez saisir l'adresse du lieu de regroupement le plus proche en cas d'évacuation (facultatif)",
+			"label": "L'adresse du lieu de regroupement le plus proche",
 			"placeholder": "Information disponible en mairie"
 		},
 		"useful_numbers": {
@@ -274,11 +275,11 @@
 			},
 			"inputs": {
 				"subtitle": "Coordonnées à compléter (facultatif)",
-				"town_hall": "Mairie :",
-				"insurance": "Assurance :",
-				"relatives": "Proches :",
-				"others": "Autres :",
-				"suggested_number": "Numéro proposé : {{ suggestedNumber }}"
+				"label": "Je rassemble des numéros de téléphone utiles en cas d'urgence",
+				"town_hall": "Numéro de la mairie",
+				"insurance": "Numéro de l'assurance",
+				"relatives": "Nom et numéro d'un⸱e proche",
+				"others": "Autre numéro"
 			}
 		}
 	},

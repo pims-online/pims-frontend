@@ -18,7 +18,7 @@ export default function GatheringPlaceInput(props: Props) {
 				{t('gathering_place.hint')}
 			</p>
 			<Input
-				label=""
+				label={t('gathering_place.label')}
 				nativeInputProps={{
 					value: props.gatheringPlace,
 					onChange: (e) => props.setGatheringPlace(e.currentTarget.value || undefined),

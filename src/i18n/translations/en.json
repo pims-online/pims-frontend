@@ -257,12 +257,13 @@
 		},
 		"kit_storage": {
 			"accessibility": "I store my 72-hour emergency kit in an easily accessible location and share its location with my relatives",
-			"input_placeholder": "I enter where my emergency kit is stored",
+			"input_placeholder": "The storage location for the emergency kit",
 			"missing_value": "Storage location of your kit required"
 		},
 		"gathering_place": {
 			"title": "I identify where to gather in case of evacuation",
 			"hint": "Please enter the address of the nearest gathering place in case of evacuation (optional)",
+			"label": "The address of the nearest gathering place",
 			"placeholder": "See information in town hall"
 		},
 		"useful_numbers": {
@@ -274,11 +275,11 @@
 			},
 			"inputs": {
 				"subtitle": "Contact details to fill in (optional)",
-				"town_hall": "Town Hall:",
-				"insurance": "Insurance:",
-				"relatives": "Relatives:",
-				"others": "Others:",
-				"suggested_number": "Suggested number: {{ suggestedNumber }}"
+				"label": "I gather useful phone numbers in case of an emergency",
+				"town_hall": "Town hall number",
+				"insurance": "Insurance number",
+				"relatives": "Number and name of a relative",
+				"others": "Other number"
 			}
 		}
 	},
