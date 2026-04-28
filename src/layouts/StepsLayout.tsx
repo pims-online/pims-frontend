@@ -52,7 +52,7 @@ export default function StepsLayout(props: Props) {
 	return (
 		<>
 			<h1>{t("title")}</h1>
-			<nav>
+			<nav role="navigation">
 				<Stepper currentStep={currentIndex} />
 			</nav>
 			<div id="pims-layouts__tab_wrapper" tabIndex={-1}>

@@ -43,7 +43,7 @@ export default function SiteMapPage() {
 		<section className="pims-components__page">
 			<h1>{t('title')}</h1>
 			<hr />
-			<nav>
+			<nav role="navigation">
 				<ul className="fr-py-4v">
 					{pages.map((item) => (
 						<li key={`site-map-item-${item.i18nkey}`}>
