@@ -40,7 +40,7 @@ export default function SiteMapPage() {
 	];
 
 	return (
-		<section className="pims-components__page">
+		<main role="main" className="pims-components__page">
 			<h1>{t('title')}</h1>
 			<hr />
 			<nav role="navigation">
@@ -52,6 +52,6 @@ export default function SiteMapPage() {
 					))}
 				</ul>
 			</nav>
-		</section>
+		</main>
 	);
 }

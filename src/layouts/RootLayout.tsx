@@ -27,7 +27,7 @@ export default function RootLayout() {
 		scrollToTop();
 	};
 	return (
-		<section className="pims-layouts__container">
+		<main role="main" className="pims-layouts__container">
 			{currentIndex === SCREENS.HOME_SCREEN && (
 				<HomeScreen navigateToFirstStep={navigateToFirstStep} />
 			)}
@@ -40,6 +40,6 @@ export default function RootLayout() {
 			{currentIndex === SCREENS.FINAL_SCREEN && (
 				<FinalScreen navigateToHomeScreen={navigateToHomeScreen} />
 			)}
-		</section>
+		</main>
 	);
 }

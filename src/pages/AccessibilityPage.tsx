@@ -11,7 +11,7 @@ export default function AccessibilityPage() {
 	}, [t]);
 
 	return (
-		<section className="pims-components__page">
+		<main role="main" className="pims-components__page">
 			<h1>{t('title')}</h1>
 			<p>{t('date')}</p>
 			<hr />
@@ -85,6 +85,6 @@ export default function AccessibilityPage() {
 					}}
 				/>
 			</p>
-		</section>
+		</main>
 	);
 }

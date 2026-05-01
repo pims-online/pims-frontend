@@ -15,7 +15,7 @@ export default function LegalInformationPage() {
 	}, [t]);
 
 	return (
-		<section className="pims-components__page">
+		<main role="main" className="pims-components__page">
 			<Title text={t('title')} />
 			<hr />
 			<Container>
@@ -63,6 +63,6 @@ export default function LegalInformationPage() {
 				<Subtitle text={t('accessibility.title')} />
 				<p>{t('accessibility.content')}</p>
 			</Container>
-		</section>
+		</main>
 	);
 }

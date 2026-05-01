@@ -13,12 +13,12 @@ export default function PrivacyPolicyPage() {
 	}, [t]);
 
 	return (
-		<section className="pims-components__page">
+		<main role="main" className="pims-components__page">
 			<h1>{t('title')}</h1>
 			<hr />
 			<SectionIntroduction t={t} />
 			<SectionRights t={t} />
 			<SectionAccordions t={t} />
-		</section>
+		</main>
 	);
 }

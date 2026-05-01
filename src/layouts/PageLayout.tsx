@@ -27,9 +27,7 @@ export default function PageLayout(props: Props) {
 		>
 			<ConsentBannerAndConsentManagement />
 			<Header isWidget={useWidgetHeader} />
-			<main role="main">
-				{props.children}
-			</main>
+			{props.children}
 			{!isWidget && <Footer />}
 		</div>
 	);
