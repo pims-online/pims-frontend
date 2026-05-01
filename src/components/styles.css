@@ -257,6 +257,10 @@
 	font-weight: bold;
 }
 
+.pims-components__required-field-meaning {
+	color: var(--text-mention-grey);
+}
+
 .pims-components__divider {
 	background-size: 100% 2px;
 }

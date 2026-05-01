@@ -21,7 +21,8 @@
 		"go_next_step": "Étape suivante",
 		"go_previous_step": "Étape précédente",
 		"go_back_home": "Revenir à l'accueil",
-		"title": "Le PIMS : Plan Individuel de Mise en Sûreté"
+		"title": "Le PIMS : Plan Individuel de Mise en Sûreté",
+		"mandatory_fields": "Les champs champs requis sont marqués d'une astérisque (<k/>)."
 	},
 	"home_screen": {
 		"title": "Le PIMS : Plan Individuel de Mise en Sûreté",
@@ -56,7 +57,6 @@
 				"step_five": "<k1>Je génère mon PIMS</k1>"
 			}
 		},
-		"mandatory_fields": "Les champs marqués d'une étoile rouge sont obligatoires pour continuer la procédure.",
 		"start_button": {
 			"title": "Prêts ? Parés !",
 			"subtitle": "Plan Individuel de Mise en Sureté",

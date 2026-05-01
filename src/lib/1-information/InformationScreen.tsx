@@ -7,6 +7,7 @@ import DisplayRiskListAround from './DisplayRiskListAround';
 import IodePastilleEligibility from './iode-pastille-eligibility/IodePastilleEligibility';
 import StrimmingObligation from './strimming-obligation/StrimmingObligation';
 import TownHallNumberLoader from './town-hall-number/TownHallNumberLoader';
+import SectionRequiredFieldMeaning from '../../components/RequiredFieldMeaning';
 
 type Props = {
 	registerNavLock: (name: string, lock?: NavigationLock) => void;
@@ -21,6 +22,7 @@ export default function InformationScreen(props: Props) {
 
 	return (
 		<div>
+			<SectionRequiredFieldMeaning />
 			<SectionAddressInput registerNavLock={registerNavLock} />
 			<DisplayRiskListAround />
 			<IodePastilleEligibility />

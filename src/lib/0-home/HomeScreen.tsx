@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 
 import SectionOnlineProcedure from './SectionOnlineProcedure';
 import SectionTemplate from './SectionTemplate';
-import SectionRequiredFieldMeaning from './SectionRequiredFieldMeaning';
 import SectionSteps from './SectionSteps';
 import StartButton from './StartButton';
 
@@ -28,7 +27,6 @@ export default function HomeScreen(props: Props) {
 			<SectionTemplate i18nKey="recipient" />
 			<SectionTemplate i18nKey="information" />
 			<SectionSteps />
-			<SectionRequiredFieldMeaning />
 			<StartButton navigateToFirstStep={props.navigateToFirstStep} />
 		</div>
 	);

@@ -21,7 +21,8 @@
 		"go_next_step": "Next step",
 		"go_previous_step": "Previous step",
 		"go_back_home": "Return to home",
-		"title": "The PIMS: Individual Safety Plan"
+		"title": "The PIMS: Individual Safety Plan",
+		"mandatory_fields": "Required fields are marked with an asterisk (<k/>)."
 	},
 	"home_screen": {
 		"title": "The PIMS: Individual Safety Plan",
@@ -56,7 +57,6 @@
 				"step_five": "<k1>I generate my PIMS</k1>"
 			}
 		},
-		"mandatory_fields": "Fields marked with a red asterisk are mandatory to proceed with the process.",
 		"start_button": {
 			"title": "Ready? Prepared!",
 			"subtitle": "Individual Safety Plan",
