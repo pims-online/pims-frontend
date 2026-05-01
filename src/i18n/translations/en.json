@@ -510,7 +510,7 @@
 		"edition": {
 			"title": "Site Edition",
 			"url": "The present site, accessible at the URL {{- domain }} (the <<Site>>), is published by:",
-			"editor": "..."
+			"editor": "JuMP Mines Paristech<br/>Association loi 1901, affiliated with CNJE<br/>60 bd Saint-Michel, 75006 Paris, France<br/>Mail: contact@jump-mines.fr - Phone: 01 43 26 79 40"
 		},
 		"publication": {
 			"title": "Publication Director",
@@ -518,7 +518,8 @@
 		},
 		"hosting": {
 			"title": "Hosting",
-			"content": "The Site is hosted by Vercel, Inc., located at 340 S Lemon Ave #4133, Walnut, CA 91789, USA, (phone or email contact: +15592887060)."
+			"content": "The Site is hosted by {{- name }}, located at {{- address }}. ",
+			"contact": "(contact: {{- contact }})"
 		},
 		"statistics_handler": {
 			"title": "Statistics Manager",

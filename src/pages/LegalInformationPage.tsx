@@ -3,6 +3,10 @@ import { useTranslation, Trans } from 'react-i18next';
 import { Container } from '@/components';
 
 const FRONTEND_DOMAIN = import.meta.env.VITE_APP_DOMAIN;
+const SITE_DIRECTOR = import.meta.env.VITE_SITE_DIRECTOR;
+const HOSTING_PROVIDER_NAME = import.meta.env.VITE_HOSTING_PROVIDER_NAME;
+const HOSTING_PROVIDER_ADDRESS = import.meta.env.VITE_HOSTING_PROVIDER_ADDRESS;
+const HOSTING_PROVIDER_CONTACT = import.meta.env.VITE_HOSTING_PROVIDER_CONTACT;
 
 const Title = ({ text }: { text: string }) => <h1>{text}</h1>;
 const Subtitle = ({ text }: { text: string }) => <h2>{text}</h2>;
@@ -21,15 +25,26 @@ export default function LegalInformationPage() {
 			<Container>
 				<Subtitle text={t('edition.title')} />
 				<p>{t('edition.url', { domain: FRONTEND_DOMAIN })}</p>
-				<p>{t('edition.editor')}</p>
+				<Trans
+					t={t}
+					i18nKey="edition.editor"
+					components={{
+						br: <br/>
+					}}
+				/>
 			</Container>
 			<Container>
 				<Subtitle text={t('publication.title')} />
-				<p>{t('publication.content', { director: 'David Bretaud' })}</p>
+				<p>{t('publication.content', { director: SITE_DIRECTOR })}</p>
 			</Container>
 			<Container>
 				<Subtitle text={t('hosting.title')} />
-				<p>{t('hosting.content')}</p>
+				<p>
+					{t('hosting.content', { name: HOSTING_PROVIDER_NAME, address: HOSTING_PROVIDER_ADDRESS})}
+					{HOSTING_PROVIDER_CONTACT && 
+						t('hosting.contact', {contact: HOSTING_PROVIDER_CONTACT})
+					}
+				</p>
 			</Container>
 			<Container>
 				<Subtitle text={t('statistics_handler.title')} />

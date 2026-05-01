@@ -510,7 +510,7 @@
 		"edition": {
 			"title": "Édition du site",
 			"url": "Le présent site, accessible à l'URL {{- domain }} (le <<Site>>), est édité par :",
-			"editor": "..."
+			"editor": "JuMP Mines Paristech<br/>Association loi 1901, affiliée à la CNJE<br/>60 bd Saint-Michel, 75006 Paris<br/>Mail : contact@jump-mines.fr - Télephone : 01 43 26 79 40"
 		},
 		"publication": {
 			"title": "Directeur de publication",
@@ -518,7 +518,8 @@
 		},
 		"hosting": {
 			"title": "Hébergement",
-			"content": "Le Site est hébergé par la société Vercel, Inc., situé 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis, (contact téléphonique ou email : +15592887060)."
+			"content": "Le Site est hébergé par la société {{- name }}, située {{- address }}. ",
+			"contact": "(contact : {{- contact }})"
 		},
 		"statistics_handler": {
 			"title": "Gestionnaire des statistiques",
