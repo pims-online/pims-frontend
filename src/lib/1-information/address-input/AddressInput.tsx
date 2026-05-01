@@ -12,7 +12,7 @@ import type {
 	GeorisqueApiResponse,
 } from './types';
 import {
-	getAutocompletedAddresses,
+	fetchAutocompletedAddresses,
 	getRisksAroundCoordinates,
 	importRiskList,
 } from './utils';
@@ -50,9 +50,28 @@ export default function AddressInput(props: Props) {
 
 	// Every time the address is updated, make a request on data.geopf to update the list
 	useEffect(() => {
-		if (tmpAddress) {
-			getAutocompletedAddresses(tmpAddress, setAddressFeatureList);
+		let cancelled: boolean = false;
+
+		if (tmpAddress.length < 3) {
+			setAddressFeatureList(undefined);
 		}
+
+		async function handler() {
+			if (tmpAddress.length >= 3) {
+				const addresses = await fetchAutocompletedAddresses(tmpAddress);
+				
+				if (cancelled) {
+					return;
+				}
+				setAddressFeatureList(addresses);
+			}
+		}
+		handler()
+
+		function cancel() {
+			cancelled = true;
+		}
+		return cancel;
 	}, [tmpAddress]);
 
 	// ----- Georisque response handler -----

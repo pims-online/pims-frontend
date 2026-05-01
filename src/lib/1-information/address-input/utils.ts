@@ -13,24 +13,20 @@ const URL_GEORISQUE = 'https://georisques.gouv.fr/api/v1/';
 /**
  * Given an input 'address', search for the closest results in geocodage database
  */
-export const getAutocompletedAddresses = (
-	address: string,
-	updateList: (nextAddresses: Array<GeoplateformeApiFeature>) => void
-) => {
+export async function fetchAutocompletedAddresses(address: string): Promise<GeoplateformeApiFeature[]|undefined> {
 	const queryParams = new URLSearchParams(address).toString();
-	// Limit the response to 15 results with 'limit=15'
+	// Limit the response to 10 results with 'limit=10'
 	const finalUrl = URL_DATA_GEOCODAGE + 'search?q=' + queryParams + '&limit=10';
 
-	fetch(finalUrl)
-		.then(async (response) => {
-			const data = (await response.json()) as GeoplateformeApiResponse;
-			updateList(data.features);
-		})
-		.catch((error) => {
-			console.error('There was an error!', error);
-			updateList([]);
-		});
-};
+	try {
+		const response = await fetch(finalUrl);
+		const data = (await response.json()) as GeoplateformeApiResponse;
+		
+		return data.features;
+	} catch(error: any) {
+		return undefined;
+	}
+}
 
 /**
  * Use the navigator feature to retrieve the user current position
