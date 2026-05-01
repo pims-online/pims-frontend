@@ -23,7 +23,7 @@ export async function fetchAutocompletedAddresses(address: string): Promise<Geop
 		const data = (await response.json()) as GeoplateformeApiResponse;
 		
 		return data.features;
-	} catch(error: any) {
+	} catch {
 		return undefined;
 	}
 }
