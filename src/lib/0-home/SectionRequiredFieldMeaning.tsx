@@ -5,7 +5,7 @@ import { RequiredFieldIndicator } from '@/components';
 export default function SectionRequiredFieldMeaning() {
 	const { t } = useTranslation('home_screen');
 	return (
-		<p>
+		<p aria-hidden>
 			<RequiredFieldIndicator />
 			{` : ${t('mandatory_fields')}`}
 		</p>

@@ -252,8 +252,9 @@
 	gap: 8px;
 }
 
-.pims-components__text-red-marianne {
+.pims-components__required-field-indicator {
 	color: var(--text-action-high-red-marianne);
+	font-weight: bold;
 }
 
 .pims-components__divider {

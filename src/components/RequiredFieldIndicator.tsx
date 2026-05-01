@@ -1,14 +1,5 @@
-import { clsx } from 'clsx';
 
-type Props = {
-	inverted?: boolean;
-};
 
-export default function RequiredFieldIndicator(props: Props) {
-	const className = clsx({
-		'pims-components__text-red-marianne': !props.inverted,
-		'pims-components__text-red-marianne-inverted': !!props.inverted,
-	});
-
-	return <b className={className}>*</b>;
+export default function RequiredFieldIndicator() {
+	return <span className="pims-components__required-field-indicator" aria-label="(requis)">*</span>;
 }
