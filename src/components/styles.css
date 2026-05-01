@@ -264,3 +264,7 @@
 .pims-components__divider {
 	background-size: 100% 2px;
 }
+
+.pims-components__bold {
+	font-weight: bold;
+}

@@ -3,6 +3,7 @@ import { useIsDark } from '@codegouvfr/react-dsfr/useIsDark';
 
 import { HOME_SCREEN_STEPS } from './constants';
 import SectionTemplate from './SectionTemplate';
+import Bold from '@/components/Bold';
 
 export default function SectionSteps() {
 	const { t } = useTranslation('home_screen');
@@ -21,12 +22,12 @@ export default function SectionSteps() {
 						<img src={isDark ? step.darkIcon : step.lightIcon} role="presentation" width={80} height={80} />
 						<div className="pims-home-screen__step-item-text-container">
 							<p>
-								<b className="fr-mr-1w">{step.id}.</b>
+								<Bold className="fr-mr-1w">{step.id}.</Bold>
 								<Trans
 									t={t}
 									i18nKey={`${translationKeyPrefix}.items.${step.i18nKey}`}
 									components={{
-										k1: <b />,
+										k1: <Bold />,
 									}}
 								/>
 							</p>
