@@ -65,12 +65,10 @@ export default function EmergencyKitListing(props: Props) {
 					options={[
 						{
 							label: 
-								<>
-									<p className="fr-mb-0">
-										{`${t('kit_listing.checkbox')} `}
-										<RequiredFieldIndicator />
-									</p>
-								</>,
+								<span className="fr-mb-0">
+									{`${t('kit_listing.checkbox')} `}
+									<RequiredFieldIndicator />
+								</span>,
 							nativeInputProps: {
 								checked: kitListChecked,
 								onChange: onCheckboxChange,
