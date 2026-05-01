@@ -8,7 +8,7 @@ type Props = {
 	address: string;
 	setAddress: Dispatch<SetStateAction<string>>;
 	onAddressChosen: AddressChosenCallback;
-	addressFeatureList: Array<GeoplateformeApiFeature>;
+	addressFeatureList: Array<GeoplateformeApiFeature>|undefined;
 	setShowAddressFeatureList: Dispatch<SetStateAction<boolean>>;
 	highlighted: boolean;
 	setHighlighted: Dispatch<SetStateAction<boolean>>;
@@ -41,7 +41,7 @@ export default function SearchBar(props: Props) {
 	const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
 		if (event.key === 'Enter') {
 			// If the featureList is not empty, pick the first item
-			if (addressFeatureList.length > 0) {
+			if (addressFeatureList !== undefined && addressFeatureList.length > 0) {
 				onAddressChosen(addressFeatureList[0]);
 			}
 		}

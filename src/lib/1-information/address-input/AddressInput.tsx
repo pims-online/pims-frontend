@@ -37,8 +37,8 @@ export default function AddressInput(props: Props) {
 	const [tmpAddress, setTmpAddress] = useState<string>(position?.address || addressFromUrl || '');
 	// State to manage the results of the query on data.geopf api
 	const [addressFeatureList, setAddressFeatureList] = useState<
-		Array<GeoplateformeApiFeature>
-	>([]);
+		Array<GeoplateformeApiFeature>|undefined
+	>(undefined);
 	// State to manage when to show the results of the data.geopf query, to help select a recognized address
 	const [showAddressFeatureList, setShowAddressFeatureList] = useState(false);
 	// State to manage API loading
@@ -151,7 +151,7 @@ export default function AddressInput(props: Props) {
 				highlighted={isHighlighted}
 				setHighlighted={setIsHighlighted}
 			/>
-			{showAddressFeatureList && addressFeatureList?.length > 0 && (
+			{showAddressFeatureList && addressFeatureList !== undefined && (
 				<AddressFeatureList
 					onAddressChosen={chooseAddress}
 					addressFeatureList={addressFeatureList}

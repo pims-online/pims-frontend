@@ -68,7 +68,8 @@
 			"title": "I identify the major risks around me",
 			"call_to_action": "Please enter your address",
 			"search_bar_label": "Postal address",
-			"address_missing": "Address missing"
+			"address_missing": "Address missing",
+			"no_result": "No result"
 		},
 		"get_geolocation": "Use my current location",
 		"geolocation_failed": "Geolocation failed",

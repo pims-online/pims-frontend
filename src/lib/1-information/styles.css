@@ -17,6 +17,12 @@
 	background-color: var(--background-default-grey-hover);
 }
 
+.pims-information-screen__address-feature-list--no-result {
+	padding: 1rem;
+	text-align: center;
+	color: var(--text-mention-grey);
+}
+
 .pims-information-screen__risk-list-table {
 	border-spacing: 0px;
 }

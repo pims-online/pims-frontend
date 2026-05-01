@@ -68,7 +68,8 @@
 			"title": "J'identifie les risques majeurs qui m'entourent",
 			"call_to_action": "Veuillez renseigner votre adresse",
 			"search_bar_label": "Adresse postale",
-			"address_missing": "Adresse manquante"
+			"address_missing": "Adresse manquante",
+			"no_result": "Aucun résultat"
 		},
 		"get_geolocation": "Utiliser ma position actuelle",
 		"geolocation_failed": "Échec de la géolocalisation",
