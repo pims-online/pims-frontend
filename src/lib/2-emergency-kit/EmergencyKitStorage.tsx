@@ -58,7 +58,7 @@ export default function EmergencyKitStorage(props: Props) {
 					"aria-invalid": isHighlighted
 				}}
 				state={isHighlighted ? "error" : undefined}
-				stateRelatedMessage={t("kit_storage.missing_value")}
+				stateRelatedMessage={isHighlighted ? t("kit_storage.missing_value") : undefined}
 				data-fr-analytics-rating
 				id="pims-step-2__input-emergency-kit-storage"
 			/>

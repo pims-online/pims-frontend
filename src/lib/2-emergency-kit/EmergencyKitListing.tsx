@@ -78,7 +78,7 @@ export default function EmergencyKitListing(props: Props) {
 						},
 					]}
 					state={isHighlighted ? "error" : "default"}
-					stateRelatedMessage={isHighlighted && t("kit_listing.checkbox_required")}
+					stateRelatedMessage={isHighlighted ? t("kit_listing.checkbox_required") : undefined}
 					data-fr-analytics-rating
 					id="pims-step-2__checkbox-emergency-kit-read"
 				/>
