@@ -550,12 +550,36 @@
 	},
 	"accessibility_page": {
 		"title": "Accessibility Statement",
-		"date": "Established on September 20, 2024.",
+		"date": "Established on May 6, 2026.",
 		"basep_commitment": "The Public Alert, Awareness, and Education Bureau is committed to making its service accessible, in accordance with Article 47 of Law No. 2005-102 of February 11, 2005.",
 		"declaration": "This accessibility statement applies to the <k1>Digital Individual Safety Plan</k1> teleprocedure ({{- url }}).",
 		"conformity": {
 			"title": "Compliance status",
-			"description": "The <k1>Digital Individual Safety Plan</k1> is <k1>non-compliant</k1> with the <k2>RGAA</k2>."
+			"description": "The <k1>Digital Individual Safety Plan</k1> is <k1>partially-compliant</k1> with the <k2>RGAA</k2>.",
+			"result": "Test results",
+			"audit": "The accessibility audit realised by <k1>JuMP Mines Paristech</k1> concludes that 96% of tests from RGAA version 4 are respected."
+		},
+		"inaccessible_content": {
+			"title": "Inaccessible content",
+			"1": "The PDF generated as the outcome of the procedure is not accessible."
+		},
+		"establishment": {
+			"title": "Establishment of this accessibility statement",
+			"date": "This statement has been established on May 6 2026.",
+			"technology": "Involved technologies",
+			"tech_1": "HTML5",
+			"tech_2": "CSS",
+			"tech_3": "JavaScript",
+			"test_environment": "Testing environment",
+			"test_1": "Google Chrome with Talkback",
+			"tooling": "Accessibility assessment tools",
+			"tool_1": "<k1>Contrast Checker</k1> by Coolors",
+			"pages": "Pages from the website subject to the conformity check",
+			"page_1": "Home page - Online procedure",
+			"page_2": "Site map",
+			"page_3": "Legal information",
+			"page_4": "Accessibility statement",
+			"page_5": "Privacy policy"
 		},
 		"right_of_recourse": {
 			"title": "Right of recourse",
@@ -566,8 +590,7 @@
 				"delegate": "Contact <k1>the regional delegate of the Defender of Rights in your area</k1>",
 				"send_letter": "Send a letter by mail (free, no stamp required):"
 			}
-		},
-		"generator": "This accessibility statement was created on September 20, 2024, using the <k1>Accessibility Statement Generator by BetaGouv</k1>."
+		}
 	},
 	"privacy_policy_page": {
 		"title": "Privacy Policy",

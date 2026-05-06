@@ -550,12 +550,36 @@
 	},
 	"accessibility_page": {
 		"title": "Déclaration d’accessibilité",
-		"date": "Établie le 20 septembre 2024.",
+		"date": "Établie le 6 mai 2026.",
 		"basep_commitment": "Le Bureau de l'Alerte, de la Sensibilisation et de l'Education des Publics s’engage à rendre son service accessible, conformément à l’article 47 de la loi n° 2005-102 du 11 février 2005.",
 		"declaration": "Cette déclaration d’accessibilité s’applique à la téléprocédure <k1>Plan Individuel de Mise en Sureté dématérialisé</k1> ({{- url }}).",
 		"conformity": {
 			"title": "État de conformité",
-			"description": "Le <k1>Plan Individuel de Mise en Sureté dématérialisé</k1> est <k1>non conforme</k1> avec le <k2>RGAA</k2>."
+			"description": "Le <k1>Plan Individuel de Mise en Sureté dématérialisé</k1> est <k1>partiellement conforme</k1> avec le <k2>RGAA</k2>.",
+			"result": "Résultat des tests",
+			"audit": "L'audit de conformité réalisé par <k1>JuMP Mines Paristech</k1> révèle que 96% des tests du RGAA version 4 sont respectés."
+		},
+		"inaccessible_content": {
+			"title": "Contenu non accessible",
+			"1": "Le PDF généré à l'issue de la procédure n'est pas accessible."
+		},
+		"establishment": {
+			"title": "Établissement de cette déclaration d’accessibilité",
+			"date": "Cette déclaration a été établie le 06/05/2026.",
+			"technology": "Technologies utilisées",
+			"tech_1": "HTML5",
+			"tech_2": "CSS",
+			"tech_3": "JavaScript",
+			"test_environment": "Environnement de test",
+			"test_1": "Google Chrome et Talkback",
+			"tooling": "Outils pour évaluer l'accessibilité",
+			"tool_1": "<k1>Contrast Checker</k1> de Coolors",
+			"pages": "Pages du site ayant fait l'objet de la vérification de conformité",
+			"page_1": "Page d'accueil & Téléprocédure",
+			"page_2": "Plan du site",
+			"page_3": "Mentions légales",
+			"page_4": "Accessibilité",
+			"page_5": "Confidentialité"
 		},
 		"right_of_recourse": {
 			"title": "Voie de recours",
@@ -566,8 +590,7 @@
 				"delegate": "Contacter <k1>le délégué du Défenseur des droits dans votre région</k1>",
 				"send_letter": "Envoyer un courrier par la poste (gratuit, ne pas mettre de timbre) :"
 			}
-		},
-		"generator": "Cette déclaration d’accessibilité a été créé le 20 septembre 2024 grâce au <k1>Générateur de Déclaration d’Accessibilité de BetaGouv</k1>."
+		}
 	},
 	"privacy_policy_page": {
 		"title": "Politique de confidentialité",
