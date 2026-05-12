@@ -561,7 +561,7 @@
 		},
 		"inaccessible_content": {
 			"title": "Contenu non accessible",
-			"1": "Le PDF généré à l'issue de la procédure n'est pas accessible."
+			"1": "L'accessibilité du PDF généré à l'issue de la procédure n'a pas été vérifée."
 		},
 		"establishment": {
 			"title": "Établissement de cette déclaration d’accessibilité",
