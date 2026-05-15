@@ -24,15 +24,7 @@ FROM docker.io/nginx:latest AS production
 # Import built content
 COPY --from=builder /home/node/app/dist /var/www/html
 
-# Enable log
-RUN sed 's%\(\s*error_log\s*\)\S\+\(\s*\)%\1/dev/stderr\2%g' -i /etc/nginx/nginx.conf \
-    && sed 's%\(\s*access_log\s*\)\S\+\(\s*\)%\1/dev/stdout\2%g' -i /etc/nginx/nginx.conf
-
-# Serve files from the built content
-RUN sed 's%root.*%root   /var/www/html;%' -i /etc/nginx/conf.d/default.conf
-# Set default page
-RUN sed 's%index.*%try_files $uri $uri/ /index.html;%' -i /etc/nginx/conf.d/default.conf
-# Allow access on any origin
-RUN sed '/location\\s*\//a add_header Access-Control-Allow-Origin *' -i /etc/nginx/conf.d/default.conf
+# Configure nginx
+COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
