@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!--  -->
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>PIMS widget</title>
-
-		<!-- Import the widget source file -->
-		<!-- TODO: Replace 'https://localhost:4173' with a public url of the PIMS frontend -->
-		<script
-			src="http://localhost:4173/assets/js/widget.js"
-			type="module"
-		></script>
-
 		<style>
 			#pims-widget-wrapper {
 				border: solid black;
 			}
 		</style>
+
+		<!-- Import the widget source files -->
+		<!-- TODO: Replace 'https://pims-demo.fr' with a public url of the PIMS frontend -->
+		<script
+			src="https://pims-demo.fr/assets/js/widget.js"
+			type="module"
+		></script>
+		<link rel="stylesheet" href="https://pims-demo.fr/node_modules/@codegouvfr/react-dsfr/main.css" />
+		<link rel="preload" href="https://pims-demo.fr/node_modules/@codegouvfr/react-dsfr/dsfr/fonts/Marianne-Regular.woff2" as="font" crossorigin="anonymous" />
+		<link rel="preload" href="https://pims-demo.fr/node_modules/@codegouvfr/react-dsfr/dsfr/fonts/Marianne-Medium.woff2" as="font" crossorigin="anonymous" />
+		<link rel="preload" href="https://pims-demo.fr/node_modules/@codegouvfr/react-dsfr/dsfr/fonts/Marianne-Bold.woff2" as="font" crossorigin="anonymous" />
 	</head>
 	<body>
 		<h1>PIMS widget</h1>

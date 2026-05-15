@@ -32,5 +32,7 @@ RUN sed 's%\(\s*error_log\s*\)\S\+\(\s*\)%\1/dev/stderr\2%g' -i /etc/nginx/nginx
 RUN sed 's%root.*%root   /var/www/html;%' -i /etc/nginx/conf.d/default.conf
 # Set default page
 RUN sed 's%index.*%try_files $uri $uri/ /index.html;%' -i /etc/nginx/conf.d/default.conf
+# Allow access on any origin
+RUN sed '/location\\s*\//a add_header Access-Control-Allow-Origin *' -i /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
