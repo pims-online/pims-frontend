@@ -100,7 +100,7 @@ export default defineConfig({
 	},
 	css: {
 		lightningcss: {
-			/* Workaround for the @media zero bug */
+			/* Workaround for the @media zero bug (see https://github.com/codegouvfr/react-dsfr/issues/484) */
 			errorRecovery: true,
 		},
 	},

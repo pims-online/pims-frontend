@@ -6,10 +6,10 @@
 
 #### 1 - Cloner le repository Github
 
-Il y a besoin d'installer le frontend et le backend pour profiter de l'expérience complète de développement. Voir le readme du backend pour le faire tourner.
+Il y a besoin d'installer le frontend et le backend pour profiter de l'expérience complète de développement. Voir le [readme](https://github.com/pims-online/pims-backend/blob/main/README.md) du backend pour le faire tourner.
 
 ```bash
-git clone git@github.com:david-bretaud-dev/pims-frontend.git
+git clone git@github.com:pims-online/pims-frontend.git
 ```
 
 #### 2 - Installer les nodes packages
@@ -21,9 +21,7 @@ Installer les packages avec la commande suivante :
 npm install
 ```
 
-Le script `"postinstall": "copy-dsfr-to-public"` (cf `package.json`) fait une copie de dsfr dans le dossier public. Il ne faut pas y toucher, car c'est là que tout le css du DSFR est stocké.
-
-Ce css est chargé dans le composant `DSFRWrapper`, avec la balise suivante : `<link rel="stylesheet" href="/dsfr/dsfr.min.css" />`.
+Le script `"postinstall": "copy-dsfr-to-public"` (cf `package.json`) fait une copie de dsfr dans le dossier public. Il ne faut pas y toucher, car c'est là que tout le css et les icones du DSFR est stocké.
 
 #### 3 - Déployer l'application en local
 
@@ -84,32 +82,35 @@ Le PIMS dématérialisé a pour objectif d'être une télé-procédure d'Etat. A
 
 ##### Vue d'ensemble du DSFR
 
-Le DSFR est le [Design System de l'État français](https://www.systeme-de-design.gouv.fr/composants-et-modeles). C'est un ensemble de règles à respecter, de composants à utiliser, de typographies à utiliser (Marianne, Spectral), de couleurs à utiliser selon des règles strictes.
+Le DSFR est le [Design System de l'État français](https://www.systeme-de-design.gouv.fr/version-courante/fr/composants). C'est un ensemble de règles à respecter, de composants à utiliser, de typographies à utiliser (Marianne, Spectral), de couleurs à utiliser selon des règles strictes.
 
-Le DSFR existe donc sous la forme d'une librairie javascript, permettant d'avoir facilement ces différentes règles d'implémenter (typographies, thème de couleur, composants réutilisables). Pour construire l'application, il "suffit" de respecter les règles d'utilisations du DSFR.
-
-##### Exemple de règles
-
-[Règles d'utilisation du Stepper du DSFR](https://www.systeme-de-design.gouv.fr/composants-et-modeles/indicateur-d-etapes)
-
-> L’indicateur d'étapes ne sert pas à naviguer d’une étape à l’autre, pour cela utiliser des boutons en bas des champs de l'étape.
-> Il est conseillé de finir par une étape de confirmation. Il est aussi conseillé de créer une page d’introduction à la démarche, avant de commencer cette dernière pour présenter les différentes étapes, sur laquelle ne figure pas cet indicateur d’étapes.
-
-A cet effet :
-
-- le composant `./src/layouts/components/stepper/Stepper.tsx` ne permet pas de naviguer ;
-- le composant `./src/layouts/components/Navigator.tsx` permet de faire cette navigation ;
-- la navigation est précédée d'une page d'introduction `./src/lib/0-home/HomeScreen.tsx` présentant les différentes étapes.
+Le DSFR existe donc sous la forme d'une librairie javascript, permettant d'avoir facilement ces différentes règles implémentées (typographies, thème de couleur, composants réutilisables). Pour construire l'application, il "suffit" de respecter les règles d'utilisations du DSFR.
 
 ##### La version React du DSFR
 
 Pour développer une application React, on utilise à la place la librairie [React DSFR](https://react-dsfr.codegouv.studio/), qui reprend (quasiment) tous les composants du DSFR original.
 
-Lorsque cette librairie est installée, de nombreux fichiers sont créés dans le dossier `./public/dsfr` (ils ne sont donc pas traités par le Build de Vite). Parmi ces fichiers se trouvent tous les composants nécessaires, le css et les polices (Marianne, Spectral) du DSFR, il n'y a donc pas besoin de les gérer de notre côté.
+Lorsque cette librairie est installée, de nombreux fichiers sont créés dans le dossier `./public/dsfr` (ils ne sont donc pas traités par le Build de Vite). Parmi ces fichiers se trouvent tous les composants nécessaire au DSFR : CSS, polices d'écriture (Marianne, Spectral), icones et pictogrammes. Il n'y a donc pas besoin de les gérer de notre côté.
+
+#### RGAA
+Le référentiel général d'amélioration de l'accessibilité ([RGAA](https://accessibilite.numerique.gouv.fr/)) définit un emsemble de règles à respecter afin que le site soit accessible au public le plus large possible. Cela inclut les mal-voyants, les mal-entendants, les épileptiques, les personnes âgées, les daltoniens...
+
+Concrètement, cela signifie que le site doit :
+- être utilisable sans souris, pour les problèmes moteurs et les malvoyants
+- être compatible avec un lecteur d'écran pour les malvoyants
+- avoir du texte lisible, suffisemment gros et avec un bon contraste 
+
+C'est pour les lecteurs d'écrans qu'il faut le plus d'adaptation. C'est un logiciel qui lit le texte du site à voix haute, directement à partir du HTML. Ainsi, il faut vérifier que le site est intelligible uniquement à partir du HTML. On ajoute un certain de nombre de méta-données destinées aux lecteurs d'écrans sous la forme d'attributs `aria-[...]` pour enrichir le contenu du lecteur d'écran. 
+
+Le DSFR est bien construit et fournit une base relativement bien accessible, avec des textes bien lisibles et un certain nombre de méta-données déjà incluses. Il reste cependant à en rajouter certaines.
+
+Pour faire un audit, on peut s'aider de la plateforme [Ara](https://ara.numerique.gouv.fr/) dans laquelle on peut renseigner chaque critère du RGAA que l'on a vérifié. Il est recommandé d'uiliser un lecteur d'écran, par exemple TalkBack d'Android avec le navigateur Chrome.
+
+#### RGPD
+À faire
 
 #### Autres sujets à traiter
 
-- RGPD
 - [Checklist Pidila](https://design.numerique.gouv.fr/outils/checklist-pidila/)
 
 ### :ship: Développement de l'application
@@ -118,9 +119,9 @@ Lorsque cette librairie est installée, de nombreux fichiers sont créés dans l
 
 L'application est pour le moment disponible en français (`fr`) et en anglais (`en`). L'internationalization est gérée avec [react-i18next](https://react.i18next.com/), et dans le dossier `./src/i18n`.
 
-Le fichier `i18n` génère l'object `i18n` utilisé ensuite dans `App.tsx` pour générer le `I18nProvider`.
+Le fichier `i18n` génère l'objet `i18n` utilisé ensuite dans `App.tsx` pour générer le `I18nProvider`.
 
-Le dossier `translations` contient les fichiers de traduction, 1 par language, nommés avec la forme `[locale].json`.
+Le dossier `translations` contient les fichiers de traduction, 1 par langue, nommés avec la forme `[locale].json`.
 
 Comme l'application est 100% côté Client, la méthode est toujours la même pour utiliser des traductions. Elle repose sur le hook `useTranslation`. Les clés de traductions sont toutes écrites en `snake_case`.
 
@@ -151,7 +152,7 @@ Liens utiles :
 
 ##### API Géorisque
 
-Cette API nous permet de récupérer les risques autour d'une position donnée (par adresse ou par coordonnées).
+Cette API nous permet principalement de récupérer les risques autour d'une position donnée (par adresse ou par coordonnées). Elle nous donne aussi accès à l'obligation légale de débroussaillement. 
 
 Liens utiles :
 
@@ -170,9 +171,13 @@ Liens utiles :
 - [Document pdf à destination des développeurs pour comprendre comment utiliser l'API](https://api-lannuaire.service-public.fr/explore/dataset/api-lannuaire-administration/information/)
 - [Tutoriel plus technique pour utiliser l'API](<https://help.opendatasoft.com/apis/ods-explore-v2/#section/Opendatasoft-Query-Language-(ODSQL)/Language-elements>)
 
-#### API de fréquences radio
+##### API de fréquences radio
 
 Le backend de PIMS met à disposition une API qui donne la fréquence des stations de Radio-France pour chaque ville de France. 
+
+##### API d'éligibilité à la pastille d'iode
+
+Les communes autour des Installations Nucléaires de Base ([INB](https://reglementation-controle.asnr.fr/espace-professionnels/installations-nucleaires/listes-des-installations-nucleaires-de-base)) font l'office de distributions de pastilles d'iode à la population, pour limiter les conséquences sur la santé d'éventuelles radiations. Le backend met à disposition une API pour tester si les habitants d'une commune sont éligible aux pastilles d'iode.
 
 ### :tada: Widget as Web Component
 
@@ -216,7 +221,7 @@ Une documentation explicite les différents items : <https://rollupjs.org/config
 
 `output.assetFileNames`: on organise de même les fichiers considérés comme assets statiques par Vite : ce sont des images, des svg, à partir d'une certaille, et qui ont besoin d'être optimisées. En bref, les images sont mis dans le dossier `assets/images`, les medias dans le dossier `assets/medias`, et le reste sera placé dans `assets`. Leurs URLs sont gérés par Vite.
 
-Les très petites images (<=4kb / 4096 bytes) sont encodées en base64 data URIs. Cela permet d'améliorer les performances en évitant des requêtes HTTP supplémentaires.
+Les très petites images (<=4ko / 4096 octets) sont encodées en base64 data URIs. Cela permet d'améliorer les performances en évitant des requêtes HTTP supplémentaires.
 
 Le script de build fait automatiquement une copie de public/dsfr vers dist/dsfr.
 
@@ -230,6 +235,7 @@ Le script de build fait automatiquement une copie de public/dsfr vers dist/dsfr.
 - [React DSFR - Github](https://github.com/codegouvfr/react-dsfr/blob/main/README.fr.md)
 - [Exemple de projets utilisant React DSFR](https://github.com/codegouvfr/react-dsfr?tab=readme-ov-file#use-cases)
 - [react-i18next](https://react.i18next.com/)
+- [RGAA](https://accessibilite.numerique.gouv.fr/)
 - [Le tutoriel qui a inspiré la configuration du Widget en Web component](https://www.linkedin.com/pulse/converting-react-app-appendable-widget-using-web-mike-rahimi-wssnf/)
 - [API Annuaire administration](https://api-lannuaire.service-public.fr/explore/dataset/api-lannuaire-administration/api/)
 - [Vite React](https://vitejs.dev/)
