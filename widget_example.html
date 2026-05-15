@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PIMS widget</title>
+
+		<!-- Import the widget source file -->
+		<script
+			src="http://localhost:4173/assets/js/widget.js"
+			type="module"
+		></script>
+
+		<style>
+			#pims-widget-wrapper {
+				border: solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>PIMS widget</h1>
+		<p>Here is an integration of the PIMS widget:</p>
+		<div id="pims-widget-wrapper">
+			<!-- Use the widget as an HTML tag -->
+			<pims-dematerialized-widget/>
+		</div>
+	</body>
+</html>

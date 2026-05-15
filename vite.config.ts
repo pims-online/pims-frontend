@@ -70,6 +70,7 @@ export default defineConfig({
 			input: {
 				main: resolve(__dirname, 'index.html'),
 				pims: resolve(__dirname, "pims-preview.html"),
+				widget_example: resolve(__dirname, 'widget_example.html'),
 				widget: resolve(__dirname, './src/widget.tsx'),
 			},
 			output: {
