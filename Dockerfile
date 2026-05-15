@@ -17,12 +17,6 @@ RUN npm audit fix
 # Build project
 RUN npm run build
 
-# Inject app URL in widget integration example
-RUN . .env; \
-  . .env.development; \
-  . .env.development.local \
-  && sed 's%http://localhost:4173%${VITE_APP_URL}%' -i dist/widget_example.html
-
 
 # ===== Step 2 : Package it into an nginx server =====
 FROM docker.io/nginx:latest AS production
