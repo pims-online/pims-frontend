@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path, { resolve } from 'path';
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 
 /** ----- BUILD STRUCTURE : dist/assets -----
  *
@@ -38,8 +39,10 @@ export default defineConfig({
 	},
 	plugins: [
 		react(),
-		/*cssInjectedByJsPlugin({
-			styleId: 'vite-injected-css',
+		cssInjectedByJsPlugin({
+			attributes: {
+				id: 'vite-injected-css',
+			},
 			jsAssetsFilterFunction: function customJsAssetsfilterFunction(
 				outputChunk
 			) {
@@ -50,7 +53,7 @@ export default defineConfig({
 					outputChunk.fileName.startsWith('assets/pims-')
 				);
 			},
-		}),*/
+		}),
 	],
 	build: {
 		assetsInlineLimit(filePath) {
