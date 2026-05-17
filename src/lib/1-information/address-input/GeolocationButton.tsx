@@ -33,17 +33,19 @@ export default function GeolocationButton(props: Props) {
 		const latitude = position.coords.latitude;
 		const longitude = position.coords.longitude;
 
-		// 1 - Fetch address Feature List
-		let featureList: GeoplateformeApiFeature[] = [];
-		try {
-			featureList = await getGeoplateformeFeaturesFromCoordinates({
-				latitude,
-				longitude,
-			});
-		} finally {
-			// 2 - Notify the user that it has been done
-			setIsProcessing(false);
+		async function fetchFeatures() {	// We need a nested function to reuse the result after the try statement 
+			// 1 - Fetch address Feature List
+			try {
+				return await getGeoplateformeFeaturesFromCoordinates({
+					latitude,
+					longitude,
+				});
+			} finally {
+				// 2 - Notify the user that it has been done
+				setIsProcessing(false);
+			}
 		}
+		const featureList: GeoplateformeApiFeature[] = await fetchFeatures();
 
 		// 3 - If list is not empty
 		if (featureList.length > 0) {
