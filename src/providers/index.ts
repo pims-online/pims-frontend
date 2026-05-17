@@ -2,10 +2,8 @@ export {
 	APP_CONTEXT_DEFAULT_VALUES,
 	type AppContextValues,
 } from './AppContextConfig';
-export {
-	default as AppContextProvider,
-	AppContext,
-} from './AppContextProvider';
+export { AppContext } from './AppContext';
+export { default as AppContextProvider } from './AppContextProvider';
 export { default as DSFRWrapper } from './DSFRWrapper';
 export { default as AppRoutesProvider } from './AppRoutesProvider';
 export {

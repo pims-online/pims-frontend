@@ -4,7 +4,7 @@
  * Thus, every state related to an input should be setup in and passed through the Context.
  */
 
-import { useState, createContext } from 'react';
+import { useState } from 'react';
 
 import {
 	type AppContextValues,
@@ -13,10 +13,7 @@ import {
 	Risk,
 	StrimmingObligation,
 } from './AppContextConfig';
-
-export const AppContext = createContext<AppContextValues>(
-	APP_CONTEXT_DEFAULT_VALUES
-);
+import { AppContext } from './AppContext';
 
 export default function AppContextProvider({
 	children,
