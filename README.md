@@ -115,6 +115,11 @@ Pour faire un audit, on peut s'aider de la plateforme [Ara](https://ara.numeriqu
 
 ### :ship: Développement de l'application
 
+#### Production du PDF
+
+Le frontend joue un rôle dans la création du PDF : il met à disposition une page HTML (`/pims-preview.html?q=[args]`) avec le contenu du PDF. Le backend peut ainsi ouvrir cette page et la convertir en PDF. Cette architecture permet une cohérence visuelle entre le site web et le PDF lui-même.  
+Les variables qui permettent de personnaliser le PIMS sont passés en argument dans l'URL (`?q=[B64-encoded JSON  args]`). C'est exactement le contenu JSON de la requête envoyé au backend, encodé en base 64 afin d'être injecté à un URL. Le format du JSON est défini dans [SerialisedPimsParams](src/lib/5-summary/utils.ts:30).
+
 #### Internationalization (i18n)
 
 L'application est pour le moment disponible en français (`fr`) et en anglais (`en`). L'internationalization est gérée avec [react-i18next](https://react.i18next.com/), et dans le dossier `./src/i18n`.
@@ -198,7 +203,7 @@ Le build de l'application par Vite suit la configuration du fichier `vite.config
 
 #### Injection du css
 
-La librairie `cssInjectedByJsPlugin` permet de récupérer tous les fichiers css, de les agréger ensemble, et d'injecter le css final dans les fichiers javascripts "spécifiés". Ces fichiers sont ceux qui vérifient la condition de sortie de la fonction `jsAssetsFilterFunction`. Dans notre cas, le css doit être injecté à la fois dans le fichier unique js qui fait tourner le site (`assets/main.js`), mais aussi dans le fichier qui contient le widget (le Web component a besoin du css aussi!)(`assets/js/widget.js`).
+La librairie `cssInjectedByJsPlugin` permet de récupérer tous les fichiers css, de les agréger ensemble, et d'injecter le css final dans les fichiers javascripts "spécifiés". Ces fichiers sont ceux qui vérifient la condition de sortie de la fonction `jsAssetsFilterFunction`. Dans notre cas, le css doit être injecté à la fois dans le fichier unique js qui fait tourner le site (`assets/main-[hash].js`), dans le PDF (`assets/pims-[hash].js`), mais aussi dans le fichier qui contient le widget (le Web component a besoin du css aussi!)(`assets/js/widget.js`).
 
 Plusieurs sources de css :
 
