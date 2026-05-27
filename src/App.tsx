@@ -7,8 +7,8 @@ import {
 	AppRoutesProvider,
 } from './providers';
 import PageLayout from '@/layouts/PageLayout';
-import MainPage from '@/pages/MainPage';
 import HtmlLanguageUpdater from './components/HtmlLanguageUpdater';
+
 
 function App() {
 	return (
@@ -21,28 +21,6 @@ function App() {
 							<AppRoutesProvider />
 						</PageLayout>
 					</BrowserRouter>
-				</I18nextProvider>
-			</AppContextProvider>
-		</DSFRWrapper>
-	);
-}
-
-export function WidgetApp(props: {
-	applicationId?: string;
-	widgetHeaderFooter?: boolean;
-}) {
-	return (
-		<DSFRWrapper>
-			<AppContextProvider>
-				<I18nextProvider i18n={i18n}>
-					<PageLayout
-						widgetConfig={{
-							useWidgetHeader: props.widgetHeaderFooter,
-							applicationId: props.applicationId,
-						}}
-					>
-						<MainPage />
-					</PageLayout>
 				</I18nextProvider>
 			</AppContextProvider>
 		</DSFRWrapper>

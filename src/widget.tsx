@@ -1,5 +1,5 @@
 import r2wc from '@r2wc/react-to-web-component';
-import { WidgetApp } from './App';
+import { WidgetApp } from './WidgetApp';
 
 export const WebComponentWidget = r2wc(WidgetApp, {
 	props: {
