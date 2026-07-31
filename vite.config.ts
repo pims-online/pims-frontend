@@ -34,7 +34,7 @@ export default defineConfig({
 	publicDir: 'public',
 	resolve: {
 		alias: {
-			'@': path.resolve(__dirname, './src'),
+			'@': path.resolve(import.meta.dirname, './src'),
 		},
 	},
 	plugins: [
@@ -68,10 +68,10 @@ export default defineConfig({
 		},
 		rollupOptions: {
 			input: {
-				main: resolve(__dirname, 'index.html'),
-				pims: resolve(__dirname, "pims-preview.html"),
-				widget_example: resolve(__dirname, 'widget_example.html'),
-				widget: resolve(__dirname, './src/widget.tsx'),
+				main: resolve(import.meta.dirname, 'index.html'),
+				pims: resolve(import.meta.dirname, "pims-preview.html"),
+				widget_example: resolve(import.meta.dirname, 'widget_example.html'),
+				widget: resolve(import.meta.dirname, './src/widget.tsx'),
 			},
 			output: {
 				entryFileNames: (assetInfo) => {
