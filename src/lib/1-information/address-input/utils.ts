@@ -116,7 +116,7 @@ export const getRisksAroundCoordinates = async (
 		const response = await fetch(finalUrl, {
 			method: 'GET',
 			headers: {
-				'Content-Type': 'application/json',
+				'Accept': 'application/json',
 			},
 		});
 
