@@ -55,7 +55,10 @@ export default function FinalizeButton(props: Props) {
 			radioFrequencies,
 			screenWidth: window.innerWidth,
 			gatheringPlace,
-			iodePastilleElegibility: (iodePastilleEligibility !== undefined),
+			// The backend answers inb_name: "" for a town outside any nuclear site zone,
+			// so an empty string must count as "not eligible" (a plain truthiness test,
+			// as the site itself does).
+			iodePastilleElegibility: Boolean(iodePastilleEligibility),
 			comment: pimsComment,
 		};
 

@@ -6,6 +6,7 @@ import type {
 	GeorisqueApiResponse,
 	GeolocationCoordinates,
 } from './types';
+import { fetchWithRetry } from '../fetchWithRetry';
 
 const URL_DATA_GEOCODAGE = 'https://data.geopf.fr/geocodage/';
 const URL_GEORISQUE = 'https://georisques.gouv.fr/api/v1/';
@@ -36,9 +37,15 @@ export const getUserLocation = (
 	failureCallback: (error: GeolocationPositionError) => Promise<void>
 ) => {
 	// if geolocation is supported by the users browser
-	const options: PositionOptions = {
+	const highAccuracyOptions: PositionOptions = {
 		enableHighAccuracy: true,
-		timeout: 4000,
+		timeout: 10000,
+		maximumAge: 0,
+	};
+	// Fallback used when high accuracy times out (e.g. desktop without GPS)
+	const lowAccuracyOptions: PositionOptions = {
+		enableHighAccuracy: false,
+		timeout: 10000,
 		maximumAge: 0,
 	};
 	if (navigator.geolocation) {
@@ -47,8 +54,19 @@ export const getUserLocation = (
 			// If position can be retrieved
 			successCallback,
 			// If there was an error getting the users location
-			failureCallback,
-			options
+			(error) => {
+				// On timeout, retry once with low accuracy
+				if (error.code === error.TIMEOUT) {
+					navigator.geolocation.getCurrentPosition(
+						successCallback,
+						failureCallback,
+						lowAccuracyOptions
+					);
+				} else {
+					failureCallback(error);
+				}
+			},
+			highAccuracyOptions
 		);
 	}
 	// If geolocation is not supported by the users browser
@@ -113,12 +131,10 @@ export const getRisksAroundCoordinates = async (
 	}
 
 	try {
-		const response = await fetch(finalUrl, {
-			method: 'GET',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		});
+		// No custom header on purpose: a Content-Type on a GET turns it into a
+		// non-simple CORS request, which adds a preflight OPTIONS call and doubles the
+		// requests sent to a rate-limited API.
+		const response = await fetchWithRetry(finalUrl);
 
 		if (response.ok) {
 			const data = (await response.json()) as GeorisqueApiResponse;

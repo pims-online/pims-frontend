@@ -1,6 +1,7 @@
 import { I18nextProvider } from "react-i18next";
 import PimsScreen from "./lib/pims/PimsScreen";
 import i18n from "./i18n/i18n";
+import HtmlLanguageUpdater from "./components/HtmlLanguageUpdater";
 import { deserialisePimsParams, PimsParams, SerialisedPimsParams } from "./lib/5-summary/utils";
 
 
@@ -38,6 +39,10 @@ export function PimsApp() {
     // ===== Return pims =====
 	return (
         <I18nextProvider i18n={i18n}>
+            {/* pims-preview.html hardcodes lang="fr": without this, an English PIMS is
+                declared French in the HTML and in the tagged PDF (/Lang), and screen
+                readers read it with a French voice. */}
+            <HtmlLanguageUpdater/>
             <PimsScreen
                 {...content}
             />

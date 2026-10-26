@@ -45,3 +45,48 @@
 		padding-top: 8px;
 	}
 }
+
+
+/* ----- FR-ALERT LOGO ----- */
+
+/* The FR-Alert SVG carries intrinsic width/height attributes (1920x989) that do
+ * not even match its viewBox: it must be constrained or it renders huge.
+ * Light/dark variants are picked in the component. */
+.pims-alert-screen__fr-alert-logo {
+	display: block;
+	width: 10rem;
+	max-width: 100%;
+	height: auto;
+	flex-shrink: 0;
+	position: relative;   /* ← ajouter */
+	top: -25px;            /* ← ajouter, monte de 4 px */
+}
+
+
+/* SAIP logo, same treatment as the FR-Alert one above. */
+.pims-alert-screen__saip-logo {
+	display: block;
+	width: 10rem;
+	max-width: 100%;
+	height: auto;
+	flex-shrink: 0;
+}
+
+
+/* Small screens: these two logos stay beside their title (--keep-inline), so they
+ * are scaled down to leave it enough room. Written as a max-width query because the
+ * widths above are the ones tuned for the desktop layout. */
+@media (max-width: 47.99rem) {
+	.pims-alert-screen__fr-alert-logo,
+	.pims-alert-screen__saip-logo {
+		width: 6rem;
+	}
+}
+
+
+/* Intro line of the alert-systems section: a bit more air before the first
+ * system block (FR-Alert), which starts with its logo. Overrides the default
+ * paragraph margin of 1.5rem. */
+.pims-alert-screen__systems-intro {
+	margin-bottom: 2.5rem;
+}

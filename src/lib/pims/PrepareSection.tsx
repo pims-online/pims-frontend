@@ -21,8 +21,8 @@ export default function PrepareSection(props: Props) {
 
     return (
         <>
-            <PimsTitle strongText={t("title_strong")} lightText={t("title_light")} icon={step2Light}/>
-            <h4>{t("kit.headline")}</h4>
+            <PimsTitle strongText={t("title_strong")} lightText={t("title_light")} icon={step2Light} id="pims-pdf-section-prepare"/>
+            <h3 className="fr-h4">{t("kit.headline")}</h3>
 
             {/* Storage location */}
             <p>{t("kit.location_instruction")}</p>
@@ -49,7 +49,7 @@ export default function PrepareSection(props: Props) {
 
             {/* Strimming obligation */}
             {strimmingObligation.affected && <>
-                <h4>{t("strimming_obligation.title")}</h4>
+                <h3 className="fr-h4">{t("strimming_obligation.title")}</h3>
                 <p>{t("strimming_obligation.description")}</p>
             </>}
         </>

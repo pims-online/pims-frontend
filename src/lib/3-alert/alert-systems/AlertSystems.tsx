@@ -13,7 +13,7 @@ export default function AlertSystems() {
 	return (
 		<>
 			<Title text={t('alert_systems.title')} level='h3' contained />
-			<p>{t('alert_systems.activation')} </p>
+			<p className='pims-alert-screen__systems-intro'>{t('alert_systems.activation')} </p>
 			<AlertSystemsFrAlert />
 			<AlertSystemsSaip />
 			<AlertSystemsPublicMedia />

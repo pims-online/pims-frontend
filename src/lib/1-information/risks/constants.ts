@@ -30,7 +30,7 @@ export const ITEM_NUCLEAR_ACCIDENT: RiskType = {
 
 export const ITEM_DANGEROUS_TRANSPORTATION_ACCIDENT: RiskType = {
 	identifier: 'dangerous_transportation_accident',
-	georisqueApiIdentifier: 'canalisationMatièresDangereuses',
+	georisqueApiIdentifier: 'canalisationsMatieresDangereuses',
 	preventionListLength: 4,
 	iconFileName: [iconDangerousTransportationAccident],
 };
@@ -142,7 +142,6 @@ export const ITEM_MINING_RISKS: RiskType = {
 
 // A list of ignored Géorisque identifiers
 export const IGNORED_RISKS_IDENTIFIERS: string[] = [
-	"canalisationsMatieresDangereuses",
 	"pollutionSols",
 	"risqueMinier",
 	"remonteeNappe",

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 import { PimsParams } from "../5-summary/utils";
@@ -6,6 +7,7 @@ import AlertSection from "./AlertSection";
 import PrepareSection from "./PrepareSection";
 import InformSection from "./InformSection";
 import PhoneNumbersSection from "./PhoneNumbersSection";
+import TableOfContents from "./TableOfContents";
 
 
 export default function PimsScreen(props: PimsParams) {
@@ -24,6 +26,12 @@ export default function PimsScreen(props: PimsParams) {
 
     const { t } = useTranslation("pdf");
 
+    // Chromium uses the page <title> as the PDF title, shown by PDF readers and
+    // announced by screen readers: make it describe this very document.
+    useEffect(() => {
+        document.title = [t("document_title"), title, address].filter(Boolean).join(" – ");
+    }, [t, title, address]);
+
     return <div className='pims__main-layout'>
         <main role="main" className='pims-layouts__container'>
             {/* Informations générales */}
@@ -31,6 +39,7 @@ export default function PimsScreen(props: PimsParams) {
             {(title !== undefined) && <p className='pims-pdf__name'>« {title} »</p>}
             <p className='pims-pdf__subtitle'>{address}</p>
             {(comment !== undefined) && <p><b>{t("comment")}</b> {comment}</p>}
+            <TableOfContents/>
             <PhoneNumbersSection numbers={numbers}/>
             <InformSection
                 strimmingObligation={strimmingObligation}

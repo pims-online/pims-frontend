@@ -1,11 +1,12 @@
 import { StrimmingObligation } from "@/providers/AppContextConfig";
+import { fetchWithRetry } from "../fetchWithRetry";
 
 
 
 export const fetchStrimmingObligation = async (inseeCode : string): Promise<StrimmingObligation|undefined> => {
     try {
         const url = `https://georisques.gouv.fr/api/v1/old?code_insee=${inseeCode}`;
-        const response = await fetch(url);
+        const response = await fetchWithRetry(url);
 
         if (response.status === 404) {
             return {

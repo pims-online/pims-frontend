@@ -1,0 +1,12 @@
+/* ----- JNR LOGO ----- */
+
+/* The JNR logo is a wide banner (ratio ~2.45:1), not a square pictogram, and its
+ * SVG carries intrinsic width/height attributes: it must be constrained or it
+ * renders at its native 1715px. Light/dark variants are picked in the component. */
+.pims-involvement__jnr-logo {
+	display: block;
+	width: 20rem;
+	max-width: 100%;
+	height: auto;
+	flex-shrink: 0;
+}

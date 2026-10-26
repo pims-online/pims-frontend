@@ -61,9 +61,15 @@
 	}
 }
 
+/* Heading of the strimming-obligation callout. It used to be a bold <span>; now
+ * an h3, it keeps the same look: the DSFR heading styles (size, line height,
+ * colour, bottom margin) are overridden. */
 .pims-pdf-information__strimming-obligation-title {
 	font-size: 1.25rem;
 	font-weight: bold;
+	line-height: 1.5rem;
+	color: inherit;
+	margin: 0;
 }
 
 .pims-information-screen__risk-list-table {
@@ -87,4 +93,98 @@
 
 .pims-pdf-involvement__tile {
 	height: 100%;
+}
+
+
+/* ----- LISTS ----- */
+
+/* The DSFR numbers ordered lists through a ::marker with a custom `content` (a CSS
+ * counter). Chromium draws that generated number outside of the PDF tags, which PDF/UA
+ * checkers (PAC) report as untagged content, and which the backend would then have to
+ * hide as an artifact. The native marker keeps the DSFR look (its size and weight rules
+ * still apply) and is tagged as the item label (Lbl), so the numbers stay readable.
+ *
+ * Plain `decimal` rather than a custom @counter-style: Chromium only maps the standard
+ * styles to the PDF /ListNumbering attribute, which PDF/UA expects on a list. The cost
+ * is one space less between the number and its text than in the DSFR marker. */
+.pims-layouts__container ol {
+	list-style-type: decimal;
+}
+
+.pims-layouts__container ol > li::marker {
+	content: normal;
+}
+
+
+/* ----- TABLE OF CONTENTS ----- */
+
+.pims-pdf__toc {
+	margin-bottom: 2rem;
+	break-inside: avoid;
+}
+
+.pims-pdf__toc h2 {
+	margin-bottom: 0.75rem;
+}
+
+
+/* ----- A4 PAGINATION ----- */
+
+/* The PDF is rendered with emulate_media("screen"), so `@media print` rules
+ * would never apply: these fragmentation rules must live in the normal cascade.
+ * They are inert on screen and only matter once the content is split in sheets. */
+
+/* Never strand a heading at the bottom of a sheet, away from what it introduces */
+.pims-layouts__container h1,
+.pims-layouts__container h2,
+.pims-layouts__container h3,
+.pims-layouts__container h4,
+.pims-layouts__container h5,
+.pims-pdf__title-component {
+	break-after: avoid;
+	break-inside: avoid;
+}
+
+/* Keep each self-contained block whole: callouts, one risk (title + its
+ * preventions, which is why each risk gets its own <tbody>), one involvement */
+.pims-layouts__container .fr-highlight,
+.pims-pdf-involvement__item,
+.pims-information-screen__risk-list-table tbody {
+	break-inside: avoid;
+}
+
+
+/* The JNR logo is a wide banner, unlike the square pictograms of the other
+ * involvement items, and its SVG has intrinsic width/height: size it explicitly
+ * so it does not blow up the flex row. */
+.pims-pdf-involvement__banner {
+	width: 190px;
+	height: auto;
+	flex-shrink: 0;
+}
+
+
+/* Population-alert bullets that carry a logo (FR-Alert, SAIP): logo on the left,
+ * text on the right. Making the <li> itself the flex row keeps them on one line;
+ * a block child would push the list marker onto its own line.
+ * The logo stands in for the marker, hence list-style: none. */
+.pims-pdf-alert__logo-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	list-style: none;
+}
+
+/* Breathing room between two consecutive logo bullets (FR-Alert then SAIP).
+ * Scoped to adjacent logo items, so the plain bullet that follows SAIP keeps
+ * the same spacing as the rest of the list. */
+.pims-pdf-alert__logo-item + .pims-pdf-alert__logo-item {
+	margin-top: 1rem;
+}
+
+.pims-pdf-alert__logo {
+	display: block;
+	width: 100px;
+	height: auto;
+	flex-shrink: 0;
 }

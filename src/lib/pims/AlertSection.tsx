@@ -5,6 +5,9 @@ import { RadioFrequencies } from "@/providers/AppContextConfig";
 import HighlightRaw from "@/components/HighlightRaw";
 
 import step3Light from '@/assets/step-icons/step-3-light.svg';
+// The PDF is always rendered in light mode, hence the light variant only.
+import logoFrAlertLight from '@/assets/alert-icons/fr_alert_light_mode.svg';
+import logoSaipLight from '@/assets/alert-icons/logo_saip_light_mode.svg';
 
 
 type Props = {
@@ -39,7 +42,7 @@ export default function Alert(props: Props) {
 
     return (
         <>
-            <PimsTitle strongText={t("title_strong")} lightText={t("title_light")} icon={step3Light}/>
+            <PimsTitle strongText={t("title_strong")} lightText={t("title_light")} icon={step3Light} id="pims-pdf-section-alert"/>
             <p className="pims-pdf-alert__subtitle">{t("subtitle")}</p>
 
             {/* Weather alerts */}
@@ -61,27 +64,41 @@ export default function Alert(props: Props) {
             <h3>{t("population_alert.title")}</h3>
             <p>{t("population_alert.description")}</p>                    
             <ul>
-                <li>
-                    <Trans
-                        t={t}
-                        i18nKey="population_alert.fr_alert"
-                        components={{
-                            b: <b/>
-                        }}
+                <li className="pims-pdf-alert__logo-item">
+                    <img
+                        className="pims-pdf-alert__logo"
+                        src={logoFrAlertLight}
+                        alt=""
                     />
+                    <span>
+                        <Trans
+                            t={t}
+                            i18nKey="population_alert.fr_alert"
+                            components={{
+                                b: <b/>
+                            }}
+                        />
+                    </span>
                 </li>
-                <li>
-                    <Trans
-                        t={t}
-                        i18nKey="population_alert.saip"
-                        components={{
-                            b: <b/>,
-                            br: <br/>
-                        }}
+                <li className="pims-pdf-alert__logo-item">
+                    <img
+                        className="pims-pdf-alert__logo"
+                        src={logoSaipLight}
+                        alt=""
                     />
-                    <ul>
-                        {saipGuidelinesNodes}
-                    </ul>
+                    <div>
+                        <Trans
+                            t={t}
+                            i18nKey="population_alert.saip"
+                            components={{
+                                b: <b/>,
+                                br: <br/>
+                            }}
+                        />
+                        <ul>
+                            {saipGuidelinesNodes}
+                        </ul>
+                    </div>
                 </li>
                 <li>
                     <Trans 

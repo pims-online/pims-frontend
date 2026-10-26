@@ -268,3 +268,69 @@
 .pims-components__bold {
 	font-weight: bold;
 }
+
+
+/* ----- Title with a logo ----- */
+
+/* Puts a section logo and its title on one row, the logo first. On narrow screens
+ * they stack instead of squeezing the title. The title carries its own bottom
+ * margin, so it is neutralised here and put on the wrapper instead. */
+.pims-components__title-with-logo {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+}
+
+/* Targeted by tag rather than :first-child, which is now the logo.
+ * No flex-grow: the title keeps its content width so it stays next to the logo.
+ * It may still shrink (min-width: 0) when there is not enough room for both.
+ * `order: -1` puts the title first when the two stack on small screens; the DOM
+ * order (logo first) is restored above the breakpoint. */
+.pims-components__title-with-logo > h1,
+.pims-components__title-with-logo > h2,
+.pims-components__title-with-logo > h3,
+.pims-components__title-with-logo > h4,
+.pims-components__title-with-logo > h5,
+.pims-components__title-with-logo > h6 {
+	flex: 0 1 auto;
+	min-width: 0;
+	margin-bottom: 0;
+	order: -1;
+}
+
+/* Modifier for the sections whose logo stays beside the title even on a small
+ * screen (FR-Alert, SAIP): no wrapping, and the document order is kept, so the
+ * logo remains on the left. Their logo is scaled down below the breakpoint. */
+.pims-components__title-with-logo--keep-inline {
+	flex-wrap: nowrap;
+}
+
+.pims-components__title-with-logo--keep-inline > h1,
+.pims-components__title-with-logo--keep-inline > h2,
+.pims-components__title-with-logo--keep-inline > h3,
+.pims-components__title-with-logo--keep-inline > h4,
+.pims-components__title-with-logo--keep-inline > h5,
+.pims-components__title-with-logo--keep-inline > h6 {
+	order: 0;
+}
+
+
+/* Above the mobile breakpoint, keep title and logo on the same row: a long title
+ * (JNR) would otherwise reach its max-content width and push the logo to the
+ * next line. Below it, wrapping is what we want. */
+@media (min-width: 48rem) {
+	.pims-components__title-with-logo {
+		flex-wrap: nowrap;
+	}
+
+	/* Side by side again: back to document order, so the logo sits on the left. */
+	.pims-components__title-with-logo > h1,
+	.pims-components__title-with-logo > h2,
+	.pims-components__title-with-logo > h3,
+	.pims-components__title-with-logo > h4,
+	.pims-components__title-with-logo > h5,
+	.pims-components__title-with-logo > h6 {
+		order: 0;
+	}
+}

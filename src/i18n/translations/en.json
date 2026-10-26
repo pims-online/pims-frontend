@@ -64,12 +64,15 @@
 		}
 	},
 	"information_screen": {
+		"retry": "Try again",
 		"address": {
 			"title": "I identify the major risks around me",
 			"call_to_action": "Please enter your address",
 			"search_bar_label": "Postal address",
 			"address_missing": "Address missing",
-			"no_result": "No result"
+			"no_result": "No result",
+			"risks_loading": "Loading the risks for your address. Please wait before moving on to the next step.",
+			"risks_failed": "The risks for your address could not be retrieved. Check your connection and try again."
 		},
 		"get_geolocation": "Use my current location",
 		"geolocation_failed": "Geolocation failed",
@@ -88,7 +91,8 @@
 			"title": "Strimming obligation",
 			"description": "You are subject to the legal obligation to clear undergrowth.",
 			"learn_more" : "Learn more",
-			"link_aria_label": "Learn more about your strimming obligation"
+			"link_aria_label": "Learn more about your strimming obligation",
+			"fetch_failed": "The legal obligation to clear undergrowth could not be checked for your municipality. Check your connection and try again."
 		}
 	},
 	"risks": {
@@ -302,7 +306,7 @@
 				"button": "FR-Alert sound"
 			},
 			"saip": {
-				"title": "SAIP sirens",
+				"title": "Sirens of the population alert and information system (SAIP)",
 				"content": "There are more than <k1>2200 SAIP sirens</k1> across the country. In case of an alert, the SAIP sirens in and around the hazard area will emit a distinctive sound signal of 3 times 41 seconds.",
 				"simulation": "To simulate the SAIP alert sound:",
 				"button": "SAIP sirens"
@@ -419,6 +423,10 @@
 		"goBackHome": "Back to home screen"
 	},
 	"pdf": {
+		"document_title": "Individual Safety Plan",
+		"toc": {
+			"title": "Contents"
+		},
 		"title": "Your Individual Safety Plan",
 		"comment": "Comment:",
 		"phone_numbers_section": {
@@ -465,7 +473,7 @@
 				"title": "Public alert systems",
 				"description": "In case of life-threatening danger, authorities may activate:",
 				"fr_alert": "<b>FR Alert</b> which sends alert messages with safety instructions directly to your phone. Neither app nor registration is needed.",
-				"saip": "The national <b>SAIP warning sirens</b> emit 3 repeated signals of 1 minute and 41 seconds.<br/>In that case, you must:",
+				"saip": "The national <b>warning sirens of the population alert and information system (SAIP)</b> emit 3 repeated signals of 1 minute and 41 seconds.<br/>In that case, you must:",
 				"saip_guidelines": {
 					"no_phone": "<b>Avoid making phone calls</b> to keep networks available for emergency services.",
 					"stay_safe": "<b>Stay sheltered</b> and only evacuate if ordered by the authorities.",

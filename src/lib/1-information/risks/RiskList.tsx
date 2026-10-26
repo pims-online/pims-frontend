@@ -6,10 +6,12 @@ import RiskItem from './RiskItem';
 type Props = {
 	riskList: Array<Risk>;
 	compact?: boolean;
+	/** Semantic level of the risk titles, see RiskItem */
+	titleLevel?: 'h3' | 'h4' | 'h5';
 };
 
 export default function RiskList(props: Props) {
-	const { riskList, compact } = props;
+	const { riskList, compact, titleLevel } = props;
 	const { t } = useTranslation('risks');
 
 	const getPreventionList = (
@@ -48,14 +50,16 @@ export default function RiskList(props: Props) {
 				preventionList={preventionList}
 				isFirstItem={index === 0}
 				compact={compact}
+				titleLevel={titleLevel}
 			/>);
 	});
 
 	return (
-		<table className="pims-information-screen__risk-list-table">
-			<tbody>
-				{risks}
-			</tbody>
+		// Layout table (title row + icon/preventions row per risk), not a data table:
+		// role="presentation" keeps screen readers, and the tagged PDF, from exposing
+		// it as a headerless grid of rows and cells.
+		<table className="pims-information-screen__risk-list-table" role="presentation">
+			{risks}
 		</table>
 	);
 }

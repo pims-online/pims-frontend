@@ -1,4 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Alert } from '@codegouvfr/react-dsfr/Alert';
+import { Button } from '@codegouvfr/react-dsfr/Button';
 
 import { AppContext } from '../../../providers';
 import { Container, CircularProgress } from '@/components';
@@ -26,7 +29,8 @@ type Props = {
 export default function AddressInput(props: Props) {
 	const { registerNavLock } = props;
 
-	const { setRiskList, position, setPosition } =
+	const { t } = useTranslation('information_screen');
+	const { riskList, setRiskList, position, setPosition } =
 		useContext(AppContext);
 
 	// ----- State management -----
@@ -45,6 +49,8 @@ export default function AddressInput(props: Props) {
 	const [isFetchingAPI, setIsFetchingAPI] = useState(false);
 	// State to manage whether the input field is highlighted 
 	const [isHighlighted, setIsHighlighted] = useState<boolean>(false);
+	// State to manage whether the user tried to move on while the risks were loading
+	const [isRisksLockHighlighted, setIsRisksLockHighlighted] = useState<boolean>(false);
 
 	// ----- Geoplateforme autocomplete -----
 
@@ -97,48 +103,61 @@ export default function AddressInput(props: Props) {
 	// But what is before and after remains the same
 	// Thus, we provider a wrapper for handlers, where the handlers
 	// Should be async method returning one Geoplateforme Feature
-	const chooseAddress =
-		async (geoplateformeFeature: GeoplateformeApiFeature) => {
+	// Fetches the risks around a position and stores them in the context.
+	// Used when an address is chosen, and again when the user retries after a failure.
+	// riskList stays undefined on failure, which keeps the "risks" navigation lock on.
+	const loadRisks = async (position: Position) => {
 		// 1 - Display that we are fetching something
 		setIsFetchingAPI(true);
-		setIsHighlighted(false);
-		setShowAddressFeatureList(false);
+		setIsRisksLockHighlighted(false);
 		setRiskList(undefined);
 
 		try {
-			// 2 - Apply the handler to get the Geoplateforme feature
-			const coordinates = geoplateformeFeature.geometry.coordinates;
-			const address = geoplateformeFeature.properties.label;
-			const inseeCode = geoplateformeFeature.properties.citycode;
-
-			// 3 - Update the context data based on the feature
-			setTmpAddress(address);
-			const position: Position = {
-				address,
-				coords: {
-					longitude: coordinates[0],
-					latitude: coordinates[1],
-				},
-				inseeCode,
-			};
-			setPosition(position);
-
-			// 4 - Fetch Georisque API
+			// 2 - Fetch Georisque API (coordinates are [longitude, latitude], as Georisque expects)
 			const georisqueResponse = await getRisksAroundCoordinates(
-				coordinates,
-				address,
-				inseeCode
+				[position.coords.longitude, position.coords.latitude],
+				position.address,
+				position.inseeCode
 			);
 
-			// 5 - Handle the Georisque Response
+			// 3 - Handle the Georisque Response
 			handleGeorisqueResponse(georisqueResponse);
 		} catch (error) {
 			console.error(error);
 		}
 
-		// 6 - Display that the process is finished
+		// 4 - Display that the process is finished
 		setIsFetchingAPI(false);
 	};
+
+	const chooseAddress =
+		async (geoplateformeFeature: GeoplateformeApiFeature) => {
+		setIsHighlighted(false);
+		setShowAddressFeatureList(false);
+
+		// 1 - Update the context data based on the Geoplateforme feature
+		const coordinates = geoplateformeFeature.geometry.coordinates;
+		const address = geoplateformeFeature.properties.label;
+		const inseeCode = geoplateformeFeature.properties.citycode;
+
+		setTmpAddress(address);
+		const position: Position = {
+			address,
+			coords: {
+				longitude: coordinates[0],
+				latitude: coordinates[1],
+			},
+			inseeCode,
+		};
+		setPosition(position);
+
+		// 2 - Fetch the risks for this position
+		await loadRisks(position);
+	};
+
+	// The risks are required to generate the PIMS: an address chosen but whose risks
+	// are still loading, or failed to load, must not let the user move on.
+	const risksLoadFailed = position !== undefined && riskList === undefined && !isFetchingAPI;
 
 
 	const highlight = () => {
@@ -158,6 +177,20 @@ export default function AddressInput(props: Props) {
 			registerNavLock(lockName, undefined);
 		}
 	}, [position]);
+
+	useEffect(() => {
+		const lockName = "risks";
+		if (position !== undefined && riskList === undefined) {
+			const lock: NavigationLock = {
+				highlight: () => setIsRisksLockHighlighted(true),
+				focusId: 'pims-step-1__input-address-search-bar',
+				scrollId: 'pims-step-1__input-address-section'
+			};
+			registerNavLock(lockName, lock);
+		} else {
+			registerNavLock(lockName, undefined);
+		}
+	}, [position, riskList]);
 
 	return (
 		<>
@@ -189,6 +222,34 @@ export default function AddressInput(props: Props) {
 					<CircularProgress color="blue" size="medium" />
 				</Container>
 			)}
+			{/* Live region: announces the loading / failure messages to screen readers */}
+			<div aria-live="polite">
+				{isFetchingAPI && isRisksLockHighlighted && (
+					<Alert
+						className="fr-mt-3v"
+						severity="info"
+						small
+						description={t('address.risks_loading')}
+					/>
+				)}
+				{risksLoadFailed && position !== undefined && (
+					<Container withoutMarginBottom className="fr-mt-3v">
+						<Alert
+							severity="error"
+							small
+							description={t('address.risks_failed')}
+						/>
+						<Button
+							className="fr-mt-2v"
+							priority="secondary"
+							size="small"
+							onClick={() => loadRisks(position)}
+						>
+							{t('retry')}
+						</Button>
+					</Container>
+				)}
+			</div>
 		</>
 	);
 }

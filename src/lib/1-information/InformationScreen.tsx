@@ -17,7 +17,6 @@ export default function InformationScreen(props: Props) {
 	const { registerNavLock } = props;
 
 	// TODO: Single loading wheel
-	// TODO: Lock navigation until all risks are fetched
 	// TODO: Display popup when failing to fetch risks
 
 	return (
@@ -26,7 +25,7 @@ export default function InformationScreen(props: Props) {
 			<SectionAddressInput registerNavLock={registerNavLock} />
 			<DisplayRiskListAround />
 			<IodePastilleEligibility />
-			<StrimmingObligation />
+			<StrimmingObligation registerNavLock={registerNavLock} />
 			<Divider />
 			<DisplayRiskListAll />
 			<TownHallNumberLoader />

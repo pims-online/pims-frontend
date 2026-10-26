@@ -5,8 +5,8 @@ import { Container, Subtitle } from '@/components';
 import FrAlertDiscovery from './FrAlertDiscovery';
 import AudioPlayer from './AudioPlayer';
 
-import iconFrAlertLight from '@/assets/alert-icons/fr_alert_light.svg';
-import iconFrAlertDark from '@/assets/alert-icons/fr_alert_dark.svg';
+import iconFrAlertLight from '@/assets/alert-icons/fr_alert_light_mode.svg';
+import iconFrAlertDark from '@/assets/alert-icons/fr_alert_dark_mode.svg';
 import mediaFrAlert from '@/assets/media/sound_fr_alert.mp3';
 
 export default function AlertSystemsFrAlert() {
@@ -17,7 +17,17 @@ export default function AlertSystemsFrAlert() {
 
 	return (
 		<Container>
-			<Subtitle text={t('alert_systems.fr_alert.title')} level='h4'/>
+			<div className='pims-components__title-with-logo pims-components__title-with-logo--keep-inline fr-mb-4v'>
+				{/* Decorative: the subtitle beside it already names FR-Alert, so the
+				    logo must not be announced a second time by screen readers. */}
+				<img
+					className='pims-alert-screen__fr-alert-logo'
+					src={isDark ? iconFrAlertDark : iconFrAlertLight}
+					alt=''
+					role='presentation'
+				/>
+				<Subtitle text={t('alert_systems.fr_alert.title')} level='h4'/>
+			</div>
 			<p>
 				<Trans
 					t={t}

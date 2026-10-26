@@ -8,6 +8,8 @@ import firefighterIcon from '@/assets/involvement-icons/firefighter.svg';
 import reserveIcon from '@/assets/involvement-icons/municipal_reserve.svg';
 import volunteerIcon from '@/assets/involvement-icons/volunteer.svg';
 import step4Light from '@/assets/step-icons/step-4-light.svg';
+// The PDF is always rendered in light mode, hence the light variant only.
+import logoJnrLight from '@/assets/alert-icons/logo_journee_nationale_resilience_light_mode.svg';
 
 
 type Involvement = {
@@ -15,6 +17,8 @@ type Involvement = {
     link?: string;
     linkText?: string;
     imageUrl?: string;
+    /** Wide banner logo instead of a square pictogram */
+    imageIsBanner?: boolean;
 };
 
 const involvements: Involvement[] = [
@@ -44,7 +48,8 @@ const involvements: Involvement[] = [
         i18nKey: "jnr",
         link: 'https://carte-jnr.fr',
         linkText: 'carte-jnr.fr',
-        imageUrl: undefined,
+        imageUrl: logoJnrLight,
+        imageIsBanner: true,
     },
 ];
 
@@ -53,12 +58,16 @@ export default function InvolvementSection() {
 
     const involvementsNodes: ReactElement[] = involvements.map(
         (involvement: Involvement) => 
-        <div key={involvement.i18nKey}>
+        <div key={involvement.i18nKey} className="pims-pdf-involvement__item">
             <h3>
                 {t(`${involvement.i18nKey}.title`)}
             </h3>
             <div className="pims-pdf-involvement__item-container">
-                <img src={involvement.imageUrl}/>
+                <img
+                    src={involvement.imageUrl}
+                    className={involvement.imageIsBanner ? 'pims-pdf-involvement__banner' : undefined}
+                    alt=''
+                />
                 <div>
                     <p>
                         {t(`${involvement.i18nKey}.description`)}<br/>
@@ -70,7 +79,7 @@ export default function InvolvementSection() {
     );
 
     return <>
-            <PimsTitle strongText={t("title_strong")} icon={step4Light}/>
+            <PimsTitle strongText={t("title_strong")} icon={step4Light} id="pims-pdf-section-involvement"/>
             {involvementsNodes}
         </>;
 }

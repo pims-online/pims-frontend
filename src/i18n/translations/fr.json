@@ -64,12 +64,15 @@
 		}
 	},
 	"information_screen": {
+		"retry": "Réessayer",
 		"address": {
 			"title": "J'identifie les risques majeurs qui m'entourent",
 			"call_to_action": "Veuillez renseigner votre adresse",
 			"search_bar_label": "Adresse postale",
 			"address_missing": "Adresse manquante",
-			"no_result": "Aucun résultat"
+			"no_result": "Aucun résultat",
+			"risks_loading": "Chargement des risques de votre adresse en cours. Veuillez patienter avant de passer à l'étape suivante.",
+			"risks_failed": "Les risques de votre adresse n'ont pas pu être récupérés. Vérifiez votre connexion puis réessayez."
 		},
 		"get_geolocation": "Utiliser ma position actuelle",
 		"geolocation_failed": "Échec de la géolocalisation",
@@ -88,7 +91,8 @@
 			"title": "Obligation légale de débroussaillement",
 			"description": "Vous êtes soumis à l'obligation légale de débrousaillement.",
 			"learn_more": "En savoir plus",
-			"link_aria_label": "En savoir plus sur votre obligation légale de débroussaillement"
+			"link_aria_label": "En savoir plus sur votre obligation légale de débroussaillement",
+			"fetch_failed": "L'obligation légale de débroussaillement n'a pas pu être vérifiée pour votre commune. Vérifiez votre connexion puis réessayez."
 		}
 	},
 	"risks": {
@@ -302,7 +306,7 @@
 				"button": "Le son FR-Alert"
 			},
 			"saip": {
-				"title": "Les sirènes SAIP",
+				"title": "Les sirènes du Système d'alerte et d'information des populations (SAIP)",
 				"content": "Il existe plus de <k1>2200 sirènes SAIP</k1> sur l'ensemble du territoire national. En cas d'alerte, les sirènes SAIP sur et à proximité de la zone d'aléa diffusent un signal sonore distinctif de 3 fois 41 secondes.",
 				"simulation": "Pour simuler le signal sonore d'alerte SAIP :",
 				"button": "Les sirènes SAIP"
@@ -419,6 +423,10 @@
 		"goBackHome": "Retourner à l'écran d'accueil"
 	},
 	"pdf": {
+		"document_title": "Plan Individuel de Mise en Sûreté",
+		"toc": {
+			"title": "Sommaire"
+		},
 		"title": "Votre Plan Individuel de Mise en Sûreté",
 		"comment": "Remarque :",
 		"phone_numbers_section": {
@@ -465,7 +473,7 @@
 				"title": "L'alerte des populations",
 				"description": "En cas de risque vital, les autorités peuvent activer :",
 				"fr_alert": "<b>FR Alert</b> qui diffuse un message d’alerte avec les consignes associées directement sur les téléphones portables. Pas d’inscription ni de téléchargement pour recevoir le message d’alerte.",
-				"saip": "<b>Les sirènes SAIP</b> qui déclenchent un signal sonore de 3 fois 1 minute et 41 secondes.<br/>Il faut alors :",
+				"saip": "<b>Les sirènes du Système d'alerte et d'information des populations (SAIP)</b> qui déclenchent un signal sonore de 3 fois 1 minute et 41 secondes.<br/>Il faut alors :",
 				"saip_guidelines": {
 					"no_phone": "<b>Éviter de téléphoner</b> afin de laisser les réseaux disponibles pour les secours.",
 					"stay_safe": "<b>Rester à l'abri</b> et n'évacuer son domicile que sur ordre des autorités.",
